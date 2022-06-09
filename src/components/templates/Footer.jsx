@@ -6,7 +6,7 @@ const Footer = (props) => {
     <>
       <footer className="footer">
         <div>
-          <p >Copyright Ⓒ - Check Your Band - 2022</p> 
+          <p >Copyright Ⓒ - Rock Your Band - 2022</p> 
         </div>
     </footer>
     </>

@@ -5,8 +5,8 @@ import Footer from '../components/templates/Footer'
 
 
 
-import ComposantUn from '../components/ComposantUn'
-import ComposantDeux from '../components/ComposantDeux'
+import ComposantUn from '../components/StreetMap'
+import StreetMap from '../components/StreetMap'
 
 
 const Home = () => {
@@ -18,8 +18,8 @@ const Home = () => {
             <Header className="header"/>
             <Main className="main">
                
-               <ComposantUn/>
-               <ComposantDeux/>
+               <StreetMap/>
+               {/* <ComposantDeux/> */}
                
             </Main >
             <Footer className="footer"/>
