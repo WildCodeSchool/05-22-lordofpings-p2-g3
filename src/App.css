@@ -162,7 +162,8 @@ body {
   min-height: 100vh;
   display: grid;
   grid:
-    "header" 100px "main" auto "footer" 100px/ 100%;
+    "header"
+     100px "main" auto "footer" 100px/ 100%;
 
 }
 
