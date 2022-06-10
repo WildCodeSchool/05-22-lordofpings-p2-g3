@@ -1,38 +1,184 @@
-.App {
-  text-align: center;
+/*** GENERIQUE BASE ***$*/
+
+:root {
+  --primary-1: #3498db;
+  --primary-2: #2980b9;
+  --danger-1: #e74c3c;
+  --danger-2: #c0392b;
+  --success-1: #2ecc71;
+  --success-2: #27ae60;
+  --gray-1: #f6f6f6;
+  --gray-2: #ddd;
+  --gray-3: #34495e;
+  --text-color: #444;
+  --text-primary-color: #ffffff;
+
+  --border: 1px solid var(--gray-2);
+  --border-radius: 4px;
+
+  --font-family: 'Roboto', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/******RESET CSS**********/
+* {
+  box-sizing: border-box;
+  margin: 0;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-style: 3rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+/******RESET CSS**********/
+
+
+body {
+  /* min-height: 100vh; */
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-family);
+  color: rgb(255, 255, 255);
+  background-color: #333
+}
+
+/*FLEX***/
+.d-flex {
   display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-column {
   flex-direction: column;
-  align-items: center;
+}
+
+.justify-content-center {
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.align-items-center {
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.flex-fill {
+  flex: 1 1 auto;
 }
+
+.p-10 {
+  padding: 10px;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+.px-20 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.p-30 {
+  padding: 30px;
+}
+
+.m-10 {
+  margin: 10px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.mr-20 {
+  margin-right: 20px;
+}
+
+
+.m-20 {
+  margin: 20px;
+}
+
+.m-30 {
+  margin: 30px;
+}
+
+/* buttons*/
+
+.btn {
+  padding: 8px 15px;
+  border: 0;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.btn-primary {
+  background-color: var(--primary-1);
+  color: var(--text-primary-color);
+
+
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-2);
+}
+
+.btn-danger {
+  background-color: var(--danger-1);
+  color: var(--text-primary-color);
+}
+
+
+.btn-danger:hover {
+  background-color: var(--danger-2);
+}
+
+.app-container {
+  min-height: 100vh;
+  display: grid;
+  grid:
+    "header" 100px "main" auto "footer" 100px/ 100%;
+
+}
+
+.header {
+  grid-area: header;
+
+}
+
+.main {
+  grid-area: main;
+
+}
+
+.footer {
+  grid-area: footer;
+
+}
+
+/****FN GENERIQUE*/

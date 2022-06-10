@@ -1,0 +1,19 @@
+header{
+  background-color: #777;
+}
+
+.logo {
+  /* background-image: url('../../assets/images/rockYourBand.png'); */
+  width:80px;
+  height:80px;
+  padding:0;
+  margin:0;
+transition: 0.5s 0s ease-in-out;
+
+
+
+}
+.logo:hover{
+  transform: rotate(360deg);
+transition: 0.5s 0s ease-in-out;
+}
