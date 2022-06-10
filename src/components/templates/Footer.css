@@ -1,0 +1,15 @@
+ footer{
+    background: #777;
+    color:var(--text-primary-color); 
+    /* min-height:10vh;    */
+} 
+
+.footer {
+    display : flex;
+    flex-flow: column;
+    justify-content: center;
+    align-content: center;
+    font-size: 2rem;
+    text-align: center;
+    
+}
