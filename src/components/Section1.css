@@ -1,6 +1,6 @@
 .container__section-un{
-    background: var(--orange-logo);
-        height: 300px;
+    background: var(--gray-2);
+        height: 400px;
         text-align: center;
         padding:3rem;
 }

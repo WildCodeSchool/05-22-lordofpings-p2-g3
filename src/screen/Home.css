@@ -2,3 +2,40 @@
     min-height:80vh;
     background-color: white;
 }
+
+
+.header__home{
+    height:100vh;
+    background: url('../assets/images/groupBlackAndWhite.png') center center/cover; 
+}
+
+.hero-container{
+    height:100vh;
+    display:flex;
+    flex-flow:column wrap;
+    justify-content: center;
+    align-content: center;
+    width:100%;
+}
+
+.hero-vp{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 1px 1px #333;
+ 
+
+}
+
+.hero-vp h1{
+    padding-top: 2rem;
+    font-size: 6rem;
+}
+
+.hero-vp span{
+    color:var(--primary-1);
+    font-style: italic;
+}
+
+

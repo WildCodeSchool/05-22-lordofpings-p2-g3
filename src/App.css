@@ -14,7 +14,7 @@
   --gray-3: #34495e;
 
   --black-logo: #060606;
-  --orange-logo: #f86100;
+  --orange-logo: #F15412;
 
 
   --text-color: #444;
@@ -135,6 +135,13 @@ body {
   margin: 30px;
 }
 
+.bg-transparent{
+  background-color: transparent;
+}
+
+.fullscreen {
+  height: 100vh;
+}
 /* buttons*/
 
 .btn {
