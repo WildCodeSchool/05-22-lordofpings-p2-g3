@@ -1,5 +1,5 @@
  footer{
-    background: #777;
+    background: var(--gray-2);
     color:var(--text-primary-color); 
     /* min-height:10vh;    */
 } 

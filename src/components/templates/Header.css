@@ -1,5 +1,5 @@
 header{
-  background-color: #777;
+  background-color: transparent;
 }
 
 .logo {
@@ -16,4 +16,10 @@ transition: 0.5s 0s ease-in-out;
 .logo:hover{
   transform: rotate(360deg);
 transition: 0.5s 0s ease-in-out;
+}
+
+nav{
+  display:flex;
+  justify-content: center;
+  justify-items: stretch;
 }
