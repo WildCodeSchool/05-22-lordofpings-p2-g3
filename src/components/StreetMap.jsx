@@ -1,5 +1,5 @@
-import React,{useState,useEffect} from 'react'
-import { MapContainer, TileLayer, useMap, Marker, Popup,Circle,CircleMarker } from 'react-leaflet'
+import React, { useState, useEffect } from 'react'
+import { MapContainer, TileLayer, useMap, Marker, Popup, Circle, CircleMarker } from 'react-leaflet'
 import './StreetMap.css'
 
 
@@ -14,79 +14,64 @@ const StreetMap = () => {
 
 
   const center = [51.505, -0.09]
-  
-  const [data, setData] = useState({});
 
-  // console.log({ gender, species, homeworld })
+  const [data, setData] = useState([]);
   useEffect(() => {
     fetch(URL_DIRECTUS)
       .then((res) => res.json())
-      .then((res) => setData(res))
-
+      .then((res) => { return setData(res.data) })
   }, [])
 
 
-  const position = [51.505, -0.09]
+  let position = [51.0, -0.1];
 
-
-
-// const dataTab =data["data"]
-//   console.log(dataTab)
-//   for(let i=0;i<10;i++){
-//      console.log(dataTab[i].location.coordinates)
-//   }
+  useEffect(() => {
+    // if (data.length){
+    //   console.log(data)
+    // }
+    // console.log(data)
+    // for (let i = 0; i < 10; i++) {
+    //   // console.log(data.length && data[i].location.coordinates)
+    // }
+    // data.length && data.map(elt => {
+  }, [data])
 
 
 
   return (
-    <>
-      <div className="leaflet d-flex justify-content-center m-30">
-        <div className="d-flex  justify-content-center">
-          <h1>FUCKING MAP in main component  🌎</h1>
-      
-        </div>
-      
 
+    <div className="leaflet d-flex justify-content-center m-30">
 
-        <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
-          <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-       
-       
-              
-                 <Marker position={[51.51, -0.12]} scrollWheelZoom={true}>
-                   <Popup>
-                     A pretty CSS3 popup. <br /> Easily customizable.
-                   </Popup>
-                 </Marker>
-
-       {/* {   for(let i=0;i<10;i++){
-            <Marker position={[52, 9]}>
-              <Popup>
-                A pretty CSS3 popup. <br /> Easily customizable.
-              </Popup>
-            </Marker> 
- 
-          }
-        } */}
-            
-
-            
-            
-       
-          <Circle center={center} pathOptions={fillBlueOptions} radius={200} />
-          <CircleMarker center={[51.51, -0.12]} pathOptions={redOptions} radius={20}>
-            <Popup>Popup in CircleMarker</Popup>
-          </CircleMarker>
-        </MapContainer>,
-          
-         
+      <div className="d-flex  justify-content-center">
+        <h1>FUCKING MAP in main component  🌎</h1>
       </div>
 
+      <MapContainer center={position} zoom={6} scrollWheelZoom={true}>
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        {data.length && data.map((dtc) => (
+          <Marker
+            key={dtc.id}
+            position={[dtc.location.coordinates[0], dtc.location.coordinates[1]]}>
 
-    </>
+            <Popup position={[dtc.location.coordinates[0], dtc.location.coordinates[1]]}>
+              <div>
+                <h2>{`Name: ${dtc.name}`}</h2>
+                {/* <p>{`Street: ${tsla.address.street}`}</p> */}
+              </div>
+
+            </Popup>
+          </Marker>
+        ))}
+
+      </MapContainer>
+
+
+
+    </div>
+
   )
 }
 
