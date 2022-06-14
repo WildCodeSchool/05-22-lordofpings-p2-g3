@@ -1,33 +1,34 @@
+/* eslint*/
+
 import './Header.css'
 import logo from '../../assets/images/rockYourBand-transparent.png'
-import useSound from 'use-sound'
-import mySound from '../../assets/sounds/urban-beat-20679.mp3'
+// import {
+//     BrowserRouter as Router,
+//     Switch,
+//     Route,
+//     Link
+// } from "react-router-dom";
 
 const Header = () => {
-  const [playSound] = useSound(mySound, { volume: 0.5 }) // 70% of the original volume
-  const [stopSound] = useSound(mySound, { volume: 0.0 }) // 70% of the original volume
-
-  const handleClick = () => {
-    playSound()
-    console.log('mouse hover')
-    // maybe you want to add other things here?
-  }
-
-  const stop = () => {
-    console.log('mouse quit')
-    stopSound()
-  }
-
   return (
-    <header className='header d-flex justify-content-center p-20'>
-      <img
-        className='logo'
-        src={logo}
-        onMouseLeave={() => stop()}
-        onMouseEnter={() => handleClick()}
-      />
+    <header className='header p-20'>
+      <div className='logo'>
+        <img src={logo} alt='rockYourBand-logo' />
+      </div>
 
-      <h1> 🎤 🎧 🎼 🎹 🎷 ROCK YOUR BAND 🎺 🎸 🎻</h1>
+      <nav className='navbarre'>
+        <ul>
+          <li>
+            <a className='active'>Annuaire</a>
+          </li>
+          <li>
+            <a>Evenement</a>
+          </li>
+          <li>
+            <a>A propos</a>
+          </li>
+        </ul>
+      </nav>
     </header>
   )
 }

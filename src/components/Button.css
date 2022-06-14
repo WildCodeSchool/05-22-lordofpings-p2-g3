@@ -1,0 +1,42 @@
+.btn-card{
+    height:300px;
+    width:300px;
+    background-color: var(--black-logo);
+    opacity:0.5;
+    font-size: 3rem;
+    border: 0px solid var(--gray-1);
+    border-radius:  3rem 0 0 3rem;
+    color:white;
+    transition: 0.6s 0s ease-in-out;
+    box-shadow: 2px 1px 10px var(--orange-logo),
+    1px 1px 5px var(--orange-logo)
+    ;
+    
+}
+
+
+.btn-card:nth-child(2){
+    border-radius: 0 3rem 3rem 0;
+}
+
+
+.btn-card:hover{
+    cursor: pointer;
+    background-color: var(--primary-1);
+    transform: scale(1.1);
+   
+
+}
+.btn-card-reverse{
+border-radius:  0  3rem 3rem 0;
+}
+
+.hero__btn-container{
+
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    justify-items: center;
+    width:100%;
+}
+
