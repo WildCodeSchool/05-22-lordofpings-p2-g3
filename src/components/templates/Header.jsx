@@ -13,16 +13,13 @@ const Header = () => {
   return (
     <header className='header p-20'>
       <div className='logo'>
-        <img
-          src={logo}
-          alt='rockYourBand-logo'
-        />
+        <img src={logo} alt='rockYourBand-logo' />
       </div>
 
       <nav className='navbarre'>
         <ul>
-          <li >
-            <a className="active">Annuaire</a>
+          <li>
+            <a className='active'>Annuaire</a>
           </li>
           <li>
             <a>Evenement</a>
