@@ -1,9 +1,17 @@
 import React from 'react'
+import { useState } from 'react'
+import { Leaflet } from '../components/Leaflet'
+
 import './Annuaire.css'
 
 const Annuaire = () => {
+  const [isDisplayMap, setIsDisplayMap] = useState(false)
+
   return (
-    <div>Annuaire</div>
+    <>
+      <button onClick={() => setIsDisplayMap(!isDisplayMap)}>CHERCHER</button>
+      {isDisplayMap ? <Leaflet /> : null}
+    </>
   )
 }
 
