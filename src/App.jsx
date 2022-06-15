@@ -1,22 +1,15 @@
-import './App.css';
+import './App.css'
 import React from 'react'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
-import Home from './screen/Home';
-
-
+import Home from './screen/Home'
 
 function App() {
   return (
-    <div  className="app-container">
+    <div className='app-container'>
       <Home />
-   
- {/* <Switch>
+
+      {/* <Switch>
           <Route path="/about">
             <About />
           </Route>
@@ -27,12 +20,8 @@ function App() {
       
           </Route>
   </Switch> */}
-
-
-      
-
-  </div>
-  );
+    </div>
+  )
 }
 
-export default App;
+export default App

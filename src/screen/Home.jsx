@@ -16,16 +16,16 @@ const Home = () => {
         <Header className='' />
         <div className='hero-container'>
           <div className='hero__btn-container'>
-              
-        <Button name="Cherche zicos"></Button>
-            <Button name= "Cherche groupe" reverse={true}></Button>
+            <Button name='Cherche zicos' reverse={false}></Button>
+            <Button name='Cherche groupe' reverse={true}></Button>
           </div>
-          <div className="hero-vp">
+          <div className='hero-vp'>
             <h1>Rock your Band</h1>
-            <h2>Link <span>connection</span> with other musician is <span>easy</span> </h2>
-           
-            </div>
-         
+            <h2>
+              Link <span>connection</span> with other musician is{' '}
+              <span>easy</span>{' '}
+            </h2>
+          </div>
         </div>
       </div>
 

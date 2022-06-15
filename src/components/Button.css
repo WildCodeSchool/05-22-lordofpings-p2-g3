@@ -1,33 +1,56 @@
-.btn-card{
-    height:300px;
-    width:300px;
-    background-color: var(--black-logo);
-    opacity:0.5;
+.btn__card{
+    position :relative;
+    height: 300px;
+    width: 300px;
     font-size: 3rem;
-    border: 0px solid var(--gray-1);
-    border-radius:  3rem 0 0 3rem;
     color:white;
+    border: 0px solid transparent;
+    background: transparent;
+    backdrop-filter: blur(10px); 
     transition: 0.6s 0s ease-in-out;
-    box-shadow: 2px 1px 10px var(--orange-logo),
-    1px 1px 5px var(--orange-logo)
-    ;
+    border-radius: 3rem 0 0 3rem;
     
 }
 
+.btn__card-bg{
+        width:100%;
+        height:100%;
+        box-shadow: 2px 1px 10px var(--orange-logo),
+            2px 1px 10px var(--orange-logo);
+        border: 0px solid var(--gray-1);
+         border-radius: 3rem 0 0 3rem;
+        background: var(--black-logo);
+        transition: 0.6s 0s ease-in-out;
+        opacity: 0.4;
+        position:absolute;
 
-.btn-card:nth-child(2){
+    }
+
+.btn__card span{
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn__card-bg:nth-child(2){
     border-radius: 0 3rem 3rem 0;
 }
 
-
-.btn-card:hover{
+.btn__card:hover{
     cursor: pointer;
-    background-color: var(--primary-1);
-    transform: scale(1.1);
-   
-
+    background:transparent;
+    /* transform: scale(1.1); */
 }
-.btn-card-reverse{
+.btn__card-bg:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    background: var(--primary-1);
+    opacity:0.6;
+}
+
+.btn__card-reverse{
 border-radius:  0  3rem 3rem 0;
 }
 
@@ -40,3 +63,49 @@ border-radius:  0  3rem 3rem 0;
     width:100%;
 }
 
+
+
+
+.waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background-color: var(--color);
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+    transition: 500ms;
+}
+
+.waves::before,
+.waves::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: -10vw;
+    left: 50%;
+    transform: translate(-50%, -75%);
+}
+
+.waves::before {
+    border-radius: 44%;
+    background: rgba(51, 51, 51, 1);
+    animation: waves 8s linear infinite;
+}
+
+.waves::after {
+    border-radius: 44%;
+    background: rgba(51, 51, 51, 0.5);
+    animation: waves 15s linear infinite;
+}
+
+@keyframes waves {
+    0% {
+        transform: translate(-50%, -75%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -75%) rotate(360deg);
+    }
+}
