@@ -1,4 +1,8 @@
 /*** GENERIQUE BASE ***$*/
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 
 :root {
   --primary-1: #3498db;
@@ -24,8 +28,15 @@
 
   --border: 1px solid var(--gray-2);
   --border-radius: 4px;
+  --border-radius-1: 50px;
 
-  --font-family: 'Roboto', sans-serif;
+  --font-family-1: "Oswald";
+  --font-family-2:"Urbanist";
+  --font-family-3:"Roboto";
+
+
+  --btn-height-xxl:200px;
+ --btn-width-xxl:300px;
 }
 
 /******RESET CSS**********/
@@ -41,6 +52,7 @@ h3,
 h4 {
   margin: 0;
   font-style: 3rem;
+  font-family: var(--font-family-1);
 }
 
 ul {
@@ -54,8 +66,12 @@ img {
 
 a {
   text-decoration: none;
+  color:white;
 }
 
+ a:link,a:visited {
+   text-decoration: none;
+ }
 /******RESET CSS**********/
 
 
@@ -63,7 +79,8 @@ body {
   /* min-height: 100vh; */
   padding: 0;
   margin: 0;
-  font-family: var(--font-family);
+  
+  font-family: var(--font-family-2);
   color: var(--text-primary-color);
   background-color: var(--background-primary-color);
 }
@@ -176,10 +193,11 @@ body {
 
 .app-container {
   min-height: 100vh;
-  display: grid;
+  /* display: grid;
   grid:
-    "header"
-    100px "main" auto "footer" 100px/ 100%;
+    "header" 100px
+   "main" auto
+   "footer" 100px/ 100%; */
 
 }
 
