@@ -1,14 +1,14 @@
 import React from 'react'
 import './Footer.css'
 
-const Footer = (props) => {
+const Footer = props => {
   return (
     <>
-      <footer className="footer">
+      <footer className='footer'>
         <div>
-          <p >Copyright Ⓒ - Rock Your Band - 2022</p> 
+          <p>Copyright Ⓒ - Rock Your Band - 2022</p>
         </div>
-    </footer>
+      </footer>
     </>
   )
 }
