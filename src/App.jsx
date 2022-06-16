@@ -1,7 +1,6 @@
 import './App.css'
 import React, { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import Slider from './components/Slider'
 import Home from './screen/Home'
 import Annuaire from './screen/Annuaire'
 import Evenements from './screen/Evenements'
