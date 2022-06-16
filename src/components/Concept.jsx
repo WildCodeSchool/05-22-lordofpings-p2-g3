@@ -73,7 +73,7 @@ function Concept() {
         <p className='animate-text'>
           Vous filtrez votre recherche avant de partager des momments.
         </p>
-        <h3 className='title_concept'>N'hésitez plus</h3>
+        <h3 className='title_concept'>N'hésitez plus !</h3>
         <p className='animate-text'>
           La musique est si vaste et le monde si petit !
         </p>
