@@ -19,14 +19,6 @@ function App() {
 
   return (
     <div className='app-container'>
-<<<<<<< HEAD
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/about' element={<Apropos />} />
-        {/* <Route path='/users' element={<Users />} /> */}
-        <Route path='/directory' element={<Annuaire />} />
-      </Routes>
-=======
       <Header className='header' isHomePage={isHomePage}></Header>
       <Main>
         <Routes>
@@ -38,7 +30,6 @@ function App() {
       </Main>
 
       <Footer className='footer' />
->>>>>>> dev
     </div>
   )
 }
