@@ -1,19 +1,73 @@
-header{
+.home {
+  min-height: 80vh;
+  width:100%;
+}
+
+.nothome{
+  width: 100%;}
+  
+
+.header {
+  background-color: transparent;
+}
+
+.header-color {
+  background-color: var(--gray-1);
+}
+
+.header {
+  background-color: transparent;
+}
+.header__home {
+  height: 100vh;
+  background: url('../../assets/images/groupBlackAndWhite.png') center center/cover;
+}
+
+.hero-container {
+  height: 100vh;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  background-color: transparent;
+}
+
+.hero-vp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 1px 1px #333;
+
+
+}
+
+.hero-vp h1 {
+  padding-top: 2rem;
+  font-size: 6rem;
+}
+
+.hero-vp span {
+  color: var(--primary-1);
+  font-style: italic;
+}
+
+header {
   position: relative;
   background-color: transparent;
-  display:flex;
+  display: flex;
   justify-content: stretch;
   justify-items: stretch;
   align-content: center;
-
 }
 
 .logo {
 
   position: absolute;
-  top:0.1rem;
+  top: 0.1rem;
 
-  left: 4rem; 
+  left: 4rem;
   width: 100px;
   height: 100px;
   padding: 0;
@@ -25,64 +79,63 @@ header{
   transition: 0.5s 0s ease-in-out;
 }
 
-.logo img{
-  width:100%;
+.logo img {
+  width: 100%;
   border-radius: 50%;
 
   box-shadow: 1px 1px 1px var(--orange-logo);
-  padding:0;
+  padding: 0;
   margin: 0;
 
   transition: 0.5s 0s ease-in-out;
   animation: rotating 2s linear infinite;
 }
 
-.navbarre{
-    width:100%;
-   
-}
-.navbarre ul{
-  display:flex;
+.navbarre {
+  width: 100%;
 
-  flex-flow:row wrap;
+}
+
+.navbarre ul {
+  display: flex;
+
+  flex-flow: row wrap;
   margin-left: 6rem;
-  margin-right:6rem;
+  margin-right: 6rem;
   justify-content: space-evenly;
   justify-items: center;
   align-items: center;
-  font-size:2.6rem;
+  font-size: 2.6rem;
 }
-.navbarre li{
+
+.navbarre li {
   /* margin: 0 5rem; */
 }
 
-.navbarre li a{
+.navbarre li a {
   border-bottom: 4px solid transparent;
   transition: 0.6s 0s ease-in-out;
-  
+
 
 }
 
-.navbarre li a::after{
+.navbarre li a::after {}
 
-}
-.navbarre li a:hover{
+.navbarre li a:hover {
 
   cursor: pointer;
   /* border-bottom: 4px solid var(--orange-logo); */
-    color: var(--orange-logo);
-   
-  transform: border ;
+  color: var(--orange-logo);
+
+  transform: border;
 }
 
-.active{
-  color:var(--orange-logo);
+.active {
+  color: var(--orange-logo);
 
-  border-bottom: 4px solid var(--orange-logo)!important;
-  
+  border-bottom: 4px solid var(--orange-logo) !important;
+
 }
-
-
 
 
 @keyframes rotating {
