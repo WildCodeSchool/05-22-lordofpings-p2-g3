@@ -17,7 +17,7 @@ function Concept() {
       const { scrollTop, scrollHeight, clientHeight } = document.documentElement
       //   console.log(scrollTop, scrollHeight, clientHeight)
       if (
-        clientHeight + scrollTop >= scrollHeight - 400 &&
+        clientHeight + scrollTop >= scrollHeight - 600 &&
         animText === false
       ) {
         console.log(animText)

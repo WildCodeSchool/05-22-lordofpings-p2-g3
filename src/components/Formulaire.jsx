@@ -1,7 +1,17 @@
 import React from 'react'
+import { useState, useEffect } from 'react'
+import { Leaflet } from '../components/Leaflet'
 import './Formulaire.css'
 
 const Formulaire = () => {
+  const [isDisplayMap, setIsDisplayMap] = useState(false)
+
+  useEffect(() => {}, [isDisplayMap])
+  const handleClick = e => {
+    e.preventDefault()
+    setIsDisplayMap(!isDisplayMap)
+  }
+
   return (
     <div className='contener'>
       <form className='form'>
@@ -58,7 +68,12 @@ const Formulaire = () => {
           Localisation :
           <input type='text' name='' className='selectForm' />
         </label>
-        <button className='buttonForm'>Recherche</button>
+
+        <button className='buttonForm' onClick={handleClick}>
+          CHERCHER
+        </button>
+
+        {isDisplayMap && <Leaflet />}
       </form>
     </div>
   )
