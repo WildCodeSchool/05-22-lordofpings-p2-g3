@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Apropos.css'
 
-const Apropos = () => {
+const Apropos = ({setIsHomePage}) => {
+
+  useEffect(() => {
+    return setIsHomePage(false)
+  }, [])
+
+
   return (
-    <div>Apropos</div>
+    <div>
+     
+        <h1>A propos</h1>
+      
+    </div>
   )
 }
 
