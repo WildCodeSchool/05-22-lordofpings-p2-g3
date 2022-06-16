@@ -2,6 +2,7 @@
 
 import './Header.css'
 import logo from '../../assets/images/rockYourBand-transparent.png'
+import { Link } from 'react-router-dom'
 // import {
 //     BrowserRouter as Router,
 //     Switch,
@@ -28,6 +29,7 @@ const Header = () => {
             <a>A propos</a>
           </li>
         </ul>
+        <Link to={'/profiledetails'}> ProfilD</Link>
       </nav>
     </header>
   )
