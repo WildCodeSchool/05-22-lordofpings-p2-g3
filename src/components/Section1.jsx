@@ -13,9 +13,9 @@ const Section1 = () => {
     //     nostrum!
     //   </p>
     // </div>
-    <>
+    <div className='container__section-un'>
       <Concept />
-    </>
+    </div>
   )
 }
 

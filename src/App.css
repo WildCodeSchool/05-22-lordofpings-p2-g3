@@ -18,9 +18,13 @@
   --gray-3: #34495e;
 
   --black-logo: #060606;
+  --black-header: #211E1E;
   --orange-logo: #F15412;
 
 
+  --bg-deg-1:#ffc8ef;
+  --bg-deg-2:#95a5fc;
+  
   --text-color: #444;
 
   --text-primary-color: white;
@@ -34,6 +38,9 @@
   --font-family-2:"Urbanist";
   --font-family-3:"Roboto";
 
+  --font-size-1: 1rem;
+  --font-size-2: 1.6rem;
+  --font-size-3: 2rem;
 
   --btn-height-xxl:200px;
  --btn-width-xxl:300px;
@@ -51,6 +58,7 @@ h2,
 h3,
 h4 {
   margin: 0;
+  padding:3rem 1rem;
   font-style: 3rem;
   font-family: var(--font-family-1);
 }
@@ -81,8 +89,10 @@ body {
   margin: 0;
   
   font-family: var(--font-family-2);
-  color: var(--text-primary-color);
-  background-color: var(--background-primary-color);
+  font-size:var(--font-size-2);
+    color: var(--text-primary-color);
+  /* background-color: var(--background-primary-color); */
+  background: linear-gradient(45deg, var(--bg-deg-1));
 }
 
 /*FLEX***/
@@ -181,8 +191,15 @@ body {
   background-color: var(--primary-2);
 }
 
-.btn-danger {
-  background-color: var(--danger-1);
+.btn-active {
+  color: var(--orange-logo);
+
+  border-bottom: 4px solid var(--orange-logo) !important;
+
+}
+
+.btn-inactif {
+  background-color: none;
   color: var(--text-primary-color);
 }
 
@@ -193,12 +210,18 @@ body {
 
 .app-container {
   min-height: 100vh;
-  /* display: grid;
+   display: grid;
   grid:
-    "header" 100px
+    "header" auto
    "main" auto
-   "footer" 100px/ 100%; */
+   "footer" 100px/ 100%; 
 
+}
+
+.container-80{
+ display:block;
+ width:80%;
+ margin:auto;
 }
 
 .header {
