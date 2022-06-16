@@ -1,7 +1,6 @@
 // import React from 'react'
 // import { GoogleMap, useLoadScript } from '@react-google-maps/api';
 
-
 // const ComposantDeux = () => {
 
 //   const containerStyle = {
@@ -13,7 +12,6 @@
 //     lat: -3.745,
 //     lng: -38.523
 //   };
-
 
 //     const { isLoaded } = useJsApiLoader({
 //       id: 'google-map-script',
@@ -32,8 +30,6 @@
 //       setMap(null)
 //     }, [])
 
-
-
 //     return(
 //       <>
 
@@ -51,12 +47,9 @@
 //         </GoogleMap>
 //         ) : <></>}
 
-
 //       </>
 //     )
 
-
-  
 // }
 
 // export default ComposantDeux
