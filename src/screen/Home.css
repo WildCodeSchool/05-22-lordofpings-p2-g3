@@ -1,8 +1,10 @@
 .home{
     min-height:80vh;
-    background-color: white;
 }
 
+.header{
+    background-color: transparent;
+}
 
 .header__home{
     height:100vh;
@@ -16,6 +18,7 @@
     justify-content: center;
     align-content: center;
     width:100%;
+    background-color: transparent;
 }
 
 .hero-vp{
