@@ -1,13 +1,34 @@
 import React from 'react'
 import './Button.css'
 
-const Button = ({name,reverse}) => {
-  const border = reverse? "btn-card-reverse":"btn-card";
+
+const Button = ({ key, name, shadow,bgColor,icone }) => {
+ 
+
+  const  shadowClass= {
+    filter: `drop-shadow(4px 4px 4px ${shadow})`
+  }
+
+  const bg= {
+    // background: `url(${icone}) center center /cover`,
+    // width: '300px'
+    backgroundColor: `${bgColor}`,
+  }
+  
+  const mergeProperties = { ...shadowClass, ...bg }
+  console.log(mergeProperties)
+  const handleChange = e => {
+    console.log('mouse enter')
+  }
 
   return (
-    <button className="btn-card">
-      {name}
-    </button>
+    <div   className='btn__card wave' onMouseEnter={handleChange}>
+      <button style={{ ...shadowClass, ...bg }} className='btn__card-bg '></button>
+      <span className='btn__card-span' onMouseEnter={handleChange}>
+        {' '}
+        {name}
+      </span>
+    </div>
   )
 }
 
