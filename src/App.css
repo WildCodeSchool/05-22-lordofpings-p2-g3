@@ -181,8 +181,15 @@ body {
   background-color: var(--primary-2);
 }
 
-.btn-danger {
-  background-color: var(--danger-1);
+.btn-active {
+  color: var(--orange-logo);
+
+  border-bottom: 4px solid var(--orange-logo) !important;
+
+}
+
+.btn-inactif {
+  background-color: none;
   color: var(--text-primary-color);
 }
 
@@ -193,11 +200,11 @@ body {
 
 .app-container {
   min-height: 100vh;
-  /* display: grid;
+   display: grid;
   grid:
     "header" 100px
    "main" auto
-   "footer" 100px/ 100%; */
+   "footer" 100px/ 100%; 
 
 }
 

@@ -130,12 +130,7 @@ header {
   transform: border;
 }
 
-.active {
-  color: var(--orange-logo);
 
-  border-bottom: 4px solid var(--orange-logo) !important;
-
-}
 
 
 @keyframes rotating {

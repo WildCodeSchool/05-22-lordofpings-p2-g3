@@ -1,23 +1,26 @@
 /* eslint*/
-import {useState} from 'react'
+import { useState } from 'react'
 import './Header.css'
 import logo from '../../assets/images/rockYourBand-transparent.png'
-import imageBtnLeft from "../../assets/images/musique-de-guitare.png";
-import imageBtnRight from "../../assets/images/groupe-musique-2.webp";
+import imageBtnLeft from '../../assets/images/musique-de-guitare.png'
+import imageBtnRight from '../../assets/images/groupe-musique-2.webp'
 
 import Button from '../../components/Button'
-import { NavLink } from 'react-router-dom'
+import { Link,NavLink } from 'react-router-dom'
 
 const Header = ({ isHomePage = false }) => {
   // const [isHomePage, setIsHomePage] = useState(true);
-  const [isActive, setIsActive] = useState()
+  // const [isActive, setIsActive] = useState(false)
 
-  
-  let activeStyle={
+  // const handleChange = () => {
+  //   setIsActive(!isActive)
+  //   console.log('header navlink', isActive)
+  // }
 
-  }
+  // let activeStyle={
+  //   color:`red`,
 
-
+  // }
 
   return (
     <header className=''>
@@ -27,34 +30,42 @@ const Header = ({ isHomePage = false }) => {
             <div className='header__home '>
               <header className='header p-20'>
                 <div className='logo'>
-                  <img
-                    src={logo}
-                    alt='rockYourBand-logo'
-                  />
+                  <img src={logo} alt='rockYourBand-logo' />
                 </div>
 
                 <nav className='navbarre'>
                   <ul>
                     <li>
                       {/* navlink ici */}
-                      <NavLink to='/'  className={({ isActive }) =>
-                        isActive ? 'active' : undefined
-                      }>
+                      <NavLink
+                        to='/'
+                        className={({ isActive }) => {
+                          console.log('accueil', isActive)
+                          return isActive ? 'btn-active' : 'btn-inactive'
+                        }}
+                      >
                         Accueil
                       </NavLink>
                     </li>
                     <li>
-                      <NavLink to='/annuaire' className={({ isActive }) =>
-                        isActive ? 'active' : undefined
-                      }>
+                      <NavLink
+                        to='/annuaire'
+                        className={({ isActive }) =>
+                          isActive ? 'btn-active' : 'btn-inactive'
+                        }
+                      >
                         Annuaire
                       </NavLink>
                     </li>
                     <li>
-                      <NavLink to='/evenement' className={({ isActive }) =>
-                        isActive ? 'active' : undefined
-                      }>
-                        évenements
+                      <NavLink
+                        to='/evenement'
+                        className={({ isActive }) => {
+                          console.log(isActive)
+                          return isActive ? 'btn-active' : 'btn-inactive'
+                        }}
+                      >
+                        &Eacute;venements
                       </NavLink>
                     </li>
                   </ul>
@@ -63,13 +74,30 @@ const Header = ({ isHomePage = false }) => {
 
               <div className='hero-container'>
                 <div className='hero__btn-container'>
-                  <Button key={`left`} name='Recherche musicien' bgColor={`var(--primary-1)`} shadow={`var(--gray-3)`} icone={imageBtnLeft}></Button>
-                  <Button key={`right`} name="Recherche groupe" bgColor={`var(--gray-1)`} shadow={`var(--orange-logo)`} icone={imageBtnRight}></Button>
+                  <Link to='/annuaire'>
+                    <Button
+                      key={`left`}
+                      name='Recherche musicien'
+                      bgColor={`var(--primary-1)`}
+                      shadow={`var(--gray-3)`}
+                      icone={imageBtnLeft}
+                    ></Button>
+                  </Link>
+
+                  <Link to='/annuaire'>
+                    <Button
+                      key={`right`}
+                      name='Recherche groupe'
+                      bgColor={`var(--gray-1)`}
+                      shadow={`var(--orange-logo)`}
+                      icone={imageBtnRight}
+                    ></Button>
+                  </Link>
                 </div>
                 <div className='hero-vp'>
                   <h1>Rock your Band</h1>
                   <h2>
-                     <span>connection</span> with other musician is{' '}
+                    <span>connection</span> with other musician is{' '}
                     <span>easy</span>{' '}
                   </h2>
                 </div>
@@ -81,46 +109,50 @@ const Header = ({ isHomePage = false }) => {
 
       {!isHomePage && (
         <div className='nothome'>
-       
           <header className='header-color  p-20'>
-              <div className='logo'>
-                <img
-                  src={logo}
-                  alt='rockYourBand-logo'
-                />
-              </div>
+            <div className='logo'>
+              <img src={logo} alt='rockYourBand-logo' />
+            </div>
 
-              <nav className='navbarre'>
-                <ul>
+            <nav className='navbarre'>
+              <ul>
                 <li>
-                  {/* navlink ici */}
-                  <NavLink to='/' className={({ isActive }) =>
-                    isActive ? 'active' : undefined
-                  }>
+                  <NavLink
+                    to='/'
+                    className={({ isActive }) =>
+                      isActive ? 'btn-active' : 'btn-inactive'
+                    }
+                  >
                     Accueil
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to='/annuaire' className={({ isActive }) =>
-                    isActive ? 'active' : undefined
-                  }>
+                  <NavLink
+                    to='/annuaire'
+                    className={({ isActive }) => {
+                      console.log('annuaire', isActive)
+                      return isActive ? 'btn-active' : 'btn-inactive'
+                    }}
+                  >
                     Annuaire
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to='/evenement' className={({ isActive }) =>
-                    isActive ? 'active' : undefined
-                  }>
+                  <NavLink
+                    to='/evenement'
+                    className={({ isActive }) =>
+                      isActive ? 'btn-active' : 'btn-inactive'
+                    }
+                  >
                     évenements
                   </NavLink>
                 </li>
-                </ul>
-              </nav>
-            </header>
+              </ul>
+            </nav>
+          </header>
         </div>
-       
       )}
-  </header>
+    </header>
   )
 }
 export default Header

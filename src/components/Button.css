@@ -49,6 +49,15 @@ background: var(--orange-logo);
 
     }
 
+.rotate{
+    transform: rotate(360deg);
+    color:var(--orange-logo);
+}
+.notRotate {
+       color:inherit;
+        transform: rotate(0deg);
+       
+}
 .btn__card span{
     /* z-index:-1; */
     position: absolute;
