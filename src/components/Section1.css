@@ -1,0 +1,6 @@
+.container__section-un{
+    background: var(--gray-2);
+        height: 400px;
+        text-align: center;
+        padding:3rem;
+}

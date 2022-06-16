@@ -1,4 +1,8 @@
 /*** GENERIQUE BASE ***$*/
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 
 :root {
   --primary-1: #3498db;
@@ -7,16 +11,32 @@
   --danger-2: #c0392b;
   --success-1: #2ecc71;
   --success-2: #27ae60;
-  --gray-1: #f6f6f6;
-  --gray-2: #ddd;
+
+  --gray-1:#D9D9D9;
+
+  --gray-2: #B7B7B7;
   --gray-3: #34495e;
+
+  --black-logo: #060606;
+  --orange-logo: #F15412;
+
+
   --text-color: #444;
-  --text-primary-color: #ffffff;
+
+  --text-primary-color: white;
+  --background-primary-color: var(--gray-1);
 
   --border: 1px solid var(--gray-2);
   --border-radius: 4px;
+  --border-radius-1: 50px;
 
-  --font-family: 'Roboto', sans-serif;
+  --font-family-1: "Oswald";
+  --font-family-2:"Urbanist";
+  --font-family-3:"Roboto";
+
+
+  --btn-height-xxl:200px;
+ --btn-width-xxl:300px;
 }
 
 /******RESET CSS**********/
@@ -32,6 +52,7 @@ h3,
 h4 {
   margin: 0;
   font-style: 3rem;
+  font-family: var(--font-family-1);
 }
 
 ul {
@@ -45,8 +66,12 @@ img {
 
 a {
   text-decoration: none;
+  color:white;
 }
 
+ a:link,a:visited {
+   text-decoration: none;
+ }
 /******RESET CSS**********/
 
 
@@ -54,9 +79,10 @@ body {
   /* min-height: 100vh; */
   padding: 0;
   margin: 0;
-  font-family: var(--font-family);
-  color: rgb(255, 255, 255);
-  background-color: #333
+  
+  font-family: var(--font-family-2);
+  color: var(--text-primary-color);
+  background-color: var(--background-primary-color);
 }
 
 /*FLEX***/
@@ -126,6 +152,13 @@ body {
   margin: 30px;
 }
 
+.bg-transparent{
+  background-color: transparent;
+}
+
+.fullscreen {
+  height: 100vh;
+}
 /* buttons*/
 
 .btn {
@@ -160,9 +193,11 @@ body {
 
 .app-container {
   min-height: 100vh;
-  display: grid;
+  /* display: grid;
   grid:
-    "header" 100px "main" auto "footer" 100px/ 100%;
+    "header" 100px
+   "main" auto
+   "footer" 100px/ 100%; */
 
 }
 

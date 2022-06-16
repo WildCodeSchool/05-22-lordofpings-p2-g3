@@ -1,33 +1,142 @@
+/* eslint*/
+import { useState } from 'react'
 import './Header.css'
 import logo from '../../assets/images/rockYourBand-transparent.png'
-import useSound from 'use-sound'
-import mySound from '../../assets/sounds/urban-beat-20679.mp3'
+import imageBtnLeft from '../../assets/images/musique-de-guitare.png'
+import imageBtnRight from '../../assets/images/groupe-musique-2.webp'
 
-const Header = () => {
-  const [playSound] = useSound(mySound, { volume: 0.5 }) // 70% of the original volume
-  const [stopSound] = useSound(mySound, { volume: 0.0 }) // 70% of the original volume
+import Button from '../../components/Button'
+import { NavLink } from 'react-router-dom'
 
-  const handleClick = () => {
-    playSound()
-    console.log('mouse hover')
-    // maybe you want to add other things here?
-  }
+const Header = ({ isHomePage = false }) => {
+  // const [isHomePage, setIsHomePage] = useState(true);
+  const [isActive, setIsActive] = useState()
 
-  const stop = () => {
-    console.log('mouse quit')
-    stopSound()
-  }
+  let activeStyle = {}
 
   return (
-    <header className='header d-flex justify-content-center p-20'>
-      <img
-        className='logo'
-        src={logo}
-        onMouseLeave={() => stop()}
-        onMouseEnter={() => handleClick()}
-      />
+    <header className=''>
+      {isHomePage && (
+        <>
+          <div className='home'>
+            <div className='header__home '>
+              <header className='header p-20'>
+                <div className='logo'>
+                  <img src={logo} alt='rockYourBand-logo' />
+                </div>
 
-      <h1> 🎤 🎧 🎼 🎹 🎷 ROCK YOUR BAND 🎺 🎸 🎻</h1>
+                <nav className='navbarre'>
+                  <ul>
+                    <li>
+                      {/* navlink ici */}
+                      <NavLink
+                        to='/'
+                        className={({ isActive }) =>
+                          isActive ? 'active' : undefined
+                        }
+                      >
+                        Accueil
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to='/annuaire'
+                        className={({ isActive }) =>
+                          isActive ? 'active' : undefined
+                        }
+                      >
+                        Annuaire
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to='/evenement'
+                        className={({ isActive }) =>
+                          isActive ? 'active' : undefined
+                        }
+                      >
+                        évenements
+                      </NavLink>
+                    </li>
+                  </ul>
+                </nav>
+              </header>
+
+              <div className='hero-container'>
+                <div className='hero__btn-container'>
+                  <Button
+                    key={`left`}
+                    name='Recherche musicien'
+                    bgColor={`var(--primary-1)`}
+                    shadow={`var(--gray-3)`}
+                    icone={imageBtnLeft}
+                  ></Button>
+                  <Button
+                    key={`right`}
+                    name='Recherche groupe'
+                    bgColor={`var(--gray-1)`}
+                    shadow={`var(--orange-logo)`}
+                    icone={imageBtnRight}
+                  ></Button>
+                </div>
+                <div className='hero-vp'>
+                  <h1>Rock your Band</h1>
+                  <h2>
+                    <span>connection</span> with other musician is{' '}
+                    <span>easy</span>{' '}
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+
+      {!isHomePage && (
+        <div className='nothome'>
+          <header className='header-color  p-20'>
+            <div className='logo'>
+              <img src={logo} alt='rockYourBand-logo' />
+            </div>
+
+            <nav className='navbarre'>
+              <ul>
+                <li>
+                  {/* navlink ici */}
+                  <NavLink
+                    to='/'
+                    className={({ isActive }) =>
+                      isActive ? 'active' : undefined
+                    }
+                  >
+                    Accueil
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to='/annuaire'
+                    className={({ isActive }) =>
+                      isActive ? 'active' : undefined
+                    }
+                  >
+                    Annuaire
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to='/evenement'
+                    className={({ isActive }) =>
+                      isActive ? 'active' : undefined
+                    }
+                  >
+                    évenements
+                  </NavLink>
+                </li>
+              </ul>
+            </nav>
+          </header>
+        </div>
+      )}
     </header>
   )
 }
