@@ -1,10 +1,28 @@
+.style1{
+  color:var(--bg-deg-1)!important;
+    text-shadow: 2px 1px white !important;
+}
+.style2 {
+  color: var(--bg-deg-2)!important;
+  text-shadow: 2px 1px white!important;
+}
+.style3 {
+  color: var(--orange-logo)!important;
+    text-shadow: 2px 1px white !important;
+}
+.style4 {
+  color: #e398ad!important;
+    text-shadow: 2px 1px white !important;
+}
+
 .home {
   min-height: 80vh;
   width:100%;
 }
 
-.nothome{
-  width: 100%;}
+/* .main{margin-top:45vh} */
+
+
   
 
 .header {
@@ -12,7 +30,9 @@
 }
 
 .header-color {
-  background-color: var(--gray-1);
+  background-color: var(--black-header);
+  width:100%;
+ 
 }
 
 .header {
@@ -21,6 +41,10 @@
 .header__home {
   height: 100vh;
   background: url('../../assets/images/groupBlackAndWhite.png') center center/cover;
+}
+
+.nothome {
+  width: 100%;
 }
 
 .hero-container {

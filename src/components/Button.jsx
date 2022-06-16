@@ -3,7 +3,7 @@ import './Button.css'
 
 const Button = ({ key, name, shadow, bgColor, icone }) => {
   const [isactive, setActive] = useState(false)
-  
+
   const handleClick = () => {
     console.log('handle click', isactive)
     setActive(!isactive)
@@ -13,8 +13,6 @@ const Button = ({ key, name, shadow, bgColor, icone }) => {
   }
 
   const bg = {
-    // background: `url(${icone}) center center /cover`,
-    // width: '300px'
     backgroundColor: `${bgColor}`
   }
 
@@ -29,20 +27,15 @@ const Button = ({ key, name, shadow, bgColor, icone }) => {
       <button
         onClick={handleClick}
         style={{ ...shadowClass, ...bg }}
-       
         className={`btn__card-bg ${isactive ? 'rotate' : 'notRotate'}`}
       ></button>
       <span
         onClick={handleClick}
         className={`btn__card-span`}
-        // className={`btn__card-span ${false ? 'rotate' : 'notRotate'}`}
         onMouseEnter={handleChange}
       >
         {' '}
         {name}
-        {/* <span onClick={handleClick} className='btn__card-span' onMouseEnter={handleChange} >
-        {' '}
-        {name} */}
       </span>
     </div>
   )

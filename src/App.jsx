@@ -16,7 +16,7 @@ function App() {
   return (
     <div className='app-container'>
       <Header className='header' isHomePage={isHomePage}></Header>
-      <Main>
+      <Main className="main">
         <Routes>
           <Route path='/' element={<Home setIsHomePage={setIsHomePage} />} />
           <Route

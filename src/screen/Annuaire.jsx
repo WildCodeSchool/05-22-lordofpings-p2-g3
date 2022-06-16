@@ -8,9 +8,10 @@ const Annuaire = ({ setIsHomePage }) => {
   }, [])
 
   return (
-    <>
+    <div className='container-80'>
+      <h1>Bienvenu sur le groupe de recherche de musiciens numéro 1</h1>
       <Formulaire />
-    </>
+    </div>
   )
 }
 
