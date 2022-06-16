@@ -43,7 +43,7 @@ const Formulaire = () => {
         </div>
         <div className='contener-1'>
           <label className='labelFrom'>
-            Recherche avancé :
+            Recherche avancée :
             <input type='text' name='' className='selectForm' />
           </label>
           <label className='labelFrom'>
