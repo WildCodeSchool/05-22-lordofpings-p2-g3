@@ -1,5 +1,5 @@
 import './App.css'
-import React,{useState}from 'react'
+import React, { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 
 import Home from './screen/Home'
@@ -18,9 +18,15 @@ function App() {
       <Header className='header' isHomePage={isHomePage}></Header>
       <Main>
         <Routes>
-          <Route path='/' element={<Home setIsHomePage={setIsHomePage}/>} />
-          <Route path='/annuaire' element={<Annuaire setIsHomePage={setIsHomePage} />} />
-          <Route path='/evenement' element={<Evenements setIsHomePage={setIsHomePage} />} />
+          <Route path='/' element={<Home setIsHomePage={setIsHomePage} />} />
+          <Route
+            path='/annuaire'
+            element={<Annuaire setIsHomePage={setIsHomePage} />}
+          />
+          <Route
+            path='/evenement'
+            element={<Evenements setIsHomePage={setIsHomePage} />}
+          />
           <Route path='/about' element={<Apropos />} />
         </Routes>
       </Main>
