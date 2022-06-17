@@ -5,7 +5,7 @@ import './Footer.css'
 import facebookImg from '../../assets/images/logoResaux/facebook.png'
 import logoImg from '../../assets/images/rockYourBand-transparent.png'
 import twitterImg from '../../assets/images/logoResaux/twitter.png'
-import instagramImg from '../../assets/images/logoResaux/instagram.png'
+import instagramImg from '../../assets/images/logoResaux/instagram2.png'
 
 const Footer = () => {
   const [openNav, setopenNav] = useState(true)
