@@ -82,16 +82,9 @@ function Concept() {
           c’est le chef qui le suit.
         </p>
       </div>
-      <Equalizer />
-      {/* <div className="marque-versuite">
-            
-          <div className="msgs" >            
-            <p className="p msgsuite"> Vous vous approchez de la grotte... <br>
-            Tout est sombre et effrayant... <br>
-            Un énorme dragon surgit juste devant vous !...<br>
-            Il ouvre grand ses machoires et...<br></p>
-          </div>
-        </div> */}
+      <div>
+        <Equalizer />
+      </div>
     </>
   )
 }
