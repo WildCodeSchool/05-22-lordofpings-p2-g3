@@ -1,6 +1,7 @@
 import Formulaire from '../components/Formulaire'
 import React, { useEffect } from 'react'
 import './Annuaire.css'
+import Profiles from '../components/Profiles'
 
 const Annuaire = ({ setIsHomePage }) => {
   useEffect(() => {
@@ -8,8 +9,9 @@ const Annuaire = ({ setIsHomePage }) => {
   }, [])
 
   return (
-    <>
-      <Formulaire />
+    <> 
+   <Formulaire />
+    <Profiles />  
     </>
   )
 }
