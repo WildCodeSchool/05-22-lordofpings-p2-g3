@@ -16,7 +16,7 @@ function App() {
   return (
     <div className='app-container'>
       <Header className='header' isHomePage={isHomePage}></Header>
-      <Main className="main">
+      <Main className='main'>
         <Routes>
           <Route path='/' element={<Home setIsHomePage={setIsHomePage} />} />
           <Route
@@ -31,7 +31,10 @@ function App() {
             path='/profilesdetails'
             element={<Profiledetails setIsHomePage={setIsHomePage} />}
           />
-          <Route path='/about' element={<Apropos />} />
+          <Route
+            path='/about'
+            element={<Apropos setIsHomePage={setIsHomePage} />}
+          />
         </Routes>
       </Main>
 
