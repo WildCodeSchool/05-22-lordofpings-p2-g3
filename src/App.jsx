@@ -1,7 +1,6 @@
 import './App.css'
 import React, { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
-
 import Home from './screen/Home'
 import Annuaire from './screen/Annuaire'
 import Evenements from './screen/Evenements'
@@ -16,7 +15,7 @@ function App() {
   return (
     <div className='app-container'>
       <Header className='header' isHomePage={isHomePage}></Header>
-      <Main>
+      <Main className="main">
         <Routes>
           <Route path='/' element={<Home setIsHomePage={setIsHomePage} />} />
           <Route

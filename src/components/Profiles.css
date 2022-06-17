@@ -24,7 +24,7 @@
 
 }
 
-img {
+.hosting-list img {
 border-radius: var(--border-radius-2);
 object-fit: cover;
 width: 100%;
@@ -37,7 +37,7 @@ height: 200px;
     background: linear-gradient(45deg, #95a5fc, #ffc8ef);
     padding: 10px;
     border-radius: 27px;
-    height: 380px;
+    height: 500px;
 }
 
 .hosting-list a article:hover {

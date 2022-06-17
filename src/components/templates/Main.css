@@ -1,3 +1,5 @@
 .main{
-    background:white; 
+    background: linear-gradient(45deg, var(--bg-deg-1), var(--bg-deg-2));
+    min-height:80vh;
+   
 }
