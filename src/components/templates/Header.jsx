@@ -9,7 +9,11 @@ import Button from '../../components/Button'
 import { Link, NavLink } from 'react-router-dom'
 
 const Header = ({ isHomePage = false }) => {
- 
+  // const [isHomePage, setIsHomePage] = useState(true);
+  const [isActive, setIsActive] = useState()
+
+  let activeStyle = {}
+
   return (
     <header className='header'>
       {isHomePage && (
