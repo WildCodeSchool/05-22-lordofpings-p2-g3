@@ -38,6 +38,7 @@ justify-content: space-around;
     align-items: center;
 }
 .buttonForm {
+    margin-bottom: 1rem;
     padding: 10px 30px;
     background-color: var(--gray-2);
     border: solid black 1px;

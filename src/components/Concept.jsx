@@ -17,7 +17,7 @@ function Concept() {
       const { scrollTop, scrollHeight, clientHeight } = document.documentElement
       //   console.log(scrollTop, scrollHeight, clientHeight)
       if (
-        clientHeight + scrollTop >= scrollHeight - 400 &&
+        clientHeight + scrollTop >= scrollHeight - 600 &&
         animText === false
       ) {
         console.log(animText)
@@ -82,16 +82,9 @@ function Concept() {
           c’est le chef qui le suit.
         </p>
       </div>
-      <Equalizer />
-      {/* <div className="marque-versuite">
-            
-          <div className="msgs" >            
-            <p className="p msgsuite"> Vous vous approchez de la grotte... <br>
-            Tout est sombre et effrayant... <br>
-            Un énorme dragon surgit juste devant vous !...<br>
-            Il ouvre grand ses machoires et...<br></p>
-          </div>
-        </div> */}
+      <div>
+        <Equalizer />
+      </div>
     </>
   )
 }

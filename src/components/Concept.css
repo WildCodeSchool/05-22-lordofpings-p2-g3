@@ -49,7 +49,7 @@
     text-align: center;
 }
 
-.animate-text p{ 
+.animate-text { 
     font-family: var(--font-family-2);
     text-align: center;
     visibility:hidden;

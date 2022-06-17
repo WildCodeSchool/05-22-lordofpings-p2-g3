@@ -1,8 +1,8 @@
 .container__equalizer {
     position: absolute;
-    top: 500px;
+    top: 600px;
     right: 0;
-    bottom: -500px;
+    bottom: -300px;
     left: 100;
     margin: 10px auto;
     text-align: center
