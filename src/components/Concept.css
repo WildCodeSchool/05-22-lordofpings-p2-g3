@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap%27');
+/* @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap%27');
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100&display=swap%27');
 
 :root {
@@ -30,21 +30,21 @@
     --font-family-1: "Oswald";
     --font-family-2:"Urbanist";
     --font-family-3:"Roboto";
-  }
+  } */
 
 .wrapper_text {
-    height: 270px;
+    height: 300px;
     text-align: center;
     padding:1.5em 0;
-    background-color: var(--gray-3);
+    /* background-color: var(--gray-3); */
 }
 
 
 /* ***************Animation Text machine à écrire *****************/
 .title_concept {
     font-family: var(--font-family-1);
-    font-size: 1.3rem;
-    color: var(--danger-2);
+    font-size: var(--font-size-2);
+    color: var(--bg-deg-2);
     padding: 0.5em 0;
     text-align: center;
 }

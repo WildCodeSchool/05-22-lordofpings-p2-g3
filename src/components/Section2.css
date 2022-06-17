@@ -1,7 +1,6 @@
-.container__section-deux{
-    background: var(--black-logo);
-    height: 470px;
+.container__section-deux {
+    background: var(--bg-deg-2);
+    height: 500px;
     text-align: center;
     padding: 3rem;
 }
-
