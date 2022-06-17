@@ -1,0 +1,121 @@
+.wrapper {
+    display: block;
+}
+.profile {
+
+    position: relative;
+    /* margin-top: 50px; */
+    width: 100%;
+    height: 350px;
+    box-shadow: 0px 0px 0px rgba(252, 3, 3, 0.4);
+    
+}
+
+
+.profile-detail {
+    display: flex;
+    /* flex: 1; */
+    width:80%;
+    height:350px;
+    position: relative;
+    top:50%;
+    left:50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 5px 10px 75px rgba(49, 4, 252, 0.4);
+    flex-grow: 1;
+}
+
+.profile-detail header{
+    border-right: 1px solid #494252;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    width: 400px;
+    /* border-top-right-radius: 40px; */
+}
+
+.pd-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 20%;
+    /* box-shadow: 5px 10px 75px rgba(0, 0, 0, .4); */
+    display: flex;
+    margin: auto;
+    /* margin-top: 10px; */
+    border: 8px solid transparent;
+    transition: .4s;
+}
+
+.pd-image:hover {
+    border: 4px solid #494252;
+
+}
+
+.profile-bio {
+    display: flex;
+    flex-direction: column;
+    /* flex:1; */
+    justify-content: center;
+    flex-grow: 1;
+    align-items: flex-start;
+}
+
+.profile-bio h3 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 10px;
+    margin-top: 7px;
+    padding-left: 20px;
+}
+
+.map-image {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    margin: auto;
+}
+
+.header-map{
+    /* display: flex; */
+    flex-direction: column;
+}
+.header-map h2 {
+    padding: 10px 10px;
+}
+
+.profile-fiche {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    max-width: 100%;
+    height: 50%;
+    margin-right: 0;
+    padding: 150px 200px;
+}
+.profile-fiche>h2 {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 4rem;
+    font-weight: 600;
+    margin: 10px 100px;
+    /* color: black; */
+}
+.profile-fiche>p {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 10px 20px;
+}
+.profile-ifram {
+    position: absolute;
+    top:80%;
+    left: 25%;
+    display: flex;
+    justify-content: center;
+}
+.colortext{
+    color: rgb(10, 9, 10);
+}

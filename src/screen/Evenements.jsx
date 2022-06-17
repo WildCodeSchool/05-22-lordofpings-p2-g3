@@ -11,7 +11,7 @@ const Evenements = ({ setIsHomePage }) => {
 
   
   return (
-    <div>
+    <div className="container-80">
     
         <h1>Evenements</h1>
      

@@ -5,6 +5,7 @@ import Home from './screen/Home'
 import Annuaire from './screen/Annuaire'
 import Evenements from './screen/Evenements'
 import Apropos from './screen/Apropos'
+import Profiledetails from './screen/Profiledetails'
 import Header from './components/templates/Header'
 import Footer from './components/templates/Footer'
 import Main from './components/templates/Main'
@@ -15,7 +16,7 @@ function App() {
   return (
     <div className='app-container'>
       <Header className='header' isHomePage={isHomePage}></Header>
-      <Main>
+      <Main className="main">
         <Routes>
           <Route path='/' element={<Home setIsHomePage={setIsHomePage} />} />
           <Route
@@ -25,6 +26,10 @@ function App() {
           <Route
             path='/evenement'
             element={<Evenements setIsHomePage={setIsHomePage} />}
+          />
+          <Route
+            path='/profilesdetails'
+            element={<Profiledetails setIsHomePage={setIsHomePage} />}
           />
           <Route path='/about' element={<Apropos />} />
         </Routes>
