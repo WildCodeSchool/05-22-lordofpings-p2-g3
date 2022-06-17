@@ -60,6 +60,16 @@ const Header = ({ isHomePage = false }) => {
                         &Eacute;venements
                       </NavLink>
                     </li>
+                    {/* <li>
+                      <NavLink
+                        to='/profilesdetails'
+                        className={({ isActive }) =>
+                          isActive ? 'active' : undefined
+                        }
+                      >
+                        ProfDeTails
+                      </NavLink>
+                    </li> */}
                   </ul>
                 </nav>
               </div>
