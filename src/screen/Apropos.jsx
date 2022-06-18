@@ -12,14 +12,13 @@ const Apropos = ({ setIsHomePage }) => {
   }, [])
 
   return (
-    <div>
+    <div className='main'>
       <h1>A propos</h1>
-      <h2>Mon PLayer</h2>
-      <div>
-        <AudioPlayer url={audio2} />
-      </div>
-      <Section1 />
-      <Section2 />
+      <div className='about__container'/>
+        <h2>Mon PLayer</h2>
+      
+      <AudioPlayer className='about__container-player' url={audio2} />
+     
     </div>
   )
 }

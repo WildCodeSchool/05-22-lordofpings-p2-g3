@@ -1,0 +1,5 @@
+.player__container{
+    color:var(--black-logo);
+    background: transparent;
+    border-radius: var(--border-radius-1);
+}
