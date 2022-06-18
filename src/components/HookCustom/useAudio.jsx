@@ -9,6 +9,7 @@ const useAudio = url => {
 
   useEffect(() => {
     if (playing) {
+      console.log('fichieraudio ', audio)
       audio.play()
     } else {
       audio.pause()

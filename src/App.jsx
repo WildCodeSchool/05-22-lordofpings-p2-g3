@@ -9,6 +9,8 @@ import Profiledetails from './screen/Profiledetails'
 import Header from './components/templates/Header'
 import Footer from './components/templates/Footer'
 import Main from './components/templates/Main'
+import GraphqlPage from './screen/Graphqlpage.jsx'
+
 
 function App() {
   const [isHomePage, setIsHomePage] = useState(true)
@@ -34,6 +36,10 @@ function App() {
           <Route
             path='/about'
             element={<Apropos setIsHomePage={setIsHomePage} />}
+          />
+          <Route
+            path='/graph'
+            element={<GraphqlPage setIsHomePage={setIsHomePage} />}
           />
         </Routes>
       </Main>
