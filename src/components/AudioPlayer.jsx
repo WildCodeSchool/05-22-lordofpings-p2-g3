@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import image from '../assets/images/pause-play-button-64.png'
-
+import image from '../assets/images/pause-play-button.png'
+import './AudioPlayer.css'
 const AudioPlayer = ({ url }) => {
   const [audio] = useState(new Audio(url))
   const [playing, setPlaying] = useState(false)
@@ -24,7 +24,7 @@ const AudioPlayer = ({ url }) => {
 
   return (
     <div onClick={togglePlayBack} className='player__container'>
-      <img className='player__img-play' src={image}/>
+      <img className={`player  ${playing ? 'rotate' : 'notRotate'}`} src={image}/>
       <div>{playing ? 'Pause' : 'Play'}</div>
     </div>
   )
