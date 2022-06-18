@@ -8,7 +8,7 @@ import imageBtnRight from '../../assets/images/groupe-musique-2.webp'
 import Button from '../../components/Button'
 import { Link, NavLink } from 'react-router-dom'
 
-const Header = ({ isHomePage = false }) => {
+const Header = ({ isHomePage = false, isDebugMode = false }) => {
   // const [isHomePage, setIsHomePage] = useState(true);
   const [isActive, setIsActive] = useState()
 
@@ -27,6 +27,19 @@ const Header = ({ isHomePage = false }) => {
 
                 <nav className='navbarre'>
                   <ul>
+                    {isDebugMode && (
+                      <li>
+                        <NavLink
+                          to='/graph'
+                          className={({ isActive }) => {
+                            console.log('accueil', isActive)
+                            return isActive ? 'btn-active' : 'btn-inactive'
+                          }}
+                        >
+                          DEBUG
+                        </NavLink>
+                      </li>
+                    )}
                     <li>
                       {/* navlink ici */}
                       <NavLink
@@ -118,6 +131,19 @@ const Header = ({ isHomePage = false }) => {
 
           <nav className='navbarre'>
             <ul>
+              {isDebugMode && (
+                <li>
+                  <NavLink
+                    to='/graph'
+                    className={({ isActive }) => {
+                      console.log('accueil', isActive)
+                      return isActive ? 'btn-active' : 'btn-inactive'
+                    }}
+                  >
+                    DEBUG
+                  </NavLink>
+                </li>
+              )}
               <li>
                 <NavLink
                   to='/'

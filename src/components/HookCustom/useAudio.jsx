@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 // un hook custom pour gérer l'audio
 const useAudio = url => {
