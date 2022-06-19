@@ -9,14 +9,19 @@ import Profiledetails from './screen/Profiledetails'
 import Header from './components/templates/Header'
 import Footer from './components/templates/Footer'
 import Main from './components/templates/Main'
+import GraphqlPage from './screen/Debug/Graphqlpage.jsx'
 
-function App() {
+function App({ isDebugMode = true }) {
   const [isHomePage, setIsHomePage] = useState(true)
 
   return (
     <div className='app-container'>
-      <Header className='header' isHomePage={isHomePage}></Header>
-      <Main className="main">
+      <Header
+        className='header'
+        isDebugMode={isDebugMode}
+        isHomePage={isHomePage}
+      />
+      <Main className='main'>
         <Routes>
           <Route path='/' element={<Home setIsHomePage={setIsHomePage} />} />
           <Route
@@ -31,7 +36,14 @@ function App() {
             path='/profilesdetails'
             element={<Profiledetails setIsHomePage={setIsHomePage} />}
           />
-          <Route path='/about' element={<Apropos />} />
+          <Route
+            path='/about'
+            element={<Apropos setIsHomePage={setIsHomePage} />}
+          />
+          <Route
+            path='/graph'
+            element={<GraphqlPage setIsHomePage={setIsHomePage} />}
+          />
         </Routes>
       </Main>
 

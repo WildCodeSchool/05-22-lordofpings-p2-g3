@@ -1,0 +1,36 @@
+.player__container{
+    color:var(--black-logo);
+    background: transparent;
+    border-radius: var(--border-radius-1);
+}
+
+
+.player {    
+    width: 100%;
+    border-radius: 50%;
+    border:2px solid var(--orange-logo);
+    /* box-shadow: 1px 1px 1px var(--orange-logo); */
+    padding: 0;
+    margin: 0;
+
+   
+}
+.rotate{
+    transition: 0.5s 0s ease-in-out;
+    animation: rotating 2s linear infinite;
+}
+.notRotate {
+    transition: 0.5s 0s ease-in-out;
+    animation: rotating 0s linear ;
+}
+
+
+@keyframes rotating {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
