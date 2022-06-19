@@ -2,8 +2,8 @@ import { gql, useMutation } from '@apollo/client'
 import React, { useState } from 'react'
 
 const CREATE_POST = gql`
-  mutation articles {
-    create_articles_items(data: [{ status: $status, slug: $slug }]) {
+  mutation post_article {
+    create_articles_items(data: [{ status: "$status", slug: "$slug" }]) {
       id
     }
   }
@@ -12,12 +12,16 @@ const CREATE_POST = gql`
 const CreateArticles = () => {
   const [slug, setSlug] = useState('')
   const [status, setStatus] = useState('')
+  const [success, setSuccess] = useState(false)
   const [createPost, { loading, error }] = useMutation(CREATE_POST)
 
   const handleCreatePost = event => {
     event.preventDefault()
     // the mutate function also doesn't return a promise
     createPost({ variables: { slug, status } })
+    if (!error && !loading) {
+      setSuccess(!success)
+    }
   }
 
   return (
@@ -37,7 +41,9 @@ const CreateArticles = () => {
         <button disabled={loading} type='submit'>
           Submit
         </button>
+        {loading && <p>{'loading...'}</p>}
         {error && <p>{error.message}</p>}
+        {success && !loading && !error && <p>{'created with succeed'}</p>}
       </form>
     </div>
   )
