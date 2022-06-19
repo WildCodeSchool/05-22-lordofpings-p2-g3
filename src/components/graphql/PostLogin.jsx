@@ -3,7 +3,7 @@ import { gql, useMutation } from '@apollo/client'
 
 const POST_LOGIN = gql`
   mutation login {
-    auth_login(email: "v.degermain@gmail.com", password: "29101981") {
+    auth_login(email: "v.degermain@gmail.com", password: "") {
       access_token
       refresh_token
     }
