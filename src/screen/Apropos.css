@@ -1,13 +1,13 @@
 .about__container{
-    
+   
     margin: auto;
 }
 
 .about__container-player{
-    width:200px;
+    width:100%;
     margin: auto;
 }
 .player__container{
-    width: 200px;
+    width: 500px;
     margin:auto;
 }

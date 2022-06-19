@@ -16,7 +16,7 @@ const PostLogin = () => {
   if (error) return `Error! ${error.message}`
 
   return (
-    <div className='main'>
+    <div className=''>
       <div className='container-80'>
         <h1>Login</h1>
         <button>Log in</button>

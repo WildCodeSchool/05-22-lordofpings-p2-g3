@@ -4,72 +4,35 @@ import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter } from 'react-router-dom'
-
 import {
   ApolloClient,
-  InMemoryCache,
   ApolloProvider,
-  useQuery,
-  gql,
-  HttpLink
+  createHttpLink,
+  InMemoryCache
 } from '@apollo/client'
+import { setContext } from '@apollo/client/link/context'
 
+const DIRECTUS_API_TOKEN = '' || process.env.REACT_APP_DIRECTUS_API_TOKEN
+const httpLink = createHttpLink({
+  uri: 'https://7kb0t63m.directus.app/graphql/'
+})
 
-
-// const myLinkDirectusItem = new HttpLink({
-//   uri: 'https://7kb0t63m.directus.app/graphql/',
-//   // other link options...
-// });
-
-// const myLinkDirectusSystem = new HttpLink({
-//   uri: 'https://7kb0t63m.directus.app/graphql/system',
-//   // other link options...
-// });
-
-const client = new ApolloClient({
-  uri: 'https://7kb0t63m.directus.app/graphql/',
-  cache: new InMemoryCache(),
-  fetchOptions: {
-    credentials: 'include'
-  },
-  request: operation => {
-    const token = localStorage.getItem('authToken') || ''
-    console.log('token root',token)
-    operation.setContext({
-      headers: {
-        Authorization: `JWT `
-      }
-    })
-  },
-  clientState: {
-    default: {
-      isLoggedIn: !!localStorage.getItem('authToken')
+const authLink = setContext((_, { headers }) => {
+  const token = DIRECTUS_API_TOKEN
+  // return the headers to the context so httpLink can read them
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : ''
     }
   }
 })
 
-// const Root = () => {
-//   <Query query={ME_QUERY}>
-//     {({ data, loading, error }) => {
-//       if (loading) return <div>LOADING...</div>
-//       if (error) return <div>Error</div>
-//       { console.log(data)}
-//       return <div>{JSON.stringify(data, null, 2)}</div>
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache()
+})
 
-//     }}
-//   </Query>
-// }
-
-// const ME_QUERY =gql`
-// query me{
-// 	users_by_id(id: "4b891ad2-04f8-48de-bfb7-05e0f76f68df") {
-// 		first_name
-// 		last_name
-// 		email
-// 	}
-// }
-
-// `
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>

@@ -6,7 +6,7 @@
 
 
 .player {    
-    width: 50%;
+    width: 100%;
     border-radius: 50%;
     border:2px solid var(--orange-logo);
     /* box-shadow: 1px 1px 1px var(--orange-logo); */
