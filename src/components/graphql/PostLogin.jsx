@@ -2,13 +2,14 @@ import React from 'react'
 import { gql, useMutation } from '@apollo/client'
 
 const POST_LOGIN = gql`
-  mutation login {
-    auth_login(email: "v.degn@gmail.com", password: "") {
-      access_token
-      refresh_token
-    }
+
+  mutation Login($email: String!) {
+  login(email: $email) {
+    id
+    token
   }
-`
+}
+`;
 
 const PostLogin = () => {
   const { loading, error, data } = useMutation(POST_LOGIN)

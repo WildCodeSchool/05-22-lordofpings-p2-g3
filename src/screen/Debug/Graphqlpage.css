@@ -1,0 +1,14 @@
+.card__btn-article{
+height:50px;
+border:2px solid white;
+border-radius: var(--border-radius-3);
+font-size:var(--font-size-1);
+    background: #f4c2ff;
+    transition :0.6s 0s ease-in-out;
+}
+
+.card__btn-article:hover{
+    transform: scale(1.1);
+    cursor:pointer;
+    background:#f86100;
+} 

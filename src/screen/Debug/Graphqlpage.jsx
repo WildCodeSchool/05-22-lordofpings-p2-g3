@@ -1,12 +1,15 @@
-import React, { useEffect, useStae } from 'react'
+import React, { useEffect, useStae, useState } from 'react'
 import GetArticles from '../../components/graphql/GetArticles'
 import GetLocations from '../../components/graphql/GetLocations'
 import PostLogin from '../../components/graphql/PostLogin'
 import GetFiles from '../../components/graphql/GetFiles'
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
 import GetMusician from '../../components/graphql/GetMusician'
-
+import CreateArticles from '../../components/graphql/CreateArticles'
+import './Graphqlpage.css'
 const GraphqlPage = ({ setIsHomePage }) => {
+  const [isActif, setIsActif] = useState(false)
+  
   const clientSystem = new ApolloClient({
     uri: 'https://7kb0t63m.directus.app/graphql/system/',
 
@@ -30,15 +33,24 @@ const GraphqlPage = ({ setIsHomePage }) => {
     setIsHomePage(false)
   }, [])
 
+  const handleClick = () => {
+    setIsActif(!isActif)
+  }
   return (
     <div className='main'>
       <div className='container-80'>
         <h1>Page GRAPHQL</h1>
+        <button className='card__btn-article' onClick={handleClick}>
+         { !isActif?`create a New Post`:`Annulation`}
+         
+        </button>
+        <p>{!isActif ? `vous devez etre authentfié préalablement pour effectuer cette action correctement` : ``}</p>
+        {isActif && <CreateArticles />}
         <h2>Accès restreint / collections</h2>
         {/* <GetLocations /> */}
         {/**/}
-       
-          <GetMusician />
+
+        <GetMusician />
         {/* <GetArticles /> */}
         <h2>Accès public / system</h2>
         <ApolloProvider client={clientSystem}>
