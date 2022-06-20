@@ -14,7 +14,8 @@ import { setContext } from '@apollo/client/link/context'
 
 const DIRECTUS_API_TOKEN = '' || process.env.REACT_APP_DIRECTUS_API_TOKEN
 const httpLink = createHttpLink({
-  uri: 'https://7kb0t63m.directus.app/graphql/'
+  uri: 'https://7kb0t63m.directus.app/graphql/',
+  credentials: 'include'
 })
 
 const authLink = setContext((_, { headers }) => {
@@ -29,7 +30,7 @@ const authLink = setContext((_, { headers }) => {
 })
 
 const client = new ApolloClient({
-  connectToDevTools: true,
+  
   link: authLink.concat(httpLink),
   cache: new InMemoryCache()
 })

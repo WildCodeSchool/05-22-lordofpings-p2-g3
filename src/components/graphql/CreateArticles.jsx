@@ -13,7 +13,7 @@ const CreateArticles = () => {
   const [slug, setSlug] = useState('')
   const [status, setStatus] = useState('')
   const [success, setSuccess] = useState(false)
-  const [createPost, { loading, error }] = useMutation(CREATE_POST)
+  const [createPost, { data, loading, error }] = useMutation(CREATE_POST)
 
   const handleCreatePost = event => {
     event.preventDefault()
@@ -42,8 +42,14 @@ const CreateArticles = () => {
           Submit
         </button>
         {loading && <p>{'loading...'}</p>}
-        {error && <p>{error.message}</p>}
-        {success && !loading && !error && <p>{'created with succeed'}</p>}
+        {error && <><p>⭕</p><p>{error.message}</p></>}
+
+        {success && !loading && !error && (
+          <>
+            <p>{'✅'}</p>
+            <pre>{JSON.stringify(data.create_articles_items[0], null)}</pre>
+          </>
+        )}
       </form>
     </div>
   )

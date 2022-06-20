@@ -26,6 +26,7 @@ const GetLocations = () => {
       <div className='container-80'>
         <h1>GET MUSCIAN</h1>
         <pre>{JSON.stringify(data, null, 2)}</pre>
+
       </div>
     </div>
   )
