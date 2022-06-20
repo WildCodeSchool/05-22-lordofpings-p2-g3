@@ -2,8 +2,8 @@ import { gql, useMutation } from '@apollo/client'
 import React, { useState } from 'react'
 
 const CREATE_POST = gql`
-  mutation post_article {
-    create_articles_items(data: [{ status: "$status", slug: "$slug" }]) {
+  mutation article($status: String!, $slug: String!) {
+    create_articles_items(data: [{ status: $status, slug: $slug }]) {
       id
     }
   }
