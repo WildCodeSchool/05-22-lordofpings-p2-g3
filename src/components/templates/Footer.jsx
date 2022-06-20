@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import React from 'react'
 import { useState } from 'react'
 import './Footer.css'
@@ -54,34 +54,81 @@ const Footer = () => {
               <div className='mobileMenu'>
                 <ul className='redirection'>
                   <li className='action'>
-                    <Link to='/'>
-                      <a className='activepage'>Accueil</a>
-                    </Link>
+                    <NavLink
+                      to='/'
+                      className={({ isActive }) => {
+                        console.log('accueil', isActive)
+
+                        return isActive
+                          ? 'redirection-active link-footer footer-active'
+                          : 'btn-inactive link-footer'
+                      }}
+                    >
+                      Accueil
+                    </NavLink>
+                  </li>
+                  <li className=''>
+                    <NavLink
+                      to='/annuaire'
+                      className={({ isActive }) => {
+                        console.log('annuaire', isActive)
+
+                        return isActive
+                          ? 'redirection-active link-footer footer-active'
+                          : 'btn-inactive link-footer'
+                      }}
+                    >
+                      Annuaire
+                    </NavLink>
                   </li>
                   <li>
-                    <Link to='/annuaire'>
-                      <a>Annuaire</a>
-                    </Link>
+                    <NavLink
+                      to='/evenement'
+                      className={({ isActive }) =>
+                        isActive
+                          ? 'redirection-active link-footer footer-active'
+                          : 'btn-inactive link-footer'
+                      }
+                    >
+                      &Eacute;venements
+                    </NavLink>
+                  </li>
+
+                  <li>
+                    <NavLink
+                      to='/apropos'
+                      className={({ isActive }) =>
+                        isActive
+                          ? 'redirection-active link-footer footer-active'
+                          : 'btn-inactive link-footer'
+                      }
+                    >
+                      A proros
+                    </NavLink>
                   </li>
                   <li>
-                    <Link to='/event'>
-                      <a>Evénements</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to='/about'>
-                      <a>A propos</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to='/contact'>
-                      <a>Contact</a>
-                    </Link>
+                    <NavLink
+                      to='/contact'
+                      className={({ isActive }) =>
+                        isActive
+                          ? 'redirection-active link-footer footer-active'
+                          : 'btn-inactive link-footer'
+                      }
+                    >
+                      Contact
+                    </NavLink>
                   </li>
                   <li className='display'>
-                    <Link to='/connexion'>
-                      <a>Connexion</a>
-                    </Link>
+                    <NavLink
+                      to='/connexion'
+                      className={({ isActive }) =>
+                        isActive
+                          ? 'redirection-active link-footer footer-active'
+                          : 'btn-inactive link-footer'
+                      }
+                    >
+                      Connexion
+                    </NavLink>
                   </li>
                 </ul>
               </div>
