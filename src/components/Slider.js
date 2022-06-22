@@ -43,9 +43,11 @@ function Slider() {
         <div key={slide.id} className='sliderContainer'>
           <img src={require(`../${slide.image}`)} alt='' />
 
+          <h2 className='overlay_title'>{slide.title}</h2>
           <div className='overlay'>
-            <h2 className='overlay_title'>{slide.title}</h2>
-            <p className='overlay_text'>{slide.text}</p>
+            <div className='slide_text-p'>
+              <p className='overlay_text'>{slide.text}</p>
+            </div>
           </div>
         </div>
       ))}

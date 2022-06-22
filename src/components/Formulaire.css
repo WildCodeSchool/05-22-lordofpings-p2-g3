@@ -4,7 +4,8 @@
     display: flex;
     /* flex-direction: column;   */
     justify-content: center;
-    /* background: linear-gradient(45deg,var(--bg-deg-1), var(--bg-deg-2)); */
+    /* background: linear-gradient(45deg, #95a5fc, #ffc8ef); */
+    
 }
 
 .contener-1 {
@@ -19,6 +20,7 @@ justify-content: space-around;
     margin: 10px;
     width: 200px;
     color: black;
+    
 }
 .selectForm {
     padding: 6px;
@@ -44,6 +46,7 @@ justify-content: space-around;
     border: solid black 1px;
     font-weight: bold;
 }
+
 
 
 @media  screen and (max-width: 768px) {

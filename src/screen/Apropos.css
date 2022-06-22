@@ -1,0 +1,13 @@
+.about__container{
+   
+    margin: auto;
+}
+
+.about__container-player{
+    width:100%;
+    margin: auto;
+}
+.player__container{
+    width: 500px;
+    margin:auto;
+}
