@@ -33,9 +33,13 @@
   } */
 
 .wrapper_text {
-    height: 300px;
+    background: var(--black-logo);
+    height: 500px;
     text-align: center;
-    padding:1.5em 0;
+    padding: 3rem;
+    /* height: 300px;
+    text-align: center;
+    padding:1.5em 0; */
     /* background-color: var(--gray-3); */
 }
 
