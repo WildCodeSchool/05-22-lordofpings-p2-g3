@@ -5,7 +5,8 @@
     bottom: -300px;
     left: 100;
     margin: 10px auto;
-    text-align: center
+    text-align: center;
+  
   }
   
   .container__equalizer::before {
