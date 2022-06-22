@@ -2,7 +2,7 @@ import './Home.css'
 import { useEffect } from 'react'
 
 // import Section1 from '../components/Section1'
-import Section2 from '../components/Section2'
+import Slider from '../components/Slider'
 import Concept from '../components/Concept'
 
 const Home = ({ setIsHomePage }) => {
@@ -12,8 +12,12 @@ const Home = ({ setIsHomePage }) => {
 
   return (
     <div className='main'>
-      <Concept />
-      <Section2 />
+      <div className='container__section-un'>
+        <Concept />
+      </div>
+      <div className='container__section-deux'>
+        <Slider />
+      </div>
     </div>
   )
 }
