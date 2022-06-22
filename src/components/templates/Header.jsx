@@ -27,19 +27,6 @@ const Header = ({ isHomePage = false, isDebugMode = false }) => {
 
                 <nav className='navbarre'>
                   <ul>
-                    {isDebugMode && (
-                      <li>
-                        <NavLink
-                          to='/graph'
-                          className={({ isActive }) => {
-                            console.log('accueil', isActive)
-                            return isActive ? 'btn-active' : 'btn-inactive'
-                          }}
-                        >
-                          DEBUG
-                        </NavLink>
-                      </li>
-                    )}
                     <li>
                       {/* navlink ici */}
                       <NavLink
@@ -131,19 +118,6 @@ const Header = ({ isHomePage = false, isDebugMode = false }) => {
 
           <nav className='navbarre'>
             <ul>
-              {isDebugMode && (
-                <li>
-                  <NavLink
-                    to='/graph'
-                    className={({ isActive }) => {
-                      console.log('accueil', isActive)
-                      return isActive ? 'btn-active' : 'btn-inactive'
-                    }}
-                  >
-                    DEBUG
-                  </NavLink>
-                </li>
-              )}
               <li>
                 <NavLink
                   to='/'

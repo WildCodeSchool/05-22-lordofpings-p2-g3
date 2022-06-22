@@ -1,10 +1,10 @@
-import React,{useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Profiledetails.css'
 import pprofile from '../assets/images/tom.jpg'
 
 const Profiledetails = ({ setIsHomePage }) => {
   useEffect(() => {
-    return setIsHomePage(false)
+    setIsHomePage(false)
   }, [])
 
   return (

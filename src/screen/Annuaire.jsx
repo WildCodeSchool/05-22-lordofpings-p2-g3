@@ -9,7 +9,7 @@ import Profiles from '../components/Profiles'
 const Annuaire = ({ setIsHomePage }) => {
   // const [isDisplayMap, setIsDisplayMap] = useState(false)
   useEffect(() => {
-    return setIsHomePage(false)
+    setIsHomePage(false)
   }, [])
 
   return (
