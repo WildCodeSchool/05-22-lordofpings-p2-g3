@@ -6,15 +6,12 @@ import './Evenements.css'
 
 const Evenements = ({ setIsHomePage }) => {
   useEffect(() => {
-    return setIsHomePage(false)
+    setIsHomePage(false)
   }, [])
 
-  
   return (
-    <div className="container-80">
-    
-        <h1>Evenements</h1>
-     
+    <div className='container-80'>
+      <h1>Evenements</h1>
     </div>
   )
 }
