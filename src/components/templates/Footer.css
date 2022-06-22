@@ -51,18 +51,25 @@ display: none;
   color: #D7CCCC;
 }
 
-footer a {
-  color: #D7CCCC;
+footer .link-footer {
+
   text-decoration: none;
 }
 
 /*Code victor */
-.redirection li a{
+.redirection li .link-footer{
   border-bottom: 4px solid transparent;
   transition: 0.6s 0s ease-in-out;
 }
 
-.redirection li a:hover{
+.footer-active{
+  color: var(--orange-logo);
+
+  border-bottom: 4px solid #F15412!important;
+
+}
+
+.redirection li .link-footer:hover{
   cursor: pointer;
   color: #F15412;;
   transform: border ;
@@ -97,7 +104,7 @@ display: flex;
 
 @media screen and (max-width: 768px) {
 
-.image li,.image a {
+.image li,.image .link-footer {
   display: flex;
 }
 
@@ -109,7 +116,7 @@ footer img {
 footer .image {
   display: flex;
   justify-content: space-around;
-  margin: 0;
+  margin: 0.25em 0 0 0;
   width: 100%;
 }
 
@@ -182,6 +189,7 @@ footer{
   cursor: pointer;
 }
 
+
 #toggle:checked + .mobileMenu {
   display: flex;
 }
@@ -199,5 +207,12 @@ footer{
 .redirection li{
   border-bottom: dotted 1px white;
 }
+
+.redirection-active{
+  color: #fc5209;
+  border-bottom: 1px dotted #fc5209!important;
+
+}
+
 }
 

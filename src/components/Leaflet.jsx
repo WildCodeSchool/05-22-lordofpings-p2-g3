@@ -15,7 +15,7 @@ export const Leaflet = () => {
   const [data, setData] = useState([])
 
   useEffect(() => {
-    fetch('https://kinotonik.github.io/jsonapi/data.json')
+    fetch('https://kinotonik.github.io/jsonapi/data_musicien.json')
       .then(res => res.json())
       .then(res => setData(res.results))
   }, [])
