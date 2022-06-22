@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react'
-import Main from '../components/templates/Main'
-import Footer from '../components/templates/Footer'
-import Header from '../components/templates/Header'
+import React from 'react'
+import { useState, useEffect } from 'react'
+import Event from '../components/Event'
+import { Leaflet } from '../components/Leaflet'
 import './Evenements.css'
 
 const Evenements = ({ setIsHomePage }) => {
@@ -9,10 +9,45 @@ const Evenements = ({ setIsHomePage }) => {
     setIsHomePage(false)
   }, [])
 
+  const [isDisplayMap, setIsDisplayMap] = useState(false)
+
+  useEffect(() => {}, [isDisplayMap])
+  const handleClick = e => {
+    e.preventDefault()
+    setIsDisplayMap(!isDisplayMap)
+  }
+
   return (
-    <div className='container-80'>
-      <h1>Evenements</h1>
-    </div>
+    <>
+      <h1 className='h1event'>
+        Tenez-vous informé des événements musicaux en cours ou à venir
+      </h1>
+      <form className='form-event'>
+        <div className='contener-form-event'>
+          Type d'événement
+          <select className='select-event'>
+            <option value='tous'>Tous</option>
+            <option value='festival'>Festival</option>
+            <option value='concert'>Concert</option>
+            <option value='guinguette'>Guinguette</option>
+          </select>
+          Genre musical :
+          <select className='select-event'>
+            <option value='tous'>Tous</option>
+            <option value='rock'>Rock</option>
+            <option value='classic'>Classic</option>
+          </select>
+          Localisation :
+          <input type='text' name='' className='selectForm' />
+          <button className='button-event' onClick={handleClick}>
+            CHERCHER
+          </button>
+        </div>
+
+        {isDisplayMap && <Leaflet />}
+      </form>
+      <Event />
+    </>
   )
 }
 
