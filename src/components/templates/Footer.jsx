@@ -1,11 +1,11 @@
-import { NavLink, Link } from 'react-router-dom'
 import React from 'react'
+import { NavLink, Link } from 'react-router-dom'
 import { useState } from 'react'
 import './Footer.css'
 import facebookImg from '../../assets/images/logoResaux/facebook.png'
-import logoImg from '../../assets/images/rockYourBand-transparent.png'
-import twitterImg from '../../assets/images/logoResaux/twitter.png'
 import instagramImg from '../../assets/images/logoResaux/instagram2.png'
+import logoImg from '../../assets/images/Rock_your_band.png'
+import twitterImg from '../../assets/images/logoResaux/twitter.png'
 
 const Footer = () => {
   const [openNav, setopenNav] = useState(true)
@@ -57,8 +57,6 @@ const Footer = () => {
                     <NavLink
                       to='/'
                       className={({ isActive }) => {
-                        console.log('accueil', isActive)
-
                         return isActive
                           ? 'redirection-active link-footer footer-active'
                           : 'btn-inactive link-footer'
@@ -71,8 +69,6 @@ const Footer = () => {
                     <NavLink
                       to='/annuaire'
                       className={({ isActive }) => {
-                        console.log('annuaire', isActive)
-
                         return isActive
                           ? 'redirection-active link-footer footer-active'
                           : 'btn-inactive link-footer'
