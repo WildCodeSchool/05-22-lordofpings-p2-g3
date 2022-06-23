@@ -1,4 +1,4 @@
-.container-80 {
+/* .container-80 {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -14,4 +14,4 @@
     }
     .div3 { 
         grid-area: 2 / 2 / 4 / 3; 
-    }
+    } */
