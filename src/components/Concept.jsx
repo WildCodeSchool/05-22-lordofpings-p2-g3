@@ -82,7 +82,7 @@ function Concept() {
           c’est le chef qui le suit.
         </p>
       </div>
-      <div>
+      <div className='equalizer'>
         <Equalizer />
       </div>
     </>

@@ -1,18 +1,16 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-// import { Leaflet } from '../components/Leaflet'
+import { Leaflet } from '../components/Leaflet'
 import Formulaire from '../components/Formulaire'
 import './Annuaire.css'
 import Profiles from '../components/Profiles'
-import '../components/Profiles.css'
 
 const Annuaire = ({ setIsHomePage }) => {
-  // const [isDisplayMap, setIsDisplayMap] = useState(false)
+  const [group, setGroup] = useState([])
+  const [profiles, setProfiles] = useState([])
   useEffect(() => {
     setIsHomePage(false)
   }, [])
-
-  const [profiles, setProfiles] = useState([])
 
   useEffect(() => {
     const getData = () => {
@@ -22,8 +20,6 @@ const Annuaire = ({ setIsHomePage }) => {
     }
     getData()
   }, [])
-
-  const [group, setGroup] = useState([])
 
   useEffect(() => {
     const getData = () => {
@@ -66,10 +62,10 @@ const Annuaire = ({ setIsHomePage }) => {
               )
           )}
         </div>
+        <div>
+          <Leaflet />
+        </div>
       </div>
-
-      {/* <button onClick={() => setIsDisplayMap(!isDisplayMap)}>CHERCHER</button>
-      {isDisplayMap ? <Leaflet /> : null} */}
     </div>
   )
 }

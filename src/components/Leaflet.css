@@ -111,9 +111,9 @@
   justify-content: center;
 }
 .leaflet-container {
-  width: 78vw;
-  height: 41vh;
-  margin: 50px 0;
+  width: 40vw;
+  height: 60vh;
+  margin: 25px 0 0 25px;
 
 }
 .btn-leaf {
