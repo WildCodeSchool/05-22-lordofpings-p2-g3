@@ -23,6 +23,89 @@
 
   }
 }
+/*pop up*/
+.leaflet-popup-content-wrapper {
+  min-height: 200px;
+  min-width: 140px;
+  display: flex;
+  align-items: flex-end;
+
+  }
+
+  .leaflet-popup-content{
+  margin: 0;
+  }
+
+  .leaflet-popup-content-wrapper div {
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+    min-width: 140px;
+    padding-left: 0px;
+    border-radius: 5px;
+  }
+
+  .leaflet-popup-content-wrapper img{
+    border-radius: 50%;
+    /* object-fit:contain; */
+    width: 70px;
+    height: 70px;
+  }
+
+  .leaflet-popup-content-wrapper h2{
+    padding: 0;
+    font-size: 1rem;
+    padding-left: 2px;
+  }
+
+  .leaflet-popup-content-wrapper p{
+    margin: 0;
+    padding-left: 2px;
+
+  }
+  .leaflet-container .leaflet-popup-close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    text-align: center;
+    width: 24px;
+    height: 24px;
+    font: 16px/24px Tahoma, Verdana, sans-serif;
+    color: #757575;
+    text-decoration: none;
+    background: transparent;
+}
+
+.btn__card {
+  background-color: #b0aef8!important;
+  position: relative;
+  height: 1.2rem!important;
+  width: 100%!important;
+  font-size: 0.8rem!important;
+  color: white!important;
+  border: 1px solid black!important;
+  -webkit-backdrop-filter: blur(10px)!important;
+  backdrop-filter: blur(10px);
+  transition: 0.6s 0s ease-in-out;
+  border-radius: var(--border-radius-1);
+  transform: scale(0.8);
+  margin:auto;
+}
+
+.btn__card:hover {
+  background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+	background-color:#408c99;
+  color: black;
+  transform: scale(1)!important;
+
+}
+.btn__card:active {
+	position:relative;
+	top:1px;
+}
+
+
 .wrap-leaf {
   display: flex;
   justify-content: center;
@@ -40,28 +123,3 @@
 }
 
 
-
-
-.btn {
-	box-shadow: 0px 10px 14px -7px #276873;
-	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
-	background-color:#599bb3;
-	border-radius:8px;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:20px;
-	font-weight:bold;
-	padding:13px 32px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #3d768a;
-}
-.btn:hover {
-	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
-	background-color:#408c99;
-}
-.btn:active {
-	position:relative;
-	top:1px;
-}
