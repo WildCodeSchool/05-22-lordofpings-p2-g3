@@ -2,9 +2,10 @@ import React from 'react'
 import { useEffect } from 'react'
 // import { Leaflet } from '../components/Leaflet'
 import Formulaire from '../components/Formulaire'
+import { Leaflet } from '../components/Leaflet'
+import Profiles from '../components/Profiles'
 
 import './Annuaire.css'
-import Profiles from '../components/Profiles'
 
 const Annuaire = ({ setIsHomePage }) => {
   // const [isDisplayMap, setIsDisplayMap] = useState(false)
@@ -14,12 +15,18 @@ const Annuaire = ({ setIsHomePage }) => {
 
   return (
     <div className='container-80'>
-      <h1>Bienvenue sur le groupe de recherche de musiciens n°1!</h1>
-      <Formulaire />
-
-      {/* <button onClick={() => setIsDisplayMap(!isDisplayMap)}>CHERCHER</button>
-      {isDisplayMap ? <Leaflet /> : null} */}
-      <Profiles />
+      <div className='div1'>
+        <h1>Bienvenue sur le groupe de recherche de musiciens n°1!</h1>
+        <Formulaire />
+      </div>
+      <div className='div2'>
+        {/* <button onClick={() => setIsDisplayMap(!isDisplayMap)}>CHERCHER</button>
+        {isDisplayMap ? <Leaflet /> : null} */}
+        <Profiles />
+      </div>
+      <div className='div3'>
+        <Leaflet />
+      </div>
     </div>
   )
 }

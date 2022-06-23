@@ -8,7 +8,7 @@ flex-direction: column;
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+  padding-top: 20px;
   max-height: 500px;
 }
 .carousel .slide img {
