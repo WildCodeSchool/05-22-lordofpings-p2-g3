@@ -1,8 +1,3 @@
-.container__section-deux {
-display: flex;
-flex-direction: column;
-}
-
 .carousel {
   position: relative;
   display: flex;
@@ -15,6 +10,9 @@ flex-direction: column;
   object-fit: cover;
   max-height: 380px;
   max-width: 1000px;
+}
+.overlay_title {
+ 
 }
 .overlay_flex {
   display: flex;
@@ -45,7 +43,8 @@ padding: 10px;
   /**********************/
   .sliderContainer {
     position: relative;
-    height: 80%
+    height: 80%;
+
   }
   .overlay {
     position: absolute;
@@ -64,13 +63,14 @@ padding: 10px;
 
   /***************/
 .carousel .overlay_title {
-  margin:0.8rem 0 1rem 0;
-
+  font-size: 3rem;
+margin:0;
 }
 
  .overlay_title h2{
   position: absolute;
   top:30px;
+
   
  }
 @media screen and (max-width:600px) {
