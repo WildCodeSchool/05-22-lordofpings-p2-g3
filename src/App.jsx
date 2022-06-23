@@ -30,7 +30,7 @@ function App({ isDebugMode = true }) {
             element={<Evenements setIsHomePage={setIsHomePage} />}
           />
           <Route
-            path='/profilesdetails/'
+            path='/profilesdetails/:id'
             element={<Profiledetails setIsHomePage={setIsHomePage} />}
           />
           <Route
