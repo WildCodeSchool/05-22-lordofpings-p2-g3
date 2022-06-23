@@ -1,121 +1,52 @@
-
-#hosting {
-    display: flex;
-    justify-content: space-between;
+.col-md-4 {
+  margin-bottom: 30px;
 }
 
-#hosting a p {
-    font-size: 1.1rem;
+.card {
+  padding: 30px;
+  border: solid 1px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+.card:hover {
+  box-shadow: 0 0 12px 3px rgba(0, 0, 0, 0.08);
+}
+.card-title {
+  margin-top: 20px;
+}
+.card-text {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.card-text .fa {
+  font-size: 26px;
+}
+.avatar {
+  width: 140px;
+  margin: auto;
+}
+.avatar img {
+  border: solid 6px transparent;
+  border-radius: 50%;
+}
+.card:hover .avatar img {
+  border-color: rgb(99, 204, 131);
 }
 
-#hosting section h2 {
-    margin-top: 0px;
+.btn {
+  border-radius: 25px;
 }
 
-.hosting-list {
-    background-color: #F2F2F2;
-    padding: 20px 20px 10px 20px;
-    border-radius: var(--border-radius-2);
-    height: 100%;
-    box-sizing: content-box;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
+footer p {
+  color: rgba(0, 0, 0, 0.6);
 }
 
-.hosting-list img {
-border-radius: var(--border-radius-2);
-object-fit: cover;
-width: 100%;
-height: 200px;
+footer p a,
+footer p a:hover {
+  color: rgb(99, 204, 131);
 }
 
-.hosting-list a {
-    width: 20%;
-    margin-bottom: 50px;
-    background: linear-gradient(45deg, #95a5fc, #ffc8ef);
-    padding: 10px;
-    border-radius: 27px;
-    height: 500px;
-}
-
-.hosting-list a article:hover {
-    box-shadow: 5px 5px 5px 0px #E2E2E2;
-}
-
-.hosting-list a article img {
-    width: 100%;
-    height: 200px;
-    border-radius: 25px 25px 0px 0px;
-    object-fit: cover;
-}
-
-.hosting-list a {
-    color: black;
-    text-decoration: none;
-}
-
-.hosting-list a article .article-content {
-    padding: 10px 10px 0px 10px;
-}
-
-.hosting-list a article .article-content h3,
-.hosting-list a article .article-content p {
-    margin: 6px;
-}
-
-.hosting-list a article .article-content .price.bold {
-    font-weight: bold;
-}
-
-#hosting .marseille {
-    width: 100%;
-}
-
-#hosting .marseille .subtitle {
-    font-weight: bold;
-    font-size: 120%;
-}
-
-#hosting .famous .chart-icone {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
-#hosting .famous {
-    width: 35%;
-    position: relative;
-}
-
-#hosting .famous .hosting-list {
-    flex-direction: column;
-}
-
-#hosting .famous .hosting-list a {
-    width: 100%;
-}
-
-#hosting .famous .hosting-list a article {
-    display: flex;
-    flex-direction: row;
-}
-
-#hosting .famous .hosting-list a article img {
-    border-radius: 25px 0px 0px 25px;
-    width: 35%;
-}
-
-#hosting .famous .hosting-list a article .article-content {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-}
-
-.subtitle a {
-    color: black;
-    font-weight: bold;
-    text-decoration: underline;
-    line-height: 35px;
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1040px;
+  }
 }
