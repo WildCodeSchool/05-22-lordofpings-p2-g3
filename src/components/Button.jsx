@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Button.css'
 
-const Button = ({ key, name, shadow, bgColor, icone }) => {
+const Button = ({ name, shadow, bgColor }) => {
   const [isactive, setActive] = useState(false)
 
   const handleClick = () => {

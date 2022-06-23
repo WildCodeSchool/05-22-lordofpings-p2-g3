@@ -78,21 +78,17 @@ const Header = ({ isHomePage = false, isDebugMode = false }) => {
                 <div className='hero__btn-container'>
                   <Link to='/annuaire'>
                     <Button
-                      key={`left`}
                       name='Recherche musicien'
                       bgColor={`var(--primary-1)`}
                       shadow={`var(--gray-3)`}
-                      icone={imageBtnLeft}
                     ></Button>
                   </Link>
 
                   <Link to='/annuaire'>
                     <Button
-                      key={`right`}
                       name='Recherche groupe'
                       bgColor={`var(--gray-1)`}
                       shadow={`var(--orange-logo)`}
-                      icone={imageBtnRight}
                     ></Button>
                   </Link>
                 </div>

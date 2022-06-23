@@ -1,22 +1,33 @@
 import React, { useInsertionEffect } from 'react'
 import { useState, useEffect } from 'react'
-import { Leaflet } from '../components/Leaflet'
-import { Profiles } from '../components/Profiles'
+//import { Leaflet } from '../components/Leaflet'
+//import { Profiles } from '../components/Profiles'
 import './Formulaire.css'
 
-const Formulaire = () => {
-  const [isDisplayMap, setIsDisplayMap] = useState(false)
-  const [search, setSearch] = useState(false)
+const Formulaire = ({ isCheck }) => {
+  //const [isDisplayMap, setIsDisplayMap] = useState(false)
+  //const [search, setSearch] = useState(false)
   const [dataFilter, setDataFilter] = useState([])
   const [instFilter, setInstFilter] = useState([])
   const [nivFilter, setNivFilter] = useState([])
   const [styleFilter, setStyleFilter] = useState([])
+  // filtres selectionnés
+  const [dataCriteria, setDataCriteria] = useState([])
+  const [instCriteria, setInstCriteria] = useState([])
+  const [nivCriteria, setNivCriteria] = useState([])
+  const [styleCriteria, setStyleCriteria] = useState([])
 
-  useEffect(() => {}, [isDisplayMap])
-  const handleClick = e => {
-    e.preventDefault()
-    setIsDisplayMap(!isDisplayMap)
-  }
+  // const handleClick = e => {
+  //   e.preventDefault()
+
+  //   isCheck('toto')
+  // }
+
+  // useEffect(() => {}, [isDisplayMap])
+  // const handleClick = e => {
+  //   e.preventDefault()
+  //   setIsDisplayMap(!isDisplayMap)
+  // }
 
   const [results, setResults] = useState([])
   useEffect(() => {
@@ -49,11 +60,14 @@ const Formulaire = () => {
         <div className='contener-1'>
           <label htmlFor='select' className='labelFrom'>
             Localisation :
-            <select className='selectForm'>
+            <select
+              className='selectForm'
+              onChange={e => setDataCriteria(e.target.value)}
+            >
               <option value=''> chosir localisation</option>
               {dataFilter.length &&
-                dataFilter.map(df => (
-                  <option key={df} value={df.location.city}>
+                dataFilter.map((df, i) => (
+                  <option key={i} value={df.location.city}>
                     {df.location.city}
                   </option>
                 ))}
@@ -61,11 +75,14 @@ const Formulaire = () => {
           </label>
           <label htmlFor='select' className='labelFrom'>
             Instruments :
-            <select className='selectForm'>
+            <select
+              className='selectForm'
+              onChange={e => setInstCriteria(e.target.value)}
+            >
               <option value=''> chosir un instrument</option>
               {instFilter.length &&
-                instFilter.map(inst => (
-                  <option key={inst.id} value={inst.name}>
+                instFilter.map((inst, i) => (
+                  <option key={i} value={inst.name}>
                     {inst.name}
                   </option>
                 ))}
@@ -75,11 +92,14 @@ const Formulaire = () => {
         <div className='contener-1'>
           <label htmlFor='select' className='labelFrom'>
             Niveau :
-            <select className='selectForm'>
+            <select
+              className='selectForm'
+              onChange={e => setNivCriteria(e.target.value)}
+            >
               <option value=''>choisir niveau</option>
               {nivFilter.length &&
-                nivFilter.map(niv => (
-                  <option key={niv.id} value={niv.niveau}>
+                nivFilter.map((niv, i) => (
+                  <option key={i} value={niv.niveau}>
                     {niv.niveau}
                   </option>
                 ))}
@@ -100,11 +120,14 @@ const Formulaire = () => {
           </label>
           <label className='labelFrom'>
             Genre musical :
-            <select className='selectForm'>
+            <select
+              className='selectForm'
+              onChange={e => setStyleCriteria(e.target.value)}
+            >
               <option value=''>choisir un style</option>
               {styleFilter.length &&
-                styleFilter.map(sty => (
-                  <option key={sty.id} value={sty.name}>
+                styleFilter.map((sty, i) => (
+                  <option key={i} value={sty.name}>
                     {sty.name}
                   </option>
                 ))}
@@ -112,11 +135,14 @@ const Formulaire = () => {
           </label>
         </div>
 
-        <button className='buttonForm' onClick={handleClick}>
+        <button
+          className='buttonForm'
+          onClick={e =>
+            isCheck(e, instCriteria, nivCriteria, styleCriteria, dataCriteria)
+          }
+        >
           CHERCHER
         </button>
-
-        {isDisplayMap && <Leaflet />}
       </form>
     </div>
   )
