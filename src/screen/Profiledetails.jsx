@@ -1,9 +1,25 @@
-import React,{useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Profiledetails.css'
 import pprofile from '../assets/images/tom.jpg'
+import axios from 'axios'
 
 const Profiledetails = ({ setIsHomePage }) => {
   useEffect(() => {
+    let token = localStorage.get('rock-your-band');
+    token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY4NzQ1MzRhLTRkN2MtNDhmMC04NDBlLWRiNDM5YjIzOTY4OSIsInJvbGUiOiI3ZmE4MDc4Zi1jODEwLTQ3MTktYTQ3Yi0xZjk4ZDYxMTk4NDYiLCJhcHBfYWNjZXNzIjoxLCJhZG1pbl9hY2Nlc3MiOjAsImlhdCI6MTY1NTg1NDMwMSwiZXhwIjoxNjU1ODU1MjAxLCJpc3MiOiJkaXJlY3R1cyJ9.rf7HNcPHRi_hT6ZU88Z_oGRxNMS1TP8MTh2Eyhs77bI"
+    console.log(token)
+    axios
+      .get('https://7kb0t63m.directus.app/users/me', {
+        headers: {
+          Authorization: `token ${token}`
+        }
+      })
+      .then(res => {
+        console.log('axios', res.data)
+      })
+      .catch(error => {
+        console.error(error)
+      })
     return setIsHomePage(false)
   }, [])
 

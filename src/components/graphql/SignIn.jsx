@@ -15,15 +15,21 @@ const SignIn = () => {
   const [password, setPassword] = useState('')
   const [success, setSuccess] = useState(false)
   const [generateToken, { data, loading, error }] = useMutation(POST_LOGIN)
-  
 
-
-  const handleSubmit = event => {
+  useEffect(() => {}, [generateToken])
+  const handleSubmit = async event => {
     event.preventDefault()
     // the mutate function also doesn't return a promise
-    generateToken({ variables: { email, password } })
+    const genToken = await generateToken({ variables: { email, password } }
+      
+      
+      )
     if (!error && !loading) {
-      localStorage.setItem('rock-your-band', JSON.stringify(data.auth_login.access_token));
+      localStorage.setItem(
+        'rock-your-band',
+        JSON.stringify(data.auth_login.access_token)
+      )
+      console.log('local', localStorage.getItem('rock-your-band'))
       setSuccess(!success)
     }
   }
@@ -48,11 +54,18 @@ const SignIn = () => {
           Se connecter
         </button>
         {loading && <p>{'loading...'}</p>}
-        {error && <><span>⭕</span><p>{error.message}</p></>}
+        {error && (
+          <>
+            <span>⭕</span>
+            <p>{error.message}</p>
+          </>
+        )}
         {success && !loading && !error && (
           <>
-            <span >{'✅'}</span>
-<p><pre>{JSON.stringify(data.auth_login.access_token, null, 2)}</pre></p>
+            <span>{'✅'}</span>
+            <p>
+              <pre>{JSON.stringify(data.auth_login.access_token, null, 2)}</pre>
+            </p>
           </>
         )}
       </form>
