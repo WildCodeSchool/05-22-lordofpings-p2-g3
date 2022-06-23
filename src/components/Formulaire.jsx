@@ -18,8 +18,6 @@ const Formulaire = () => {
     setIsDisplayMap(!isDisplayMap)
   }
 
-  useEffect(() => {}, [search])
-
   const [results, setResults] = useState([])
   useEffect(() => {
     fetch('https://kinotonik.github.io/jsonapi/data_musicien.json')

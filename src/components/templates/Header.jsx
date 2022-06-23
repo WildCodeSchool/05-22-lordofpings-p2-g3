@@ -8,7 +8,7 @@ import imageBtnRight from '../../assets/images/groupe-musique-2.webp'
 import Button from '../../components/Button'
 import { Link, NavLink } from 'react-router-dom'
 
-const Header = ({ isHomePage = false }) => {
+const Header = ({ isHomePage = false, isDebugMode = false }) => {
   // const [isHomePage, setIsHomePage] = useState(true);
   const [isActive, setIsActive] = useState()
 
