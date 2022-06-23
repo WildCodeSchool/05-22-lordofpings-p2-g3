@@ -38,38 +38,45 @@ const Annuaire = ({ setIsHomePage }) => {
     <div className='container-80'>
       <h1>Bienvenue sur le groupe de recherche de musiciens n°1!</h1>
       <Formulaire />
-      <div className=''>
-        <p>Retrouvez les sur Rock Your Band ... </p>
+      <div className='title1'>
+        <h3>Retrouvez vos futurs musiciens sur Rock Your Band ... </h3>
       </div>
-      <div className='clearfix'>
-        <div className='row'>
-          {profiles.map(
-            (profile, index) =>
-              index < 3 && (
-                <Profiles
-                  key={profile.id}
-                  name={profile.name.first}
-                  image={profile.picture.large}
-                  location={profile.location.city}
-                />
-              )
-          )}
+      <div className='containerSolo'>
+        {profiles.map(
+          (profile, index) =>
+            index < 6 && (
+              <Profiles
+                key={profile.id}
+                id={profile.id}
+                name={profile.name.first}
+                image={profile.picture.large}
+                location={profile.location.city}
+                instrument={profile.music.instrument}
+                experience={profile.music.expérience}
+              />
+            )
+        )}
+        <div className='title2'>
+          <h3>Ou votre futur groupe de musique ... </h3>
+        </div>
+        <div className='containerGroupe'>
           {group.map(
             (group, index) =>
-              index < 3 && (
+              index < 6 &&
+              (console.log('groupe', group) || (
                 <Profiles
                   key={group.id}
+                  id={group.id}
                   name={group.name}
                   image={group.jacket}
                   location={group.location.city}
+                  instrument={group.instrument}
+                  experience={group.expérience}
                 />
-              )
+              ))
           )}
         </div>
       </div>
-
-      {/* <button onClick={() => setIsDisplayMap(!isDisplayMap)}>CHERCHER</button>
-      {isDisplayMap ? <Leaflet /> : null} */}
     </div>
   )
 }
