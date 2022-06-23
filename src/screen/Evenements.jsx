@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import Event from '../components/Event'
+import Slider from '../components/Slider'
 import { Leaflet } from '../components/Leaflet'
 import './Evenements.css'
 
@@ -46,7 +46,7 @@ const Evenements = ({ setIsHomePage }) => {
 
         {isDisplayMap && <Leaflet />}
       </form>
-      <Event />
+      <Slider />
     </>
   )
 }
