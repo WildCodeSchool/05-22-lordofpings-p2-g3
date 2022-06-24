@@ -6,8 +6,14 @@ import './Annuaire.css'
 import Profiles from '../components/Profiles'
 
 const Annuaire = ({ setIsHomePage }) => {
-  const [group, setGroup] = useState([])
+  const [isDisplayMap, setIsDisplayMap] = useState(false)
   const [profiles, setProfiles] = useState([])
+  const [group, setGroup] = useState([])
+  const [dataCreteria, setDataCreteria] = useState('Tours')
+  const [instCreteria, setInstCriteria] = useState('Piano')
+  const [nivCreteria, setNivCreteria] = useState('débutant')
+  const [styleCreteria, setStyleCreteria] = useState('Jazz')
+
   useEffect(() => {
     setIsHomePage(false)
   }, [])
@@ -16,7 +22,7 @@ const Annuaire = ({ setIsHomePage }) => {
     const getData = () => {
       fetch('https://kinotonik.github.io/jsonapi/data_musicien.json')
         .then(res => res.json())
-        .then(res => console.log(res) || setProfiles(res.results))
+        .then(res => setProfiles(res.results))
     }
     getData()
   }, [])
@@ -29,6 +35,27 @@ const Annuaire = ({ setIsHomePage }) => {
     }
     getData()
   }, [])
+
+  const checkCreteria = (
+    e,
+    instCreteria,
+    nivCreteria,
+    styleCreteria,
+    dataCreteria
+  ) => {
+    e.preventDefault()
+    console.log(
+      'appel annuaire',
+      instCreteria,
+      nivCreteria,
+      styleCreteria,
+      dataCreteria
+    )
+    setInstCriteria(instCreteria)
+    setNivCreteria(nivCreteria)
+    setStyleCreteria(styleCreteria)
+    setDataCreteria(dataCreteria)
+  }
 
   return (
     <div className='container-80'>
