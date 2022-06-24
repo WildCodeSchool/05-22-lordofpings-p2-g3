@@ -67,26 +67,30 @@ const Annuaire = ({ setIsHomePage }) => {
       <div className='containerSolo'>
         {profiles.map(
           (profile, index) =>
-            index < 6 && (
-              <Profiles
-                key={profile.id}
-                id={profile.id}
-                name={profile.name.first}
-                image={profile.picture.large}
-                location={profile.location.city}
-                instrument={profile.music.instrument}
-                experience={profile.music.expérience}
-              />
+            index < 10 && (
+              <div className='containerSolo'>
+                <Profiles
+                  key={profile.id}
+                  id={profile.id}
+                  name={profile.name.first}
+                  image={profile.picture.large}
+                  location={profile.location.city}
+                  instrument={profile.music.instrument}
+                  experience={profile.music.expérience}
+                />
+              </div>
             )
         )}
-        <div className='title2'>
-          <h3>Ou votre futur groupe de musique ... </h3>
-        </div>
-        <div className='containerGroupe'>
-          {group.map(
-            (group, index) =>
-              index < 6 &&
-              (console.log('groupe', group) || (
+      </div>
+      <div className='title2'>
+        <h3>Ou votre futur groupe de musique ... </h3>
+      </div>
+      <div className='containerGroupe'>
+        {group.map(
+          (group, index) =>
+            index < 10 &&
+            (console.log('groupe', group) || (
+              <div className='containerGroupe'>
                 <Profiles
                   key={group.id}
                   id={group.id}
@@ -96,12 +100,12 @@ const Annuaire = ({ setIsHomePage }) => {
                   instrument={group.instrument}
                   experience={group.expérience}
                 />
-              ))
-          )}
-        </div>
-        <div>
-          <Leaflet />
-        </div>
+              </div>
+            ))
+        )}
+      </div>
+      <div>
+        <Leaflet />
       </div>
     </div>
   )
