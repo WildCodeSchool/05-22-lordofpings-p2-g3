@@ -1,16 +1,61 @@
-import React from 'react'
+import React, { useInsertionEffect } from 'react'
 import { useState, useEffect } from 'react'
-import { Leaflet } from '../components/Leaflet'
+//import { Leaflet } from '../components/Leaflet'
+//import { Profiles } from '../components/Profiles'
 import './Formulaire.css'
 // étape 4 récupe de la props dans le formulaire
 const Formulaire = ({ setDisplayMOrG }) => {
   const [isDisplayMap, setIsDisplayMap] = useState(false)
 
-  useEffect(() => {}, [isDisplayMap])
-  const handleClick = e => {
-    e.preventDefault()
-    setIsDisplayMap(!isDisplayMap)
-  }
+  // const Formulaire = ({ isCheck }) => {
+  //const [isDisplayMap, setIsDisplayMap] = useState(false)
+  //const [search, setSearch] = useState(false)
+  const [dataFilter, setDataFilter] = useState([])
+  const [instFilter, setInstFilter] = useState([])
+  const [nivFilter, setNivFilter] = useState([])
+  const [styleFilter, setStyleFilter] = useState([])
+  // filtres selectionnés
+  const [dataCreteria, setDataCreteria] = useState([])
+  const [instCreteria, setInstCreteria] = useState([])
+  const [nivCreteria, setNivCreteria] = useState([])
+  const [styleCreteria, setStyleCreteria] = useState([])
+
+  // const handleClick = e => {
+  //   e.preventDefault()
+
+  //   isCheck('toto')
+  // }
+
+  // useEffect(() => {}, [isDisplayMap])
+  // const handleClick = e => {
+  //   e.preventDefault()
+  //   setIsDisplayMap(!isDisplayMap)
+  // }
+
+  const [results, setResults] = useState([])
+  useEffect(() => {
+    fetch('https://kinotonik.github.io/jsonapi/data_musicien.json')
+      .then(res => res.json())
+      .then(res => setDataFilter(res.results))
+  }, [])
+
+  useEffect(() => {
+    fetch('https://yv3o2geh.directus.app/items/instruments')
+      .then(res => res.json())
+      .then(res => setInstFilter(res.data))
+  }, [])
+
+  useEffect(() => {
+    fetch('https://yv3o2geh.directus.app/items/level')
+      .then(res => res.json())
+      .then(res => setNivFilter(res.data))
+  }, [])
+
+  useEffect(() => {
+    fetch('https://yv3o2geh.directus.app/items/style')
+      .then(res => res.json())
+      .then(res => setStyleFilter(res.data))
+  }, [])
 
   return (
     <div className='contener'>
@@ -30,21 +75,34 @@ const Formulaire = ({ setDisplayMOrG }) => {
           </label>
           <label htmlFor='select' className='labelFrom'>
             Instruments :
-            <select className='selectForm'>
-              <option value='guitare'>Guitare</option>
-              <option value='basse'>Basse</option>
-              <option value='batteur'>Batterie</option>
-              <option value='flûte'>Flûte</option>
+            <select
+              className='selectForm'
+              onChange={e => setInstCreteria(e.target.value)}
+            >
+              <option value=''> chosir un instrument</option>
+              {instFilter.length &&
+                instFilter.map((inst, i) => (
+                  <option key={i} value={inst.name}>
+                    {inst.name}
+                  </option>
+                ))}
             </select>
           </label>
         </div>
         <div className='contener-1'>
           <label htmlFor='select' className='labelFrom'>
             Niveau :
-            <select className='selectForm'>
-              <option value='debutant'>Débutant</option>
-              <option value='intermediaire'>Intermediaire</option>
-              <option value='avance'>Avancé</option>
+            <select
+              className='selectForm'
+              onChange={e => setNivCreteria(e.target.value)}
+            >
+              <option value=''>choisir niveau</option>
+              {nivFilter.length &&
+                nivFilter.map((niv, i) => (
+                  <option key={i} value={niv.niveau}>
+                    {niv.niveau}
+                  </option>
+                ))}
             </select>
           </label>
           <label htmlFor='select' className='labelFrom'>
@@ -62,22 +120,29 @@ const Formulaire = ({ setDisplayMOrG }) => {
           </label>
           <label className='labelFrom'>
             Genre musical :
-            <select className='selectForm'>
-              <option value='rock'>Rock</option>
-              <option value='classic'>Classic</option>
+            <select
+              className='selectForm'
+              onChange={e => setStyleCreteria(e.target.value)}
+            >
+              <option value=''>choisir un style</option>
+              {styleFilter.length &&
+                styleFilter.map((sty, i) => (
+                  <option key={i} value={sty.name}>
+                    {sty.name}
+                  </option>
+                ))}
             </select>
           </label>
         </div>
-        <label className='locForm'>
-          Localisation :
-          <input type='text' name='' className='selectForm' />
-        </label>
 
-        <button className='buttonForm' onClick={handleClick}>
+        <button
+          className='buttonForm'
+          // onClick={e =>
+          //   isCheck(e, instCreteria, nivCreteria, styleCreteria, dataCreteria)
+          // }
+        >
           CHERCHER
         </button>
-
-        {isDisplayMap && <Leaflet />}
       </form>
     </div>
   )

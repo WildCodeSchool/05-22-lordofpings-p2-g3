@@ -1,27 +1,31 @@
 import { Link } from 'react-router-dom'
 import './Profiles.css'
+import { useNavigate } from 'react-router-dom'
 // import Lover from '../assets/images/tom.jpg'
 // import Choses from '../assets/images/groupe4.jpg'
 // import Knackis from '../assets/images/groupe2.jpg'
 // import Riata from '../assets/images/rnbfever.jpg'
 
-const Profiles = ({ name, image, id, location }) => {
-  const linkIdProfiles = `/characters/${id}`
+const Profiles = ({ name, image, id, location, experience, instrument }) => {
+  let navigate = useNavigate()
   return (
-    <Link to={linkIdProfiles}>
-      <div className='card' style={{ transitionDelay: { id } }}>
-        <div className='content'>
-          <div className='img'>
-            <img src={image} alt={name} />
-          </div>
-          <div className='details'>
-            <span className='name'>{name}</span>
-            <p>{location}</p>
-          </div>
-        </div>
-        <a href='#'>En savoir plus</a>
+    <div className='card'>
+      <div className='align'>
+        <img src={image} alt={name} />
       </div>
-    </Link>
+      <div className='details'>
+        <h2 className='name'>{name}</h2>
+        <p>📍 {location}</p>
+        <p>⭐️ {experience}</p>
+        <p>🎶 {instrument.join(', ')}</p>
+      </div>
+      <button
+        className='buttonProfile'
+        onClick={() => navigate(`/profilesdetails/${id}`)}
+      >
+        En savoir plus
+      </button>
+    </div>
   )
 }
 

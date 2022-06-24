@@ -1,11 +1,12 @@
 import React from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-
+import { useNavigate } from 'react-router-dom'
 // import dataUser from './data/dataUser.json'
 import { useState, useEffect } from 'react'
 import './Leaflet.css'
 //  étape 6 récupération de la props
 export const Leaflet = ({ displayMOrG }) => {
+  let navigate = useNavigate()
   const position = [47.389509, 0.693421]
   // const filteredStations = teslaData.filter(tsla => tsla.address.country === "USA")
   // console.log(filteredStations);
@@ -107,7 +108,12 @@ export const Leaflet = ({ displayMOrG }) => {
                               dt.instrument?.map(inst => <li>{`${inst}`}</li>)}
                           </ul>
                         </>
-                        <button className='btn__leaflet'>Détail</button>
+                        <button
+                          className='leaflet_btn__card'
+                          onClick={() => navigate(`/profilesdetails/${dt.id}`)}
+                        >
+                          Détail
+                        </button>
                       </div>
                     </Popup>
                   </Marker>
