@@ -8,7 +8,7 @@ import Profiledetails from './screen/Profiledetails'
 import Header from './components/templates/Header'
 import Footer from './components/templates/Footer'
 import Main from './components/templates/Main'
-// import GraphqlPage from './screen/Debug/Graphqlpage.jsx'1
+import GraphqlPage from './screen/Debug/Graphqlpage'
 
 import './App.css'
 
@@ -30,12 +30,16 @@ function App({ isDebugMode = true }) {
             element={<Evenements setIsHomePage={setIsHomePage} />}
           />
           <Route
-            path='/profilesdetails/'
+            path='/profilesdetails/:id'
             element={<Profiledetails setIsHomePage={setIsHomePage} />}
           />
           <Route
             path='/about'
             element={<Apropos setIsHomePage={setIsHomePage} />}
+          />
+          <Route
+            path='/graphql'
+            element={<GraphqlPage setIsHomePage={setIsHomePage} />}
           />
         </Routes>
       </Main>

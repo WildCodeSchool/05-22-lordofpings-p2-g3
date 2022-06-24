@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import image from '../assets/images/pause-play-button.png'
 import './AudioPlayer.css'
 const AudioPlayer = ({ url }) => {
-  const [audio] = useState(new Audio(url))
+  const [audio] = useState(new Audio(url)) //HTML audio element dans le state
   const [playing, setPlaying] = useState(false)
 
   const togglePlayBack = () => setPlaying(!playing)
@@ -15,6 +15,7 @@ const AudioPlayer = ({ url }) => {
     }
   }, [playing])
 
+  //Gestion de la fin de lecture du mp3 et rafraichissment du composant puis on set la lecture a false
   useEffect(() => {
     audio.addEventListener('ended', () => setPlaying(false))
     return () => {
@@ -24,7 +25,10 @@ const AudioPlayer = ({ url }) => {
 
   return (
     <div onClick={togglePlayBack} className='player__container'>
-      <img className={`player  ${playing ? 'rotate' : 'notRotate'}`} src={image}/>
+      <img
+        className={`player  ${playing ? 'rotate' : 'notRotate'}`}
+        src={image}
+      />
       <div>{playing ? 'Pause' : 'Play'}</div>
     </div>
   )

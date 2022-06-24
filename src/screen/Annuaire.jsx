@@ -4,7 +4,6 @@ import { Leaflet } from '../components/Leaflet'
 import Formulaire from '../components/Formulaire'
 import './Annuaire.css'
 import Profiles from '../components/Profiles'
-import '../components/Profiles.css'
 
 const Annuaire = ({ setIsHomePage }) => {
   const [isDisplayMap, setIsDisplayMap] = useState(false)
@@ -61,50 +60,49 @@ const Annuaire = ({ setIsHomePage }) => {
   return (
     <div className='container-80'>
       <h1>Bienvenue sur le groupe de recherche de musiciens n°1!</h1>
-      <Formulaire isCheck={checkCreteria} />
-      <Leaflet />
-      <div className=''>
-        <p>Retrouvez les sur Rock Your Band ... </p>
+      <Formulaire />
+      <div className='title1'>
+        <h3>Retrouvez vos futurs musiciens sur Rock Your Band ... </h3>
       </div>
-      <div className='clearfix'>
-        <div className='row'>
-          {/* {profiles !== null &&
-            profiles 
-              .filter(profileFiltre => {
-                // console.log('0', profileFiltre)
-                // console.log('1', profileFiltre.style, styleCreteria)
-                // console.log('2', profileFiltre.style.includes(styleCreteria))
-                profileFiltre.instrument.includes(instCreteria)
-              })
-              .map(profileFiltre => <Profiles key={profileFiltre.id} />)}  */}
-
-          {profiles.map(
-            (profile, index) =>
-              index < 3 && (
-                <Profiles
-                  key={profile.id}
-                  name={profile.name.first}
-                  image={profile.picture.large}
-                  location={profile.location.city}
-                />
-              )
-          )}
+      <div className='containerSolo'>
+        {profiles.map(
+          (profile, index) =>
+            index < 6 && (
+              <Profiles
+                key={profile.id}
+                id={profile.id}
+                name={profile.name.first}
+                image={profile.picture.large}
+                location={profile.location.city}
+                instrument={profile.music.instrument}
+                experience={profile.music.expérience}
+              />
+            )
+        )}
+        <div className='title2'>
+          <h3>Ou votre futur groupe de musique ... </h3>
+        </div>
+        <div className='containerGroupe'>
           {group.map(
             (group, index) =>
-              index < 3 && (
+              index < 6 &&
+              (console.log('groupe', group) || (
                 <Profiles
                   key={group.id}
+                  id={group.id}
                   name={group.name}
                   image={group.jacket}
                   location={group.location.city}
+                  instrument={group.instrument}
+                  experience={group.expérience}
                 />
-              )
+              ))
           )}
         </div>
+        <div>
+          <Leaflet />
+        </div>
       </div>
-
-      {/* <button onClick={() => setIsDisplayMap(!isDisplayMap)}>CHERCHER</button>
-      {isDisplayMap ? <Leaflet /> : null} */}
     </div>
   )
 }
