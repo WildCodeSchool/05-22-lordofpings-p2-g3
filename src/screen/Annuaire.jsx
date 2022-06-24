@@ -8,6 +8,7 @@ import Profiles from '../components/Profiles'
 const Annuaire = ({ setIsHomePage }) => {
   const [isDisplayMap, setIsDisplayMap] = useState(false)
   const [profiles, setProfiles] = useState([])
+  const [displayMOrG, setDisplayMOrG] = useState('') // etape 1
   const [group, setGroup] = useState([])
   const [dataCreteria, setDataCreteria] = useState('Tours')
   const [instCreteria, setInstCriteria] = useState('Piano')
@@ -59,8 +60,9 @@ const Annuaire = ({ setIsHomePage }) => {
 
   return (
     <div className='container-80'>
-      <h1>Bienvenue sur le groupe de recherche de musiciens n°1!</h1>
-      <Formulaire />
+      <h1>Bienvenue sur le groupe de recherche de musiciens n°1 !</h1>
+
+      <Formulaire setDisplayMOrG={setDisplayMOrG} />
       <div className='title1'>
         <h3>Retrouvez vos futurs musiciens sur Rock Your Band ... </h3>
       </div>
@@ -103,9 +105,11 @@ const Annuaire = ({ setIsHomePage }) => {
               </div>
             ))
         )}
-      </div>
-      <div>
-        <Leaflet />
+
+        <div>
+          {/* étape 3 passage de la state à la carte */}
+          <Leaflet displayMOrG={displayMOrG} />
+        </div>
       </div>
     </div>
   )

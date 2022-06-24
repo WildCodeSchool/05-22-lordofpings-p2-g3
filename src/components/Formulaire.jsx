@@ -3,8 +3,11 @@ import { useState, useEffect } from 'react'
 //import { Leaflet } from '../components/Leaflet'
 //import { Profiles } from '../components/Profiles'
 import './Formulaire.css'
+// étape 4 récupe de la props dans le formulaire
+const Formulaire = ({ setDisplayMOrG }) => {
+  const [isDisplayMap, setIsDisplayMap] = useState(false)
 
-const Formulaire = ({ isCheck }) => {
+  // const Formulaire = ({ isCheck }) => {
   //const [isDisplayMap, setIsDisplayMap] = useState(false)
   //const [search, setSearch] = useState(false)
   const [dataFilter, setDataFilter] = useState([])
@@ -59,18 +62,15 @@ const Formulaire = ({ isCheck }) => {
       <form className='form'>
         <div className='contener-1'>
           <label htmlFor='select' className='labelFrom'>
-            Localisation :
+            Recherche Groupe / <br />
+            Personne solos :
             <select
               className='selectForm'
-              onChange={e => setDataCreteria(e.target.value)}
+              onChange={e => setDisplayMOrG(e.target.value)} // étape 5 utilise la props récupérée en ciblant la valeur de l'input /onChange
             >
-              <option value=''> chosir localisation</option>
-              {dataFilter.length &&
-                dataFilter.map((df, i) => (
-                  <option key={i} value={df.location.city}>
-                    {df.location.city}
-                  </option>
-                ))}
+              <option value=''>---Type---</option>
+              <option value='crew'>Groupe</option>
+              <option value='solo'>Solo</option>
             </select>
           </label>
           <label htmlFor='select' className='labelFrom'>
@@ -137,9 +137,9 @@ const Formulaire = ({ isCheck }) => {
 
         <button
           className='buttonForm'
-          onClick={e =>
-            isCheck(e, instCreteria, nivCreteria, styleCreteria, dataCreteria)
-          }
+          // onClick={e =>
+          //   isCheck(e, instCreteria, nivCreteria, styleCreteria, dataCreteria)
+          // }
         >
           CHERCHER
         </button>
