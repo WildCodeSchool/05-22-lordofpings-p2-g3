@@ -162,6 +162,13 @@ body {
 .m-30 {
   margin: 30px;
 }
+.b-20 {
+  margin-bottom: 20px;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
 
 .bg-transparent{
   background-color: transparent;

@@ -12,19 +12,21 @@
     display: flex;
 justify-content: space-around;
     align-items: flex-end;
-    width: 400px;
+    width: 600px;
+    margin: 30px;
 }
 .labelFrom{
      display: flex;
     flex-direction: column;
     margin: 10px;
-    width: 200px;
+    width: 300px;
     color: black;
     
 }
 .selectForm {
     padding: 6px;
     margin: 10px 0px;
+    height: 35px;
 }
 .locForm{
         display: flex;
@@ -46,6 +48,12 @@ justify-content: space-around;
     border: solid black 1px;
     font-weight: bold;
 }
+.buttonForm:active {
+    box-shadow: 
+      7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+    transform: translateY(4px);
+    
+}
 
 
 
@@ -54,14 +62,15 @@ justify-content: space-around;
         width: 300px;
         display:flex;
         flex-direction: column;
+        margin: auto;
     }
-    .locForm {
+   /* .locForm {
         width: 200px;
         display: flex;
         flex-direction: column;
-        margin-left: 90px;
-    }
+        margin-left: 90px; 
+    } */
     .buttonForm {
-        margin-left: 80px;
+        
     }
 }
