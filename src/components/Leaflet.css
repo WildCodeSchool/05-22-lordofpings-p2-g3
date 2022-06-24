@@ -93,14 +93,14 @@
   margin:auto;
 }
 
-.btn__card:hover {
+.leaflet_btn__card:hover {
   background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
 	background-color:#408c99;
   color: black;
   transform: scale(1)!important;
 
 }
-.btn__card:active {
+.leaflet_btn__card:active {
 	position:relative;
 	top:1px;
 }
