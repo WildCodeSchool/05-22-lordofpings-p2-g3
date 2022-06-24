@@ -8,6 +8,7 @@ import Profiles from '../components/Profiles'
 const Annuaire = ({ setIsHomePage }) => {
   const [isDisplayMap, setIsDisplayMap] = useState(false)
   const [profiles, setProfiles] = useState([])
+  const [displayMOrG, setDisplayMOrG] = useState('') // etape 1
   const [group, setGroup] = useState([])
   const [dataCreteria, setDataCreteria] = useState('Tours')
   const [instCreteria, setInstCriteria] = useState('Piano')
@@ -59,34 +60,39 @@ const Annuaire = ({ setIsHomePage }) => {
 
   return (
     <div className='container-80'>
-      <h1>Bienvenue sur le groupe de recherche de musiciens n°1!</h1>
-      <Formulaire />
+      <h1>Bienvenue sur le groupe de recherche de musiciens n°1 !</h1>
+
+      <Formulaire setDisplayMOrG={setDisplayMOrG} />
       <div className='title1'>
         <h3>Retrouvez vos futurs musiciens sur Rock Your Band ... </h3>
       </div>
       <div className='containerSolo'>
         {profiles.map(
           (profile, index) =>
-            index < 6 && (
-              <Profiles
-                key={profile.id}
-                id={profile.id}
-                name={profile.name.first}
-                image={profile.picture.large}
-                location={profile.location.city}
-                instrument={profile.music.instrument}
-                experience={profile.music.expérience}
-              />
+            index < 10 && (
+              <div className='containerSolo'>
+                <Profiles
+                  key={profile.id}
+                  id={profile.id}
+                  name={profile.name.first}
+                  image={profile.picture.large}
+                  location={profile.location.city}
+                  instrument={profile.music.instrument}
+                  experience={profile.music.expérience}
+                />
+              </div>
             )
         )}
-        <div className='title2'>
-          <h3>Ou votre futur groupe de musique ... </h3>
-        </div>
-        <div className='containerGroupe'>
-          {group.map(
-            (group, index) =>
-              index < 6 &&
-              (console.log('groupe', group) || (
+      </div>
+      <div className='title2'>
+        <h3>Ou votre futur groupe de musique ... </h3>
+      </div>
+      <div className='containerGroupe'>
+        {group.map(
+          (group, index) =>
+            index < 10 &&
+            (console.log('groupe', group) || (
+              <div className='containerGroupe'>
                 <Profiles
                   key={group.id}
                   id={group.id}
@@ -96,11 +102,13 @@ const Annuaire = ({ setIsHomePage }) => {
                   instrument={group.instrument}
                   experience={group.expérience}
                 />
-              ))
-          )}
-        </div>
+              </div>
+            ))
+        )}
+
         <div>
-          <Leaflet />
+          {/* étape 3 passage de la state à la carte */}
+          <Leaflet displayMOrG={displayMOrG} />
         </div>
       </div>
     </div>
