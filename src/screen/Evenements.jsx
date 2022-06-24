@@ -21,7 +21,9 @@ const Evenements = ({ setIsHomePage }) => {
 
   useEffect(() => {
     const getData = () => {
-      fetch('https://yv3o2geh.directus.app/items/evenements/')
+      fetch(
+        'https://gist.githubusercontent.com/letotor/4271dbd3b8ffeccf885b4674807a6f2b/raw/e9b91991918b4e5497f698033560f467e79a261d/data.json'
+      )
         .then(res => res.json())
         .then(res => console.log(res) || setEvenements(res.data))
     }
@@ -63,6 +65,7 @@ const Evenements = ({ setIsHomePage }) => {
             key={evenement.id}
             name={evenement.name}
             image={evenement.image}
+            description={evenement.description}
             id={evenement.id}
           />
         ))}
