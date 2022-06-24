@@ -1,27 +1,33 @@
 import React, { useEffect, useState } from 'react'
-import { ApolloClient, ApolloProvider, createHttpLink, InMemoryCache } from '@apollo/client'
+import {
+  ApolloClient,
+  ApolloProvider,
+  createHttpLink,
+  InMemoryCache
+} from '@apollo/client'
 import CreateArticles from '../../components/graphql/CreateArticles'
+
+import AudioPlayer from '../../components/AudioPlayer'
 import SignIn from '../../components/graphql/SignIn'
 
 import './Graphqlpage.css'
 import { setContext } from '@apollo/client/link/context'
-
-
-
-const httpLink = new createHttpLink({ uri: process.env.REACT_APP_DIRECTUS_API_URL_SYSTEM });
-
-
+import GetLocations from '../../components/graphql/GetLocations'
+import audio1 from '../../assets/sounds/lofi-study-112191.mp3'
+const httpLink = new createHttpLink({
+  uri: process.env.REACT_APP_DIRECTUS_API_URL_SYSTEM
+})
 
 const GraphqlPage = ({ setIsHomePage }) => {
   const [isActif, setIsActif] = useState(false)
   const [isActifToken, setIsActifToken] = useState(false)
-  
+
   useEffect(() => {
     return setIsHomePage(false)
   }, [])
-  
+
   const authLink = setContext((_, { headers }) => {
-    const token = ""
+    const token = ''
     // return the headers to the context so httpLink can read them
     return {
       headers: {
@@ -31,9 +37,7 @@ const GraphqlPage = ({ setIsHomePage }) => {
     }
   })
 
-
   const clientSystem = new ApolloClient({
-
     link: authLink.concat(httpLink),
     cache: new InMemoryCache()
   })
@@ -62,19 +66,20 @@ const GraphqlPage = ({ setIsHomePage }) => {
 
   isActifToken
   return (
-    
     <div className='main'>
       <div className='container-80'>
+        <h1>Votre player</h1>
+        <AudioPlayer url={audio1} title={"lofi-study-112191.mp3"}></AudioPlayer>
         <h1>Page GRAPHQL</h1>
 
         <ApolloProvider client={clientSystem}>
-        <div className='container  mb-20'>
-          <button className='card__btn-article' onClick={handleClickToken}>
-            {!isActifToken ? `Sign in` : `Annulation`}
-          </button>
-          {isActifToken && <SignIn />}
-        </div>
-        </ApolloProvider >
+          <div className='container  mb-20'>
+            <button className='card__btn-article' onClick={handleClickToken}>
+              {!isActifToken ? `Sign in` : `Annulation`}
+            </button>
+            {isActifToken && <SignIn />}
+          </div>
+        </ApolloProvider>
         <br></br>
         <div className='container mb-20'>
           <button className='card__btn-article' onClick={handleClick}>
@@ -88,17 +93,15 @@ const GraphqlPage = ({ setIsHomePage }) => {
           </p>
           {isActif && <CreateArticles />}
           <h2>Accès restreint / collections</h2>
-       
         </div>
-      
-        <h2>Accès public / system</h2>
-      <ApolloProvider client={clientSystem}>
-          {/* <GetFiles /> */}
-          </ApolloProvider >
 
+  
+        <h2>Accès public / system</h2>
+        <ApolloProvider client={client}>
+          <GetLocations />
+        </ApolloProvider>
       </div>
     </div>
-  
   )
 }
 export default GraphqlPage

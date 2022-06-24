@@ -11,7 +11,12 @@
     padding: 0;
     margin: 0;
 }
-
+.title{
+   background: 5px 5px linear-gradient(45deg,var(--bg-deg-1),var(--bg-deg-2));
+   border-radius:var(--border-radius-1);
+   margin-top: 1rem;
+   padding:0.2rem 1rem;
+}
 .rotate{
     transition: 0.5s 0s ease-in-out;
     animation: rotating 2s linear infinite;

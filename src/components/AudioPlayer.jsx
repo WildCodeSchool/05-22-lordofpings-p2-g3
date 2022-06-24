@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import image from '../assets/images/pause-play-button.png'
 import './AudioPlayer.css'
-const AudioPlayer = ({ url }) => {
+const AudioPlayer = ({ url ,title }) => {
   const [audio] = useState(new Audio(url)) //HTML audio element dans le state
   const [playing, setPlaying] = useState(false)
 
@@ -30,6 +30,7 @@ const AudioPlayer = ({ url }) => {
         src={image}
       />
       <div>{playing ? 'Pause' : 'Play'}</div>
+      <span className={"title"}>{title}</span>
     </div>
   )
 }
