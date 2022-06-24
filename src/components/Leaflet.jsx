@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react'
 import './Leaflet.css'
 
 export const Leaflet = () => {
-  // let navigate = useNavigate()
+  let navigate = useNavigate()
   const position = [47.389509, 0.693421]
   // const filteredStations = teslaData.filter(tsla => tsla.address.country === "USA")
   // console.log(filteredStations);
@@ -83,7 +83,7 @@ export const Leaflet = () => {
                       // </ul>*/}
                       <button
                         className='leaflet_btn__card'
-                        // onClick={() => navigate(`/profilesdetails/${}`)}
+                        onClick={() => navigate(`/profilesdetails/${dt.id}`)}
                       >
                         Détail
                       </button>
