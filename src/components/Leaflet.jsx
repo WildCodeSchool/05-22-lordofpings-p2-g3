@@ -1,11 +1,12 @@
 import React from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-
+import { useNavigate } from 'react-router-dom'
 // import dataUser from './data/dataUser.json'
 import { useState, useEffect } from 'react'
 import './Leaflet.css'
 
 export const Leaflet = () => {
+  // let navigate = useNavigate()
   const position = [47.389509, 0.693421]
   // const filteredStations = teslaData.filter(tsla => tsla.address.country === "USA")
   // console.log(filteredStations);
@@ -80,7 +81,12 @@ export const Leaflet = () => {
                       //     <li>{`${inst}`}</li>
                       //   ))}
                       // </ul>*/}
-                      <button className='btn__card'>Détail</button>
+                      <button
+                        className='leaflet_btn__card'
+                        // onClick={() => navigate(`/profilesdetails/${}`)}
+                      >
+                        Détail
+                      </button>
                     </div>
                   </Popup>
                 </Marker>
