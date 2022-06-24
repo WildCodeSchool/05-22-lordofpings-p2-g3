@@ -13,12 +13,12 @@ import {
 import { setContext } from '@apollo/client/link/context'
 
 //recuperation des variables environnement
-const DIRECTUS_API_TOKEN = '' || process.env.REACT_APP_DIRECTUS_API_TOKEN
+const DIRECTUS_API_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRiODkxYWQyLTA0ZjgtNDhkZS1iZmI3LTA1ZTBmNzZmNjhkZiIsInJvbGUiOiI4MTI1MmI5ZC0yYmVmLTQyMjQtOTdjYi0yY2QzN2Y1OWJkOTYiLCJhcHBfYWNjZXNzIjoxLCJhZG1pbl9hY2Nlc3MiOjEsImlhdCI6MTY1NjA1NjkzMCwiZXhwIjoxNjU2MDU3ODMwLCJpc3MiOiJkaXJlY3R1cyJ9.1D9UIrjqw9JPtpOHmrSJ0t6DGZ-wx362Jf85NwcCqVg' || process.env.REACT_APP_DIRECTUS_API_TOKEN
 
 // Apollo Client est une bibliothèque complète de gestion d'état pour JavaScript qui vous permet de gérer des données locales et distantes avec GraphQL.
 
 const httpLink = createHttpLink({
-  uri: 'https://7kb0t63m.directus.app/graphql/',
+  uri: 'https://yv3o2geh.directus.app/graphql/',
   credentials: 'include'
 })
 
@@ -44,9 +44,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <ApolloProvider client={client}>
-        <App />
-      </ApolloProvider>
+      <App />
     </BrowserRouter>
   </React.StrictMode>
 )

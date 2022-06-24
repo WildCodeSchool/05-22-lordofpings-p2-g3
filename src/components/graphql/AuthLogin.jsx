@@ -11,12 +11,9 @@ const AUTH_LOGIN = gql`
   }
 `
 
-
-
 const AuthLogin = () => {
   let input
 
-  
   return (
     <Mutation mutation={AUTH_LOGIN}>
       {(addPerson, { data, loading, error }) => (

@@ -1,4 +1,3 @@
-import './App.css'
 import React, { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Home from './screen/Home'
@@ -9,18 +8,16 @@ import Profiledetails from './screen/Profiledetails'
 import Header from './components/templates/Header'
 import Footer from './components/templates/Footer'
 import Main from './components/templates/Main'
-import GraphqlPage from './screen/Debug/Graphqlpage.jsx'
+import GraphqlPage from './screen/Debug/Graphqlpage'
 
-function App({ isDebugMode = false }) {
+import './App.css'
+
+function App({ isDebugMode = true }) {
   const [isHomePage, setIsHomePage] = useState(true)
 
   return (
     <div className='app-container'>
-      <Header
-        className='header'
-        isDebugMode={isDebugMode}
-        isHomePage={isHomePage}
-      />
+      <Header className='header' isHomePage={isHomePage} />
       <Main className='main'>
         <Routes>
           <Route path='/' element={<Home setIsHomePage={setIsHomePage} />} />
@@ -33,7 +30,7 @@ function App({ isDebugMode = false }) {
             element={<Evenements setIsHomePage={setIsHomePage} />}
           />
           <Route
-            path='/profilesdetails'
+            path='/profilesdetails/:id'
             element={<Profiledetails setIsHomePage={setIsHomePage} />}
           />
           <Route
@@ -41,7 +38,7 @@ function App({ isDebugMode = false }) {
             element={<Apropos setIsHomePage={setIsHomePage} />}
           />
           <Route
-            path='/graph'
+            path='/graphql'
             element={<GraphqlPage setIsHomePage={setIsHomePage} />}
           />
         </Routes>

@@ -1,121 +1,91 @@
-
-#hosting {
-    display: flex;
-    justify-content: space-between;
+.card {
+  padding: 30px;
+  border: solid 1px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  background-color: white;
+  color:black;
+  margin-bottom: 20px;
+  width: 20rem;
+  border-radius: 25px;
 }
 
-#hosting a p {
-    font-size: 1.1rem;
+
+.card:hover {
+  box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.08);
 }
 
-#hosting section h2 {
-    margin-top: 0px;
+.align {
+  display: flex;
+  justify-content: center;
 }
 
-.hosting-list {
-    background-color: #F2F2F2;
-    padding: 20px 20px 10px 20px;
-    border-radius: var(--border-radius-2);
-    height: 100%;
-    box-sizing: content-box;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
+.card img {
+  max-width: 100%;
+  width: 12.5rem;
+  height: 12.5rem;
+  border-radius: 50%
 }
 
-.hosting-list img {
-border-radius: var(--border-radius-2);
-object-fit: cover;
-width: 100%;
-height: 200px;
+.card .name {
+  padding: 0
 }
 
-.hosting-list a {
-    width: 20%;
-    margin-bottom: 50px;
-    background: linear-gradient(45deg, #95a5fc, #ffc8ef);
-    padding: 10px;
-    border-radius: 27px;
-    height: 500px;
+.buttonProfile {
+  width: 200px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+
+  border-radius: 50px;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
 }
 
-.hosting-list a article:hover {
-    box-shadow: 5px 5px 5px 0px #E2E2E2;
+.buttonProfile:hover {
+  background-position: 100% 0;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
 }
 
-.hosting-list a article img {
-    width: 100%;
-    height: 200px;
-    border-radius: 25px 25px 0px 0px;
-    object-fit: cover;
+.buttonProfile:focus {
+  outline: none;
 }
 
-.hosting-list a {
-    color: black;
-    text-decoration: none;
+.containerSolo {
+  
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.hosting-list a article .article-content {
-    padding: 10px 10px 0px 10px;
+.containerGroupe {
+  
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.hosting-list a article .article-content h3,
-.hosting-list a article .article-content p {
-    margin: 6px;
+
+.buttonProfile {
+    background-image: linear-gradient(to right, #667eea, #764ba2, #6B8DD6, #8E37D7);
+    box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
 }
 
-.hosting-list a article .article-content .price.bold {
-    font-weight: bold;
-}
 
-#hosting .marseille {
-    width: 100%;
-}
-
-#hosting .marseille .subtitle {
-    font-weight: bold;
-    font-size: 120%;
-}
-
-#hosting .famous .chart-icone {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
-#hosting .famous {
-    width: 35%;
-    position: relative;
-}
-
-#hosting .famous .hosting-list {
-    flex-direction: column;
-}
-
-#hosting .famous .hosting-list a {
-    width: 100%;
-}
-
-#hosting .famous .hosting-list a article {
-    display: flex;
-    flex-direction: row;
-}
-
-#hosting .famous .hosting-list a article img {
-    border-radius: 25px 0px 0px 25px;
-    width: 35%;
-}
-
-#hosting .famous .hosting-list a article .article-content {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-}
-
-.subtitle a {
-    color: black;
-    font-weight: bold;
-    text-decoration: underline;
-    line-height: 35px;
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1040px;
+  }
 }

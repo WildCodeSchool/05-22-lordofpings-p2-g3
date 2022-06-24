@@ -55,7 +55,7 @@
 .profile-bio {
     display: flex;
     flex-direction: column;
-    /* flex:1; */
+    flex-wrap: wrap;
     justify-content: center;
     flex-grow: 1;
     align-items: flex-start;

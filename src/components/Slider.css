@@ -2,13 +2,17 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  
-  max-height: 300px;
+  align-items: center;
+  padding-top: 20px;
+  max-height: 500px;
 }
 .carousel .slide img {
   object-fit: cover;
-  max-height: 500px;
+  max-height: 380px;
   max-width: 1000px;
+}
+.overlay_title {
+ 
 }
 .overlay_flex {
   display: flex;
@@ -39,14 +43,15 @@ padding: 10px;
   /**********************/
   .sliderContainer {
     position: relative;
-    height: 80%
+    height: 80%;
+
   }
   .overlay {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-height: 1000%;
+    max-height: 50%;
     max-width: 800px;
     overflow: hidden;
 }
@@ -58,12 +63,15 @@ padding: 10px;
 
   /***************/
 .carousel .overlay_title {
-  margin:0.8rem 0 1rem 0;
+  font-size: 3rem;
+margin:0;
 }
 
  .overlay_title h2{
   position: absolute;
-  top:10px;
+  top:30px;
+
+  
  }
 @media screen and (max-width:600px) {
   .carousel .slide img {
@@ -73,7 +81,7 @@ padding: 10px;
   }
 
   .overlay {
-    top: 75%;
+    top: 40%;
 }
   
 }

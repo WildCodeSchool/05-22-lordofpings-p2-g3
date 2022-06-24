@@ -1,0 +1,745 @@
+{
+    "results": [
+  
+      {
+        "id": 1,
+        "gender": "male",
+        "age": 26,
+        "name": {
+          "title": "mr",
+          "first": "Brad",
+          "last": "Gibson"
+        },
+        "contact": {
+          "email": "brad.gibson@example.com"
+        },
+        "picture": {
+          "large": "https://randomuser.me/api/portraits/men/1.jpg",
+          "medium": "https://randomuser.me/api/portraits/med/men/1.jpg",
+          "thumbnail": "https://randomuser.me/api/portraits/thumb/men/1.jpg"
+        },
+        "location": {
+          "city": "Tours",
+          "state": "France",
+          "coordinates": {
+            "latitude": 47.39501935922057,
+            "longitude": 0.681839035582598
+          }
+        },
+        "music": {
+          "style": [
+            "Rock",
+            "Disco"
+          ],
+          "expérience": "débutant",
+          "instrument": [
+            "Guitare"
+          ],
+          "lien": "https"
+  
+        }
+      },
+      
+          {
+        "id": 2,
+        "gender": "male",
+        "age": 28,
+        "name": {
+          "title": "mr",
+          "first": "Gégé",
+          "last": "Rouflaquettes"
+        },
+        "contact": {
+          "email": "gégé@example.com"
+        },
+        "picture": {
+          "large": "https://randomuser.me/api/portraits/men/2.jpg",
+          "medium": "https://randomuser.me/api/portraits/med/men/2.jpg",
+          "thumbnail": "https://randomuser.me/api/portraits/thumb/men/2.jpg"
+        },
+        "location": {
+          "city": "Tours",
+          "state": "France",
+          "coordinates": {
+            "latitude": 47.392498,
+            "longitude": 0.698948
+          }
+        },
+        "music": {
+          "style": [
+           "Punk"
+          ],
+          "expérience": "intermédiaire",
+          "instrument": [
+            "Basse"
+          ],
+          "lien": "https"
+  
+        }
+      },
+      
+              {
+        "id": 3,
+        "gender": "female",
+        "age": 32,
+        "name": {
+          "title": "ms",
+          "first": "Angel",
+          "last": "Latine"
+        },
+        "contact": {
+          "email": "angel@example.com"
+        },
+        "picture": {
+          "large": "https://randomuser.me/api/portraits/women/3.jpg",
+          "medium": "https://randomuser.me/api/portraits/med/women/3.jpg",
+          "thumbnail": "https://randomuser.me/api/portraits/thumb/women/3.jpg"
+        },
+        "location": {
+          "city": "Marseille",
+          "state": "France",
+          "coordinates": {
+            "latitude": 43.292717,
+            "longitude": 5.384702
+          }
+        },
+        "music": {
+          "style": [
+           "classic"
+          ],
+          "expérience": "intermédiaire",
+          "instrument": [
+            "Violon"
+          ],
+          "lien": "https"
+  
+        }
+      },
+      
+      {
+      "id": 4,
+      "gender": "female",
+      "age": 76,
+      "name": {
+        "title": "ms",
+        "first": "Mauricette",
+        "last": "Huitneuf"
+      },
+      "contact": {
+        "phone": "011-962-7516",
+        "email": "mauricette@example.com"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/4.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/4.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/4.jpg"
+      },
+      "location": {
+        "city": "Loches",
+        "state": "France",
+        "coordinates": {  
+          "latitude": 47.128587855149966,
+          "longitude": 0.9966694029628709
+        }
+      },
+      "music": {
+        "style": [
+          "Jazz"
+        ],
+        "expérience": "confirmé",
+        "instrument": [
+          "Saxophone"
+        ],
+        "lien": "https"
+  
+      }
+    },
+  
+    {
+      "id": 5,
+      "gender": "male",
+      "age": 62,
+      "name": {
+        "title": "mr",
+        "first": "Stanislas",
+        "last": "Lefort"
+      },
+      "contact": {
+        "phone": "011-962-7516",
+        "email": "stanislas@example.com"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/5.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/5.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/5.jpg"
+      },
+      "location": {
+        "city": "Paris",
+        "state": "France",
+        "coordinates": { 
+          "latitude": 48.87735218671986,
+          "longitude": 2.331927162445113
+        }
+      },
+      "music": {
+        "style": [
+          "Classic"
+        ],
+        "expérience": "confirmé",
+        "instrument": [
+          "Clavecin"
+        ],
+        "lien": "https"
+  
+      }
+    },
+    {
+      "id": 6,
+      "gender": "male",
+      "age": 16,
+      "name": {
+        "title": "mr",
+        "first": "Cloclo",
+        "last": "Chette"
+      },
+      "contact": {
+        "phone": "011-962-7516",
+        "email": "cloclo@example.com"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/6.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/6.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/6.jpg"
+      },
+      "location": {
+        "city": "Nantes",
+        "state": "France",
+        "coordinates": { 
+          "latitude": 47.20770271481143,
+          "longitude": -1.5386366808532583
+        }
+      },
+      "music": {
+        "style": [
+          "Disco"
+        ],
+        "expérience": "débutant",
+        "instrument": [
+          "Guitare"
+        ],
+        "lien": "https"
+  
+      }
+    },
+  
+      
+    {
+        "id": 7,
+        "gender": "female",
+        "age": 72,
+        "name": {
+          "title": "Lady",
+          "first": "Margaret",
+          "last": "de la côte ardière"
+        },
+        "contact": {
+          "email": "ladymargaret@wanadoo.com"
+        },
+        "picture": {
+          "large": "https://randomuser.me/api/portraits/thumb/women/7.jpg",
+          "medium": "https://randomuser.me/api/portraits/med/women/7.jpg",
+          "thumbnail": "https://randomuser.me/api/portraits/thumb/women/7.jpg"
+        },
+        "location": {
+          "city": "Monaco",
+          "state": "Monaco",
+          "coordinates": {
+            "latitude": 43.738417589415945,
+            "longitude": 7.42551878703025
+          }
+        },
+        "music": {
+          "style": [
+           "classic"
+          ],
+          "expérience": "intermédiaire",
+          "instrument": [
+            "Chant"
+  
+          ],
+        "lien": "https"
+        }
+      },
+  
+  
+  
+  
+  {
+        "id": 8,
+        "gender": "male",
+        "age": 48,
+        "name": {
+          "title": "mr",
+          "first": "Sergei",
+          "last": "Lemalianov"
+        },
+        "contact": {
+          "email": "sergei852@gmail.com"
+        },
+        "picture": {
+          "large": "https://randomuser.me/api/portraits/thumb/men/8.jpg",
+          "medium": "https://randomuser.me/api/portraits/med/men/8.jpg",
+          "thumbnail": "https://randomuser.me/api/portraits/thumb/men/8.jpg"
+        },
+        "location": {
+          "city": "Nantes",
+          "state": "France",
+          "coordinates": {
+            "latitude": 47.24004065052991,
+            "longitude": -1.5757561896597265
+          }
+        },
+        "music": {
+          "style": [
+           "Metal"
+          ],
+          "expérience": "confirmé",
+          "instrument": [
+            "Guitare"
+          ],
+          "lien": "https"
+        }
+      },
+  
+  {
+        "id": 9,
+        "gender": "male",
+        "age": 32,
+        "name": {
+          "title": "mr",
+          "first": "Jean",
+          "last": "Neymar"
+        },
+        "contact": {
+          "email": "jeanneymar@hotmail.fr"
+        },
+        "picture": {
+          "large": "https://randomuser.me/api/portraits/thumb/men/9.jpg",
+          "medium": "https://randomuser.me/api/portraits/med/men/9jpg",
+          "thumbnail": "https://randomuser.me/api/portraits/thumb/men/9jpg"
+        },
+        "location": {
+          "city": "Nantes",
+          "state": "France",
+          "coordinates": { 
+            "latitude": 47.240330604053305,
+            "longitude": -1.5033429295221143
+          }
+        },
+        "music": {
+          "style": [
+           "Rock"
+          ],
+          "expérience": "confirmé",
+          "instrument": [
+            "Batterie"
+          ],
+          "lien": "https"
+        }
+      },
+  
+  
+  
+  
+  {
+        "id": 10,
+        "gender": "women",
+        "age": 28,
+        "name": {
+          "title": "ms",
+          "first": "Gilberte",
+          "last": "O'live"
+        },
+        "contact": {
+          "email": "gilberte@example.com"
+        },
+        "picture": {
+          "large": "https://randomuser.me/api/portraits/women/10.jpg",
+          "medium": "https://randomuser.me/api/portraits/men/women/10.jpg",
+          "thumbnail": "https://randomuser.me/api/portraits/thumb/women/10.jpg"
+        },
+  
+        "location": {
+          "city": "Tours",
+          "state": "France",
+          "coordinates": {
+            "latitude": 47.379420,
+            "longitude": 0.687517
+          }
+        },
+        "music": {
+          "style": [
+           "Classique"
+          ],
+          "expérience": "Confirmé",
+          "instrument": [
+            "Harpe"
+          ],
+      "lien":"https://www.shutterstock.com/fr/music/track-438590-scarborough-fair"
+  
+        }
+      },
+  {
+        "id": 11,
+        "gender": "men",
+        "age": 56,
+        "name": {
+          "title": "mr",
+          "first": "Vincent",
+          "last": "Brilland"
+        },
+        "contact": {
+          "email": "vincent.brilland@example.com"
+        },
+        "picture": {
+          "large": "https://randomuser.me/api/portraits/men/11.jpg",
+          "medium": "https://randomuser.me/api/portraits/men/men/11.jpg",
+          "thumbnail": "https://randomuser.me/api/portraits/thumb/men/11.jpg"
+        },
+  
+        "location": {
+          "city": "Nantes",
+          "state": "France",
+          "coordinates": {
+            "latitude": 47.219672, 
+            "longitude": -1.560687
+          }
+        },
+        "music": {
+          "style": [
+           "techno"
+          ],
+          "expérience": "Débutant",
+          "instrument": [
+            "Platine"
+          ],
+      "lien":"https://www.shutterstock.com/fr/music/track-1216158-subterfuge"
+  
+        }
+      },
+  {
+        "id": 12,
+        "gender": "men",
+        "age": 20,
+        "name": {
+          "title": "mr",
+          "first": "Mehdi",
+          "last": "Camant"
+        },
+        "contact": {
+          "email": "mehdi.camant@example.com"
+        },
+        "picture": {
+          "large": "https://randomuser.me/api/portraits/men/12.jpg",
+          "medium": "https://randomuser.me/api/portraits/men/men/12.jpg",
+          "thumbnail": "https://randomuser.me/api/portraits/thumb/men/12.jpg"
+        },
+  
+        "location": {
+          "city": "Le Mans",
+          "state": "France",
+          "coordinates": {
+            "latitude": 48.006816,  
+            "longitude": 0.177559
+          }
+        },
+        "music": {
+          "style": [
+           "Rock"
+          ],
+          "expérience": "Intermédiaire",
+          "instrument": [
+            "Batterie"
+          ],
+      "lien":"https://www.shutterstock.com/fr/music/track-437141-final-stage"
+  
+        }
+      },
+  
+  
+  
+  
+  
+  {
+        "id": 13,
+        "gender": "woman",
+        "age": 19,
+        "name": {
+          "title": "ms",
+          "first": "Emma",
+          "last": "School"
+        },
+        "contact": {
+          "email": "emmaschool@wcs.com"
+        },
+        "picture": {
+          "large": "https://randomuser.me/api/portraits/men/13.jpg",
+          "medium": "https://randomuser.me/api/portraits/med/men/13.jpg",
+          "thumbnail": "https://randomuser.me/api/portraits/thumb/men/13.jpg"
+        },
+        "location": {
+          "city": "La Loupe",
+          "state": "France",
+          "coordinates": {
+            "latitude": 48.473707,
+            "longitude": 1.011568
+          }
+        },
+        "music": {
+          "style": [
+           "Rock"
+          ],
+          "expérience": "intermédiaire",
+          "instrument": [
+            "Chant"
+          ],
+          "lien": "https"
+  
+        }
+      },
+  
+  
+  
+  {
+        "id": 14,
+        "gender": "male",
+        "age": 34,
+        "name": {
+          "title": "mr",
+          "first": "Joe",
+          "last": "Bart"
+        },
+        "contact": {
+          "email": "joebart@team.com"
+        },
+        "picture": {
+          "large": "https://randomuser.me/api/portraits/men/14.jpg",
+          "medium": "https://randomuser.me/api/portraits/med/men/14.jpg",
+          "thumbnail": "https://randomuser.me/api/portraits/thumb/men/14.jpg"
+        },
+        "location": {
+          "city": "Chartres",
+          "state": "France",
+          "coordinates": {
+            "latitude": 48.443623,
+            "longitude": 1.484455
+          }
+        },
+        "music": {
+          "style": [
+           "Rock"
+          ],
+          "expérience": "confirmé",
+          "instrument": [
+            "Guitare"
+          ],
+          "lien": "https"
+  
+        }
+      },
+      
+      {
+        "id": 15,
+        "gender": "male",
+        "age": 28,
+        "name": {
+          "title": "mr",
+          "first": "Man",
+          "last": "Ipulate"
+        },
+        "contact": {
+          "email": "manipulate@example.com"
+        },
+        "picture": {
+          "large": "https://randomuser.me/api/portraits/men/15.jpg",
+          "medium": "https://randomuser.me/api/portraits/med/men/15.jpg",
+          "thumbnail": "https://randomuser.me/api/portraits/thumb/men/15.jpg"
+        },
+        "location": {
+          "city": "Berlin",
+          "state": "Allemagne",
+          "coordinates": {
+            "latitude": 52.511267961355514, 
+            "longitude": 3.443047413676705
+          }
+        },
+        "music": {
+          "style": [
+           "Punk"
+          ],
+          "expérience": "intermédiaire",
+          "instrument": [
+            "Guitare électrique"
+          ],
+           "lien": "https"
+  
+        }
+      },
+  
+  
+  
+  
+  
+  {
+        "id": 16,
+        "gender": "female",
+        "age": 58,
+        "name": {
+          "title": "ms",
+          "first": "Ariera",
+          "last": "Grande"
+        },
+        "contact": {
+          "email": "arieragrande@example.com"
+        },
+        "picture": {
+          "large": "https://randomuser.me/api/portraits/woman/16.jpg",
+          "medium": "https://randomuser.me/api/portraits/med/woman/16.jpg",
+          "thumbnail": "https://randomuser.me/api/portraits/thumb/woman/16.jpg"
+        },
+        "location": {
+          "city": "Paris",
+          "state": "France",
+          "coordinates": {
+            "latitude": 48.86493186477317, 
+            "longitude": 2.3381065179624523
+          }
+        },
+        "music": {
+          "style": [
+           "R’n’b"
+          ],
+          "expérience": "intermédiaire",
+          "instrument": [
+            "Chant"
+          ],
+           "lien": "https"
+  
+        }
+      }, 
+  {
+        "id": 17,
+        "gender": "female",
+        "age": 28,
+        "name": {
+          "title": "ms",
+          "first": "Boo",
+          "last": "Babe"
+        },
+        "contact": {
+          "email": "boobabe@example.com"
+        },
+        "picture": {
+          "large": "https://randomuser.me/api/portraits/woman/17.jpg",
+          "medium": "https://randomuser.me/api/portraits/med/woman/17.jpg",
+          "thumbnail": "https://randomuser.me/api/portraits/thumb/woman/17.jpg"
+        },
+        "location": {
+          "city": "Paris",
+          "state": "France",
+          "coordinates": {
+            "latitude":48.89249588570871, 
+            "longitude":2.2160150301527772
+          }
+        },
+        "music": {
+          "style": [
+           "Rap"
+          ],
+          "expérience": "confirmé",
+          "instrument": [
+            "Chant"
+          ],
+           "lien": "https"
+  
+        }
+      },
+      
+                  {
+        "id": 18,
+        "gender": "male",
+        "age": 18,
+        "name": {
+          "title": "mr",
+          "first": "Sam",
+          "last": "Essoul"
+        },
+        "contact": {
+          "email": "sam@example.com"
+        },
+        "picture": {
+          "large": "https://randomuser.me/api/portraits/men/18.jpg",
+          "medium": "https://randomuser.me/api/portraits/med/men/18.jpg",
+          "thumbnail": "https://randomuser.me/api/portraits/thumb/men/18.jpg"
+        },
+        "location": {
+          "city": "Lyon",
+          "state": "France",
+          "coordinates": {
+            "latitude": 45.755876,
+            "longitude": 4.853026
+          }
+        },
+        "music": {
+          "style": [
+           "Sock"
+          ],
+          "expérience": "confirmé",
+          "instrument": [
+            "Batterie"
+          ],
+          "lien": "https"
+  
+        }
+      },
+      
+      {
+        "id": 19,
+        "gender": "male",
+        "age": 54,
+        "name": {
+          "title": "mr",
+          "first": "Bernard",
+          "last": "Palliasse"
+        },
+        "contact": {
+          "email": "nanardpal@libertysurf.com"
+        },
+        "picture": {
+          "large": "https://randomuser.me/api/portraits/men/19.jpg",
+          "medium": "https://randomuser.me/api/portraits/med/men/19.jpg",
+          "thumbnail": "https://randomuser.me/api/portraits/thumb/men/19.jpg"
+        },
+        "location": {
+          "city": "Marseille",
+          "state": "France",
+          "coordinates": {
+            "latitude": 43.290424,
+            "longitude": 5.383494
+          }
+        },
+        "music": {
+          "style": [
+           "classique"
+          ],
+          "expérience": "intermédiaire",
+          "instrument": [
+            "Flute"
+          ],
+          "lien": "https"
+  
+        }
+      }
+     
+        ]
+      }
