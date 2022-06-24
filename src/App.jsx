@@ -11,7 +11,7 @@ import Footer from './components/templates/Footer'
 import Main from './components/templates/Main'
 import GraphqlPage from './screen/Debug/Graphqlpage.jsx'
 
-function App({ isDebugMode = true }) {
+function App({ isDebugMode = false }) {
   const [isHomePage, setIsHomePage] = useState(true)
 
   return (
