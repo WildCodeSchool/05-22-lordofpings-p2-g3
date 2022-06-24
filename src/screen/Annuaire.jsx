@@ -10,10 +10,10 @@ const Annuaire = ({ setIsHomePage }) => {
   const [isDisplayMap, setIsDisplayMap] = useState(false)
   const [profiles, setProfiles] = useState([])
   const [group, setGroup] = useState([])
-  const [dataCriteria, setDataCriteria] = useState('Tours')
-  const [instCriteria, setInstCriteria] = useState('Piano')
-  const [nivCriteria, setNivCriteria] = useState('débutant')
-  const [styleCriteria, setStyleCriteria] = useState('Jazz')
+  const [dataCreteria, setDataCreteria] = useState('Tours')
+  const [instCreteria, setInstCriteria] = useState('Piano')
+  const [nivCreteria, setNivCreteria] = useState('débutant')
+  const [styleCreteria, setStyleCreteria] = useState('Jazz')
 
   useEffect(() => {
     setIsHomePage(false)
@@ -28,34 +28,34 @@ const Annuaire = ({ setIsHomePage }) => {
     getData()
   }, [])
 
-  // useEffect(() => {
-  //   const getData = () => {
-  //     fetch('https://kinotonik.github.io/jsonapi/data_groupe.json')
-  //       .then(res => res.json())
-  //       .then(res => console.log(res) || setGroup(res.results))
-  //   }
-  //   getData()
-  // }, [])
+  useEffect(() => {
+    const getData = () => {
+      fetch('https://kinotonik.github.io/jsonapi/data_groupe.json')
+        .then(res => res.json())
+        .then(res => console.log(res) || setGroup(res.results))
+    }
+    getData()
+  }, [])
 
   const checkCreteria = (
     e,
-    instCriteria,
-    nivCriteria,
-    styleCriteria,
-    dataCriteria
+    instCreteria,
+    nivCreteria,
+    styleCreteria,
+    dataCreteria
   ) => {
     e.preventDefault()
     console.log(
       'appel annuaire',
-      instCriteria,
-      nivCriteria,
-      styleCriteria,
-      dataCriteria
+      instCreteria,
+      nivCreteria,
+      styleCreteria,
+      dataCreteria
     )
-    setInstCriteria(instCriteria)
-    setNivCriteria(nivCriteria)
-    setStyleCriteria(styleCriteria)
-    setDataCriteria(dataCriteria)
+    setInstCriteria(instCreteria)
+    setNivCreteria(nivCreteria)
+    setStyleCreteria(styleCreteria)
+    setDataCreteria(dataCreteria)
   }
 
   return (
@@ -68,17 +68,17 @@ const Annuaire = ({ setIsHomePage }) => {
       </div>
       <div className='clearfix'>
         <div className='row'>
-          {profiles !== null &&
-            profiles /* la ça affiche les profiles en dessous de la map mais juste un en savoir plus pas profiles entier  */
+          {/* {profiles !== null &&
+            profiles 
               .filter(profileFiltre => {
                 // console.log('0', profileFiltre)
-                // console.log('1', profileFiltre.style, styleCriteria)
-                // console.log('2', profileFiltre.style.includes(styleCriteria))
-                return profileFiltre.location.city.includes(dataCriteria)
+                // console.log('1', profileFiltre.style, styleCreteria)
+                // console.log('2', profileFiltre.style.includes(styleCreteria))
+                profileFiltre.instrument.includes(instCreteria)
               })
-              .map(profilesRes => <Profiles key={profilesRes.id} />)}
+              .map(profileFiltre => <Profiles key={profileFiltre.id} />)}  */}
 
-          {/* {profiles.map(
+          {profiles.map(
             (profile, index) =>
               index < 3 && (
                 <Profiles
@@ -88,8 +88,8 @@ const Annuaire = ({ setIsHomePage }) => {
                   location={profile.location.city}
                 />
               )
-          )} */}
-          {/* {group.map(
+          )}
+          {group.map(
             (group, index) =>
               index < 3 && (
                 <Profiles
@@ -99,7 +99,7 @@ const Annuaire = ({ setIsHomePage }) => {
                   location={group.location.city}
                 />
               )
-          )}  */}
+          )}
         </div>
       </div>
 

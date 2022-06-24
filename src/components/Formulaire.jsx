@@ -12,10 +12,10 @@ const Formulaire = ({ isCheck }) => {
   const [nivFilter, setNivFilter] = useState([])
   const [styleFilter, setStyleFilter] = useState([])
   // filtres selectionnés
-  const [dataCriteria, setDataCriteria] = useState([])
-  const [instCriteria, setInstCriteria] = useState([])
-  const [nivCriteria, setNivCriteria] = useState([])
-  const [styleCriteria, setStyleCriteria] = useState([])
+  const [dataCreteria, setDataCreteria] = useState([])
+  const [instCreteria, setInstCreteria] = useState([])
+  const [nivCreteria, setNivCreteria] = useState([])
+  const [styleCreteria, setStyleCreteria] = useState([])
 
   // const handleClick = e => {
   //   e.preventDefault()
@@ -62,7 +62,7 @@ const Formulaire = ({ isCheck }) => {
             Localisation :
             <select
               className='selectForm'
-              onChange={e => setDataCriteria(e.target.value)}
+              onChange={e => setDataCreteria(e.target.value)}
             >
               <option value=''> chosir localisation</option>
               {dataFilter.length &&
@@ -77,7 +77,7 @@ const Formulaire = ({ isCheck }) => {
             Instruments :
             <select
               className='selectForm'
-              onChange={e => setInstCriteria(e.target.value)}
+              onChange={e => setInstCreteria(e.target.value)}
             >
               <option value=''> chosir un instrument</option>
               {instFilter.length &&
@@ -94,7 +94,7 @@ const Formulaire = ({ isCheck }) => {
             Niveau :
             <select
               className='selectForm'
-              onChange={e => setNivCriteria(e.target.value)}
+              onChange={e => setNivCreteria(e.target.value)}
             >
               <option value=''>choisir niveau</option>
               {nivFilter.length &&
@@ -122,7 +122,7 @@ const Formulaire = ({ isCheck }) => {
             Genre musical :
             <select
               className='selectForm'
-              onChange={e => setStyleCriteria(e.target.value)}
+              onChange={e => setStyleCreteria(e.target.value)}
             >
               <option value=''>choisir un style</option>
               {styleFilter.length &&
@@ -138,7 +138,7 @@ const Formulaire = ({ isCheck }) => {
         <button
           className='buttonForm'
           onClick={e =>
-            isCheck(e, instCriteria, nivCriteria, styleCriteria, dataCriteria)
+            isCheck(e, instCreteria, nivCreteria, styleCreteria, dataCreteria)
           }
         >
           CHERCHER
