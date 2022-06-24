@@ -8,6 +8,7 @@ import Profiles from '../components/Profiles'
 const Annuaire = ({ setIsHomePage }) => {
   const [group, setGroup] = useState([])
   const [profiles, setProfiles] = useState([])
+  const [displayMOrG, setDisplayMOrG] = useState('') // etape 1
   useEffect(() => {
     setIsHomePage(false)
   }, [])
@@ -33,7 +34,8 @@ const Annuaire = ({ setIsHomePage }) => {
   return (
     <div className='container-80'>
       <h1>Bienvenue sur le groupe de recherche de musiciens n°1!</h1>
-      <Formulaire />
+      {/* etape 2 passage de la porps au formulaire */}
+      <Formulaire setDisplayMOrG={setDisplayMOrG} />
       <div className=''>
         <p>Retrouvez les sur Rock Your Band ... </p>
       </div>
@@ -63,7 +65,8 @@ const Annuaire = ({ setIsHomePage }) => {
           )}
         </div>
         <div>
-          <Leaflet />
+          {/* étape 3 passage de la state à la carte */}
+          <Leaflet displayMOrG={displayMOrG} />
         </div>
       </div>
     </div>

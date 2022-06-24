@@ -2,8 +2,8 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { Leaflet } from '../components/Leaflet'
 import './Formulaire.css'
-
-const Formulaire = () => {
+// étape 4 récupe de la props dans le formulaire
+const Formulaire = ({ setDisplayMOrG }) => {
   const [isDisplayMap, setIsDisplayMap] = useState(false)
 
   useEffect(() => {}, [isDisplayMap])
@@ -19,7 +19,11 @@ const Formulaire = () => {
           <label htmlFor='select' className='labelFrom'>
             Recherche Groupe / <br />
             Personne solos :
-            <select className='selectForm'>
+            <select
+              className='selectForm'
+              onChange={e => setDisplayMOrG(e.target.value)} // étape 5 utilise la props récupérée en ciblant la valeur de l'input /onChange
+            >
+              <option value=''>choice</option>
               <option value='crew'>Groupe</option>
               <option value='solo'>Solo</option>
             </select>

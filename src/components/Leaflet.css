@@ -77,7 +77,7 @@
     background: transparent;
 }
 
-.btn__card {
+.btn__leaflet {
   background-color: #b0aef8!important;
   position: relative;
   height: 1.2rem!important;
@@ -93,14 +93,14 @@
   margin:auto;
 }
 
-.btn__card:hover {
+.btn__leaflet:hover {
   background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
 	background-color:#408c99;
   color: black;
   transform: scale(1)!important;
 
 }
-.btn__card:active {
+.btn__leaflet:active {
 	position:relative;
 	top:1px;
 }
@@ -111,9 +111,9 @@
   justify-content: center;
 }
 .leaflet-container {
-  width: 40vw;
-  height: 60vh;
-  margin: 25px 0 0 25px;
+  width: 78vw;
+  height: 41vh;
+  margin: 50px 0;
 
 }
 .btn-leaf {

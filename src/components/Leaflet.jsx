@@ -4,8 +4,8 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 // import dataUser from './data/dataUser.json'
 import { useState, useEffect } from 'react'
 import './Leaflet.css'
-
-export const Leaflet = () => {
+//  étape 6 récupération de la props
+export const Leaflet = ({ displayMOrG }) => {
   const position = [47.389509, 0.693421]
   // const filteredStations = teslaData.filter(tsla => tsla.address.country === "USA")
   // console.log(filteredStations);
@@ -24,17 +24,17 @@ export const Leaflet = () => {
     // console.log(data)
   }, [dataM])
 
-  // const [dataG, setDataG] = useState([])
+  const [dataG, setDataG] = useState([])
 
-  // useEffect(() => {
-  //   fetch('https://kinotonik.github.io/jsonapi/data_groupe.json')
-  //     .then(res => res.json())
-  //     .then(res => setDataG(res.results))
-  // }, [])
+  useEffect(() => {
+    fetch('https://kinotonik.github.io/jsonapi/data_groupe.json')
+      .then(res => res.json())
+      .then(res => setDataG(res.results))
+  }, [])
 
-  // useEffect(() => {
-  //   // console.log(data)
-  // }, [dataG])
+  useEffect(() => {
+    // console.log(data)
+  }, [dataG])
 
   return (
     <>
@@ -45,46 +45,73 @@ export const Leaflet = () => {
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
             />
-            {dataM.length &&
-              dataM.map(dt => (
-                <Marker
-                  key={dt.id}
-                  position={[
-                    dt.location.coordinates.latitude,
-                    dt.location.coordinates.longitude
-                  ]}
-                >
-                  <Popup
+            {/* étape 7 mise en condition de la state  displayMOrG(avec de base useState =('')) => falsy et ne joue pas ce qui est à droite en attribuant la value récupérée dans le formulaire*/}
+            {displayMOrG && displayMOrG === 'solo'
+              ? dataM.length &&
+                dataM.map(dt => (
+                  <Marker
+                    key={dt.id}
                     position={[
                       dt.location.coordinates.latitude,
                       dt.location.coordinates.longitude
                     ]}
                   >
-                    <div className='pop_up-contain'>
-                      <img src={dt.picture.thumbnail} alt={dt.name.first} />
-                      <h2>{`${dt.name.first} ${dt.name.last}`}</h2>
-                      <p style={{ color: 'red' }}>{` ${[dt.music.style]}`}</p>
-                      <p
-                        style={{ color: 'blue' }}
-                      >{`Niveau:${dt.music.expérience}`}</p>
-                      <p>{`${dt.music.instrument}`}</p>
-                      {/* // <img src={dt.jacket} alt={dt.name} />
-                      // <h2>{`${dt.name}`}</h2>
-                      // <p style={{ color: 'red' }}> {` ${dt.style}`}</p>
-                      // <p style={{ color: 'blue' }}>{`${dt.expérience}`}</p>
-                      // <p
-                      //   style={{ color: 'green' }}
-                      // >{`Membres:${dt.members}`}</p>
-                      // <ul>
-                      //   {dt.instrument.map(inst => (
-                      //     <li>{`${inst}`}</li>
-                      //   ))}
-                      // </ul>*/}
-                      <button className='btn__card'>Détail</button>
-                    </div>
-                  </Popup>
-                </Marker>
-              ))}
+                    <Popup
+                      position={[
+                        dt.location.coordinates.latitude,
+                        dt.location.coordinates.longitude
+                      ]}
+                    >
+                      <div className='pop_up-contain'>
+                        <>
+                          <img src={dt.picture.thumbnail} alt={dt.name.first} />
+                          <h2>{`${dt.name.first} ${dt.name.last}`}</h2>
+                          <p style={{ color: 'red' }}>{` ${[
+                            dt.music.style
+                          ]}`}</p>
+                          <p
+                            style={{ color: 'blue' }}
+                          >{`Niveau:${dt.music.expérience}`}</p>
+                          <p>{`${dt.music.instrument}`}</p>
+                        </>
+                        <button className='btn__leaflet'>Détail</button>
+                      </div>
+                    </Popup>
+                  </Marker>
+                ))
+              : displayMOrG === 'crew' &&
+                dataG.length &&
+                dataG.map(dt => (
+                  <Marker
+                    key={dt.id}
+                    position={[
+                      dt.location.coordinates.latitude,
+                      dt.location.coordinates.longitude
+                    ]}
+                  >
+                    <Popup
+                      position={[
+                        dt.location.coordinates.latitude,
+                        dt.location.coordinates.longitude
+                      ]}
+                    >
+                      <div className='pop_up-contain'>
+                        <>
+                          <img src={dt.jacket} alt={dt.name} />
+                          <h2>{`${dt.name}`}</h2>
+                          <p style={{ color: 'red' }}> {dt.style.join(' ')}</p>
+                          <p style={{ color: 'blue' }}>{`${dt.expérience}`}</p>
+                          <p style={{ color: 'green' }}>Membres:{dt.members}</p>
+                          <ul>
+                            {console.log('map:', dt) ||
+                              dt.instrument?.map(inst => <li>{`${inst}`}</li>)}
+                          </ul>
+                        </>
+                        <button className='btn__leaflet'>Détail</button>
+                      </div>
+                    </Popup>
+                  </Marker>
+                ))}
           </MapContainer>
         }
       </div>
