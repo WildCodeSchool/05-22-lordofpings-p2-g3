@@ -23,7 +23,7 @@ const Formulaire = ({ setDisplayMOrG }) => {
               className='selectForm'
               onChange={e => setDisplayMOrG(e.target.value)} // étape 5 utilise la props récupérée en ciblant la valeur de l'input /onChange
             >
-              <option value=''>choice</option>
+              <option value=''>---Type---</option>
               <option value='crew'>Groupe</option>
               <option value='solo'>Solo</option>
             </select>
