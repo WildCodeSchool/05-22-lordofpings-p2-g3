@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom'
 import './Profiles.css'
+import { useNavigate } from 'react-router-dom'
 // import Lover from '../assets/images/tom.jpg'
 // import Choses from '../assets/images/groupe4.jpg'
 // import Knackis from '../assets/images/groupe2.jpg'
 // import Riata from '../assets/images/rnbfever.jpg'
 
 const Profiles = ({ name, image, id, location, experience, instrument }) => {
-  const linkIdProfiles = `/profiledetails/${id}`
+  let navigate = useNavigate()
   return (
     <div className='card'>
       <div className='align'>
@@ -18,7 +19,10 @@ const Profiles = ({ name, image, id, location, experience, instrument }) => {
         <p>⭐️ {experience}</p>
         <p>🎶 {instrument.join(', ')}</p>
       </div>
-      <button className='buttonProfile' onClick={linkIdProfiles}>
+      <button
+        className='buttonProfile'
+        onClick={() => navigate(`/profilesdetails/${id}`)}
+      >
         En savoir plus
       </button>
     </div>
