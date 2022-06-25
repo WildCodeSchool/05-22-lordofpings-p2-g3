@@ -13,7 +13,11 @@ import SignIn from '../../components/graphql/SignIn'
 import './Graphqlpage.css'
 import { setContext } from '@apollo/client/link/context'
 import GetLocations from '../../components/graphql/GetLocations'
-import audio1 from '../../assets/sounds/lofi-study-112191.mp3'
+import audio1 from '../../assets/sounds/lofi-study.mp3'
+import audio2 from '../../assets/sounds/test.mp3'
+import audio3 from '../../assets/sounds/urban-beat.mp3'
+const playlist=[audio1, audio2,audio3];
+
 const httpLink = new createHttpLink({
   uri: process.env.REACT_APP_DIRECTUS_API_URL_SYSTEM
 })
@@ -69,7 +73,8 @@ const GraphqlPage = ({ setIsHomePage }) => {
     <div className='main'>
       <div className='container-80'>
         <h1>Votre player</h1>
-        <AudioPlayer url={audio1} title={"lofi-study-112191.mp3"}></AudioPlayer>
+
+        <AudioPlayer url={[audio1, audio2, audio3]} title={[audio1, audio2, audio3]}></AudioPlayer>
         <h1>Page GRAPHQL</h1>
 
         <ApolloProvider client={clientSystem}>
