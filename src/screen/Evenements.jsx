@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import Slider from '../components/Slider'
+import Event from '../components/Event'
 import { Leaflet } from '../components/Leaflet'
 import './Evenements.css'
 
@@ -16,6 +16,19 @@ const Evenements = ({ setIsHomePage }) => {
     e.preventDefault()
     setIsDisplayMap(!isDisplayMap)
   }
+
+  const [evenements, setEvenements] = useState([])
+
+  useEffect(() => {
+    const getData = () => {
+      fetch(
+        'https://gist.githubusercontent.com/letotor/4271dbd3b8ffeccf885b4674807a6f2b/raw/e9b91991918b4e5497f698033560f467e79a261d/data.json'
+      )
+        .then(res => res.json())
+        .then(res => console.log(res) || setEvenements(res.data))
+    }
+    getData()
+  }, [])
 
   return (
     <>
@@ -46,7 +59,17 @@ const Evenements = ({ setIsHomePage }) => {
 
         {isDisplayMap && <Leaflet />}
       </form>
-      <Slider />
+      <div className='GaleryEvenements'>
+        {evenements.map(evenement => (
+          <Event
+            key={evenement.id}
+            name={evenement.name}
+            image={evenement.image}
+            description={evenement.description}
+            id={evenement.id}
+          />
+        ))}
+      </div>
     </>
   )
 }
