@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import './SignIn.css'
 import { Link } from 'react-router-dom'
 import close from '../../assets/images/knob--round.png'
+import LoadingSpinner from '../LoadingSpinner'
 
 const POST_LOGIN = gql`
   mutation genereToken($email: String!, $password: String!) {
@@ -32,6 +33,7 @@ const SignIn = () => {
   const handleSubmit = async event => {
     event.preventDefault()
     // the mutate function also doesn't return a promise
+    
     const genToken = await generateToken({ variables: { email, password } })
     if (!error && !loading) {
       localStorage.setItem(
@@ -79,8 +81,7 @@ const SignIn = () => {
                   'Se connecter'
                 )}
               </button>
-
-              {loading && <div className='error'>{'loading...'}</div>}
+              {loading && <LoadingSpinner className='error' />}
               {error && (
                 <>
                   <span className='state'>⭕</span>
