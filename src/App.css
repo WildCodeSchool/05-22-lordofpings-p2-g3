@@ -13,9 +13,10 @@
   --success-2: #27ae60;
 
   --gray-1:#D9D9D9;
-
   --gray-2: #B7B7B7;
   --gray-3: #34495e;
+
+  --white:white;
 
   --black-logo: #060606;
   --black-header: #211E1E;
@@ -32,8 +33,10 @@
 
   --border: 1px solid var(--gray-2);
   --border-radius: 4px;
+  
   --border-radius-1: 50px;
   --border-radius-2: 25px;
+  --border-radius-3: 12px;
 
   --font-family-1: "Oswald";
   --font-family-2:"Urbanist";
@@ -101,11 +104,20 @@ body {
   display: flex;
 }
 
+.flex-center {
+  flex: 1 1 auto;
+  align-content: center;
+  justify-content: center;
+    align-items: center;
+      justify-items: center;
+}
 .flex-row {
+    display: flex;
   flex-direction: row;
 }
 
 .flex-column {
+    display: flex;
   flex-direction: column;
 }
 
@@ -113,8 +125,18 @@ body {
   justify-content: center;
 }
 
-.align-items-center {
-  align-items: center;
+.justify-items-stretch {
+
+  justify-items: stretch;
+}
+.align-items-stretch {
+
+  align-items: stretch;
+}
+
+.text-center{
+  text-align:center;
+
 }
 
 .flex-fill {
@@ -231,6 +253,7 @@ body {
  width:80%;
  margin:auto;
 }
+
 
 .header {
   grid-area: header;

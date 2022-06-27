@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import AudioPlayer from '../components/AudioPlayer'
 import audio1 from '../assets/sounds/test.mp3'
-import audio2 from '../assets/sounds/urban-beat-20679.mp3'
+import audio2 from '../assets/sounds/urban-beat.mp3'
 import './Apropos.css'
 import { Link } from 'react-router-dom'
 
