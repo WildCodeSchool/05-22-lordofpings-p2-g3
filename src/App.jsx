@@ -33,7 +33,7 @@ function App({ isDebugMode = true }) {
             element={<Evenements setIsHomePage={setIsHomePage} />}
           />
           <Route
-            path='/eventdetails/:id'
+            path='/evenement/:id'
             element={<EventDetails setIsHomePage={setIsHomePage} />}
           />
           <Route
