@@ -37,9 +37,10 @@ const Apropos = ({ setIsHomePage }) => {
         {devProject.map(dev => (
           <DisplayDev
             key={dev.id}
-            devName={dev.devName}
-            devBack={dev.devBack}
+            devBck={dev.devBck}
             devAvatar={dev.devAvatar}
+            devName={dev.devName}
+            devDescription={dev.devDescription}
             devBtn={dev.devBtn}
           />
         ))}

@@ -18,18 +18,14 @@
 
 .banner-apropos {
   position: absolute;
-  /* background-image: url(https://images.pexels.com/photos/2088208/pexels-photo-2088208.jpeg); */
+  background-image: url(https://images.pexels.com/photos/2088208/pexels-photo-2088208.jpeg);
   height: 10rem;
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-.banner-apropos .banner-img {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-}
+
 
 .img-apropos {
   width: 15rem;

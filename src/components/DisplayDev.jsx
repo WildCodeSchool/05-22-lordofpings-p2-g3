@@ -8,7 +8,7 @@ function DisplayDev({ devName, devDescription, devAvatar, devBck, devBtn }) {
       <div className='container-apropos'>
         <div
           className='banner-apropos'
-          style={{ backgroundImage: `${devBck}` }}
+          style={{ backgroundImage: `url(${devBck})` }}
         ></div>
         <img className='img-apropos' src={devAvatar} alt={devName} />
         <h1 className='name-apropos'>{devName}</h1>
