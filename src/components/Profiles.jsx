@@ -27,7 +27,6 @@ const Profiles = ({
         <p>📍 {location}</p>
         <p>⭐️ {experience}</p>
         <p>🎶 {instrument.join(', ')}</p>
-        <p>{style}</p>
       </div>
       <button
         className='buttonProfile'
