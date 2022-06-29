@@ -6,8 +6,17 @@ import { useNavigate } from 'react-router-dom'
 // import Knackis from '../assets/images/groupe2.jpg'
 // import Riata from '../assets/images/rnbfever.jpg'
 
-const Profiles = ({ name, image, id, location, experience, instrument }) => {
+const Profiles = ({
+  name,
+  image,
+  id,
+  location,
+  experience,
+  instrument,
+  style
+}) => {
   let navigate = useNavigate()
+  console.log({ name, image, id, location, experience, instrument })
   return (
     <div className='card'>
       <div className='align'>

@@ -1,42 +1,60 @@
 import React, { useInsertionEffect } from 'react'
 import { useState, useEffect } from 'react'
-//import { Leaflet } from '../components/Leaflet'
-//import { Profiles } from '../components/Profiles'
+
 import './Formulaire.css'
 // étape 4 récupe de la props dans le formulaire
-const Formulaire = ({ setDisplayMOrG }) => {
+const Formulaire = ({ setDisplayMOrG, isCheck }) => {
   const [isDisplayMap, setIsDisplayMap] = useState(false)
+  const [noCreteria, setNoCreteria] = useState(true)
+  const [creteria, setCreteria] = useState({
+    instrument: '',
+    experience: '',
+    style: '',
+    location: '',
+    goal: ''
+  })
 
-  // const Formulaire = ({ isCheck }) => {
-  //const [isDisplayMap, setIsDisplayMap] = useState(false)
-  //const [search, setSearch] = useState(false)
-  const [dataFilter, setDataFilter] = useState([])
+  const [locFilter, setLocFilter] = useState([])
   const [instFilter, setInstFilter] = useState([])
   const [nivFilter, setNivFilter] = useState([])
   const [styleFilter, setStyleFilter] = useState([])
+  const [objFilter, setObjFilter] = useState([])
   // filtres selectionnés
-  const [dataCreteria, setDataCreteria] = useState([])
+  const [locCreteria, setLocCreteria] = useState([])
   const [instCreteria, setInstCreteria] = useState([])
   const [nivCreteria, setNivCreteria] = useState([])
   const [styleCreteria, setStyleCreteria] = useState([])
+  const [objCreteria, setObjCreteria] = useState([])
 
-  // const handleClick = e => {
-  //   e.preventDefault()
+  const handleChange = target => {
+    setNoCreteria(false)
 
-  //   isCheck('toto')
-  // }
-
-  // useEffect(() => {}, [isDisplayMap])
-  // const handleClick = e => {
-  //   e.preventDefault()
-  //   setIsDisplayMap(!isDisplayMap)
-  // }
+    if (target.id === 'selectInst') {
+      setCreteria({ ...creteria, instrument: target.value })
+      setInstCreteria(target.value)
+    }
+    if (target.id === 'selectNiv') {
+      setCreteria({ ...creteria, experience: target.value })
+      setNivCreteria(target.value)
+    }
+    if (target.id === 'selectObj') {
+      setObjCreteria({ ...creteria, goal: target.value })
+    }
+    if (target.id === 'selectLoc') {
+      setCreteria({ ...creteria, location: target.value })
+      setLocCreteria(target.value)
+    }
+    if (target.id === 'selectStyle') {
+      setCreteria({ ...creteria, style: target.value })
+      setStyleCreteria(target.value)
+    }
+  }
 
   const [results, setResults] = useState([])
   useEffect(() => {
     fetch('https://kinotonik.github.io/jsonapi/data_musicien.json')
       .then(res => res.json())
-      .then(res => setDataFilter(res.results))
+      .then(res => setLocFilter(res.results))
   }, [])
 
   useEffect(() => {
@@ -56,7 +74,7 @@ const Formulaire = ({ setDisplayMOrG }) => {
       .then(res => res.json())
       .then(res => setStyleFilter(res.data))
   }, [])
-
+  console.log('stateMaj', creteria)
   return (
     <div className='contener'>
       <form className='form'>
@@ -65,6 +83,7 @@ const Formulaire = ({ setDisplayMOrG }) => {
             Recherche Groupe / <br />
             Personne solos :
             <select
+              id='selectGs'
               className='selectForm'
               onChange={e => setDisplayMOrG(e.target.value)} // étape 5 utilise la props récupérée en ciblant la valeur de l'input /onChange
             >
@@ -76,8 +95,9 @@ const Formulaire = ({ setDisplayMOrG }) => {
           <label htmlFor='select' className='labelFrom'>
             Instruments :
             <select
+              id='selectInst'
               className='selectForm'
-              onChange={e => setInstCreteria(e.target.value)}
+              onChange={e => handleChange(e.target)}
             >
               <option value=''> chosir un instrument</option>
               {instFilter.length &&
@@ -93,8 +113,9 @@ const Formulaire = ({ setDisplayMOrG }) => {
           <label htmlFor='select' className='labelFrom'>
             Niveau :
             <select
+              id='selectNiv'
               className='selectForm'
-              onChange={e => setNivCreteria(e.target.value)}
+              onChange={e => handleChange(e.target)}
             >
               <option value=''>choisir niveau</option>
               {nivFilter.length &&
@@ -107,22 +128,44 @@ const Formulaire = ({ setDisplayMOrG }) => {
           </label>
           <label htmlFor='select' className='labelFrom'>
             Objectif recherché :
-            <select className='selectForm'>
-              <option value='loisir'>Loisir</option>
-              <option value='professionnel'>Professionnel</option>
+            <select
+              id='selectObj'
+              className='selectForm'
+              onChange={e => handleChange(e.target)}
+            >
+              <option value=''></option>
+              {objFilter.length &&
+                objFilter.map((obj, i) => (
+                  <option key={i} value={obj.music.search.objectif}>
+                    {obj.music.search.objectif}
+                  </option>
+                ))}
             </select>
           </label>
         </div>
         <div className='contener-1'>
           <label className='labelFrom'>
-            Recherche avancée :
-            <input type='text' name='' className='selectForm' />
+            Localisation :
+            <select
+              id='selectLoc'
+              className='selectForm'
+              onChange={e => handleChange(e.target)}
+            >
+              <option value=''>choisir localisation</option>
+              {locFilter.length &&
+                locFilter.map((loc, i) => (
+                  <option key={i} value={loc.location.city}>
+                    {loc.location.city}
+                  </option>
+                ))}
+            </select>
           </label>
           <label className='labelFrom'>
             Genre musical :
             <select
+              id='selectStyle'
               className='selectForm'
-              onChange={e => setStyleCreteria(e.target.value)}
+              onChange={e => handleChange(e.target)}
             >
               <option value=''>choisir un style</option>
               {styleFilter.length &&
@@ -134,15 +177,11 @@ const Formulaire = ({ setDisplayMOrG }) => {
             </select>
           </label>
         </div>
-
-        <button
-          className='buttonForm'
-          // onClick={e =>
-          //   isCheck(e, instCreteria, nivCreteria, styleCreteria, dataCreteria)
-          // }
-        >
-          CHERCHER
-        </button>
+        <div className='contButton'>
+          <button className='buttonForm' onClick={e => isCheck(e, creteria)}>
+            CHERCHER
+          </button>
+        </div>
       </form>
     </div>
   )
