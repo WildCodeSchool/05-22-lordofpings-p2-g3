@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import Events from './Events'
+import Events from '../components/Events'
 
 const EventDetails = ({ setIsHomePage }) => {
   const [EventDetails, setEventDetails] = useState([])
