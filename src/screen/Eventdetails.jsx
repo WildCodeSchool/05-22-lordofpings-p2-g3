@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Events from '../components/Events'
 
+const imgUrl = `https://yv3o2geh.directus.app/assets/${imgUrl}`
 const EventDetails = ({ setIsHomePage }) => {
   const [EventDetails, setEventDetails] = useState([])
   const { id } = useParams()
@@ -18,21 +19,20 @@ const EventDetails = ({ setIsHomePage }) => {
           setEventDetails(res.data)
       })
   }, [])
-  const { name, image, date_start, date_end, description, localisation } =
+  const { name, imgUrl, date_start, date_end, description, localisation } =
     EventDetails
   return (
     <div>
-      blablalol
       <h2>{name}</h2>
-      {/* <div>
-        <img src={image} alt={name} />
+      <div>
+        <img src={imgUrl} alt={name} />
       </div>
-      <div>{image}</div>
+      <div>{imgUrl}</div>
       <div>{date_start}</div>
       <div>{date_end}</div>
-      <div>{image}</div>
+      <div>{imgUrl}</div>
       <div>{description}</div>
-      <div>{localisation}</div> */}
+      <div>{localisation}</div>
     </div>
   )
 }
