@@ -9,7 +9,6 @@ import Header from './components/templates/Header'
 import Footer from './components/templates/Footer'
 import Main from './components/templates/Main'
 import GraphqlPage from './screen/Debug/Graphqlpage'
-import EventDetails from './screen/Eventdetails'
 import './App.css'
 import LoginPage from './screen/LoginPage'
 import Playlist from './screen/PlayList'
@@ -32,10 +31,7 @@ function App({ isDebugMode = true }) {
             path='/evenement'
             element={<Evenements setIsHomePage={setIsHomePage} />}
           />
-          <Route
-            path='/evenement/:id'
-            element={<EventDetails setIsHomePage={setIsHomePage} />}
-          />
+
           <Route
             path='/profilesdetails/:id'
             element={<Profiledetails setIsHomePage={setIsHomePage} />}
