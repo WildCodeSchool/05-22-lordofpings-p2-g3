@@ -8,7 +8,7 @@ import Profiles from '../components/Profiles'
 const Annuaire = ({ setIsHomePage }) => {
   const [isDisplayMap, setIsDisplayMap] = useState(false)
   const [profiles, setProfiles] = useState([])
-  const [displayMOrG, setDisplayMOrG] = useState('') // etape 1
+  const [displayMOrG, setDisplayMOrG] = useState('') // étape 1
   const [group, setGroup] = useState([])
   const [dataCreteria, setDataCreteria] = useState('Tours')
   const [instCreteria, setInstCriteria] = useState('Piano')
