@@ -10,14 +10,14 @@ const Annuaire = ({ setIsHomePage }) => {
   const [displayMOrG, setDisplayMOrG] = useState('') // etape 1
   const [profilesFilter, setProfilesFilter] = useState([])
   const [group, setGroup] = useState([])
-
+  const [noResult, setNoResult] = useState(false)
   const [noCreteria, setNoCreteria] = useState(true)
   const [creteria, setCreteria] = useState({
     instrument: '',
     experience: '',
     style: '',
     location: '',
-    goal: ''
+    objectif: ''
   })
 
   const filter1 = (arr, strCompare) => {
@@ -37,7 +37,7 @@ const Annuaire = ({ setIsHomePage }) => {
   }
 
   const filter5 = (arr, strCompare) => {
-    return arr.filter(el => el.music.objectif?.includes(strCompare))
+    return arr.filter(el => el.music.search.objectif?.includes(strCompare))
   }
 
   useEffect(() => {
@@ -70,36 +70,39 @@ const Annuaire = ({ setIsHomePage }) => {
     result = creteria.style ? filter2(result, creteria.style) : result
     result = creteria.experience ? filter3(result, creteria.experience) : result
     result = creteria.location ? filter4(result, creteria.location) : result
-    result = creteria.goal ? filter5(result, creteria.goal) : result
+    result = creteria.objectif ? filter5(result, creteria.objectif) : result
     setCreteria(creteria)
     setProfilesFilter(result)
     setNoCreteria(noCreteria)
+    setNoResult(true)
   }
 
   return (
     <div className='container-80'>
-      <h1>Bienvenue sur le groupe de recherche de musiciens n°1 !</h1>
-
+      <div className='titleForm1'>
+        <h1>Bienvenue sur le groupe de recherche de musiciens n°1 !</h1>
+      </div>
       <Formulaire setDisplayMOrG={setDisplayMOrG} isCheck={checkCreteria} />
       <div className='title1'>
         <h3>Retrouvez vos futurs musiciens sur Rock Your Band ... </h3>
       </div>
       <div className='containerSolo'>
         <div className='containerSolo'>
-          {!noCreteria &&
-            profilesFilter.length &&
-            profilesFilter.map(profile => (
-              <Profiles
-                key={profile.id}
-                id={profile.id}
-                name={profile.name.first}
-                image={profile.picture.large}
-                location={profile.location.city}
-                instrument={profile.music.instrument}
-                experience={profile.music.experience}
-                style={profile.music.style}
-              />
-            ))}
+          {!noCreteria && profilesFilter.length
+            ? profilesFilter.map(profile => (
+                <Profiles
+                  key={profile.id}
+                  id={profile.id}
+                  name={profile.name.first}
+                  image={profile.picture.large}
+                  location={profile.location.city}
+                  instrument={profile.music.instrument}
+                  experience={profile.music.experience}
+                  style={profile.music.style}
+                  objectif={profile.music.search.objectif}
+                />
+              ))
+            : noResult && <p className='noResultAff'>Aucun résultat</p>}
           {noCreteria &&
             profiles !== null &&
             profiles.map(profileFiltre => (
@@ -110,8 +113,9 @@ const Annuaire = ({ setIsHomePage }) => {
                 image={profileFiltre.picture.large}
                 location={profileFiltre.location.city}
                 instrument={profileFiltre.music.instrument}
-                experience={profileFiltre.music.expérience}
+                experience={profileFiltre.music.experience}
                 style={profileFiltre.music.style}
+                objectif={profileFiltre.music.search.objectif}
               />
             ))}
         </div>
@@ -122,8 +126,7 @@ const Annuaire = ({ setIsHomePage }) => {
       <div className='containerGroupe'>
         {group.map(
           (group, index) =>
-            index < 11 &&
-            (console.log('groupe', group) || (
+            index < 11 && (
               <div className='containerGroupe'>
                 <Profiles
                   key={group.id}
@@ -132,10 +135,10 @@ const Annuaire = ({ setIsHomePage }) => {
                   image={group.jacket}
                   location={group.location.city}
                   instrument={group.instrument}
-                  experience={group.expérience}
+                  experience={group.experience}
                 />
               </div>
-            ))
+            )
         )}
 
         <div>
