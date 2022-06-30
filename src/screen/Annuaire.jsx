@@ -11,10 +11,7 @@ const Annuaire = ({ setIsHomePage }) => {
   const [displayMOrG, setDisplayMOrG] = useState('') // etape 1
   const [profilesFilter, setProfilesFilter] = useState([])
   const [group, setGroup] = useState([])
-<<<<<<< HEAD
-=======
   const [noResult, setNoResult] = useState(false)
->>>>>>> dev
   const [noCreteria, setNoCreteria] = useState(true)
   const [creteria, setCreteria] = useState({
     instrument: '',
@@ -75,20 +72,11 @@ const Annuaire = ({ setIsHomePage }) => {
     result = creteria.style ? filter2(result, creteria.style) : result
     result = creteria.experience ? filter3(result, creteria.experience) : result
     result = creteria.location ? filter4(result, creteria.location) : result
-<<<<<<< HEAD
-    result = creteria.goal ? filter5(result, creteria.goal) : result
-
-    setCreteria(creteria)
-    setProfilesFilter(result)
-    setNoCreteria(noCreteria)
-    setDeso(true)
-=======
     result = creteria.objectif ? filter5(result, creteria.objectif) : result
     setCreteria(creteria)
     setProfilesFilter(result)
     setNoCreteria(noCreteria)
     setNoResult(true)
->>>>>>> dev
   }
 
   return (
@@ -113,16 +101,10 @@ const Annuaire = ({ setIsHomePage }) => {
                   instrument={profile.music.instrument}
                   experience={profile.music.experience}
                   style={profile.music.style}
-<<<<<<< HEAD
-                />
-              ))
-            : deso && <p>deso gros</p>}
-=======
                   objectif={profile.music.search.objectif}
                 />
               ))
             : noResult && <p className='noResultAff'>Aucun résultat</p>}
->>>>>>> dev
           {noCreteria &&
             profiles !== null &&
             profiles.map(profileFiltre => (
