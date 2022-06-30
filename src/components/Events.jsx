@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import './Events.css'
-import { useNavigate } from 'react-router-dom'
 
 const Events = ({ name, image, description, id }) => {
   const linkIdEvent = `/evenement/${id}`
