@@ -66,11 +66,11 @@ const Annuaire = ({ setIsHomePage }) => {
       <div className='title1'>
         <h3>Retrouvez vos futurs musiciens sur Rock Your Band ... </h3>
       </div>
-      <div className='containerSolo'>
+      <div className='box-container'>
         {profiles.map(
           (profile, index) =>
             index < 10 && (
-              <div className='containerSolo'>
+              <div className=''>
                 <Profiles
                   key={profile.id}
                   id={profile.id}
@@ -78,7 +78,7 @@ const Annuaire = ({ setIsHomePage }) => {
                   image={profile.picture.large}
                   location={profile.location.city}
                   instrument={profile.music.instrument}
-                  experience={profile.music.expérience}
+                  experience={profile.music.experience}
                 />
               </div>
             )
@@ -87,12 +87,12 @@ const Annuaire = ({ setIsHomePage }) => {
       <div className='title2'>
         <h3>Ou votre futur groupe de musique ... </h3>
       </div>
-      <div className='containerGroupe'>
+      <div className=''>
         {group.map(
           (group, index) =>
             index < 10 &&
             (console.log('groupe', group) || (
-              <div className='containerGroupe'>
+              <div className=''>
                 <Profiles
                   key={group.id}
                   id={group.id}
