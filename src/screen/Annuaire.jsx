@@ -11,13 +11,17 @@ const Annuaire = ({ setIsHomePage }) => {
   const [displayMOrG, setDisplayMOrG] = useState('') // etape 1
   const [profilesFilter, setProfilesFilter] = useState([])
   const [group, setGroup] = useState([])
+<<<<<<< HEAD
+=======
+  const [noResult, setNoResult] = useState(false)
+>>>>>>> dev
   const [noCreteria, setNoCreteria] = useState(true)
   const [creteria, setCreteria] = useState({
     instrument: '',
     experience: '',
     style: '',
     location: '',
-    goal: ''
+    objectif: ''
   })
   const [deso, setDeso] = useState(false)
 
@@ -38,7 +42,7 @@ const Annuaire = ({ setIsHomePage }) => {
   }
 
   const filter5 = (arr, strCompare) => {
-    return arr.filter(el => el.music.objectif?.includes(strCompare))
+    return arr.filter(el => el.music.search.objectif?.includes(strCompare))
   }
 
   useEffect(() => {
@@ -71,18 +75,27 @@ const Annuaire = ({ setIsHomePage }) => {
     result = creteria.style ? filter2(result, creteria.style) : result
     result = creteria.experience ? filter3(result, creteria.experience) : result
     result = creteria.location ? filter4(result, creteria.location) : result
+<<<<<<< HEAD
     result = creteria.goal ? filter5(result, creteria.goal) : result
 
     setCreteria(creteria)
     setProfilesFilter(result)
     setNoCreteria(noCreteria)
     setDeso(true)
+=======
+    result = creteria.objectif ? filter5(result, creteria.objectif) : result
+    setCreteria(creteria)
+    setProfilesFilter(result)
+    setNoCreteria(noCreteria)
+    setNoResult(true)
+>>>>>>> dev
   }
 
   return (
     <div className='container-80'>
-      <h1>Bienvenue sur le groupe de recherche de musiciens n°1 !</h1>
-
+      <div className='titleForm1'>
+        <h1>Bienvenue sur le groupe de recherche de musiciens n°1 !</h1>
+      </div>
       <Formulaire setDisplayMOrG={setDisplayMOrG} isCheck={checkCreteria} />
       <div className='title1'>
         <h3>Retrouvez vos futurs musiciens sur Rock Your Band ... </h3>
@@ -100,9 +113,16 @@ const Annuaire = ({ setIsHomePage }) => {
                   instrument={profile.music.instrument}
                   experience={profile.music.experience}
                   style={profile.music.style}
+<<<<<<< HEAD
                 />
               ))
             : deso && <p>deso gros</p>}
+=======
+                  objectif={profile.music.search.objectif}
+                />
+              ))
+            : noResult && <p className='noResultAff'>Aucun résultat</p>}
+>>>>>>> dev
           {noCreteria &&
             profiles !== null &&
             profiles.map(profileFiltre => (
@@ -115,6 +135,7 @@ const Annuaire = ({ setIsHomePage }) => {
                 instrument={profileFiltre.music.instrument}
                 experience={profileFiltre.music.experience}
                 style={profileFiltre.music.style}
+                objectif={profileFiltre.music.search.objectif}
               />
             ))}
         </div>
@@ -125,8 +146,7 @@ const Annuaire = ({ setIsHomePage }) => {
       <div className='containerGroupe'>
         {group.map(
           (group, index) =>
-            index < 11 &&
-            (console.log('groupe', group) || (
+            index < 11 && (
               <div className='containerGroupe'>
                 <Profiles
                   key={group.id}
@@ -138,7 +158,7 @@ const Annuaire = ({ setIsHomePage }) => {
                   experience={group.experience}
                 />
               </div>
-            ))
+            )
         )}
 
         <div>
