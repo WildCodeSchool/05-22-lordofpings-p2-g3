@@ -6,14 +6,39 @@ import './Annuaire.css'
 import Profiles from '../components/Profiles'
 
 const Annuaire = ({ setIsHomePage }) => {
-  const [isDisplayMap, setIsDisplayMap] = useState(false)
   const [profiles, setProfiles] = useState([])
-  const [displayMOrG, setDisplayMOrG] = useState('') // étape 1
+  const [displayMOrG, setDisplayMOrG] = useState('') // etape 1
+  const [profilesFilter, setProfilesFilter] = useState([])
   const [group, setGroup] = useState([])
-  const [dataCreteria, setDataCreteria] = useState('Tours')
-  const [instCreteria, setInstCriteria] = useState('Piano')
-  const [nivCreteria, setNivCreteria] = useState('débutant')
-  const [styleCreteria, setStyleCreteria] = useState('Jazz')
+
+  const [noCreteria, setNoCreteria] = useState(true)
+  const [creteria, setCreteria] = useState({
+    instrument: '',
+    experience: '',
+    style: '',
+    location: '',
+    goal: ''
+  })
+
+  const filter1 = (arr, strCompare) => {
+    return arr.filter(el => el.music.instrument?.includes(strCompare))
+  }
+
+  const filter2 = (arr, strCompare) => {
+    return arr.filter(el => el.music.style?.includes(strCompare))
+  }
+
+  const filter3 = (arr, strCompare) => {
+    return arr.filter(el => el.music.experience?.includes(strCompare))
+  }
+
+  const filter4 = (arr, strCompare) => {
+    return arr.filter(el => el.location.city?.includes(strCompare))
+  }
+
+  const filter5 = (arr, strCompare) => {
+    return arr.filter(el => el.music.objectif?.includes(strCompare))
+  }
 
   useEffect(() => {
     setIsHomePage(false)
@@ -32,57 +57,64 @@ const Annuaire = ({ setIsHomePage }) => {
     const getData = () => {
       fetch('https://kinotonik.github.io/jsonapi/data_groupe.json')
         .then(res => res.json())
-        .then(res => console.log(res) || setGroup(res.results))
+        .then(res => setGroup(res.results))
     }
     getData()
   }, [])
 
-  const checkCreteria = (
-    e,
-    instCreteria,
-    nivCreteria,
-    styleCreteria,
-    dataCreteria
-  ) => {
+  const checkCreteria = (e, creteria, noCreteria) => {
     e.preventDefault()
-    console.log(
-      'appel annuaire',
-      instCreteria,
-      nivCreteria,
-      styleCreteria,
-      dataCreteria
-    )
-    setInstCriteria(instCreteria)
-    setNivCreteria(nivCreteria)
-    setStyleCreteria(styleCreteria)
-    setDataCreteria(dataCreteria)
+
+    let result = profiles
+    result = creteria.instrument ? filter1(result, creteria.instrument) : result
+    result = creteria.style ? filter2(result, creteria.style) : result
+    result = creteria.experience ? filter3(result, creteria.experience) : result
+    result = creteria.location ? filter4(result, creteria.location) : result
+    result = creteria.goal ? filter5(result, creteria.goal) : result
+    setCreteria(creteria)
+    setProfilesFilter(result)
+    setNoCreteria(noCreteria)
   }
 
   return (
     <div className='container-80'>
       <h1>Bienvenue sur le groupe de recherche de musiciens n°1 !</h1>
 
-      <Formulaire setDisplayMOrG={setDisplayMOrG} />
+      <Formulaire setDisplayMOrG={setDisplayMOrG} isCheck={checkCreteria} />
       <div className='title1'>
         <h3>Retrouvez vos futurs musiciens sur Rock Your Band ... </h3>
       </div>
       <div className='containerSolo'>
-        {profiles.map(
-          (profile, index) =>
-            index < 10 && (
-              <div className='containerSolo'>
-                <Profiles
-                  key={profile.id}
-                  id={profile.id}
-                  name={profile.name.first}
-                  image={profile.picture.large}
-                  location={profile.location.city}
-                  instrument={profile.music.instrument}
-                  experience={profile.music.expérience}
-                />
-              </div>
-            )
-        )}
+        <div className='containerSolo'>
+          {!noCreteria &&
+            profilesFilter.length &&
+            profilesFilter.map(profile => (
+              <Profiles
+                key={profile.id}
+                id={profile.id}
+                name={profile.name.first}
+                image={profile.picture.large}
+                location={profile.location.city}
+                instrument={profile.music.instrument}
+                experience={profile.music.experience}
+                style={profile.music.style}
+              />
+            ))}
+          {noCreteria &&
+            profiles !== null &&
+            profiles.map(profileFiltre => (
+              <Profiles
+                key={profileFiltre.id}
+                id={profileFiltre.id}
+                name={profileFiltre.name.first}
+                image={profileFiltre.picture.large}
+                location={profileFiltre.location.city}
+                instrument={profileFiltre.music.instrument}
+                experience={profileFiltre.music.expérience}
+                style={profileFiltre.music.style}
+              />
+            ))}
+        </div>
       </div>
       <div className='title2'>
         <h3>Ou votre futur groupe de musique ... </h3>
@@ -90,7 +122,7 @@ const Annuaire = ({ setIsHomePage }) => {
       <div className='containerGroupe'>
         {group.map(
           (group, index) =>
-            index < 10 &&
+            index < 11 &&
             (console.log('groupe', group) || (
               <div className='containerGroupe'>
                 <Profiles

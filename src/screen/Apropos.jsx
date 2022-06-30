@@ -6,9 +6,8 @@ import axios from 'axios'
 import DisplayDev from '../components/DisplayDev'
 import AudioPlayer from '../components/AudioPlayer'
 import audio1 from '../assets/sounds/test.mp3'
-import audio2 from '../assets/sounds/urban-beat-20679.mp3'
-
-// import './Apropos.css'
+import audio2 from '../assets/sounds/urban-beat.mp3'
+import './Apropos.css'
 
 const Apropos = ({ setIsHomePage }) => {
   const [isactive, setIsactive] = useState(false)

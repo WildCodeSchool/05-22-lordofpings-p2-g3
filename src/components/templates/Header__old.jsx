@@ -1,7 +1,7 @@
 import './Header.css'
 import logo from '../../assets/images/rockYourBand-transparent.png';
 import useSound from 'use-sound'
-import mySound from '../../assets/sounds/urban-beat-20679.mp3';
+import mySound from '../../assets/sounds/urban-beat.mp3';
 
 const Header = () => {
     const [playSound] = useSound(mySound, { volume: 0.5 }) // 70% of the original volume

@@ -11,6 +11,9 @@ import Main from './components/templates/Main'
 import GraphqlPage from './screen/Debug/Graphqlpage'
 
 import './App.css'
+import LoginPage from './screen/LoginPage'
+import Playlist from './screen/PlayList'
+import UserProfil from './screen/UserProfil'
 
 function App({ isDebugMode = true }) {
   const [isHomePage, setIsHomePage] = useState(true)
@@ -36,6 +39,18 @@ function App({ isDebugMode = true }) {
           <Route
             path='/about'
             element={<Apropos setIsHomePage={setIsHomePage} />}
+          />
+          <Route
+            path='/login'
+            element={<LoginPage setIsHomePage={setIsHomePage} />}
+          />
+          <Route
+            path='/user-profil/:id'
+            element={<UserProfil setIsHomePage={setIsHomePage} />}
+          />
+          <Route
+            path='/playlist'
+            element={<Playlist setIsHomePage={setIsHomePage} />}
           />
           <Route
             path='/graphql'

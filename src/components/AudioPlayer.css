@@ -1,7 +1,15 @@
 .player__container{
     color:var(--black-logo);
     background: transparent;
-    border-radius: var(--border-radius-1);
+    background: linear-gradient(45deg, var(--bg-deg-1), var(--bg-deg-2));
+width:300px;
+height:500px;
+    border-radius: 50%;
+
+}
+.player__container img {
+background:url(../assets/images/pause-play-button.png);
+
 }
 
 .player {    
@@ -11,7 +19,21 @@
     padding: 0;
     margin: 0;
 }
-
+.title{
+   background:linear-gradient(45deg,var(--bg-deg-1),var(--bg-deg-2));
+   border-radius:var(--border-radius-1);
+   border:0px solid transparent;
+   margin: 1rem;
+   padding:0.5rem 1rem;
+   color:white;
+   text-shadow: 1px 1px #333;
+   font-weight: 500;
+   font-style: italic;
+}
+.playstop{
+    color:white;
+    margin:1rem 1rem;
+}
 .rotate{
     transition: 0.5s 0s ease-in-out;
     animation: rotating 2s linear infinite;
