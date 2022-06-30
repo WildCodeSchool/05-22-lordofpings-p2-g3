@@ -3,6 +3,7 @@ import './DisplayDev.css'
 
 function DisplayDev({ devName, devDescription, devAvatar, devBck, devBtn }) {
   console.log({ devBck })
+
   return (
     <div>
       <div className='container-apropos'>
@@ -10,7 +11,12 @@ function DisplayDev({ devName, devDescription, devAvatar, devBck, devBtn }) {
           className='banner-apropos'
           style={{ backgroundImage: `url(${devBck})` }}
         ></div>
-        <img className='img-apropos' src={devAvatar} alt={devName} />
+        <img
+          className='img-apropos'
+          src={devAvatar}
+          alt={devName}
+          style={{ width: 240, height: 135 }}
+        />
         <h1 className='name-apropos'>{devName}</h1>
         <p className='description-apropos'>{devDescription}</p>
         <button
