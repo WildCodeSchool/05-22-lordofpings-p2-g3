@@ -1,4 +1,5 @@
 import React from 'react'
+import { MapContainer, TileLayer } from 'react-leaflet'
 import { useEffect, useState } from 'react'
 import { Leaflet } from '../components/Leaflet'
 import Formulaire from '../components/Formulaire'
@@ -10,7 +11,6 @@ const Annuaire = ({ setIsHomePage }) => {
   const [displayMOrG, setDisplayMOrG] = useState('') // etape 1
   const [profilesFilter, setProfilesFilter] = useState([])
   const [group, setGroup] = useState([])
-
   const [noCreteria, setNoCreteria] = useState(true)
   const [creteria, setCreteria] = useState({
     instrument: '',
@@ -19,6 +19,7 @@ const Annuaire = ({ setIsHomePage }) => {
     location: '',
     goal: ''
   })
+  const [deso, setDeso] = useState(false)
 
   const filter1 = (arr, strCompare) => {
     return arr.filter(el => el.music.instrument?.includes(strCompare))
@@ -71,9 +72,11 @@ const Annuaire = ({ setIsHomePage }) => {
     result = creteria.experience ? filter3(result, creteria.experience) : result
     result = creteria.location ? filter4(result, creteria.location) : result
     result = creteria.goal ? filter5(result, creteria.goal) : result
+
     setCreteria(creteria)
     setProfilesFilter(result)
     setNoCreteria(noCreteria)
+    setDeso(true)
   }
 
   return (
@@ -86,20 +89,20 @@ const Annuaire = ({ setIsHomePage }) => {
       </div>
       <div className='containerSolo'>
         <div className='containerSolo'>
-          {!noCreteria &&
-            profilesFilter.length &&
-            profilesFilter.map(profile => (
-              <Profiles
-                key={profile.id}
-                id={profile.id}
-                name={profile.name.first}
-                image={profile.picture.large}
-                location={profile.location.city}
-                instrument={profile.music.instrument}
-                experience={profile.music.experience}
-                style={profile.music.style}
-              />
-            ))}
+          {!noCreteria && profilesFilter.length
+            ? profilesFilter.map(profile => (
+                <Profiles
+                  key={profile.id}
+                  id={profile.id}
+                  name={profile.name.first}
+                  image={profile.picture.large}
+                  location={profile.location.city}
+                  instrument={profile.music.instrument}
+                  experience={profile.music.experience}
+                  style={profile.music.style}
+                />
+              ))
+            : deso && <p>deso gros</p>}
           {noCreteria &&
             profiles !== null &&
             profiles.map(profileFiltre => (
@@ -110,7 +113,7 @@ const Annuaire = ({ setIsHomePage }) => {
                 image={profileFiltre.picture.large}
                 location={profileFiltre.location.city}
                 instrument={profileFiltre.music.instrument}
-                experience={profileFiltre.music.expérience}
+                experience={profileFiltre.music.experience}
                 style={profileFiltre.music.style}
               />
             ))}
@@ -132,15 +135,63 @@ const Annuaire = ({ setIsHomePage }) => {
                   image={group.jacket}
                   location={group.location.city}
                   instrument={group.instrument}
-                  experience={group.expérience}
+                  experience={group.experience}
                 />
               </div>
             ))
         )}
 
         <div>
-          {/* étape 3 passage de la state à la carte */}
-          <Leaflet displayMOrG={displayMOrG} />
+          <>
+            <div className='wrap-leaf'>
+              {
+                <MapContainer
+                  center={[47.389509, 0.693421]}
+                  zoom={10}
+                  scrollWheelZoom={false}
+                >
+                  <TileLayer
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+                  />
+
+                  {!noCreteria && profilesFilter.length
+                    ? profilesFilter.map(profile => (
+                        <Leaflet
+                          key={profile.id}
+                          id={profile.id}
+                          name={profile.name.first}
+                          image={profile.picture.large}
+                          location={profile.location.city}
+                          instrument={profile.music.instrument}
+                          experience={profile.music.experience}
+                          style={profile.music.style}
+                          latitude={profile.location.coordinates.latitude}
+                          longitude={profile.location.coordinates.longitude}
+                        />
+                      ))
+                    : deso && <p>deso gros</p>}
+
+                  {noCreteria &&
+                    profiles !== null &&
+                    profiles.map(profileFiltre => (
+                      <Leaflet
+                        key={profileFiltre.id}
+                        id={profileFiltre.id}
+                        name={profileFiltre.name.first}
+                        image={profileFiltre.picture.large}
+                        location={profileFiltre.location.city}
+                        instrument={profileFiltre.music.instrument}
+                        experience={profileFiltre.music.experience}
+                        style={profileFiltre.music.style}
+                        latitude={profileFiltre.location.coordinates.latitude}
+                        longitude={profileFiltre.location.coordinates.longitude}
+                      />
+                    ))}
+                </MapContainer>
+              }
+            </div>
+          </>
         </div>
       </div>
     </div>
