@@ -12,7 +12,7 @@ const Formulaire = ({ setDisplayMOrG, isCheck }) => {
     location: '',
     objectif: ''
   })
-
+  //const [state, setState] = useState(() => new Set());
   const [locFilter, setLocFilter] = useState([])
   const [instFilter, setInstFilter] = useState([])
   const [nivFilter, setNivFilter] = useState([])
@@ -54,7 +54,14 @@ const Formulaire = ({ setDisplayMOrG, isCheck }) => {
   useEffect(() => {
     fetch('https://kinotonik.github.io/jsonapi/data_musicien.json')
       .then(res => res.json())
-      .then(res => setLocFilter(res.results))
+      .then(res => {
+        let a = res.results.map(el => el.location.city)
+        console.log('ARR MAP', a)
+        a = a.filter((item, index) => a.indexOf(item) === index)
+
+        console.log('FILTRE TEST', a)
+        return setLocFilter(a)
+      })
   }, [])
 
   useEffect(() => {
@@ -80,7 +87,7 @@ const Formulaire = ({ setDisplayMOrG, isCheck }) => {
       .then(res => res.json())
       .then(res => setStyleFilter(res.data))
   }, [])
-  //console.log('stateMaj', creteria)
+
   return (
     <div className='contener'>
       <form className='form'>
@@ -161,8 +168,8 @@ const Formulaire = ({ setDisplayMOrG, isCheck }) => {
               <option value=''>---Type---</option>
               {locFilter.length &&
                 locFilter.map((loc, i) => (
-                  <option key={i} value={loc.location.city}>
-                    {loc.location.city}
+                  <option key={i} value={loc}>
+                    {loc}
                   </option>
                 ))}
             </select>
