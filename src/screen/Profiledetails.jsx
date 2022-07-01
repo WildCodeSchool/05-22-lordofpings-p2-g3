@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import './Profiledetails.css'
+import facebookImg from '../assets/images/logoResaux/facebook.png'
+import instagramImg from '../assets/images/logoResaux/instagram.png'
+import youtubeImg from '../assets/images/logoResaux/youtube.png'
 import pprofile from '../assets/images/tom.jpg'
 import LeafletDetails from '../components/LeafletDetails'
 
@@ -26,105 +29,92 @@ const Profiledetails = ({ setIsHomePage }) => {
     character.length && (
       <>
         {console.log(character)}
-        <div className='wrapper'>
-          <div className='profile'>
-            <div className='profile-detail'>
-              <div>
+        <div className='profile-wrapper'>
+          <div className='profile-container'>
+            <div className='profile-gutter'>
+              <div className='profile-coninfo'>
                 <img
-                  src={character[0].picture.large}
+                  src={character[0].picture.medium}
                   alt='profile photo'
-                  className='pd-image'
+                  className='profile-image'
                 />
               </div>
-              <div className='profile-bio'>
-                <h3>
-                  <span className='colortext'>
-                    Nom: {character[0].name.last}{' '}
-                  </span>
-                </h3>
-                <h3>
-                  <span className='colortext'>
-                    Prénom: {character[0].name.first}{' '}
-                  </span>
-                </h3>
-                <h3>
-                  <span className='colortext'>
-                    Genre: {character[0].music.style}{' '}
-                  </span>
-                </h3>
-                <h3>
-                  <span className='colortext'>
-                    Instrument: {character[0].music.instrument}
-                  </span>
-                </h3>
-                <h3>
-                  <span className='colortext'>
-                    Expérience: {character[0].music.experience}
-                  </span>
-                </h3>
-              </div>
-            </div>
-          </div>
-          <div className='profile'>
-            <div className='profile-detail'>
-              <div className='header-map'>
-                <h2>
-                  <span className='colortext'>
-                    Localisation : {character[0].location.city}
-                  </span>
-                </h2>
-                <div>
-                  <LeafletDetails
-                    key={character[0].id}
-                    latitude={character[0].location.coordinates.latitude}
-                    longitude={character[0].location.coordinates.longitude}
-                  />
+              <div className='profile-info'>
+                <div className='profile-liens'>
+                  <div className='profile-social'>
+                    <div className='profile-name'>
+                      <h3>
+                        {character[0].name.last} {character[0].name.first}
+                      </h3>
+                      <h4>{character[0].age}ans </h4>
+                    </div>
+                    <div className='profile-resbtn'>
+                      <div className='profile-reseaux'>
+                        <div className='profile-resfain'>
+                          <a href='https://www.facebook.com/'>
+                            <img src={facebookImg} alt='logo facebook'></img>
+                          </a>
+                        </div>
+                        <div className='profile-resfain'>
+                          <a href='https://www.instagram.com/?hl=fr'>
+                            <img src={instagramImg} alt='logo twitter'></img>
+                          </a>
+                        </div>
+                        <div className='profile-resyoutub'>
+                          <a href='https://www.youtube.com/'>
+                            <img src={youtubeImg} alt='logo youtube'></img>
+                          </a>
+                        </div>
+                      </div>
+                      <button className='profile-totobtn'>
+                        <span>Contact</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div className='profile-title'>
+                    <h4>Description : </h4>{' '}
+                    <p>{character[0].music.description} </p>
+                  </div>
+                  <div className='profile-cubes'>
+                    <div className='profile-cube1'>
+                      <h4>Genre : </h4>
+                      <h6>{character[0].music.style} </h6>
+                    </div>
+                    <div className='profile-cube2'>
+                      <h4>Instrument: </h4>
+                      <h6>{character[0].music.instrument}</h6>
+                    </div>
+                    <div className='profile-cube3'>
+                      <h4>Recherche:</h4>
+                      <h6>{character[0].music.search.type}</h6>
+                      <h6>{character[0].music.search.niveau}</h6>
+                    </div>
+                    <div className='profile-cube4'>
+                      <h4>Objectif:</h4>
+                      <h6>{character[0].music.search.objectif}</h6>
+                    </div>
+                  </div>
                 </div>
-
-                {/* <img
-                  src='http://www.1france.fr/image/carte-plan-departement/28-eure-et-loir.jpg'
-                  alt='map'
-                  className='map-image'
-                /> */}
-              </div>
-              <div className='profile-bio'>
-                <h3>
-                  <span className='colortext'>Recherche Groupe: Oui</span>
-                </h3>
-                <h3>
-                  <span className='colortext'>Objectif: </span>
-                </h3>
-                <h3>
-                  <span className='colortext'>
-                    Contact: {character[0].contact.email}
-                  </span>
-                </h3>
               </div>
             </div>
           </div>
-          <div className='profile'></div>
-          <div className='profile-fiche'>
-            <h2>
-              <span className='colortext'>Fiche descriptive</span>
-            </h2>
-            <p>
-              <span className='colortext'>
-                Ipsam vero urbem Byzantiorum fuisse refertissimam atque
-                ornatissimam signis quis ignorat? Quae illi, exhausti sumptibus
-                bellisque maximis, cum omnis Mithridaticos impetus totumque
-                Pontum armatum affervescentem in Asiam atque erumpentem.
-              </span>
-            </p>
-            <div className='profile-ifram'>
-              <iframe
-                width='630'
-                height='250'
-                src='https://www.youtube.com/embed/mMFVWgqfO9Q'
-                title="Les béruriers noirs - Salut à toi [live à l'Olympia]"
-                frameBorder='0'
-                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-                allowFullScreen
-              ></iframe>
+          <div className='profile-mappor'>
+            <div className='profile-map'>
+              <h2>Localisation : {character[0].location.city}</h2>
+              <div>
+                <LeafletDetails
+                  key={character[0].id}
+                  latitude={character[0].location.coordinates.latitude}
+                  longitude={character[0].location.coordinates.longitude}
+                />
+              </div>
+            </div>
+            <div className='profile-porfolio'>
+              <h4>Playlist: </h4>
+              <h6>{character[0].music.lien}</h6>
+              <div className='profile-contai'>
+                <i className='fas fa-play'></i>
+              </div>
             </div>
           </div>
         </div>
