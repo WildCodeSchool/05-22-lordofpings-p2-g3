@@ -31,6 +31,18 @@ const Profiles = ({ name, image, id, location, experience, instrument }) => {
           </div>
         </div>
       </div>
+      <div className='details'>
+        <h2 className='name'>{name}</h2>
+        <p>📍 {location}</p>
+        <p>⭐️ {experience}</p>
+        <p>🎶 {instrument.join(', ')}</p>
+      </div>
+      <button
+        className='buttonProfile'
+        onClick={() => navigate(`/profilesdetails/${id}`)}
+      >
+        En savoir plus
+      </button>
     </div>
   )
 }
