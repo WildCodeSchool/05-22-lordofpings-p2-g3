@@ -91,7 +91,7 @@ const Formulaire = ({ setDisplayMOrG, isCheck }) => {
             <select
               id='selectGs'
               className='selectForm'
-              onChange={e => setDisplayMOrG(e.target.value)} // étape 5 utilise la props récupérée en ciblant la valeur de l'input /onChange
+              onChange={e => setDisplayMOrG(e.target.value)} // peut etre changer plus d'interaction avec Leaflet
             >
               <option value=''>---Type---</option>
               <option value='crew'>Groupe</option>
