@@ -22,7 +22,7 @@ const Evenements = ({ setIsHomePage }) => {
   useEffect(() => {
     const getData = () => {
       fetch(
-        'https://gist.githubusercontent.com/letotor/4271dbd3b8ffeccf885b4674807a6f2b/raw/e9b91991918b4e5497f698033560f467e79a261d/data.json'
+        'https://gist.githubusercontent.com/Joshua35260/570274df963631defeac775a4ce472d3/raw/eee1a92e9baa6a36a3a4df3d9cb4f95e01091b83/data.json'
       )
         .then(res => res.json())
         .then(res => console.log(res) || setEvenements(res.data))

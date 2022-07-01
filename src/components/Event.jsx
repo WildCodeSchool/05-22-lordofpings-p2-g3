@@ -4,7 +4,7 @@ import './Event.css'
 const Event = ({ name, image, description, id }) => {
   const linkIdEvent = `/evenement/${id}`
   return (
-    <div className='allEvents'>
+    <>
       <Link to={linkIdEvent}>
         <div className='eventBody'>
           <div className='eventTitle'>
@@ -18,7 +18,7 @@ const Event = ({ name, image, description, id }) => {
           </div>
         </div>
       </Link>
-    </div>
+    </>
   )
 }
 export default Event
