@@ -23,6 +23,7 @@ const UserProfil = ({ setIsHomePage }) => {
       Authorization: 'Bearer ' + token
     }
   }
+  
   console.log(token, `${DIRECTUS_URL}/users/me`)
 
   useEffect(() => {

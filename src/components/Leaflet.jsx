@@ -37,6 +37,7 @@ export const Leaflet = ({ displayMOrG }) => {
     // console.log(data)
   }, [dataG])
 
+  
   return (
     <>
       <div className='wrap-leaf'>

@@ -19,21 +19,17 @@ const SignIn = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [success, setSuccess] = useState(false)
+  const [nextPageRedirect, setNextPageRedirect] = useState(false)
 
   const [generateToken, { data, loading, error }] = useMutation(POST_LOGIN)
   let navigate = useNavigate()
-  const shouldRedirect = false
 
-  useEffect(() => {}, [generateToken])
-
-  useEffect(() => {
-    shouldRedirect && navigate('/')
-  }, [])
+  useEffect(() => { }, [generateToken, data])
 
   const handleSubmit = async event => {
     event.preventDefault()
     // the mutate function also doesn't return a promise
-    
+
     const genToken = await generateToken({ variables: { email, password } })
     if (!error && !loading) {
       localStorage.setItem(
@@ -42,7 +38,7 @@ const SignIn = () => {
       )
       console.log('local', localStorage.getItem('rock-your-band'))
       setSuccess(!success)
-      success && navigate('/', { replace: true })
+      navigate('/')
     }
   }
 
@@ -75,11 +71,7 @@ const SignIn = () => {
               />
 
               <button disabled={loading} type='submit'>
-                {success && !loading && !error ? (
-                  <Link to='/'>Se connecter</Link>
-                ) : (
-                  'Se connecter'
-                )}
+                {!loading && !error && 'Se connecter'}
               </button>
               {loading && <LoadingSpinner className='error' />}
               {error && (
