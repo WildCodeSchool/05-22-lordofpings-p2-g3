@@ -1,4 +1,5 @@
 import React from 'react'
+import { MapContainer, TileLayer } from 'react-leaflet'
 import { useEffect, useState } from 'react'
 import { Leaflet } from '../components/Leaflet'
 import Formulaire from '../components/Formulaire'
@@ -6,14 +7,40 @@ import './Annuaire.css'
 import Profiles from '../components/Profiles'
 
 const Annuaire = ({ setIsHomePage }) => {
-  const [isDisplayMap, setIsDisplayMap] = useState(false)
   const [profiles, setProfiles] = useState([])
   const [displayMOrG, setDisplayMOrG] = useState('') // etape 1
+  const [profilesFilter, setProfilesFilter] = useState([])
   const [group, setGroup] = useState([])
-  const [dataCreteria, setDataCreteria] = useState('Tours')
-  const [instCreteria, setInstCriteria] = useState('Piano')
-  const [nivCreteria, setNivCreteria] = useState('débutant')
-  const [styleCreteria, setStyleCreteria] = useState('Jazz')
+  const [noResult, setNoResult] = useState(false)
+  const [noCreteria, setNoCreteria] = useState(true)
+  const [creteria, setCreteria] = useState({
+    instrument: '',
+    experience: '',
+    style: '',
+    location: '',
+    objectif: ''
+  })
+  const [deso, setDeso] = useState(false)
+
+  const filter1 = (arr, strCompare) => {
+    return arr.filter(el => el.music.instrument?.includes(strCompare))
+  }
+
+  const filter2 = (arr, strCompare) => {
+    return arr.filter(el => el.music.style?.includes(strCompare))
+  }
+
+  const filter3 = (arr, strCompare) => {
+    return arr.filter(el => el.music.experience?.includes(strCompare))
+  }
+
+  const filter4 = (arr, strCompare) => {
+    return arr.filter(el => el.location.city?.includes(strCompare))
+  }
+
+  const filter5 = (arr, strCompare) => {
+    return arr.filter(el => el.music.search.objectif?.includes(strCompare))
+  }
 
   useEffect(() => {
     setIsHomePage(false)
@@ -32,45 +59,39 @@ const Annuaire = ({ setIsHomePage }) => {
     const getData = () => {
       fetch('https://kinotonik.github.io/jsonapi/data_groupe.json')
         .then(res => res.json())
-        .then(res => console.log(res) || setGroup(res.results))
+        .then(res => setGroup(res.results))
     }
     getData()
   }, [])
 
-  const checkCreteria = (
-    e,
-    instCreteria,
-    nivCreteria,
-    styleCreteria,
-    dataCreteria
-  ) => {
+  const checkCreteria = (e, creteria, noCreteria) => {
     e.preventDefault()
-    console.log(
-      'appel annuaire',
-      instCreteria,
-      nivCreteria,
-      styleCreteria,
-      dataCreteria
-    )
-    setInstCriteria(instCreteria)
-    setNivCreteria(nivCreteria)
-    setStyleCreteria(styleCreteria)
-    setDataCreteria(dataCreteria)
+
+    let result = profiles
+    result = creteria.instrument ? filter1(result, creteria.instrument) : result
+    result = creteria.style ? filter2(result, creteria.style) : result
+    result = creteria.experience ? filter3(result, creteria.experience) : result
+    result = creteria.location ? filter4(result, creteria.location) : result
+    result = creteria.objectif ? filter5(result, creteria.objectif) : result
+    setCreteria(creteria)
+    setProfilesFilter(result)
+    setNoCreteria(noCreteria)
+    setNoResult(true)
   }
 
   return (
     <div className='container-80'>
-      <h1>Bienvenue sur le groupe de recherche de musiciens n°1 !</h1>
-
-      <Formulaire setDisplayMOrG={setDisplayMOrG} />
+      <div className='titleForm1'>
+        <h1>Bienvenue sur le groupe de recherche de musiciens n°1 !</h1>
+      </div>
+      <Formulaire setDisplayMOrG={setDisplayMOrG} isCheck={checkCreteria} />
       <div className='title1'>
         <h3>Retrouvez vos futurs musiciens sur Rock Your Band ... </h3>
       </div>
-      <div className='box-container'>
-        {profiles.map(
-          (profile, index) =>
-            index < 10 && (
-              <div className=''>
+      <div className='containerSolo'>
+        <div className='containerSolo'>
+          {!noCreteria && profilesFilter.length
+            ? profilesFilter.map(profile => (
                 <Profiles
                   key={profile.id}
                   id={profile.id}
@@ -79,10 +100,27 @@ const Annuaire = ({ setIsHomePage }) => {
                   location={profile.location.city}
                   instrument={profile.music.instrument}
                   experience={profile.music.experience}
+                  style={profile.music.style}
+                  objectif={profile.music.search.objectif}
                 />
-              </div>
-            )
-        )}
+              ))
+            : noResult && <p className='noResultAff'>Aucun résultat</p>}
+          {noCreteria &&
+            profiles !== null &&
+            profiles.map(profileFiltre => (
+              <Profiles
+                key={profileFiltre.id}
+                id={profileFiltre.id}
+                name={profileFiltre.name.first}
+                image={profileFiltre.picture.large}
+                location={profileFiltre.location.city}
+                instrument={profileFiltre.music.instrument}
+                experience={profileFiltre.music.experience}
+                style={profileFiltre.music.style}
+                objectif={profileFiltre.music.search.objectif}
+              />
+            ))}
+        </div>
       </div>
       <div className='title2'>
         <h3>Ou votre futur groupe de musique ... </h3>
@@ -90,9 +128,8 @@ const Annuaire = ({ setIsHomePage }) => {
       <div className=''>
         {group.map(
           (group, index) =>
-            index < 10 &&
-            (console.log('groupe', group) || (
-              <div className=''>
+            index < 11 && (
+              <div className='containerGroupe'>
                 <Profiles
                   key={group.id}
                   id={group.id}
@@ -100,15 +137,63 @@ const Annuaire = ({ setIsHomePage }) => {
                   image={group.jacket}
                   location={group.location.city}
                   instrument={group.instrument}
-                  experience={group.expérience}
+                  experience={group.experience}
                 />
               </div>
-            ))
+            )
         )}
 
         <div>
-          {/* étape 3 passage de la state à la carte */}
-          <Leaflet displayMOrG={displayMOrG} />
+          <>
+            <div className='wrap-leaf'>
+              {
+                <MapContainer
+                  center={[47.389509, 0.693421]}
+                  zoom={10}
+                  scrollWheelZoom={false}
+                >
+                  <TileLayer
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+                  />
+
+                  {!noCreteria && profilesFilter.length
+                    ? profilesFilter.map(profile => (
+                        <Leaflet
+                          key={profile.id}
+                          id={profile.id}
+                          name={profile.name.first}
+                          image={profile.picture.large}
+                          location={profile.location.city}
+                          instrument={profile.music.instrument}
+                          experience={profile.music.experience}
+                          style={profile.music.style}
+                          latitude={profile.location.coordinates.latitude}
+                          longitude={profile.location.coordinates.longitude}
+                        />
+                      ))
+                    : deso && <p>deso gros</p>}
+
+                  {noCreteria &&
+                    profiles !== null &&
+                    profiles.map(profileFiltre => (
+                      <Leaflet
+                        key={profileFiltre.id}
+                        id={profileFiltre.id}
+                        name={profileFiltre.name.first}
+                        image={profileFiltre.picture.large}
+                        location={profileFiltre.location.city}
+                        instrument={profileFiltre.music.instrument}
+                        experience={profileFiltre.music.experience}
+                        style={profileFiltre.music.style}
+                        latitude={profileFiltre.location.coordinates.latitude}
+                        longitude={profileFiltre.location.coordinates.longitude}
+                      />
+                    ))}
+                </MapContainer>
+              }
+            </div>
+          </>
         </div>
       </div>
     </div>

@@ -59,7 +59,7 @@ const Profiledetails = ({ setIsHomePage }) => {
                 </h3>
                 <h3>
                   <span className='colortext'>
-                    Expérience: {character[0].music.expérience}
+                    Expérience: {character[0].music.experience}
                   </span>
                 </h3>
               </div>

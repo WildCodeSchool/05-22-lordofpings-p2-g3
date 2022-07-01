@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 const Profiles = ({ name, image, id, location, experience, instrument }) => {
   let navigate = useNavigate()
+  //console.log({ name, image, id, location, experience, instrument })
   return (
     <div className='box-item'>
       <div className='flip-box'>
