@@ -34,7 +34,7 @@ const SignIn = () => {
     if (!error && !loading) {
       localStorage.setItem(
         'rock-your-band',
-        JSON.stringify(data.auth_login.access_token)
+        JSON.stringify(data?.auth_login.access_token)
       )
       console.log('local', localStorage.getItem('rock-your-band'))
       setSuccess(!success)
@@ -71,7 +71,7 @@ const SignIn = () => {
               />
 
               <button disabled={loading} type='submit'>
-                {!loading && !error && 'Se connecter'}
+                {'Se connecter'}
               </button>
               {loading && <LoadingSpinner className='error' />}
               {error && (
