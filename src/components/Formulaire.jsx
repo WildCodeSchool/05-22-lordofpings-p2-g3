@@ -75,6 +75,7 @@ const Formulaire = ({ setDisplayMOrG, isCheck }) => {
       .then(res => setStyleFilter(res.data))
   }, [])
   console.log('stateMaj', creteria)
+
   return (
     <div className='contener'>
       <form className='form'>
