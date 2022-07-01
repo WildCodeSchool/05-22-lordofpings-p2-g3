@@ -125,7 +125,7 @@ const Annuaire = ({ setIsHomePage }) => {
       <div className='title2'>
         <h3>Ou votre futur groupe de musique ... </h3>
       </div>
-      <div className='containerGroupe'>
+      <div className=''>
         {group.map(
           (group, index) =>
             index < 11 && (
