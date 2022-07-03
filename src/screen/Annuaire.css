@@ -27,3 +27,18 @@
 
         text-align: center;
     }
+
+    .containerCard {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+
+    .titleCard {
+    text-align: center;
+    text-align: center;
+    margin-top: 4rem;
+    font-size:xx-large
+    }
