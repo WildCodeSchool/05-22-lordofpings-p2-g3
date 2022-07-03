@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
-import './Event.css'
-
-const Event = ({ name, image, description, id }) => {
+import './Events.css'
+import { useNavigate } from 'react-router-dom'
+const Events = ({ name, image, description, id }) => {
   const linkIdEvent = `/evenement/${id}`
   return (
     <>
@@ -16,9 +16,10 @@ const Event = ({ name, image, description, id }) => {
           <div className='eventDescription'>
             <p>{description}</p>
           </div>
+          <div></div>
         </div>
       </Link>
     </>
   )
 }
-export default Event
+export default Events

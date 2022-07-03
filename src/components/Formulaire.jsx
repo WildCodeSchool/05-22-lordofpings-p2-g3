@@ -71,6 +71,12 @@ const Formulaire = ({ setDisplayMOrG, isCheck }) => {
   }, [])
 
   useEffect(() => {
+    fetch('https://yv3o2geh.directus.app/items/objectif')
+      .then(res => res.json())
+      .then(res => setObjFilter(res.data))
+  }, [])
+
+  useEffect(() => {
     fetch('https://yv3o2geh.directus.app/items/instruments')
       .then(res => res.json())
       .then(res => setInstFilter(res.data))
@@ -98,7 +104,7 @@ const Formulaire = ({ setDisplayMOrG, isCheck }) => {
             <select
               id='selectGs'
               className='selectForm'
-              onChange={e => setDisplayMOrG(e.target.value)} // étape 5 utilise la props récupérée en ciblant la valeur de l'input /onChange
+              onChange={e => setDisplayMOrG(e.target.value)} // peut etre changer plus d'interaction avec Leaflet
             >
               <option value=''>---Type---</option>
               <option value='crew'>Groupe</option>

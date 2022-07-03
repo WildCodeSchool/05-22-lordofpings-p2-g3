@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import Event from '../components/Event'
+import Events from '../components/Events'
 import { Leaflet } from '../components/Leaflet'
 import './Evenements.css'
 
@@ -61,7 +61,7 @@ const Evenements = ({ setIsHomePage }) => {
       </form>
       <div className='GaleryEvenements'>
         {evenements.map(evenement => (
-          <Event
+          <Events
             key={evenement.id}
             name={evenement.name}
             image={evenement.image}
