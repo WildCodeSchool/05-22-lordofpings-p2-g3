@@ -67,16 +67,26 @@ const Header = ({ isHomePage = false, isDebugMode = false }) => {
                           &Eacute;venements
                         </NavLink>
                       </li>
-                      {/* <li>
-                      <NavLink
-                        to='/profilesdetails'
-                        className={({ isActive }) =>
-                          isActive ? 'active' : undefined
-                        }
-                      >
-                        ProfDeTails
-                      </NavLink>
-                    </li> */}
+                      <li>
+                        <NavLink
+                          to='/about'
+                          className={({ isActive }) =>
+                            isActive ? 'active' : undefined
+                          }
+                        >
+                          A propos
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to='/contact'
+                          className={({ isActive }) =>
+                            isActive ? 'btn-active' : 'btn-inactive'
+                          }
+                        >
+                          Contact
+                        </NavLink>
+                      </li>
                     </ul>
                   </div>
 
@@ -167,6 +177,26 @@ const Header = ({ isHomePage = false, isDebugMode = false }) => {
                     }
                   >
                     &Eacute;venements
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to='/about'
+                    className={({ isActive }) =>
+                      isActive ? 'active' : undefined
+                    }
+                  >
+                    A propos
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to='/contact'
+                    className={({ isActive }) =>
+                      isActive ? 'btn-active' : 'btn-inactive'
+                    }
+                  >
+                    Contact
                   </NavLink>
                 </li>
               </ul>
