@@ -17,7 +17,6 @@ export const Leaflet = ({
   let navigate = useNavigate()
   // const position = [47.389509, 0.693421]
 
-  
   return (
     <>
       <Marker key={id} position={[latitude, longitude]}>
