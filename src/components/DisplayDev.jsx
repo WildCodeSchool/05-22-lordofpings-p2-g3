@@ -21,7 +21,7 @@ function DisplayDev({ devName, devDescription, devAvatar, devBck, devBtn }) {
         <p className='description-apropos'>{devDescription}</p>
         <button
           className='btn-apropos'
-          onClick={() => (location.href = `${devBtn}`)}
+          onClick={() => window.open(`${devBtn}`, '_blank')}
         >
           Ma musique
         </button>

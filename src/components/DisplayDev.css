@@ -1,6 +1,8 @@
 .bigwrapper-apropos {
   background-color:#0d1117;
   padding-bottom: 16px;
+
+
 }
 
 /* ***************parallax*************** */
@@ -10,7 +12,9 @@ overflow-y: auto;
 overflow-x: hidden;
 perspective: 10px;
 }
-
+.wrapper-parallax::-webkit-scrollbar {
+  display: none;
+}
 .header-apropos{
   position: relative;
   display: flex;
