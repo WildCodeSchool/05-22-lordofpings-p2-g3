@@ -7,6 +7,8 @@
   margin-bottom: 20px;
   width: 20rem;
   border-radius: 25px;
+  max-height: 45vh;
+  min-height: 60vh;
 }
 
 
@@ -43,7 +45,7 @@
   background-size: 300% 100%;
 
   border-radius: 50px;
-  moz-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
   -o-transition: all .4s ease-in-out;
   -webkit-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
@@ -51,7 +53,7 @@
 
 .buttonProfile:hover {
   background-position: 100% 0;
-  moz-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
   -o-transition: all .4s ease-in-out;
   -webkit-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
@@ -87,5 +89,22 @@
 @media (min-width: 1200px) {
   .container {
     max-width: 1040px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .containerSolo {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .card {
+    max-height: 63vh;
+    min-height: 60vh;
+
   }
 }
