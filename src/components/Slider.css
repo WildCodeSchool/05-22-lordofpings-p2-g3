@@ -9,11 +9,16 @@
 }
 .carousel .slide img {
   object-fit: cover;
-  max-height: 380px;
-  max-width: 1000px;
+  height: 60vh;
+  width: 90vw;
+  
 }
+
 .overlay_title {
  
+}
+.carousel.carousel-slider .control-arrow {
+  display: none;
 }
 .overlay_flex {
   display: flex;
