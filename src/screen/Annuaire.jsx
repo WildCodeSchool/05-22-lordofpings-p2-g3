@@ -92,40 +92,37 @@ const Annuaire = ({ setIsHomePage }) => {
       </div>
       <div className='elment-annuaire'>
         <div className='containerSolo'>
-          <div className='containerSolo'>
-            {!noCreteria && profilesFilter.length
-              ? profilesFilter.map(profile => (
-                  <Profiles
-                    key={profile.id}
-                    id={profile.id}
-                    name={profile.name.first}
-                    image={profile.picture.large}
-                    location={profile.location.city}
-                    instrument={profile.music.instrument}
-                    experience={profile.music.experience}
-                    style={profile.music.style}
-                    objectif={profile.music.search.objectif}
-                  />
-                ))
-              : noResult && <p className='noResultAff'>Aucun résultat</p>}
-            {noCreteria &&
-              profiles !== null &&
-              profiles.map(profileFiltre => (
+          {!noCreteria && profilesFilter.length
+            ? profilesFilter.map(profile => (
                 <Profiles
-                  key={profileFiltre.id}
-                  id={profileFiltre.id}
-                  name={profileFiltre.name.first}
-                  image={profileFiltre.picture.large}
-                  location={profileFiltre.location.city}
-                  instrument={profileFiltre.music.instrument}
-                  experience={profileFiltre.music.experience}
-                  style={profileFiltre.music.style}
-                  objectif={profileFiltre.music.search.objectif}
+                  key={profile.id}
+                  id={profile.id}
+                  name={profile.name.first}
+                  image={profile.picture.large}
+                  location={profile.location.city}
+                  instrument={profile.music.instrument}
+                  experience={profile.music.experience}
+                  style={profile.music.style}
+                  objectif={profile.music.search.objectif}
                 />
-              ))}
-          </div>
+              ))
+            : noResult && <p className='noResultAff'>Aucun résultat</p>}
+          {noCreteria &&
+            profiles !== null &&
+            profiles.map(profileFiltre => (
+              <Profiles
+                key={profileFiltre.id}
+                id={profileFiltre.id}
+                name={profileFiltre.name.first}
+                image={profileFiltre.picture.large}
+                location={profileFiltre.location.city}
+                instrument={profileFiltre.music.instrument}
+                experience={profileFiltre.music.experience}
+                style={profileFiltre.music.style}
+                objectif={profileFiltre.music.search.objectif}
+              />
+            ))}
         </div>
-
         <div>
           <>
             <div className='wrap-leaf'>
