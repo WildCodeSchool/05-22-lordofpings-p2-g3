@@ -7,9 +7,9 @@
 }
 .eventImage img {
 	display: flex;
-	
-  max-height: 400px;
-	background-image: contain;
+	object-fit: cover;
+  height: 400px;
+	width: 500px;
 }
 .eventBody {
 	
@@ -25,26 +25,31 @@
 	border-color: tomato;
 	border-style: solid;
 	transition: 200ms;
-  max-width: 500px;
-	max-height: 800px;
+  width: 500px;
+	height: 600px;
+  max-height: 600px;
 	margin: 20px;
 	flex-wrap: wrap;
-	
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  
 }
 .eventDescription p {
 	display: flex;
-	max-height: 250px;
 	font-size: 1.2rem;
   flex-wrap: wrap;
 	text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis; 
 
 }
 .eventDescription {
 	display: flex;
 	flex-wrap: wrap;
-	text-overflow:ellipsis;
-	max-height: 250px;
-	position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin:auto;
+	
 
 
 }
