@@ -61,6 +61,10 @@ function App({ isDebugMode = true }) {
             path='/graphql'
             element={<GraphqlPage setIsHomePage={setIsHomePage} />}
           />
+          <Route
+            path='/contact'
+            element={<EventDetails setIsHomePage={setIsHomePage} />}
+          />
         </Routes>
       </Main>
 
