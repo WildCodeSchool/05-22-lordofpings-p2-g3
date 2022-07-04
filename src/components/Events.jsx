@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
-import './Event.css'
+import './Events.css'
 
-const Event = ({ name, image, description, id }) => {
+const Events = ({ name, image, description, id }) => {
   const linkIdEvent = `/evenement/${id}`
+  const imgUrl = `https://yv3o2geh.directus.app/assets/${image}`
   return (
     <>
       <Link to={linkIdEvent}>
@@ -11,14 +12,15 @@ const Event = ({ name, image, description, id }) => {
             <p>{name}</p>
           </div>
           <div className='eventImage'>
-            <img src={image} alt={name} className='cardEventImg' />
+            <img src={imgUrl} alt={name} className='cardEventImg' />
           </div>
           <div className='eventDescription'>
             <p>{description}</p>
           </div>
+          <div></div>
         </div>
       </Link>
     </>
   )
 }
-export default Event
+export default Events

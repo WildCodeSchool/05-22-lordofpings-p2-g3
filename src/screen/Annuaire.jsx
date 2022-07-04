@@ -124,6 +124,7 @@ const Annuaire = ({ setIsHomePage }) => {
           </div>
         </div>
 
+
         <div>
           <>
             <div className='wrap-leaf'>
