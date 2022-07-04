@@ -90,61 +90,49 @@ const Annuaire = ({ setIsHomePage }) => {
           <h3>Retrouvez vos futurs musiciens sur Rock Your Band ... </h3>
         </div>
       </div>
-      <div className='containerCard'>
-        {!noCreteria && profilesFilter.length
-          ? profilesFilter.map(profile => (
-              <Profiles
-                key={profile.id}
-                id={profile.id}
-                name={profile.name.first}
-                image={profile.picture.large}
-                location={profile.location.city}
-                instrument={profile.music.instrument}
-                experience={profile.music.experience}
-                style={profile.music.style}
-                objectif={profile.music.search.objectif}
-              />
-            ))
-          : noResult && <p className='noResultAff'>Aucun résultat</p>}
-        {noCreteria &&
-          profiles !== null &&
-          profiles.map(profileFiltre => (
-            <Profiles
-              key={profileFiltre.id}
-              id={profileFiltre.id}
-              name={profileFiltre.name.first}
-              image={profileFiltre.picture.large}
-              location={profileFiltre.location.city}
-              instrument={profileFiltre.music.instrument}
-              experience={profileFiltre.music.experience}
-              style={profileFiltre.music.style}
-              objectif={profileFiltre.music.search.objectif}
-            />
-          ))}
-      </div>
-      <div className='titleCard'>
-        <h3>Ou votre futur groupe de musique ... </h3>
-      </div>
-      <div className='containerCard'>
-        {group.map((group, index) => (
-          <Profiles
-            key={group.id}
-            id={group.id}
-            name={group.name}
-            image={group.jacket}
-            location={group.location.city}
-            instrument={group.instrument}
-            experience={group.experience}
-          />
-        ))}
+      <div className='elment-annuaire'>
+        <div className='containerSolo'>
+          <div className='containerSolo'>
+            {!noCreteria && profilesFilter.length
+              ? profilesFilter.map(profile => (
+                  <Profiles
+                    key={profile.id}
+                    id={profile.id}
+                    name={profile.name.first}
+                    image={profile.picture.large}
+                    location={profile.location.city}
+                    instrument={profile.music.instrument}
+                    experience={profile.music.experience}
+                    style={profile.music.style}
+                    objectif={profile.music.search.objectif}
+                  />
+                ))
+              : noResult && <p className='noResultAff'>Aucun résultat</p>}
+            {noCreteria &&
+              profiles !== null &&
+              profiles.map(profileFiltre => (
+                <Profiles
+                  key={profileFiltre.id}
+                  id={profileFiltre.id}
+                  name={profileFiltre.name.first}
+                  image={profileFiltre.picture.large}
+                  location={profileFiltre.location.city}
+                  instrument={profileFiltre.music.instrument}
+                  experience={profileFiltre.music.experience}
+                  style={profileFiltre.music.style}
+                  objectif={profileFiltre.music.search.objectif}
+                />
+              ))}
+          </div>
+        </div>
 
         <div>
           <>
             <div className='wrap-leaf'>
               {
                 <MapContainer
-                  center={[47.389509, 0.693421]}
-                  zoom={10}
+                  center={[49.837965, 6.057441]}
+                  zoom={5}
                   scrollWheelZoom={false}
                 >
                   <TileLayer
@@ -190,6 +178,27 @@ const Annuaire = ({ setIsHomePage }) => {
             </div>
           </>
         </div>
+      </div>
+      <div className='title2'>
+        <h3>Ou votre futur groupe de musique ... </h3>
+      </div>
+      <div className='containerGroupe'>
+        {group.map(
+          (group, index) =>
+            index < 11 && (
+              <div className='containerGroupe'>
+                <Profiles
+                  key={group.id}
+                  id={group.id}
+                  name={group.name}
+                  image={group.jacket}
+                  location={group.location.city}
+                  instrument={group.instrument}
+                  experience={group.experience}
+                />
+              </div>
+            )
+        )}
       </div>
     </div>
   )

@@ -11,7 +11,7 @@ export const LeafletDetails = ({ latitude, longitude, id }) => {
     <div className='lf-David'>
       {
         <MapContainer
-          style={{ width: '250px', height: '250px', margin: '0px' }}
+          style={{ width: '450px', height: '450px', margin: '0px' }}
           center={position}
           zoom={10}
           scrollWheelZoom={true}

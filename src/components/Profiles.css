@@ -7,12 +7,46 @@ html {
   box-sizing: inherit;
 }
 
+.card {
+  padding: 30px;
+  border: solid 1px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  background-color: white;
+  color:black;
+  margin-bottom: 20px;
+  width: 20rem;
+  border-radius: 25px;
+  max-height: 45vh;
+  min-height: 60vh;
+}
+
+
 .text-center {
   text-align: center;
 }
 
 .color-white {
   color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+
+  border-radius: 50px;
+  -moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.buttonProfile:hover {
+  background-position: 100% 0;
+  -moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
 }
 
 @media screen and (min-width:1380px) {
@@ -20,6 +54,9 @@ html {
     flex-direction: row
   }
 }
+
+
+
 
 .box-item {
   position: relative;
@@ -134,4 +171,21 @@ html {
   width: auto;
   height: 600px;
   object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+  
+.containerSolo {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 10px;
+}
+.card {
+  max-height: 63vh;
+  min-height: 60vh;
+
+}
 }
