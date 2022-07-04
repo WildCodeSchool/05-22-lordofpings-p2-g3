@@ -80,17 +80,15 @@ const Annuaire = ({ setIsHomePage }) => {
   }
 
   return (
-    <div>
-      <div className='container-80'>
-        <div className='titleForm1'>
-          <h1>Bienvenue sur le groupe de recherche de musiciens n°1 !</h1>
-        </div>
-        <Formulaire setDisplayMOrG={setDisplayMOrG} isCheck={checkCreteria} />
-        <div className='titleCard'>
-          <h3>Retrouvez vos futurs musiciens sur Rock Your Band ... </h3>
-        </div>
+    <div className='container-80'>
+      <div className='titleForm1'>
+        <h1>Bienvenue sur le groupe de recherche de musiciens n°1 !</h1>
       </div>
-      <div className='elment-annuaire'>
+      <Formulaire setDisplayMOrG={setDisplayMOrG} isCheck={checkCreteria} />
+      <div className='title1'>
+        <h3>Retrouvez vos futurs musiciens sur Rock Your Band ... </h3>
+      </div>
+      <div className='tout'>
         <div className='containerSolo'>
           <div className='containerSolo'>
             {!noCreteria && profilesFilter.length
