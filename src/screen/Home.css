@@ -49,3 +49,7 @@
  /* .main{
     margin-top:45vh;
 } */
+
+.container__section-deux{
+    background-color: var(--bg-deg-2);
+}
