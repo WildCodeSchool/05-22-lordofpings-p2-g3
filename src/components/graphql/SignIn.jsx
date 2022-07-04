@@ -24,7 +24,7 @@ const SignIn = () => {
   const [generateToken, { data, loading, error }] = useMutation(POST_LOGIN)
   let navigate = useNavigate()
 
-  useEffect(() => { }, [generateToken, data])
+  useEffect(() => {}, [generateToken, data])
 
   const handleSubmit = async event => {
     event.preventDefault()
@@ -34,7 +34,7 @@ const SignIn = () => {
     if (!error && !loading) {
       localStorage.setItem(
         'rock-your-band',
-        JSON.stringify(data?.auth_login.access_token)
+        JSON.stringify(data.auth_login.access_token)
       )
       console.log('local', localStorage.getItem('rock-your-band'))
       setSuccess(!success)
