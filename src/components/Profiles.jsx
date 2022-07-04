@@ -9,7 +9,7 @@ const Profiles = ({ name, image, id, location, experience, instrument }) => {
     <div className='box-item'>
       <div className='flip-box'>
         <div className='flip-box-front text-center'>
-          <img src={image} alt={name} />
+          <img src={image} alt={name} className='flip-image' />
           <div className='inner color-white'>
             <h3 className='flip-box-header'>{name}</h3>
             <p>📍 {location}</p>
@@ -18,7 +18,7 @@ const Profiles = ({ name, image, id, location, experience, instrument }) => {
           </div>
         </div>
         <div className='flip-box-back text-center'>
-          <img src={image} alt={image} />
+          <img src={image} alt={image} className='flip-image' />
           <div className='inner color-white'>
             <h3 className='flip-box-header'>{name}</h3>
             <p>A short sentence describing this callout is.</p>
@@ -31,18 +31,6 @@ const Profiles = ({ name, image, id, location, experience, instrument }) => {
           </div>
         </div>
       </div>
-      <div className='details'>
-        <h2 className='name'>{name}</h2>
-        <p>📍 {location}</p>
-        <p>⭐️ {experience}</p>
-        <p>🎶 {instrument.join(', ')}</p>
-      </div>
-      <button
-        className='buttonProfile'
-        onClick={() => navigate(`/profilesdetails/${id}`)}
-      >
-        En savoir plus
-      </button>
     </div>
   )
 }

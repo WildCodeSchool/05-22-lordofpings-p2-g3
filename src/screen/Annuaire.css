@@ -1,20 +1,4 @@
-/* .container-80 {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    }
-    
-    .div1 { 
-        grid-area: 1 / 1 / 2 / 3; 
-    }
-    .div2 { 
-        grid-area: 2 / 1 / 4 / 2; 
-    }
-    .div3 { 
-        grid-area: 2 / 2 / 4 / 3; 
-    } */
+
 
     .titleForm1 {
         text-align: center;
@@ -24,6 +8,33 @@
     }
 
     .noResultAff {
-
         text-align: center;
+    }
+
+    .containerCard {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+
+    .titleCard {
+    text-align: center;
+    text-align: center;
+    margin-top: 4rem;
+    font-size:xx-large
+    }
+
+    .elment-annuaire{
+        display: grid;
+    grid-template-columns: 2fr 1fr;
+    }
+
+    @media screen and (max-width: 768px) {
+        .elment-annuaire{
+            display: flex;
+            flex-direction: column-reverse;
+        
+        }
     }
