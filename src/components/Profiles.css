@@ -49,30 +49,18 @@ html {
   transition: all .4s ease-in-out;
 }
 
-.box-container {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 35px 15px;
-  width: 100%;
-}
-
 @media screen and (min-width:1380px) {
   .box-container {
     flex-direction: row
   }
 }
 
-@media screen and (max-width: 768px) {
+
 
 
 .box-item {
   position: relative;
-  -webkit-backface-visibility: hidden;
-  width: 415px;
-  margin-bottom: 35px;
-  max-width: 100%;
+  --webkit-backface-visibility: hidden;
 }
 
 .flip-box {
@@ -81,6 +69,8 @@ html {
   -webkit-transform-style: preserve-3d;
   perspective: 1000px;
   -webkit-perspective: 1000px;
+  width: 350px;
+  margin: 20px;
 }
 
 .flip-box-front,
@@ -158,12 +148,10 @@ html {
 }
 
 .flip-box p {
-  font-size: 20px;
+  font-size: 30px;
   line-height: 1.5em;
-}
-
-.flip-box-img {
-  margin-top: 25px;
+  font-weight: 700;
+  text-shadow: 0px 0px 7px rgba(0, 0, 0, 1);
 }
 
 .flip-box-button {
@@ -179,6 +167,14 @@ html {
   text-transform: uppercase;
 }
 
+.flip-image {
+  width: auto;
+  height: 600px;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+  
 .containerSolo {
   display:flex;
   flex-direction: row;
