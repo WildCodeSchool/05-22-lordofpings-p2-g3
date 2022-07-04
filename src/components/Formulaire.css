@@ -25,7 +25,7 @@ justify-content: space-around;
     margin: 10px;
     width: 300px;
     color: white;
-    
+    font-weight: bold;
 }
 .selectForm {
     padding: 6px;
