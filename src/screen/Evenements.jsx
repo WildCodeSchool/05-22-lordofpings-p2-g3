@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import Event from '../components/Event'
+import Events from '../components/Events'
 import { Leaflet } from '../components/Leaflet'
 import './Evenements.css'
 
@@ -21,9 +21,7 @@ const Evenements = ({ setIsHomePage }) => {
 
   useEffect(() => {
     const getData = () => {
-      fetch(
-        'https://gist.githubusercontent.com/Joshua35260/570274df963631defeac775a4ce472d3/raw/eee1a92e9baa6a36a3a4df3d9cb4f95e01091b83/data.json'
-      )
+      fetch('https://yv3o2geh.directus.app/items/evenements/')
         .then(res => res.json())
         .then(res => console.log(res) || setEvenements(res.data))
     }
@@ -48,6 +46,11 @@ const Evenements = ({ setIsHomePage }) => {
           <select className='select-event'>
             <option value='tous'>Tous</option>
             <option value='rock'>Rock</option>
+            <option value='metal'>Metal</option>
+            <option value='electro'>Electro</option>
+            <option value='rap'>Rap</option>
+            <option value='hip-hop'>Hip-Hop</option>
+            <option value='pop'>Pop</option>
             <option value='classic'>Classic</option>
           </select>
           Localisation :
@@ -61,7 +64,7 @@ const Evenements = ({ setIsHomePage }) => {
       </form>
       <div className='GaleryEvenements'>
         {evenements.map(evenement => (
-          <Event
+          <Events
             key={evenement.id}
             name={evenement.name}
             image={evenement.image}

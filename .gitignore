@@ -28,4 +28,4 @@ yarn.lock
 .netlify
 
 # variable environnement
-.env*
+.env
