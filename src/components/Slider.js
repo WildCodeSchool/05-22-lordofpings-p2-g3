@@ -80,9 +80,6 @@ function Slider() {
 
           <div key={slide.id} className='sliderContainer'>
             <img src={`${imgUrl}/${slide.image}`} alt='' />
-            <p>
-              {randomEvent[0]}, {randomEvent[1]}, {randomEvent[2]}
-            </p>
             <h2 className='overlay_title'>{slide.name}</h2>
             <div className='overlay'>
               <div className='slide_text-p'>
