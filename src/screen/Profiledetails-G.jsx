@@ -20,7 +20,7 @@ const Profiledetails = ({ setIsHomePage }) => {
   const { id } = useParams()
   console.log(id)
   useEffect(() => {
-    fetch(`https://kinotonik.github.io/jsonapi/data_musicien.json`)
+    fetch(`https://kinotonik.github.io/jsonapi/data_groupe.json`)
       .then(res => res.json())
       .then(
         res =>

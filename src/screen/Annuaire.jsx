@@ -80,51 +80,49 @@ const Annuaire = ({ setIsHomePage }) => {
   }
 
   return (
-    <div className='container-80'>
-      <div className='titleForm1'>
-        <h1>Bienvenue sur le groupe de recherche de musiciens n°1 !</h1>
-      </div>
-      <Formulaire setDisplayMOrG={setDisplayMOrG} isCheck={checkCreteria} />
-      <div className='title1'>
-        <h3>Retrouvez vos futurs musiciens sur Rock Your Band ... </h3>
-      </div>
-      <div className='tout'>
-        <div className='containerSolo'>
-          <div className='containerSolo'>
-            {!noCreteria && profilesFilter.length
-              ? profilesFilter.map(profile => (
-                  <Profiles
-                    key={profile.id}
-                    id={profile.id}
-                    name={profile.name.first}
-                    image={profile.picture.large}
-                    location={profile.location.city}
-                    instrument={profile.music.instrument}
-                    experience={profile.music.experience}
-                    style={profile.music.style}
-                    objectif={profile.music.search.objectif}
-                  />
-                ))
-              : noResult && <p className='noResultAff'>Aucun résultat</p>}
-            {noCreteria &&
-              profiles !== null &&
-              profiles.map(profileFiltre => (
-                <Profiles
-                  key={profileFiltre.id}
-                  id={profileFiltre.id}
-                  name={profileFiltre.name.first}
-                  image={profileFiltre.picture.large}
-                  location={profileFiltre.location.city}
-                  instrument={profileFiltre.music.instrument}
-                  experience={profileFiltre.music.experience}
-                  style={profileFiltre.music.style}
-                  objectif={profileFiltre.music.search.objectif}
-                />
-              ))}
-          </div>
+    <div>
+      <div className='container-80'>
+        <div className='titleForm1'>
+          <h1>Bienvenue sur le groupe de recherche de musiciens n°1 !</h1>
         </div>
-
-
+        <Formulaire setDisplayMOrG={setDisplayMOrG} isCheck={checkCreteria} />
+        <div className='titleCard'>
+          <h3>Retrouvez vos futurs musiciens sur Rock Your Band ... </h3>
+        </div>
+      </div>
+      <div className='elment-annuaire'>
+        <div className='containerSolo'>
+          {!noCreteria && profilesFilter.length
+            ? profilesFilter.map(profile => (
+                <Profiles
+                  key={profile.id}
+                  id={profile.id}
+                  name={profile.name.first}
+                  image={profile.picture.large}
+                  location={profile.location.city}
+                  instrument={profile.music.instrument}
+                  experience={profile.music.experience}
+                  style={profile.music.style}
+                  objectif={profile.music.search.objectif}
+                />
+              ))
+            : noResult && <p className='noResultAff'>Aucun résultat</p>}
+          {noCreteria &&
+            profiles !== null &&
+            profiles.map(profileFiltre => (
+              <Profiles
+                key={profileFiltre.id}
+                id={profileFiltre.id}
+                name={profileFiltre.name.first}
+                image={profileFiltre.picture.large}
+                location={profileFiltre.location.city}
+                instrument={profileFiltre.music.instrument}
+                experience={profileFiltre.music.experience}
+                style={profileFiltre.music.style}
+                objectif={profileFiltre.music.search.objectif}
+              />
+            ))}
+        </div>
         <div>
           <>
             <div className='wrap-leaf'>

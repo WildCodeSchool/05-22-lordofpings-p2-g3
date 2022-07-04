@@ -1,9 +1,51 @@
-.body-apropos {
-  background-color:rgb(33, 30, 30);
+.bigwrapper-apropos {
+  background-color:#0d1117;
+  padding-bottom: 16px;
+}
+
+/* ***************parallax*************** */
+.wrapper-parallax {
+height: 100vh;
+overflow-y: auto;
+overflow-x: hidden;
+perspective: 10px;
+}
+
+.header-apropos{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+  transform-style: preserve-3d;
+  z-index: -1;
+}
+.boomer,
+.partoch {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  z-index: -1;
+}
+
+.boomer {
+ transform: translateZ(-10px) scale(1.5);
+}
+.partoch {
+  transform: translateZ(-5px) scale(1);
 
 }
+
+/* fin parallax*************** */
+
+/* ***************cards*************** */
 .h1-apropos {
+  font-size: 8rem;
   padding: 2rem 4rem;
+  color: #0d1117;
+  padding-right: 60%;
+  text-shadow: 0 0 15px white;
 }
 
 .wrapper-apropos {
@@ -17,11 +59,13 @@
 .container-apropos {
   text-align: center;
   border-radius: 1rem;
+  background-color: #0d1117;
   position: relative;
   overflow: hidden;
   animation: shadow-pop-tr 0.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
 }
 
+/*  ***************effet cube card */
 @-webkit-keyframes shadow-pop-tr {
   0% {
             box-shadow: 0 0 #d64d13, 0 0 #d64d13, 0 0 #d64d13, 0 0 #d64d13, 0 0 #d64d13, 0 0 #d64d13, 0 0 #d64d13, 0 0 #d64d13;
@@ -42,6 +86,7 @@
             transform: translateX(-8px) translateY(8px);
   }
 }
+/*  fin effet cube card*************** */
 
 .banner-apropos {
   position: absolute;
@@ -55,7 +100,7 @@
 .img-apropos {
   width: 15rem;
   clip-path: circle(60px at center);
-  margin-top: 5rem;
+  margin-top: 6rem;
 }
 
 /* h1:ntd-child(2)  {
@@ -67,6 +112,8 @@
   margin: 1rem 2rem;
   font-size: 0.9rem;
 }
+
+/* ***************btn */
 
 .btn-apropos {
   width: 100%;
@@ -90,15 +137,26 @@
   --_p: 100%;
   --_s: .3s;
 }
+/* fin btn*************** */
 
+/* fin cards*************** */
 
+/* ***************MEDIA SCREEN*************** */
+@media screen and (max-width:499px) {
+.h1-apropos {
+  font-size: 4rem;
+}
+}
 @media screen and (min-width:500px) {
   .wrapper-apropos {
       grid-template-columns: repeat(2, 1fr);
-  }
+    }
+      
 }
+
 @media screen and (min-width:750px) {
   .wrapper-apropos {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
   }
+ 
 }
