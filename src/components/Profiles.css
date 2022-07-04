@@ -16,8 +16,8 @@ html {
   margin-bottom: 20px;
   width: 20rem;
   border-radius: 25px;
-  max-height: 45vh;
-  min-height: 60vh;
+  /* max-height: 45vh;
+  min-height: 60vh; */
 }
 
 
@@ -56,11 +56,10 @@ html {
 }
 
 
-
-
 .box-item {
   position: relative;
   --webkit-backface-visibility: hidden;
+  backdrop-filter: blur(2px);
 }
 
 .flip-box {
@@ -131,7 +130,7 @@ html {
   position: absolute;
   left: 0;
   width: 100%;
-  padding: 60px;
+  padding-bottom: 120px;
   outline: 1px solid transparent;
   -webkit-perspective: inherit;
   perspective: inherit;
@@ -141,6 +140,7 @@ html {
   -webkit-transform: translateY(-50%) translateZ(60px) scale(.94);
   -ms-transform: translateY(-50%) translateZ(60px) scale(.94);
   top: 50%;
+ 
 }
 
 .flip-box-header {
@@ -173,19 +173,10 @@ html {
   object-fit: cover;
 }
 
-@media screen and (max-width: 768px) {
-  
-.containerSolo {
-  display:flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 10px;
-}
-.card {
+
+/* .card {
   max-height: 63vh;
   min-height: 60vh;
 
-}
-}
+} */
+
