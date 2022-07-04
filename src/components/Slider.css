@@ -5,7 +5,7 @@
   align-items: center;
   padding-top: 4em;
   max-height: 600px;
-  background-color: var(--black-header);
+  
 }
 .carousel .slide img {
   object-fit: cover;
@@ -47,7 +47,7 @@ height: 70px;
   .sliderContainer {
     position: relative;
     height: 80%;
-    background-color: var(--black-header);
+
 
   }
   .overlay {
@@ -70,7 +70,7 @@ height: 70px;
 .carousel .overlay_title {
   font-size: 3rem;
 margin:0;
-background-color: var(--black-header);
+
 
 }
 
