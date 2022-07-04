@@ -29,11 +29,11 @@ const LoginPage = ({ setIsHomePage }) => {
     })
 
   return (
-      <ApolloProvider client={clientSystem}>
+       <ApolloProvider client={clientSystem}>
     <div className="signin__container d-flex-center">
       <SignIn />
     </div>
-    </ApolloProvider>
+     </ApolloProvider>
   )
 }
 

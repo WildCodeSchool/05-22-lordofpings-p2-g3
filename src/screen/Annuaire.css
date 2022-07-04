@@ -15,3 +15,15 @@
     .div3 { 
         grid-area: 2 / 2 / 4 / 3; 
     } */
+
+    .titleForm1 {
+        text-align: center;
+        text-align: center;
+    border-top: 1px solid;
+    margin-top: 4rem;
+    }
+
+    .noResultAff {
+
+        text-align: center;
+    }
