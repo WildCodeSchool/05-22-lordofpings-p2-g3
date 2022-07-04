@@ -3,8 +3,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 20px;
+  padding-top: 4em;
   max-height: 600px;
+  
 }
 .carousel .slide img {
   object-fit: cover;
@@ -21,7 +22,9 @@
 }
 .carousel .thumbs {
 margin: 0;
-padding: 10px;
+display: flex;
+object-fit: cover;
+height: 70px;
 }
 
 .carousel .thumb {
@@ -45,6 +48,7 @@ padding: 10px;
     position: relative;
     height: 80%;
 
+
   }
   .overlay {
     position: absolute;
@@ -59,17 +63,22 @@ padding: 10px;
     width: 80%;
     background: rgba(0, 0, 0, 0.6);
     color: white;
+    
   }
 
   /***************/
 .carousel .overlay_title {
   font-size: 3rem;
 margin:0;
+
+
 }
 
  .overlay_title h2{
   position: absolute;
   top:30px;
+ 
+ 
 
   
  }
