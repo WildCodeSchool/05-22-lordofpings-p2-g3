@@ -109,7 +109,11 @@
 .wrap-leaf {
   display: flex;
   justify-content: center;
+  top: 0;
+  position: sticky;
+  /* position:-webkit-sticky; position:sticky; bottom:0; border-color:red; */
 }
+
 .leaflet-container {
   width: 24vw;
   height: 82vh;
@@ -122,3 +126,12 @@
 }
 
 
+@media screen and (max-width: 768px) {
+  .leaflet-container {
+    width: 77vw;
+    height: 55vh;
+  
+  }
+
+
+}

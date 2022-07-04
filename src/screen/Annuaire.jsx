@@ -88,7 +88,7 @@ const Annuaire = ({ setIsHomePage }) => {
       <div className='title1'>
         <h3>Retrouvez vos futurs musiciens sur Rock Your Band ... </h3>
       </div>
-      <div className='tout'>
+      <div className='elment-annuaire'>
         <div className='containerSolo'>
           <div className='containerSolo'>
             {!noCreteria && profilesFilter.length

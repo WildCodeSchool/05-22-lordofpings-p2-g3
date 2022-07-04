@@ -8,7 +8,6 @@ import './Apropos.css'
 import { Link } from 'react-router-dom'
 let audio2 = ''
 
-
 const Apropos = ({ setIsHomePage }) => {
   const [isactive, setIsactive] = useState(false)
 
