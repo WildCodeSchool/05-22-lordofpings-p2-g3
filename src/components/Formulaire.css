@@ -25,7 +25,7 @@ justify-content: space-around;
     margin: 10px;
     width: 300px;
     color: white;
-    
+    font-weight: bold;
 }
 .selectForm {
     padding: 6px;
@@ -123,7 +123,7 @@ justify-content: space-around;
     /* background: #990073; */
     transform-origin: 0% 100%;
     transform: rotateX(90deg);
-    text-align: start;
+    /* text-align: start; */
 }
 
 .buttonForm:hover {

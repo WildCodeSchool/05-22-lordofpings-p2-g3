@@ -11,10 +11,18 @@
         text-align: center;
     }
 
-    .containerCard {
+    .containerSolo {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: space-around;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+
+    .containerGroupe {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
         margin-right: 15px;
         margin-left: 15px;
     }
@@ -37,4 +45,24 @@
             flex-direction: column-reverse;
         
         }
-    }
+            .containerSolo {
+              display:flex;
+              flex-direction: row;
+              flex-wrap: wrap;
+              gap: 20px;
+              justify-content: center;
+              margin-top: 10px;
+            }
+
+            .containerGroupe {
+                display:flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+                margin-top: 10px;
+              }
+        
+
+        }
+    
