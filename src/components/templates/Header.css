@@ -43,6 +43,8 @@
 }
 
 .header__home {
+  display:flex;
+  flex-direction: column;
   height: 100vh;
   background: url('../../assets/images/groupBlackAndWhite.png') center center/cover;
 }
@@ -53,37 +55,41 @@
 
 .home__container {
   display: flex;
-  /* flex-wrap:wrap ; */
   justify-content: center;
   align-content: center;
 }
 
+
+
 .hero-container {
-  height: 100vh;
-  display: flex;
-  flex-flow: column wrap;
+
+   display: flex; 
+  flex-flow: column; 
   justify-content: center;
   align-content: center;
-  width: 100%;
+  /* width: 100%; */
+  padding-top:8rem;
   background-color: transparent;
 }
 
 .hero-vp {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   text-shadow: 1px 1px #333;
-
-
 }
 
 .hero-vp h1 {
   padding-top: 2rem;
-  font-size: 6rem;
+  padding-bottom: 1rem;
+  font-size: 5rem;
 }
 
+.hero-vp h2 {
+  padding:0rem;
+  font-size: 2rem;
+}
 .hero-vp span {
   color: var(--primary-1);
   font-style: italic;
@@ -99,7 +105,6 @@ header {
 }
 
 .logo {
-
   position: absolute;
   top: 1rem;
   left: 4rem;
@@ -138,6 +143,11 @@ header {
   /* margin-top:1rem; */
 }
 
+
+.hero__btn-container{
+ padding-top: 5rem;
+}
+
 .navbarre ul {
   display: flex;
 
@@ -160,10 +170,8 @@ header {
 
 }
 
-.navbarre li a::after {}
 
 .navbarre li a:hover {
-
   cursor: pointer;
   /* border-bottom: 4px solid var(--orange-logo); */
   color: var(--orange-logo);
@@ -248,4 +256,62 @@ img.home__profil {
   to {
     transform: rotate(360deg);
   }
+}
+
+
+
+@media screen and (max-width:1280px) {
+.hero__btn-container {
+  padding-top: 0rem;
+}
+
+.hero-vp h1 {
+  padding-top: 1.8rem;
+  /* padding-bottom: 1rem;
+  font-size: 5rem; */
+}
+
+}
+@media screen and (max-width:768px) {
+  
+  .hero__btn-container{
+    padding-top:3rem;
+  }
+      .hero-vp{
+      padding-top:2rem;
+      margin:2rem;
+      }
+    .hero-vp h1 {
+      padding-top: 1.8rem;
+      padding-bottom: 1rem;
+      font-size: 3rem;
+    }
+  
+    .hero-vp h2 {
+      padding: 0rem;
+      font-size: 1.2rem;
+    }
+
+    .home__container {
+      background-color: red;
+      display: flex;
+    }
+
+    nav.home__container {
+      display:none;
+    }
+ 
+    .home__container .header__right{
+    background-color: yellow;
+      display: none;
+        }
+
+    .home__container .header__right > a:nth-child(1) {
+      padding-right: 0rem;     
+  }
+     .home__container .header__right>a:nth-child(2) {
+       padding:0rem;
+     }
+  
+
 }

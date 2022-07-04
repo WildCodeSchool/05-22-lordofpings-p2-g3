@@ -47,8 +47,16 @@
   --font-size-2: 1.6rem;
   --font-size-3: 2rem;
 
-  --btn-height-xxl:200px;
- --btn-width-xxl:300px;
+
+  --btn-height-xxl:150px;
+  --btn-width-xxl:200px;
+  --btn-text-size-xl: 2.5rem;
+  
+
+
+  --btn-height-xs: 100px;
+  --btn-width-xs: 150px;
+  --btn-text-size-xs: 1.5rem;
 }
 
 /******RESET CSS**********/
