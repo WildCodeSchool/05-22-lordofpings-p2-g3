@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import './SignIn.css'
 import { Link } from 'react-router-dom'
 import close from '../../assets/images/knob--round.png'
+import LoadingSpinner from '../LoadingSpinner'
 
 const POST_LOGIN = gql`
   mutation genereToken($email: String!, $password: String!) {
@@ -18,29 +19,26 @@ const SignIn = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [success, setSuccess] = useState(false)
+  const [nextPageRedirect, setNextPageRedirect] = useState(false)
 
   const [generateToken, { data, loading, error }] = useMutation(POST_LOGIN)
   let navigate = useNavigate()
-  const shouldRedirect = false
 
-  useEffect(() => {}, [generateToken])
-
-  useEffect(() => {
-    shouldRedirect && navigate('/')
-  }, [])
+  useEffect(() => { }, [generateToken, data])
 
   const handleSubmit = async event => {
     event.preventDefault()
     // the mutate function also doesn't return a promise
+
     const genToken = await generateToken({ variables: { email, password } })
     if (!error && !loading) {
       localStorage.setItem(
         'rock-your-band',
-        JSON.stringify(data.auth_login.access_token)
+        JSON.stringify(data?.auth_login.access_token)
       )
       console.log('local', localStorage.getItem('rock-your-band'))
       setSuccess(!success)
-      success && navigate('/', { replace: true })
+      navigate('/')
     }
   }
 
@@ -73,14 +71,9 @@ const SignIn = () => {
               />
 
               <button disabled={loading} type='submit'>
-                {success && !loading && !error ? (
-                  <Link to='/'>Se connecter</Link>
-                ) : (
-                  'Se connecter'
-                )}
+                {'Se connecter'}
               </button>
-
-              {loading && <div className='error'>{'loading...'}</div>}
+              {loading && <LoadingSpinner className='error' />}
               {error && (
                 <>
                   <span className='state'>⭕</span>
