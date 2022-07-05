@@ -94,6 +94,7 @@ const Evenements = ({ setIsHomePage }) => {
             tarif={evenement.tarif}
             style={evenement.style}
             location={evenement.location}
+            city={evenement.city}
           />
         ))}
       </div>
