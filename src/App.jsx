@@ -25,7 +25,7 @@ function App({ isDebugMode = true }) {
         <Routes>
           <Route path='/' element={<Home setIsHomePage={setIsHomePage} />} />
           <Route
-            path='/annuaire'
+            path='/annuaire/:setGroupe'
             element={<Annuaire setIsHomePage={setIsHomePage} />}
           />
           <Route

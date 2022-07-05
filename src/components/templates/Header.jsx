@@ -107,7 +107,7 @@ const Header = ({ isHomePage = false, isDebugMode = false }) => {
 
               <div className='hero-container'>
                 <div className='hero__btn-container'>
-                  <Link to='/annuaire'>
+                  <Link to='/annuaire/musicien'>
                     <Button
                       name='Recherche musicien'
                       bgColor={`var(--primary-1)`}
@@ -115,7 +115,7 @@ const Header = ({ isHomePage = false, isDebugMode = false }) => {
                     ></Button>
                   </Link>
 
-                  <Link to='/annuaire'>
+                  <Link to='/annuaire/groupe'>
                     <Button
                       name='Recherche groupe'
                       bgColor={`var(--gray-1)`}
@@ -160,7 +160,7 @@ const Header = ({ isHomePage = false, isDebugMode = false }) => {
                 </li>
                 <li>
                   <NavLink
-                    to='/annuaire'
+                    to='/annuaire/'
                     className={({ isActive }) => {
                       console.log('annuaire', isActive)
                       return isActive ? 'btn-active' : 'btn-inactive'
