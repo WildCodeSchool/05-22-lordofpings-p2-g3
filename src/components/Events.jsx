@@ -9,7 +9,8 @@ const Events = ({
   url,
   location,
   tarif,
-  style
+  style,
+  city
 }) => {
   // const linkIdEvent = `/evenement/${id}`
   let navigate = useNavigate()
@@ -31,6 +32,7 @@ const Events = ({
             <h3 className='event-flip-box-header'>{name}</h3>
             <p>💰 {tarif}</p>
             <p>🎶 {style.join(', ')}</p>
+            <p>📍 {city}</p>
             <button
               className='event-flip-box-button'
               onClick={() => navigate({ url })}
