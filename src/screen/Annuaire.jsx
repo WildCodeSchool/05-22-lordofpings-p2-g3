@@ -184,22 +184,22 @@ const Annuaire = ({ setIsHomePage }) => {
                     url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
                   />
 
-                  {!noCreteria && profilesFilter.length
-                    ? profilesFilter.map(profile => (
-                        <Leaflet
-                          key={profile.id}
-                          id={profile.id}
-                          name={profile.name.first}
-                          image={profile.picture.large}
-                          location={profile.location.city}
-                          instrument={profile.music.instrument}
-                          experience={profile.music.experience}
-                          style={profile.music.style}
-                          latitude={profile.location.coordinates.latitude}
-                          longitude={profile.location.coordinates.longitude}
-                        />
-                      ))
-                    : deso && <p>deso gros</p>}
+                  {!noCreteria &&
+                    profilesFilter.length &&
+                    profilesFilter.map(profile => (
+                      <Leaflet
+                        key={profile.id}
+                        id={profile.id}
+                        name={profile.name.first}
+                        image={profile.picture.large}
+                        location={profile.location.city}
+                        instrument={profile.music.instrument}
+                        experience={profile.music.experience}
+                        style={profile.music.style}
+                        latitude={profile.location.coordinates.latitude}
+                        longitude={profile.location.coordinates.longitude}
+                      />
+                    ))}
 
                   {noCreteria &&
                     profiles !== null &&
@@ -304,6 +304,46 @@ const Annuaire = ({ setIsHomePage }) => {
                   instrument={group.instrument}
                   experience={group.experience}
                 />
+              )
+          )}
+        </div>
+        <div>
+          <>
+            <div className='wrap-leaf'>
+              {
+                <MapContainer
+                  center={[49.837965, 6.057441]}
+                  zoom={5}
+                  scrollWheelZoom={false}
+                >
+                  <TileLayer
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+                  />
+                  {group.map(
+                    (group, index) =>
+                      index < 11 && (
+                        <div className='containerGroupe'>
+                          <Leaflet
+                            key={group.id}
+                            id={group.id}
+                            name={group.name}
+                            image={group.jacket}
+                            location={group.location.city}
+                            instrument={group.instrument}
+                            experience={group.experience}
+                            latitude={group.location.coordinates.latitude}
+                            longitude={group.location.coordinates.longitude}
+                          />
+                        </div>
+                      )
+                  )}
+                </MapContainer>
+              }
+            </div>
+          </>
+        </div>
+      </div>
               </div>
             )
         )}
