@@ -1,9 +1,12 @@
 .bigwrapper-apropos {
   background-color:#0d1117;
   padding-bottom: 16px;
-
-
 }
+
+.wrapper-parallax::-webkit-scrollbar {
+  display: none;
+}
+
 
 /* ***************parallax*************** */
 .wrapper-parallax {
@@ -11,9 +14,6 @@ height: 100vh;
 overflow-y: auto;
 overflow-x: hidden;
 perspective: 10px;
-}
-.wrapper-parallax::-webkit-scrollbar {
-  display: none;
 }
 .header-apropos{
   position: relative;
@@ -61,6 +61,8 @@ perspective: 10px;
 }
 
 .container-apropos {
+  width: 350px;
+
   text-align: center;
   border-radius: 1rem;
   background-color: #0d1117;
@@ -146,19 +148,36 @@ perspective: 10px;
 /* fin cards*************** */
 
 /* ***************MEDIA SCREEN*************** */
-@media screen and (max-width:499px) {
-.h1-apropos {
-  font-size: 4rem;
-}
-}
-@media screen and (min-width:500px) {
+@media screen and (min-width:768px) {
   .wrapper-apropos {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    grid-template-columns: repeat(2, 1fr);
+  }
       
 }
+@media screen and (max-width:767px) {
+  .wrapper-apropos {
+    grid-template-columns: repeat(1, 1fr);}
+    .h1-apropos {
+      position: absolute;
+      top:15%;
+      text-align: center;
+      font-size: 4rem;
+      padding: 0;
+    }
+    .header-apropos {
+      height: 45%;
+    }
+  }
 
-@media screen and (min-width:750px) {
+
+  @media screen and (min-width:1200px) {
+    .wrapper-apropos {
+        grid-template-columns: repeat(3, 1fr);
+      }
+        
+  }
+
+@media screen and (min-width:1600px) {
   .wrapper-apropos {
       grid-template-columns: repeat(4, 1fr);
   }

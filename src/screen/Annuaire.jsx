@@ -8,9 +8,10 @@ import Profiles from '../components/Profiles'
 
 const Annuaire = ({ setIsHomePage }) => {
   const [profiles, setProfiles] = useState([])
-  const [displayMOrG, setDisplayMOrG] = useState('') // etape 1
+  const [displayMOrG, setDisplayMOrG] = useState('')
   const [profilesFilter, setProfilesFilter] = useState([])
   const [group, setGroup] = useState([])
+  // const [groupesFilter, setGroupesFilter] = useState([])
   const [noResult, setNoResult] = useState(false)
   const [noCreteria, setNoCreteria] = useState(true)
   const [creteria, setCreteria] = useState({
@@ -179,23 +180,56 @@ const Annuaire = ({ setIsHomePage }) => {
       <div className='title2'>
         <h3>Ou votre futur groupe de musique ... </h3>
       </div>
-      <div className='containerGroupe'>
-        {group.map(
-          (group, index) =>
-            index < 11 && (
-              <div className='containerGroupe'>
+      <div className='elment-annuaire'>
+        <div className='containerSolo'>
+          {group.map(
+            grp =>
+              group.length && (
                 <Profiles
-                  key={group.id}
-                  id={group.id}
-                  name={group.name}
-                  image={group.jacket}
-                  location={group.location.city}
-                  instrument={group.instrument}
-                  experience={group.experience}
+                  key={grp.id}
+                  id={grp.id}
+                  name={grp.name}
+                  image={grp.jacket}
+                  location={grp.location.city}
+                  instrument={grp.instrument}
+                  experience={grp.experience}
+                  latitude={grp.location.coordinates.latitude}
+                  longitude={grp.location.coordinates.longitude}
                 />
-              </div>
-            )
-        )}
+              )
+          )}
+        </div>
+        <div>
+          <>
+            <div className='wrap-leaf'>
+              {
+                <MapContainer
+                  center={[49.837965, 6.057441]}
+                  zoom={5}
+                  scrollWheelZoom={false}
+                >
+                  <TileLayer
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+                  />
+                  {group.map(grp => (
+                    <Leaflet
+                      key={grp.id}
+                      id={grp.id}
+                      name={grp.name}
+                      image={grp.jacket}
+                      location={grp.location.city}
+                      instrument={grp.instrument}
+                      experience={grp.experience}
+                      latitude={grp.location.coordinates.latitude}
+                      longitude={grp.location.coordinates.longitude}
+                    />
+                  ))}
+                </MapContainer>
+              }
+            </div>
+          </>
+        </div>
       </div>
     </div>
   )
