@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './Formulaire.css'
 
-const Formulaire = ({ setIsGroupe, isCheck, selectGroupe }) => {
+const Formulaire = ({ isCheck, selectGroupe }) => {
   const [noCreteria, setNoCreteria] = useState(true)
   const [creteria, setCreteria] = useState({
     instrument: '',

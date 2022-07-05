@@ -24,7 +24,7 @@ export const Leaflet = ({
           <div className='pop_up-contain'>
             <>
               <img src={image} alt={name} />
-              <h2>{`${name} ${name}`}</h2>
+              <h2>{`${name}`}</h2>
               <p>{`${location}`}</p>
               <p style={{ color: 'red' }}>{` ${[style]}`}</p>
               <p style={{ color: 'blue' }}>{`Niveau:${experience}`}</p>
