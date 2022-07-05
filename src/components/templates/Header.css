@@ -1,3 +1,13 @@
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index:-1;
+}
+
 .style1 {
   color: var(--bg-deg-1) !important;
   text-shadow: 2px 1px white !important;
@@ -46,7 +56,7 @@
   display:flex;
   flex-direction: column;
   height: 100vh;
-  background: url('../../assets/images/groupBlackAndWhite.png') center center/cover;
+  /* background: url('../../assets/images/groupBlackAndWhite.png') center center/cover; */
 }
 
 .nothome {

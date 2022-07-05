@@ -31,7 +31,7 @@ background: var(--orange-logo);
     background: transparent;
     backdrop-filter: blur(10px); 
     transition: 0.6s 0s ease-in-out;
-    border-radius: var(--border-radius-1);
+    border-radius: var(--border-radius);
     
 }
 
@@ -52,7 +52,7 @@ background: var(--orange-logo);
         /* box-shadow: 2px 1px 10px var(--orange-logo),
             2px 1px 10px var(--orange-logo); */
         border: 0px solid var(--gray-1);
-        border-radius: var(--border-radius-1);
+        border-radius: var(--border-radius); 
         background: var(--black-logo);
         transition: 0.6s 0s ease-in-out;
         opacity: 0.4;

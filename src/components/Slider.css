@@ -3,27 +3,28 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 4em;
-  max-height: 600px;
+  max-height: 80vh;
   
 }
 .carousel .slide img {
   object-fit: cover;
-  height: 40vh;
-  width: 90vw;
-  border: solid white 4px;
-  border-radius: 40px;
+  height: 60vh;
+  width: 100vw;
+  -webkit-filter: grayscale(10%);
+  filter: contrast(50%)
   
 }
 
 .overlay_title {
-
+display: flex;
  justify-content: center;
  position: absolute;
  top:20px;
  left:42vw;
- background: rgba(0, 0, 0, 0.6);
+ color: white;
+ font-size: 3rem;
  padding:0!important;
+ text-shadow: 1px 1px 2px black;
 }
 .carousel.carousel-slider .control-arrow {
   display: none;
@@ -38,6 +39,8 @@ margin: 0;
 display: flex;
 object-fit: cover;
 height: 70px;
+-webkit-filter: grayscale(10%);
+filter: contrast(50%)
 }
 
 .carousel .thumb {
@@ -74,8 +77,11 @@ height: 70px;
 }
   .carousel .overlay {
     width: 80%;
-    background: rgba(0, 0, 0, 0.6);
     color: white;
+    font-size: 2rem;
+    text-shadow: 1px 1px black;
+   
+
     
     
   }

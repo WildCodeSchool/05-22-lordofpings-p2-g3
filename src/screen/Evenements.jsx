@@ -90,6 +90,10 @@ const Evenements = ({ setIsHomePage }) => {
             image={evenement.image}
             description={evenement.description}
             id={evenement.id}
+            url={evenement.url}
+            tarif={evenement.tarif}
+            style={evenement.style}
+            location={evenement.location}
           />
         ))}
       </div>
