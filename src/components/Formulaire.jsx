@@ -95,7 +95,7 @@ const Formulaire = ({ setDisplayMOrG, isCheck }) => {
   }, [])
 
   return (
-    <div className='contener'>
+    <div className='contenerForm'>
       <form className='form'>
         <div className='contener-1'>
           <label htmlFor='select' className='labelFrom'>
