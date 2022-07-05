@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './Formulaire.css'
 
-const Formulaire = ({ setIsGroupe, isCheck }) => {
+const Formulaire = ({ setIsGroupe, isCheck, selectGroupe }) => {
   const [noCreteria, setNoCreteria] = useState(true)
   const [creteria, setCreteria] = useState({
     instrument: '',
@@ -9,7 +9,7 @@ const Formulaire = ({ setIsGroupe, isCheck }) => {
     style: '',
     location: '',
     objectif: '',
-    gs: ''
+    gs: selectGroupe
   })
 
   const [locFilter, setLocFilter] = useState([])
@@ -43,6 +43,10 @@ const Formulaire = ({ setIsGroupe, isCheck }) => {
   }
 
   useEffect(() => {
+    document.getElementById('selectGs').value = selectGroupe
+  }, [])
+
+  useEffect(() => {
     fetch('https://kinotonik.github.io/jsonapi/data_musicien.json')
       .then(res => res.json())
       .then(res => {
@@ -61,11 +65,11 @@ const Formulaire = ({ setIsGroupe, isCheck }) => {
       .then(res => setObjFilter(res.data))
   }, [])
 
-  useEffect(() => {
-    fetch('https://yv3o2geh.directus.app/items/objectif')
-      .then(res => res.json())
-      .then(res => setObjFilter(res.data))
-  }, [])
+  // useEffect(() => {
+  //   fetch('https://yv3o2geh.directus.app/items/objectif')
+  //     .then(res => res.json())
+  //     .then(res => setObjFilter(res.data))
+  // }, [])
 
   useEffect(() => {
     fetch('https://yv3o2geh.directus.app/items/instruments')
@@ -97,7 +101,6 @@ const Formulaire = ({ setIsGroupe, isCheck }) => {
               className='selectForm'
               onChange={e => handleChange(e.target)}
             >
-              <option value=''>---Type---</option>
               <option value={true}>Groupe</option>
               <option value={false}>Solo</option>
             </select>

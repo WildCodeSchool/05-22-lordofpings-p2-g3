@@ -7,7 +7,7 @@ import './Annuaire.css'
 import Profiles from '../components/Profiles'
 import { useParams } from 'react-router-dom'
 
-const Annuaire = ({ setIsHomePage }) => {
+const Annuaire = ({ setIsHomePage, selectGroupe }) => {
   const [profiles, setProfiles] = useState([])
   const [displayMOrG, setDisplayMOrG] = useState('') // etape 1
   const [profilesFilter, setProfilesFilter] = useState([])
@@ -21,16 +21,15 @@ const Annuaire = ({ setIsHomePage }) => {
     style: '',
     location: '',
     objectif: '',
-    gs: ''
+    gs: selectGroupe
   })
 
-  const { setGroupe } = useParams()
-
   useEffect(() => {
-    setGroupe == 'musicien'
+    !selectGroupe
       ? setCreteria({ ...creteria, gs: 'false' })
       : setCreteria({ ...creteria, gs: 'true' })
-  }, [setGroupe])
+  }, [selectGroupe])
+
   const filter1 = (arr, strCompare) => {
     return arr.filter(el => el.music.instrument?.includes(strCompare))
   }
@@ -67,7 +66,7 @@ const Annuaire = ({ setIsHomePage }) => {
   }
 
   const filterG5 = (arr, strCompareG) => {
-    return arr.filter(el => el.objectif?.includes(strCompareG))
+    return arr.filter(el => el.search.objectif?.includes(strCompareG))
   }
 
   useEffect(() => {
@@ -128,7 +127,7 @@ const Annuaire = ({ setIsHomePage }) => {
         <div className='titleForm1'>
           <h1>Bienvenue sur le groupe de recherche de musiciens n°1 !</h1>
         </div>
-        <Formulaire isCheck={checkCreteria} />
+        <Formulaire isCheck={checkCreteria} selectGroupe={selectGroupe} />
         <div className='titleCard'>
           {console.log('BORDEL DE MERDE', creteria.gs)}
           <h3>Retrouvez vos futurs musiciens sur Rock Your Band ... </h3>
