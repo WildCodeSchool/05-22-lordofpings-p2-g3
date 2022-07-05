@@ -71,12 +71,6 @@ const Formulaire = ({ setDisplayMOrG, isCheck }) => {
   }, [])
 
   useEffect(() => {
-    fetch('https://yv3o2geh.directus.app/items/objectif')
-      .then(res => res.json())
-      .then(res => setObjFilter(res.data))
-  }, [])
-
-  useEffect(() => {
     fetch('https://yv3o2geh.directus.app/items/instruments')
       .then(res => res.json())
       .then(res => setInstFilter(res.data))

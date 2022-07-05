@@ -2,7 +2,15 @@ import { Link } from 'react-router-dom'
 import './Profiles.css'
 import { useNavigate } from 'react-router-dom'
 
-const Profiles = ({ name, image, id, location, experience, instrument }) => {
+const Profiles = ({
+  name,
+  image,
+  id,
+  location,
+  experience,
+  instrument,
+  objectif
+}) => {
   let navigate = useNavigate()
   //console.log({ name, image, id, location, experience, instrument })
   return (
@@ -15,6 +23,7 @@ const Profiles = ({ name, image, id, location, experience, instrument }) => {
             <p>📍 {location}</p>
             <p>⭐️ {experience}</p>
             <p>🎶 {instrument.join(', ')}</p>
+            <p>🎶 {objectif}</p>
           </div>
         </div>
         <div className='flip-box-back text-center'>

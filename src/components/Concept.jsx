@@ -31,7 +31,7 @@ function Concept() {
   }, [animText])
 
   function animate_text() {
-    let delay = 60,
+    let delay = 20,
       delay_start = 0,
       contents,
       letters
