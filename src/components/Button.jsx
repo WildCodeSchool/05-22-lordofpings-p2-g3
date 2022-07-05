@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Button.css'
 
-const Button = ({ name, shadow, bgColor }) => {
+const Button = ({ name, shadow, bgColor, spec, handleType }) => {
   const [isactive, setActive] = useState(false)
 
   const handleClick = () => {
@@ -23,7 +23,11 @@ const Button = ({ name, shadow, bgColor }) => {
   }
 
   return (
-    <div className='btn__card wave' onMouseEnter={handleChange}>
+    <div
+      className='btn__card wave'
+      onClick={() => handleType(spec.choice, spec.url)}
+      onMouseEnter={handleChange}
+    >
       <button
         onClick={handleClick}
         style={{ ...shadowClass, ...bg }}

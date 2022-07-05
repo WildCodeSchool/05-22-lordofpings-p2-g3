@@ -17,16 +17,26 @@ import UserProfil from './screen/UserProfil'
 
 function App({ isDebugMode = true }) {
   const [isHomePage, setIsHomePage] = useState(true)
+  const [selectGroupe, setSelectGroupe] = useState(false)
 
   return (
     <div className='app-container'>
-      <Header className='header' isHomePage={isHomePage} />
+      <Header
+        className='header'
+        isHomePage={isHomePage}
+        setSelectGroupe={setSelectGroupe}
+      />
       <Main className='main'>
         <Routes>
           <Route path='/' element={<Home setIsHomePage={setIsHomePage} />} />
           <Route
             path='/annuaire'
-            element={<Annuaire setIsHomePage={setIsHomePage} />}
+            element={
+              <Annuaire
+                setIsHomePage={setIsHomePage}
+                selectGroupe={selectGroupe}
+              />
+            }
           />
           <Route
             path='/evenement'
