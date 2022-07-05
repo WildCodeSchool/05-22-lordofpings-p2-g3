@@ -39,7 +39,8 @@ margin: 0;
 display: flex;
 object-fit: cover;
 height: 70px;
--webkit-filter: grayscale(100%)
+-webkit-filter: grayscale(10%);
+filter: contrast(50%)
 }
 
 .carousel .thumb {
