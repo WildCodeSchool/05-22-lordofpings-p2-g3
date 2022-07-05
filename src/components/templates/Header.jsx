@@ -5,15 +5,26 @@ import logo from '../../assets/images/rockYourBand-transparent.png'
 import imageBtnLeft from '../../assets/images/musique-de-guitare.png'
 import imageBtnRight from '../../assets/images/groupe-musique-2.webp'
 import Button from '../../components/Button'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, useNavigate, NavLink } from 'react-router-dom'
 import login from '../../assets/images/login.png'
 import profil from '../../assets/images/vincent.png'
 
 const userId = 1
 
-const Header = ({ isHomePage = false, isDebugMode = false }) => {
+const Header = ({
+  isHomePage = false,
+  isDebugMode = false,
+  setSelectGroupe
+}) => {
   // const [isHomePage, setIsHomePage] = useState(true);
   const [isActive, setIsActive] = useState()
+
+  let navigate = useNavigate()
+  const handleType = (choice, url) => {
+    console.log('handleClick')
+    setSelectGroupe(choice)
+    navigate(url)
+  }
 
   let activeStyle = {}
 
@@ -107,21 +118,25 @@ const Header = ({ isHomePage = false, isDebugMode = false }) => {
 
               <div className='hero-container'>
                 <div className='hero__btn-container'>
-                  <Link to='/annuaire'>
-                    <Button
-                      name='Recherche musicien'
-                      bgColor={`var(--primary-1)`}
-                      shadow={`var(--gray-3)`}
-                    ></Button>
-                  </Link>
+                  {/* <Link to='/annuaire/musicien'> */}
+                  <Button
+                    name='Recherche musicien'
+                    bgColor={`var(--primary-1)`}
+                    shadow={`var(--gray-3)`}
+                    spec={{ choice: false, url: '/annuaire' }}
+                    handleType={handleType}
+                  ></Button>
+                  {/* </Link> */}
 
-                  <Link to='/annuaire'>
-                    <Button
-                      name='Recherche groupe'
-                      bgColor={`var(--gray-1)`}
-                      shadow={`var(--orange-logo)`}
-                    ></Button>
-                  </Link>
+                  {/* <Link to='/annuaire/groupe'> */}
+                  <Button
+                    name='Recherche groupe'
+                    bgColor={`var(--gray-1)`}
+                    shadow={`var(--orange-logo)`}
+                    spec={{ choice: true, url: '/annuaire' }}
+                    handleType={handleType}
+                  ></Button>
+                  {/* </Link> */}
                 </div>
                 <div className='hero-vp'>
                   <h1>Rock your Band</h1>
@@ -160,7 +175,7 @@ const Header = ({ isHomePage = false, isDebugMode = false }) => {
                 </li>
                 <li>
                   <NavLink
-                    to='/annuaire'
+                    to='/annuaire/'
                     className={({ isActive }) => {
                       console.log('annuaire', isActive)
                       return isActive ? 'btn-active' : 'btn-inactive'
