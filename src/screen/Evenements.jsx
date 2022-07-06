@@ -107,7 +107,7 @@ const Evenements = ({ setIsHomePage }) => {
             <option value='Décembre'>Décembre</option>
           </select>
           <button
-            className='buttonForm'
+            className='buttonForm buttonEvent'
             onClick={e => checkCreteria(e, creteria)}
           >
             RECHERCHE
