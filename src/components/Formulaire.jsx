@@ -9,7 +9,7 @@ const Formulaire = ({ isCheck, selectGroupe }) => {
     style: '',
     location: '',
     objectif: '',
-    gs: selectGroupe
+    gs: `${selectGroupe}`
   })
 
   const [locFilter, setLocFilter] = useState([])
