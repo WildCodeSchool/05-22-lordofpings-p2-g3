@@ -13,6 +13,7 @@ import profil from '../../assets/images/vincent.png'
 const userId = 1
 
 const Header = ({ isHomePage = false, isDebugMode = false }) => {
+  
   // const [isHomePage, setIsHomePage] = useState(true);
   const [isActive, setIsActive] = useState()
 

@@ -1,13 +1,18 @@
 import { ApolloClient, ApolloProvider, createHttpLink, InMemoryCache } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
 import SignIn from '../components/graphql/SignIn'
 import './LoginPage.css'
+
+
 
 const LoginPage = ({ setIsHomePage }) => {
     const httpLink = new createHttpLink({
         uri: process.env.REACT_APP_DIRECTUS_API_URL_SYSTEM
     })
+
+
+
   useEffect(() => {
     return setIsHomePage(false)
   }, [])
