@@ -10,7 +10,8 @@ const Events = ({
   location,
   tarif,
   style,
-  city
+  city,
+  date_start
 }) => {
   // const linkIdEvent = `/evenement/${id}`
   let navigate = useNavigate()
@@ -33,9 +34,10 @@ const Events = ({
             <p>💰 {tarif}</p>
             <p>🎶 {style.join(', ')}</p>
             <p>📍 {city}</p>
+            <p>📅 {date_start.replace('T', ' à ')}</p>
             <button
               className='event-flip-box-button'
-              onClick={() => navigate({ url })}
+              onClick={() => window.open(`${url}`, '_blank')}
             >
               En savoir plus
             </button>
