@@ -3,12 +3,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-height: 80vh;
+  max-height: 90vh;
   
+}
+
+.overlay_text {
+  padding-bottom: 200px;
 }
 .carousel .slide img {
   object-fit: cover;
-  height: 60vh;
+  height: 70vh;
   width: 100vw;
   -webkit-filter: grayscale(10%);
   filter: contrast(50%)
@@ -16,14 +20,11 @@
 }
 
 .overlay_title {
-display: flex;
+ display: flex;
  justify-content: center;
- position: absolute;
- top:20px;
- left:42vw;
+ position: center;
  color: white;
  font-size: 3rem;
- padding:0!important;
  text-shadow: 1px 1px 2px black;
 }
 .carousel.carousel-slider .control-arrow {
@@ -37,17 +38,25 @@ display: flex;
 .carousel .thumbs {
 margin: 0;
 display: flex;
+align-items: center;
 object-fit: cover;
-height: 70px;
+flex-wrap: wrap;
+align-content: center;
 -webkit-filter: grayscale(10%);
 filter: contrast(50%)
 }
 
 .carousel .thumb {
-  margin: 0 px;
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  height: 70px;
+  margin: 0.1em;
   cursor: pointer;
 
 }
+
 /* .carousel .overlay {
   width: 80%;
   transform: translateY(-70vh) translateX(12%);
@@ -56,9 +65,7 @@ filter: contrast(50%)
 
 } */
 
-.slide_text-p p{
-  padding-top:-30px;
-}
+
   /**********************/
   .sliderContainer {
     position: relative;
@@ -96,16 +103,17 @@ filter: contrast(50%)
   
 
 }
+@media screen and (max-width:1000px) {
+  .carousel .thumbs {
+    display: none;
+  }
+  .carousel.carousel-slider .control-arrow {
+    display: flex;
+  }
+}
 
 @media screen and (max-width:600px) {
-  .carousel .slide img {
-    width: 100vw !important;
-    height: 40vh;
-    object-fit: cover;
+  .carousel {
+    display: none;
   }
-
-  .overlay {
-    top: 40%;
-}
-  
 }

@@ -74,7 +74,19 @@ const Evenements = ({ setIsHomePage }) => {
             />
             <span className='validity'></span>
           </label>
-          Localisation :
+          <label>
+            Ville :
+            <select className='select-event'>
+              <option value='tous'>Tous</option>
+              <option value='rock'>Rock</option>
+              <option value='metal'>Metal</option>
+              <option value='electro'>Electro</option>
+              <option value='rap'>Rap</option>
+              <option value='hip-hop'>Hip-Hop</option>
+              <option value='pop'>Pop</option>
+              <option value='classic'>Classic</option>
+            </select>
+          </label>
           <button className='button-event' onClick={handleClick}>
             CHERCHER
           </button>
