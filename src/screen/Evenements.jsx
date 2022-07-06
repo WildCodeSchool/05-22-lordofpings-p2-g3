@@ -53,8 +53,40 @@ const Evenements = ({ setIsHomePage }) => {
             <option value='pop'>Pop</option>
             <option value='classic'>Classic</option>
           </select>
-          Localisation :
           <input type='text' name='' className='selectForm' />
+          <label>
+            Veuillez saisir la date de début:
+            <input
+              type='date'
+              name='bday'
+              required
+              pattern='\d{4}-\d{2}-\d{2}'
+            />
+            <span className='validity'></span>
+          </label>
+          <label>
+            Veuillez saisir la date de fin:
+            <input
+              type='date'
+              name='bday'
+              required
+              pattern='\d{4}-\d{2}-\d{2}'
+            />
+            <span className='validity'></span>
+          </label>
+          <label>
+            Ville :
+            <select className='select-event'>
+              <option value='tous'>Tous</option>
+              <option value='rock'>Rock</option>
+              <option value='metal'>Metal</option>
+              <option value='electro'>Electro</option>
+              <option value='rap'>Rap</option>
+              <option value='hip-hop'>Hip-Hop</option>
+              <option value='pop'>Pop</option>
+              <option value='classic'>Classic</option>
+            </select>
+          </label>
           <button className='button-event' onClick={handleClick}>
             CHERCHER
           </button>
@@ -70,6 +102,11 @@ const Evenements = ({ setIsHomePage }) => {
             image={evenement.image}
             description={evenement.description}
             id={evenement.id}
+            url={evenement.url}
+            tarif={evenement.tarif}
+            style={evenement.style}
+            location={evenement.location}
+            city={evenement.city}
           />
         ))}
       </div>
