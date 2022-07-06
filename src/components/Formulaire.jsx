@@ -47,13 +47,9 @@ const Formulaire = ({ isCheck, selectGroupe }) => {
   }, [])
 
   useEffect(() => {
-    fetch('https://kinotonik.github.io/jsonapi/data_musicien.json')
+    fetch('https://yv3o2geh.directus.app/items/locations')
       .then(res => res.json())
-      .then(res => {
-        let a = res.results.map(el => el.location.city)
-        a = a.filter((item, index) => a.indexOf(item) === index)
-        return setLocFilter(a)
-      })
+      .then(res => setLocFilter(res.data))
   }, [])
 
   useEffect(() => {
@@ -61,12 +57,6 @@ const Formulaire = ({ isCheck, selectGroupe }) => {
       .then(res => res.json())
       .then(res => setObjFilter(res.data))
   }, [])
-
-  // useEffect(() => {
-  //   fetch('https://yv3o2geh.directus.app/items/objectif')
-  //     .then(res => res.json())
-  //     .then(res => setObjFilter(res.data))
-  // }, [])
 
   useEffect(() => {
     fetch('https://yv3o2geh.directus.app/items/instruments')
@@ -165,8 +155,8 @@ const Formulaire = ({ isCheck, selectGroupe }) => {
               <option value=''>---Type---</option>
               {locFilter.length &&
                 locFilter.map((loc, i) => (
-                  <option key={i} value={loc}>
-                    {loc}
+                  <option key={i} value={loc.name}>
+                    {loc.name}
                   </option>
                 ))}
             </select>
