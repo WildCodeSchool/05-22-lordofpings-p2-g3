@@ -132,41 +132,41 @@ const Annuaire = ({ setIsHomePage, selectGroupe }) => {
         </div>
       </div>
       {creteria.gs == 'false' && (
-        <div className='elment-annuaire'>
-          <div className='containerSolo'>
-            {!noCreteria && profilesFilter.length
-              ? profilesFilter.map(profile => (
+        <>
+          <div className='elment-annuaire'>
+            <div className='containerSolo'>
+              {!noCreteria && profilesFilter.length
+                ? profilesFilter.map(profile => (
+                    <Profiles
+                      key={profile.id}
+                      id={profile.id}
+                      name={profile.name.first}
+                      image={profile.picture.large}
+                      location={profile.location.city}
+                      instrument={profile.music.instrument}
+                      experience={profile.music.experience}
+                      style={profile.music.style}
+                      objectif={profile.music.search.objectif}
+                    />
+                  ))
+                : noResult && <p className='noResultAff'>Aucun résultat</p>}
+              {noCreteria &&
+                profiles !== null &&
+                profiles.map(profileFiltre => (
                   <Profiles
-                    key={profile.id}
-                    id={profile.id}
-                    name={profile.name.first}
-                    image={profile.picture.large}
-                    location={profile.location.city}
-                    instrument={profile.music.instrument}
-                    experience={profile.music.experience}
-                    style={profile.music.style}
-                    objectif={profile.music.search.objectif}
+                    key={profileFiltre.id}
+                    id={profileFiltre.id}
+                    name={profileFiltre.name.first}
+                    image={profileFiltre.picture.large}
+                    location={profileFiltre.location.city}
+                    instrument={profileFiltre.music.instrument}
+                    experience={profileFiltre.music.experience}
+                    style={profileFiltre.music.style}
+                    objectif={profileFiltre.music.search.objectif}
                   />
-                ))
-              : noResult && <p className='noResultAff'>Aucun résultat</p>}
-            {noCreteria &&
-              profiles !== null &&
-              profiles.map(profileFiltre => (
-                <Profiles
-                  key={profileFiltre.id}
-                  id={profileFiltre.id}
-                  name={profileFiltre.name.first}
-                  image={profileFiltre.picture.large}
-                  location={profileFiltre.location.city}
-                  instrument={profileFiltre.music.instrument}
-                  experience={profileFiltre.music.experience}
-                  style={profileFiltre.music.style}
-                  objectif={profileFiltre.music.search.objectif}
-                />
-              ))}
-          </div>
-          <div>
-            <>
+                ))}
+            </div>
+            <div>
               <div className='wrap-leaf'>
                 {
                   <MapContainer
@@ -217,98 +217,101 @@ const Annuaire = ({ setIsHomePage, selectGroupe }) => {
                   </MapContainer>
                 }
               </div>
-            </>
+            </div>
           </div>
-        </div>
+        </>
       )}
-      <div className='title2'>
-        <h3>Ou votre futur groupe de musique ... </h3>
-      </div>
 
       {creteria.gs == 'true' && (
-        <div className='elment-annuaire'>
-          <div className='containerSolo'>
-            {!noCreteria && groupesFilter.length
-              ? groupesFilter.map(groupe => (
-                  <Profiles
-                    key={groupe.id}
-                    id={groupe.id}
-                    name={groupe.name}
-                    image={groupe.jacket}
-                    location={groupe.location.city}
-                    instrument={groupe.instrument}
-                    experience={groupe.experience}
-                    style={groupe.style}
-                    objectif={groupe.search.objectif}
-                  />
-                ))
-              : noResult && <p className='noResultAff'>Aucun résultat</p>}
-            {noCreteria &&
-              groupes !== null &&
-              groupes.map(groupeFiltre => (
-                <Profiles
-                  key={groupeFiltre.id}
-                  id={groupeFiltre.id}
-                  name={groupeFiltre.name}
-                  image={groupeFiltre.jacket}
-                  location={groupeFiltre.location.city}
-                  instrument={groupeFiltre.instrument}
-                  experience={groupeFiltre.experience}
-                  style={groupeFiltre.style}
-                  objectif={groupeFiltre.search.objectif}
-                />
-              ))}
+        <>
+          <div className='titleCard'>
+            <h3>
+              Retrouvez vos futurs groupes de musique sur Rock Your Band ...{' '}
+            </h3>
           </div>
-
-          <>
-            <div className='wrap-leaf'>
-              {
-                <MapContainer
-                  center={[49.837965, 6.057441]}
-                  zoom={5}
-                  scrollWheelZoom={false}
-                >
-                  <TileLayer
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                    url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+          <div className='elment-annuaire'>
+            <div className='containerSolo'>
+              {!noCreteria && groupesFilter.length
+                ? groupesFilter.map(groupe => (
+                    <Profiles
+                      key={groupe.id}
+                      id={groupe.id}
+                      name={groupe.name}
+                      image={groupe.jacket}
+                      location={groupe.location.city}
+                      instrument={groupe.instrument}
+                      experience={groupe.experience}
+                      style={groupe.style}
+                      objectif={groupe.search.objectif}
+                    />
+                  ))
+                : noResult && <p className='noResultAff'>Aucun résultat</p>}
+              {noCreteria &&
+                groupes !== null &&
+                groupes.map(groupeFiltre => (
+                  <Profiles
+                    key={groupeFiltre.id}
+                    id={groupeFiltre.id}
+                    name={groupeFiltre.name}
+                    image={groupeFiltre.jacket}
+                    location={groupeFiltre.location.city}
+                    instrument={groupeFiltre.instrument}
+                    experience={groupeFiltre.experience}
+                    style={groupeFiltre.style}
+                    objectif={groupeFiltre.search.objectif}
                   />
-                  {!noCreteria &&
-                    groupesFilter.length &&
-                    groupesFilter.map(grpFiltre => (
-                      <Leaflet
-                        key={grpFiltre.id}
-                        id={grpFiltre.id}
-                        name={grpFiltre.name}
-                        image={grpFiltre.jacket}
-                        location={grpFiltre.location.city}
-                        instrument={grpFiltre.instrument}
-                        experience={grpFiltre.experience}
-                        objectif={grpFiltre.search.objectif}
-                        latitude={grpFiltre.location.coordinates.latitude}
-                        longitude={grpFiltre.location.coordinates.longitude}
-                      />
-                    ))}
-                  {noCreteria &&
-                    groupes !== null &&
-                    groupes.map(grpFiltre => (
-                      <Leaflet
-                        key={grpFiltre.id}
-                        id={grpFiltre.id}
-                        name={grpFiltre.name}
-                        image={grpFiltre.jacket}
-                        location={grpFiltre.location.city}
-                        instrument={grpFiltre.instrument}
-                        experience={grpFiltre.experience}
-                        objectif={grpFiltre.search.objectif}
-                        latitude={grpFiltre.location.coordinates.latitude}
-                        longitude={grpFiltre.location.coordinates.longitude}
-                      />
-                    ))}
-                </MapContainer>
-              }
+                ))}
             </div>
-          </>
-        </div>
+            <div>
+              <div className='wrap-leaf'>
+                {
+                  <MapContainer
+                    center={[49.837965, 6.057441]}
+                    zoom={5}
+                    scrollWheelZoom={false}
+                  >
+                    <TileLayer
+                      attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                      url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+                    />
+                    {!noCreteria &&
+                      groupesFilter.length &&
+                      groupesFilter.map(grpFiltre => (
+                        <Leaflet
+                          key={grpFiltre.id}
+                          id={grpFiltre.id}
+                          name={grpFiltre.name}
+                          image={grpFiltre.jacket}
+                          location={grpFiltre.location.city}
+                          instrument={grpFiltre.instrument}
+                          experience={grpFiltre.experience}
+                          objectif={grpFiltre.search.objectif}
+                          latitude={grpFiltre.location.coordinates.latitude}
+                          longitude={grpFiltre.location.coordinates.longitude}
+                        />
+                      ))}
+                    {noCreteria &&
+                      groupes !== null &&
+                      groupes.map(grpFiltre => (
+                        <Leaflet
+                          key={grpFiltre.id}
+                          id={grpFiltre.id}
+                          name={grpFiltre.name}
+                          image={grpFiltre.jacket}
+                          location={grpFiltre.location.city}
+                          instrument={grpFiltre.instrument}
+                          experience={grpFiltre.experience}
+                          objectif={grpFiltre.search.objectif}
+                          latitude={grpFiltre.location.coordinates.latitude}
+                          longitude={grpFiltre.location.coordinates.longitude}
+                        />
+                      ))}
+                  </MapContainer>
+                }
+              </div>
+            </div>
+          </div>
+        </>
       )}
     </div>
   )

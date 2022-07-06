@@ -4,7 +4,6 @@ import { useState } from 'react'
 import logo from '../../assets/images/rockYourBand-transparent.png'
 import imageBtnLeft from '../../assets/images/musique-de-guitare.png'
 import imageBtnRight from '../../assets/images/groupe-musique-2.webp'
-
 import Button from '../../components/Button'
 import { Link, useNavigate, NavLink } from 'react-router-dom'
 import login from '../../assets/images/login.png'
@@ -34,6 +33,7 @@ const Header = ({
       {isHomePage && (
         <>
           <div className='home'>
+            <video src='/video.mp4' autoPlay loop playsinline muted></video>
             <div className='header__home '>
               <div className=' p-20'>
                 <div className='logo'>
