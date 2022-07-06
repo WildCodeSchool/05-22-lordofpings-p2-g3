@@ -1,4 +1,6 @@
 .contener-form-event {
+  display: flex;
+  
 text-align: center;
 }
 
@@ -13,4 +15,8 @@ text-align: center;
 
 .button-event {
   margin:10px
+}
+.eventForm {
+  display:flex;
+  flex-direction: row;
 }
