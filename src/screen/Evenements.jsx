@@ -73,7 +73,7 @@ const Evenements = ({ setIsHomePage }) => {
         <div className='contener-form-event'>
           Genre musical :
           <select
-            className='select-event'
+            className='selectForm eventForm'
             id='selectStyle'
             onChange={e => handleChange(e.target)}
           >
@@ -86,8 +86,9 @@ const Evenements = ({ setIsHomePage }) => {
             <option value='Pop'>Pop</option>
             <option value='Classic'>Classic</option>
           </select>
-          <label htmlFor='month'> Date: </label>
+          Date:
           <select
+            className='selectForm eventForm'
             id='month'
             name='month'
             onChange={e => handleChange(e.target)}
@@ -106,7 +107,7 @@ const Evenements = ({ setIsHomePage }) => {
             <option value='Décembre'>Décembre</option>
           </select>
           <button
-            className='buttonFormEvent'
+            className='buttonForm'
             onClick={e => checkCreteria(e, creteria)}
           >
             RECHERCHE
