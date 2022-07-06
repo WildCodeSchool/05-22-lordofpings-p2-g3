@@ -154,14 +154,16 @@ const Header = ({
 
       {!isHomePage && (
         // <div className='nothome'>
-        <header className='header-color  p-20'>
-          <div className='logo'>
-            <Link to='/playlist'>
-              <img src={logo} alt='rockYourBand-logo' />
-            </Link>
-          </div>
+        <header className='header-color'>
+          
 
-          <nav className='home__container flex-row flex-center'>
+          <nav className='home__container-2'>
+            <div className='logo'>
+              <Link to='/playlist'>
+                <img src={logo} alt='rockYourBand-logo' />
+              </Link>
+            </div>
+            
             <div className='navbarre'>
               <ul>
                 <li>
@@ -195,16 +197,16 @@ const Header = ({
                     &Eacute;venements
                   </NavLink>
                 </li>
-                <li>
-                  {/* <NavLink
+                {/*  <li>
+                  <NavLink
                     to='/about'
                     className={({ isActive }) =>
                       isActive ? 'active' : undefined
                     }
                   >
                     A propos
-                  </NavLink> */}
-                </li>
+                  </NavLink>
+                </li> */}
                 <li>
                   <NavLink
                     to='/contact'
@@ -217,7 +219,7 @@ const Header = ({
                 </li>
               </ul>
             </div>
-            <div className='home__container flex-row header__right '>
+            <div className='container__profil '>
               <Link to={`/user-profil/${userId}`}>
                 <div className='home__profil'>
                   <img src={profil} className='home__profil_img' />
