@@ -33,7 +33,7 @@ const Header = ({
       {isHomePage && (
         <>
           <div className='home'>
-            <video src='/Video WTF.mp4' autoPlay loop playsinline muted></video>
+            <video src='/video.mp4' autoPlay loop playsinline muted></video>
             <div className='header__home '>
               <div className=' p-20'>
                 <div className='logo'>

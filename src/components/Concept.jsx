@@ -21,37 +21,37 @@ function Concept() {
         animText === false
       ) {
         console.log(animText)
-        setAnimText(true)
+        // setAnimText(true)
       }
     })
   }, [])
 
-  useEffect(() => {
-    animText && animate_text()
-  }, [animText])
+  // useEffect(() => {
+  //   animText && animate_text()
+  // }, [animText])
 
-  function animate_text() {
-    let delay = 20,
-      delay_start = 0,
-      contents,
-      letters
+  // function animate_text() {
+  //   let delay = 20,
+  //     delay_start = 0,
+  //     contents,
+  //     letters
 
-    document.querySelectorAll('.animate-text').forEach(elem => {
-      contents = elem.textContent.trim()
-      elem.textContent = ''
-      letters = contents.split('')
-      elem.style.visibility = 'visible'
+  //   document.querySelectorAll('.animate-text').forEach(elem => {
+  //     contents = elem.textContent.trim()
+  //     elem.textContent = ''
+  //     letters = contents.split('')
+  //     elem.style.visibility = 'visible'
 
-      letters.forEach((letter, index_1) => {
-        setTimeout(() => {
-          let span = document.createElement('span')
-          span.innerHTML = letter.replace(/ /, '&nbsp;')
-          elem.appendChild(span)
-        }, delay_start + delay * index_1)
-      })
-      delay_start += delay * letters.length
-    })
-  }
+  //     letters.forEach((letter, index_1) => {
+  //       setTimeout(() => {
+  //         let span = document.createElement('span')
+  //         span.innerHTML = letter.replace(/ /, '&nbsp;')
+  //         elem.appendChild(span)
+  //       }, delay_start + delay * index_1)
+  //     })
+  //     delay_start += delay * letters.length
+  //   })
+  // }
 
   return (
     <>
@@ -71,7 +71,7 @@ function Concept() {
         </p>
         <h3 className='title_concept'>Comment ça marche ?</h3>
         <p className='animate-text'>
-          Vous filtrez votre recherche avant de partager des momments.
+          Vous filtrez votre recherche avant de partager des moments.
         </p>
         <h3 className='title_concept'>N'hésitez plus !</h3>
         <p className='animate-text'>
@@ -82,9 +82,9 @@ function Concept() {
           c’est le chef qui le suit.
         </p>
       </div>
-      <div className='equalizer'>
+      {/* <div className='equalizer'>
         <Equalizer />
-      </div>
+      </div> */}
     </>
   )
 }

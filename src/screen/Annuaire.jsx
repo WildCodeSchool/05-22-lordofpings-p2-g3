@@ -14,7 +14,7 @@ const Annuaire = ({ setIsHomePage, selectGroupe }) => {
   const [groupes, setGroupes] = useState([])
   const [groupesFilter, setGroupesFilter] = useState([])
   const [noResult, setNoResult] = useState(false)
-  const [noCreteria, setNoCreteria] = useState(true)
+  const [noCreteria, setNoCreteria] = useState(false)
   const [creteria, setCreteria] = useState({
     instrument: '',
     experience: '',
@@ -29,6 +29,8 @@ const Annuaire = ({ setIsHomePage, selectGroupe }) => {
       ? setCreteria({ ...creteria, gs: 'false' })
       : setCreteria({ ...creteria, gs: 'true' })
   }, [selectGroupe])
+
+  useEffect(() => {}, [groupesFilter])
 
   const filter1 = (arr, strCompare) => {
     return arr.filter(el => el.music.instrument?.includes(strCompare))
@@ -100,7 +102,7 @@ const Annuaire = ({ setIsHomePage, selectGroupe }) => {
     result = creteria.experience ? filter3(result, creteria.experience) : result
     result = creteria.location ? filter4(result, creteria.location) : result
     result = creteria.objectif ? filter5(result, creteria.objectif) : result
-    setCreteria(creteria)
+    // setCreteria(creteria)
     setProfilesFilter(result)
     setNoCreteria(noCreteria)
     setNoResult(true)
@@ -115,7 +117,7 @@ const Annuaire = ({ setIsHomePage, selectGroupe }) => {
       : resultG
     resultG = creteria.location ? filterG4(resultG, creteria.location) : resultG
     resultG = creteria.objectif ? filterG5(resultG, creteria.objectif) : resultG
-    setCreteria(creteria)
+    // setCreteria(creteria)
     setGroupesFilter(resultG)
     setNoCreteria(noCreteria)
     setNoResult(true)

@@ -65,11 +65,9 @@ const Formulaire = ({ isCheck, selectGroupe }) => {
       .then(res => setObjFilter(res.data))
   }, [])
 
-  // useEffect(() => {
-  //   fetch('https://yv3o2geh.directus.app/items/objectif')
-  //     .then(res => res.json())
-  //     .then(res => setObjFilter(res.data))
-  // }, [])
+  useEffect(() => {
+    console.log(creteria)
+  }, [creteria])
 
   useEffect(() => {
     fetch('https://yv3o2geh.directus.app/items/instruments')
