@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
+
+import DisplayDev from '../components/DisplayDev'
+import Equalizer from '../components/Equalizer'
 import Memory from '../components/Memory'
+
 import boomer from '../assets/images/boomer.png'
 import partoch from '../assets/images/partoch.png'
-import DisplayDev from '../components/DisplayDev'
-// import AudioPlayer from '../components/AudioPlayer'
-// import audio1 from '../assets/sounds/test.mp3'
-// import audio2 from '../assets/sounds/urban-beat.mp3'
-// import './Apropos.css'
 
 const Apropos = ({ setIsHomePage }) => {
   const [isactive, setIsactive] = useState(false)
@@ -46,10 +45,13 @@ const Apropos = ({ setIsHomePage }) => {
               devBtn={dev.devBtn}
             />
           ))}
+          <div className='equalizer'>
+            <Equalizer />
+          </div>
         </div>
-        {/* <div className='app-memo'>
+        <div className='app-memo'>
           <Memory />
-        </div> */}
+        </div>
       </div>
     </div>
   )
