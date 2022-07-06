@@ -6,7 +6,9 @@ import facebookImg from '../../assets/images/logoResaux/facebook.png'
 import instagramImg from '../../assets/images/logoResaux/instagram2.png'
 import logoImg from '../../assets/images/Rock_your_band.png'
 import twitterImg from '../../assets/images/logoResaux/twitter.png'
+import profil from '../../assets/images/vincent.png'
 
+const userId = 1
 const Footer = () => {
   const [openNav, setopenNav] = useState(true)
 
@@ -22,9 +24,9 @@ const Footer = () => {
           <div className='footerbody'>
             <ul className='image'>
               <li className='logofooter display'>
-                <a href=''>
+                <Link to='/'>
                   <img id='logof' src={logoImg} alt='logo rock band'></img>
-                </a>
+                </Link>
               </li>
               <li>
                 <a href='https://www.facebook.com/'>
@@ -40,6 +42,14 @@ const Footer = () => {
                 <a href='https://twitter.com/?lang=fr'>
                   <img src={instagramImg} alt='logo instagram'></img>
                 </a>
+              </li>
+              <li>
+                <Link to={`/user-profil/${userId}`}>
+                  <img
+                    src={profil}
+                    className='home__profil_img footer_profil'
+                  />
+                </Link>
               </li>
             </ul>
             <div className='nav'>
@@ -92,7 +102,7 @@ const Footer = () => {
 
                   <li>
                     <NavLink
-                      to='/apropos'
+                      to='/about'
                       className={({ isActive }) =>
                         isActive
                           ? 'redirection-active link-footer footer-active'
@@ -116,7 +126,7 @@ const Footer = () => {
                   </li>
                   <li className='display'>
                     <NavLink
-                      to='/connexion'
+                      to='/login'
                       className={({ isActive }) =>
                         isActive
                           ? 'redirection-active link-footer footer-active'
