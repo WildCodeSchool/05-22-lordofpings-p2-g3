@@ -107,12 +107,9 @@ perspective: 10px;
   width: 15rem;
   clip-path: circle(60px at center);
   margin-top: 6rem;
+  object-fit: contain;
 }
 
-/* h1:ntd-child(2)  {
-  font-size: 1.5rem;
-  padding: 2rem 1rem;
-} */
 
 .description-apropos {
   margin: 1rem 2rem;

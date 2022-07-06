@@ -10,7 +10,7 @@ import { useState, useEffect } from 'react'
 function Slider() {
   const imgUrl = `https://yv3o2geh.directus.app/assets`
   const [evenements, setEvenements] = useState([])
-  const [randomEvent, setrandomEvent] = useState([0, 0, 0])
+  const [randomEvent, setrandomEvent] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0])
 
   useEffect(() => {
     const getData = () => {
@@ -26,7 +26,7 @@ function Slider() {
 
   const randomArr = data => {
     let array = []
-    while (array.length < 3) {
+    while (array.length < 10) {
       const pushEvent = Math.floor(Math.random() * data.length + 1)
       !array.includes(pushEvent) && array.push(pushEvent)
     }
@@ -71,7 +71,14 @@ function Slider() {
           return (
             slide.id === randomEvent[0] ||
             slide.id === randomEvent[1] ||
-            slide.id === randomEvent[2]
+            slide.id === randomEvent[2] ||
+            slide.id === randomEvent[3] ||
+            slide.id === randomEvent[4] ||
+            slide.id === randomEvent[5] ||
+            slide.id === randomEvent[6] ||
+            slide.id === randomEvent[7] ||
+            slide.id === randomEvent[8] ||
+            slide.id === randomEvent[9]
           )
         })
         .map((slide, index) => (
@@ -79,7 +86,7 @@ function Slider() {
           //  slide.map(slide =>
 
           <div key={slide.id} className='sliderContainer'>
-            <img src={`${imgUrl}/${slide.image}`} alt='' />
+            <img src={`${imgUrl}/${slide.image}`} alt={name} />
             <h2 className='overlay_title'>{slide.name}</h2>
             <div className='overlay'>
               <div className='slide_text-p'>

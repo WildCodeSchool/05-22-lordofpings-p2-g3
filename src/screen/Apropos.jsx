@@ -13,7 +13,7 @@ const Apropos = ({ setIsHomePage }) => {
   const [devProject, setDevProject] = useState([])
 
   useEffect(() => {
-    fetch('https://kinotonik.github.io/jsonapi/data_dev_p2.json')
+    fetch('https://yv3o2geh.directus.app/items/team')
       .then(res => res.json())
       .then(res => setDevProject(res.data))
   }, [])

@@ -1,56 +1,51 @@
 import React, { useState, useEffect } from 'react'
 import './Formulaire.css'
 
-// étape 4 récupe de la props dans le formulaire
-const Formulaire = ({ setDisplayMOrG, isCheck }) => {
-  //const [isDisplayMap, setIsDisplayMap] = useState(false)
+const Formulaire = ({ isCheck, selectGroupe }) => {
   const [noCreteria, setNoCreteria] = useState(true)
   const [creteria, setCreteria] = useState({
     instrument: '',
     experience: '',
     style: '',
     location: '',
-    objectif: ''
+    objectif: '',
+    gs: selectGroupe
   })
-  //const [state, setState] = useState(() => new Set());
+
   const [locFilter, setLocFilter] = useState([])
   const [instFilter, setInstFilter] = useState([])
   const [nivFilter, setNivFilter] = useState([])
   const [styleFilter, setStyleFilter] = useState([])
   const [objFilter, setObjFilter] = useState([])
-  // filtres selectionnés
-  // const [locCreteria, setLocCreteria] = useState([])
-  // const [instCreteria, setInstCreteria] = useState([])
-  // const [nivCreteria, setNivCreteria] = useState([])
-  // const [styleCreteria, setStyleCreteria] = useState([])
-  // const [objCreteria, setObjCreteria] = useState([])
 
   const handleChange = target => {
     setNoCreteria(false)
 
     if (target.id === 'selectInst') {
       setCreteria({ ...creteria, instrument: target.value })
-      // setInstCreteria(target.value)
     }
     if (target.id === 'selectNiv') {
       setCreteria({ ...creteria, experience: target.value })
-      //setNivCreteria(target.value)
     }
     if (target.id === 'selectObj') {
       setCreteria({ ...creteria, objectif: target.value })
-      //setObjCreteria
     }
     if (target.id === 'selectLoc') {
       setCreteria({ ...creteria, location: target.value })
-      //setLocCreteria(target.value)
     }
     if (target.id === 'selectStyle') {
       setCreteria({ ...creteria, style: target.value })
-      //setStyleCreteria(target.value)
+    }
+
+    if (target.id === 'selectGs') {
+      setCreteria({ ...creteria, gs: target.value })
     }
   }
 
-  //const [results, setResults] = useState([])
+  useEffect(() => {
+    document.getElementById('selectGs').value = selectGroupe
+  }, [])
+
   useEffect(() => {
     fetch('https://kinotonik.github.io/jsonapi/data_musicien.json')
       .then(res => res.json())
@@ -69,6 +64,12 @@ const Formulaire = ({ setDisplayMOrG, isCheck }) => {
       .then(res => res.json())
       .then(res => setObjFilter(res.data))
   }, [])
+
+  // useEffect(() => {
+  //   fetch('https://yv3o2geh.directus.app/items/objectif')
+  //     .then(res => res.json())
+  //     .then(res => setObjFilter(res.data))
+  // }, [])
 
   useEffect(() => {
     fetch('https://yv3o2geh.directus.app/items/instruments')
@@ -89,7 +90,7 @@ const Formulaire = ({ setDisplayMOrG, isCheck }) => {
   }, [])
 
   return (
-    <div className='contener'>
+    <div className='contenerForm'>
       <form className='form'>
         <div className='contener-1'>
           <label htmlFor='select' className='labelFrom'>
@@ -98,11 +99,10 @@ const Formulaire = ({ setDisplayMOrG, isCheck }) => {
             <select
               id='selectGs'
               className='selectForm'
-              onChange={e => setDisplayMOrG(e.target.value)} // peut etre changer plus d'interaction avec Leaflet
+              onChange={e => handleChange(e.target)}
             >
-              <option value=''>---Type---</option>
-              <option value='crew'>Groupe</option>
-              <option value='solo'>Solo</option>
+              <option value={true}>Groupe</option>
+              <option value={false}>Solo</option>
             </select>
           </label>
           <label htmlFor='select' className='labelFrom'>

@@ -23,14 +23,13 @@ const Profiles = ({
             <p>📍 {location}</p>
             <p>⭐️ {experience}</p>
             <p>🎶 {instrument.join(', ')}</p>
-            <p>🎶 {objectif}</p>
+            <p>⭐️{objectif}</p>
           </div>
         </div>
         <div className='flip-box-back text-center'>
           <img src={image} alt={image} className='flip-image' />
           <div className='inner color-white'>
             <h3 className='flip-box-header'>{name}</h3>
-            <p>A short sentence describing this callout is.</p>
             <button
               className='flip-box-button'
               onClick={() => navigate(`/profilesdetails/${id}`)}

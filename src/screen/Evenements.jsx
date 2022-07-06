@@ -53,8 +53,28 @@ const Evenements = ({ setIsHomePage }) => {
             <option value='pop'>Pop</option>
             <option value='classic'>Classic</option>
           </select>
-          Localisation :
           <input type='text' name='' className='selectForm' />
+          <label>
+            Veuillez saisir la date de début:
+            <input
+              type='date'
+              name='bday'
+              required
+              pattern='\d{4}-\d{2}-\d{2}'
+            />
+            <span className='validity'></span>
+          </label>
+          <label>
+            Veuillez saisir la date de fin:
+            <input
+              type='date'
+              name='bday'
+              required
+              pattern='\d{4}-\d{2}-\d{2}'
+            />
+            <span className='validity'></span>
+          </label>
+          Localisation :
           <button className='button-event' onClick={handleClick}>
             CHERCHER
           </button>
@@ -70,6 +90,10 @@ const Evenements = ({ setIsHomePage }) => {
             image={evenement.image}
             description={evenement.description}
             id={evenement.id}
+            url={evenement.url}
+            tarif={evenement.tarif}
+            style={evenement.style}
+            location={evenement.location}
           />
         ))}
       </div>
