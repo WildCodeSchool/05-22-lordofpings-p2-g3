@@ -21,7 +21,7 @@ const Annuaire = ({ setIsHomePage, selectGroupe }) => {
     style: '',
     location: '',
     objectif: '',
-    gs: selectGroupe
+    gs: `${selectGroupe}`
   })
 
   useEffect(() => {
@@ -62,7 +62,7 @@ const Annuaire = ({ setIsHomePage, selectGroupe }) => {
   }
 
   const filterG4 = (arr, strCompareG) => {
-    return arr.filter(el => el.location?.includes(strCompareG))
+    return arr.filter(el => el.location?.city?.includes(strCompareG))
   }
 
   const filterG5 = (arr, strCompareG) => {
@@ -93,7 +93,6 @@ const Annuaire = ({ setIsHomePage, selectGroupe }) => {
 
   const checkCreteria = (e, creteria, noCreteria) => {
     e.preventDefault()
-    console.log('ETAT BORDEL', creteria, creteria.gs)
     let result = profiles
     result = creteria.instrument ? filter1(result, creteria.instrument) : result
     result = creteria.style ? filter2(result, creteria.style) : result
@@ -129,7 +128,6 @@ const Annuaire = ({ setIsHomePage, selectGroupe }) => {
         </div>
         <Formulaire isCheck={checkCreteria} selectGroupe={selectGroupe} />
         <div className='titleCard'>
-          {console.log('BORDEL DE MERDE', creteria.gs)}
           <h3>Retrouvez vos futurs musiciens sur Rock Your Band ... </h3>
         </div>
       </div>

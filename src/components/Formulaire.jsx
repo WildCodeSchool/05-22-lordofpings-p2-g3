@@ -9,7 +9,7 @@ const Formulaire = ({ isCheck, selectGroupe }) => {
     style: '',
     location: '',
     objectif: '',
-    gs: selectGroupe
+    gs: `${selectGroupe}`
   })
 
   const [locFilter, setLocFilter] = useState([])
@@ -51,10 +51,7 @@ const Formulaire = ({ isCheck, selectGroupe }) => {
       .then(res => res.json())
       .then(res => {
         let a = res.results.map(el => el.location.city)
-        console.log('ARR MAP', a)
         a = a.filter((item, index) => a.indexOf(item) === index)
-
-        console.log('FILTRE TEST', a)
         return setLocFilter(a)
       })
   }, [])
