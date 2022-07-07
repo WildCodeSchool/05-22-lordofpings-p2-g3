@@ -48,7 +48,7 @@ const Header = ({
   const handleMouseEnter = () => {
     play()
   }
-  const handleMouseleave = () => {
+  const handleMouseLeave = () => {
     stop()
   }
 
@@ -66,7 +66,7 @@ const Header = ({
                       src={logo}
                       alt='rockYourBand-logo'
                       onMouseEnter={handleMouseEnter}
-                      onMouseLeave={handleMouseleave}
+                      onMouseLeave={handleMouseLeave}
                     />
                   </Link>
                 </div>
