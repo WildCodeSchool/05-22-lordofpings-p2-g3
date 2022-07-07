@@ -1,17 +1,22 @@
 .buttonEvent {
-  width:20px;
+  width:10em;
+  padding-inline: 00px;
+  margin-right: 100px;
+  margin-bottom: 2em;
 }
 .contener-form-event {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   font-weight: bolder;
+  align-content: center;
   
 }
 
 .h1event {
-  font-size: 3rem;
+  font-size: 2rem;
   text-align: center;
 }
 
@@ -20,4 +25,10 @@
   display: flex;
   margin-inline: 2em;
   width:6em;
+}
+
+@media screen and (max-width:1000px) {
+
+.contener-form-event {  flex-direction: column
+}
 }
