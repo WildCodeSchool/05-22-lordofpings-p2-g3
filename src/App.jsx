@@ -15,19 +15,30 @@ import './App.css'
 import LoginPage from './screen/LoginPage'
 import Playlist from './screen/PlayList'
 import UserProfil from './screen/UserProfil'
+import Contact from './screen/Contact'
 
 function App({ isDebugMode = true }) {
   const [isHomePage, setIsHomePage] = useState(true)
+  const [selectGroupe, setSelectGroupe] = useState(false)
 
   return (
     <div className='app-container'>
-      <Header className='header' isHomePage={isHomePage} />
+      <Header
+        className='header'
+        isHomePage={isHomePage}
+        setSelectGroupe={setSelectGroupe}
+      />
       <Main className='main'>
         <Routes>
           <Route path='/' element={<Home setIsHomePage={setIsHomePage} />} />
           <Route
             path='/annuaire'
-            element={<Annuaire setIsHomePage={setIsHomePage} />}
+            element={
+              <Annuaire
+                setIsHomePage={setIsHomePage}
+                selectGroupe={selectGroupe}
+              />
+            }
           />
           <Route
             path='/evenement'
@@ -65,6 +76,10 @@ function App({ isDebugMode = true }) {
           <Route
             path='/graphql'
             element={<GraphqlPage setIsHomePage={setIsHomePage} />}
+          />
+          <Route
+            path='/contact'
+            element={<Contact setIsHomePage={setIsHomePage} />}
           />
         </Routes>
       </Main>

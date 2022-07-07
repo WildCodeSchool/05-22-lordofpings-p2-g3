@@ -48,6 +48,8 @@ const Apropos = ({ setIsHomePage }) => {
           ))}
         </div>
       </div>
+
+      {/* <Memory /> */}
       {/* <div className='main'>
               <div className='about__container' />
               <h2>Mon Player</h2>

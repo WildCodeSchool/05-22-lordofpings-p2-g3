@@ -5,6 +5,8 @@
         text-align: center;
     border-top: 1px solid;
     margin-top: 4rem;
+    border-bottom: 1px solid;
+    margin-bottom: 6rem;
     }
 
     .noResultAff {
@@ -30,9 +32,12 @@
     .titleCard {
     text-align: center;
     text-align: center;
-    margin-top: 4rem;
-    font-size:xx-large
-    }
+    margin-top: 6rem;
+    font-size:xx-large;
+    border-top: 1px solid;
+    margin-bottom: 4rem;
+   
+ }
 
     .elment-annuaire{
         display: grid;
@@ -62,6 +67,14 @@
                 justify-content: center;
                 margin-top: 10px;
               }
+
+              .titleForm1 {
+                text-align: center;
+                text-align: center;
+            border-top: 1px solid;
+            margin-top: 4rem;
+            font-size: 14px;
+            }
         
 
         }
