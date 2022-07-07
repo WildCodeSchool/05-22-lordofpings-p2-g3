@@ -127,12 +127,12 @@ const Annuaire = ({ setIsHomePage, selectGroupe }) => {
           <h1>Bienvenue sur le groupe de recherche de musiciens n°1 !</h1>
         </div>
         <Formulaire isCheck={checkCreteria} selectGroupe={selectGroupe} />
-        <div className='titleCard'>
-          <h3>Retrouvez vos futurs musiciens sur Rock Your Band ... </h3>
-        </div>
       </div>
       {creteria.gs == 'false' && (
         <>
+          <div className='titleCard'>
+            <h3>Retrouvez vos futurs musiciens sur Rock Your Band ... </h3>
+          </div>
           <div className='elment-annuaire'>
             <div className='containerSolo'>
               {!noCreteria && profilesFilter.length
