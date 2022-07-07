@@ -11,13 +11,13 @@ video {
 
 /************* STYLE GENERIQUE **************/
 .style1 {
-  color: var(--bg-deg-2) !important;
-  text-shadow: 2px 1px white !important;
+  color: var(--orange-logo) !important;
+  text-shadow: 2px 1px black !important;
 }
 
 .style2 {
-  color: var(--bg-deg-2) !important;
-  text-shadow: 2px 1px white !important;
+  color: var(--orange-logo) !important;
+  text-shadow: 2px 1px black !important;
 }
 
 .style3 {
@@ -126,6 +126,7 @@ header {
   padding-top: 2rem;
   padding-bottom: 1rem;
   font-size: 5rem;
+    letter-spacing: 0.2rem;
 }
 
 .hero-vp h2 {
@@ -200,6 +201,7 @@ header {
   flex-flow: row nowrap;
   align-items: center;
   font-size: var(--font-size-3);
+  font-weight:700;
   /* padding-left: 1rem;; */
 }
 
@@ -272,7 +274,7 @@ button.header__login:hover {
   font-family: var(--font-family-2);
   /* font-size: 2rem; */
   color: var(--orange-logo);
-  font-weight: 300;
+  font-weight: 700;
   transition: 0.6s 0s ease-in-out;
 
 }
@@ -388,8 +390,7 @@ img.home__profil {
 
   .hero-vp h1 {
     padding-top: 1.8rem;
-    /* padding-bottom: 1rem;
-  font-size: 5rem; */
+ 
   }
 
 }
