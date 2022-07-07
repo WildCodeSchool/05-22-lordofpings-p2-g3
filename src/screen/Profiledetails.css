@@ -66,6 +66,7 @@
     flex-basis: 66.6667%;
     /* max-width: 66.666667%;  */
     max-height: 100%;
+    justify-content: center;
 }
 
 .profile-liens {
@@ -90,13 +91,14 @@ font-size: 40px;
     background-color: rgb(90, 90, 90);
     color: white;
     /* font-size: 60px; */
-    height: 40%;
+    /* height: 40%; */
 }
 
 .profile-social h4 {
   color: white;
   font-size: 25px;
   text-align: start;
+      padding: 1rem 1rem;
   /* height: 90px;
   line-height: 90px; */
 }
@@ -105,13 +107,15 @@ font-size: 40px;
   height: 80px;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   }
   .profile-reseaux img{
     padding: 0.5vh;
     
     }
-
+.profile-cart{
+  z-index: 0;
+}
 .profile-totobtn {
   display: inline-block;
   background-color: #0d1117;
@@ -158,9 +162,9 @@ font-size: 40px;
 .profile-title {
     padding: 1rem;
     background-color: #211e1e;
-    height: 25%;
+    /* height: 25%; */
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     flex-wrap: wrap; 
     align-content: flex-start;
     align-items: flex-start;
@@ -187,28 +191,28 @@ font-size: 40px;
     padding: 32px;
     text-align: center;
     display: block;
-    width: 30%;
+    width: 50%;
 }
 .profile-cube2{
    background-color: #f15512aa;
     padding: 32px;
     text-align: center;
     display: block;
-    width: 30%;
+    width: 50%;
 }
 .profile-cube3{
     background-color: #f15512d0;
     padding: 32px;
     text-align: center;
     display: block;
-    width: 30%;
+    width: 50%;
 }
 .profile-cube4{
     background-color: #f15512f6;
     padding: 32px;
     text-align: center;
     display: block;
-    width: 30%;
+    width: 50%;
 }
 .pd-image:hover {
     border: 4px solid #494252;
@@ -231,8 +235,11 @@ font-size: 40px;
   flex-wrap: wrap;
   justify-content: space-around;
   align-content: stretch;
-  align-items: flex-start;
-  flex-direction: row;}
+  align-items: center;
+  flex-direction: column;
+  z-index: 0;
+}
+
 
 .profile-map {
   width: 50%;
@@ -250,17 +257,30 @@ font-size: 40px;
 .profile-WTF{
   width: 50%;
   height: 100%;
+  margin: 20px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
 }
 
 .profile-contain{
   height: 300px;
   width: 300px;
+  display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .player__container{
   height: 100px!important;
   width: 100px!important;
   margin-top: 1rem;
+      display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .player__container img{
   height: 100px!important;
@@ -280,12 +300,63 @@ font-size: 40px;
 }
 
 
-@media (max-width: 520px) {
+@media (min-width:300px) and (max-width: 491px) {
+  .profile-title h4 {
+    font-size: 25px;
+  }
+  .profile-title p {
+  font-size: 18px;
+  }
+  .profile-cubes h4{
+    font-size: 16px;
+     }
+  .profile-cubes h6{
+  font-size: 13px;
+     }
+     .profile-cube1{
+            padding: 10px;
+     }
+      .profile-cube2{
+              padding: 10px;
+    }
+    .profile-cube3{
+      padding: 10px;
+}
+.profile-cube4{
+        padding: 10px;
+}
+  }
 
+
+
+@media (min-width:300px) and (max-width: 1199px) {
+  .profile-gutter {
+    flex-direction: column;
+  }
+  .profile-cubes{
+    flex-wrap: wrap;
+  }
+  .profile-info{
+    justify-content: flex-start;
+  }
 }
 
-@media (min-width:520px) and (max-width: 1199px) {
- 
-}
+@media (max-width: 765px) {
+
+  .profile-social {
+    flex-direction: column;
+  }
+  .profile-totobtn{
+    padding: 5px;
+  }
   
+.profile-resbtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profile-reseaux {
+  width: 170px;
+}
+}
 

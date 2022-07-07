@@ -72,10 +72,7 @@ const Footer = () => {
               {userInfo.avatar != '' &&
                 localStorage.getItem('rock-your-band') != null && (
                   <Link to={`/user-profil/${userId}`}>
-                    <img
-                      src={userImg}
-                      className='home__profil_img footer_profil'
-                    />
+                    <img src={userImg} className='footer_profil' />
                   </Link>
                 )}
               <label
