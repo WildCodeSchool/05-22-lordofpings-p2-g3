@@ -117,6 +117,9 @@
 .leaflet-container {
   width: 24vw;
   height: 82vh;
+  border-radius: 10px;
+  border: solid 2px white;
+
 
 }
 .btn-leaf {

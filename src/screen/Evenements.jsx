@@ -161,7 +161,7 @@ const Evenements = ({ setIsHomePage }) => {
             {
               <MapContainer
                 center={[47.146135, 2.325562]}
-                zoom={6}
+                zoom={5}
                 scrollWheelZoom={false}
               >
                 <TileLayer
