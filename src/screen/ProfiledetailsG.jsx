@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import './Profiledetails.css'
+import './ProfiledetailsG.css'
 import facebookImg from '../assets/images/logoResaux/facebook.png'
 import instagramImg from '../assets/images/logoResaux/instagram.png'
 import youtubeImg from '../assets/images/logoResaux/youtube.png'
-import pprofile from '../assets/images/tom.jpg'
+import profile from '../assets/images/tom.jpg'
 import LeafletDetails from '../components/LeafletDetails'
 import AudioPlayer from '../components/AudioPlayer.jsx'
 import audio1 from '../assets/sounds/lofi-study.mp3'
 import audio2 from '../assets/sounds/test.mp3'
 import audio3 from '../assets/sounds/urban-beat.mp3'
 
-const Profiledetails = ({ setIsHomePage }) => {
+const profiledetailsG = ({ setIsHomePage }) => {
   useEffect(() => {
     setIsHomePage(false)
   }, [])
@@ -33,77 +33,75 @@ const Profiledetails = ({ setIsHomePage }) => {
     character.length && (
       <>
         {console.log(character)}
-        <div className='profile-wrapper'>
-          <div className='profile-container'>
-            <div className='profile-gutter'>
-              <div className='profile-coninfo'>
+        <div className='profile-g-wrapper'>
+          <div className='profile-g-container'>
+            <div className='profile-g-gutter'>
+              <div className='profile-g-coninfo'>
                 <img
-                  src={character[0].picture.medium}
-                  alt='profile photo'
-                  className='profile-image'
+                  src={character[0].jacket}
+                  alt='profile-g photo'
+                  className='profile-g-image'
                 />
               </div>
-              <div className='profile-info'>
-                <div className='profile-liens'>
-                  <div className='profile-social'>
-                    <div className='profile-name'>
-                      <h3>
-                        {character[0].name.last} {character[0].name.first}
-                      </h3>
-                      <h4>{character[0].age}ans </h4>
+              <div className='profile-g-info'>
+                <div className='profile-g-liens'>
+                  <div className='profile-g-social'>
+                    <div className='profile-g-name'>
+                      <h3>{character[0].name}</h3>
                     </div>
-                    <div className='profile-resbtn'>
-                      <div className='profile-reseaux'>
-                        <div className='profile-resfain'>
+                    <div className='profile-g-resbtn'>
+                      <div className='profile-g-reseaux'>
+                        <div className='profile-g-resfain'>
                           <a href='https://www.facebook.com/'>
                             <img src={facebookImg} alt='logo facebook'></img>
                           </a>
                         </div>
-                        <div className='profile-resfain'>
+                        <div className='profile-g-resfain'>
                           <a href='https://www.instagram.com/?hl=fr'>
                             <img src={instagramImg} alt='logo twitter'></img>
                           </a>
                         </div>
-                        <div className='profile-resyoutub'>
+                        <div className='profile-g-resyoutub'>
                           <a href='https://www.youtube.com/'>
                             <img src={youtubeImg} alt='logo youtube'></img>
                           </a>
                         </div>
                       </div>
-                      <button className='profile-totobtn'>
+                      <button className='profile-g-totobtn'>
                         <span>Contact</span>
                       </button>
                     </div>
                   </div>
-                  <div className='profile-title'>
-                    <h4>Description : </h4>{' '}
-                    <p>{character[0].music.description} </p>
+                  <div className='profile-g-title'>
+                    <h4>Description : </h4> <p>{character[0].description} </p>
                   </div>
-                  <div className='profile-cubes'>
-                    <div className='profile-cube1'>
+                  <div className='profile-g-cubes'>
+                    <div className='profile-g-cube1'>
                       <h4>Genre : </h4>
-                      <h6>{character[0].music.style} </h6>
+                      <h6>{character[0].style} </h6>
                     </div>
-                    <div className='profile-cube2'>
-                      <h4>Instrument: </h4>
-                      <h6>{character[0].music.instrument}</h6>
+                    <div className='profile-g-cube2'>
+                      <h4>Instruments: </h4>
+                      {character[0].instrument.map(int => (
+                        <h6>{`${int}`}</h6>
+                      ))}
                     </div>
-                    <div className='profile-cube3'>
+                    <div className='profile-g-cube3'>
                       <h4>Recherche:</h4>
-                      <h6>{character[0].music.search.type}</h6>
-                      <h6>{character[0].music.search.niveau}</h6>
+                      <h6>{character[0].search.instrument}</h6>
+                      <h6>{character[0].search.niveau}</h6>
                     </div>
-                    <div className='profile-cube4'>
+                    <div className='profile-g-cube4'>
                       <h4>Objectif:</h4>
-                      <h6>{character[0].music.search.objectif}</h6>
+                      <h6>{character[0].search.objectif}</h6>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className='profile-mappor'>
-            <div className='profile-map'>
+          <div className='profile-g-mappor'>
+            <div className='profile-g-map'>
               <h2>Localisation : {character[0].location.city}</h2>
               <div>
                 <LeafletDetails
@@ -113,20 +111,20 @@ const Profiledetails = ({ setIsHomePage }) => {
                 />
               </div>
             </div>
-            <div className='profile-WTF'>
+            {/* <div className='profile-g-WTF'>
               <h4>Playlist: </h4>
               <h6>{character[0].music.lien}</h6>
-              <div className='profile-contai'>
-                <div className='profile-contain'>
+              <div className='profile-g-contai'>
+                <div className='profile-g-contain'>
                   <AudioPlayer
-                    className='profile-player'
-                    url={[audio3]} /*div playstop*/
-                    title={['urban-beat.mp3']} /*div title*/
+                    className='profile-g-player'
+                    url={[audio3]} 
+                    title={['urban-beat.mp3']} 
                   />
-                  {/* <i className='fas fa-play'></i> */}
+                  
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </>
@@ -134,4 +132,4 @@ const Profiledetails = ({ setIsHomePage }) => {
   )
 }
 
-export default Profiledetails
+export default profiledetailsG

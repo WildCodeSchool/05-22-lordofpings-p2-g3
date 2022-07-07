@@ -6,7 +6,9 @@ import facebookImg from '../../assets/images/logoResaux/facebook.png'
 import instagramImg from '../../assets/images/logoResaux/instagram2.png'
 import logoImg from '../../assets/images/Rock_your_band.png'
 import twitterImg from '../../assets/images/logoResaux/twitter.png'
+import profil from '../../assets/images/vincent.png'
 
+const userId = 1
 const Footer = () => {
   const [openNav, setopenNav] = useState(true)
 
@@ -22,24 +24,44 @@ const Footer = () => {
           <div className='footerbody'>
             <ul className='image'>
               <li className='logofooter display'>
-                <a href=''>
+                <Link to='/'>
                   <img id='logof' src={logoImg} alt='logo rock band'></img>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href='https://www.facebook.com/'>
+                <a
+                  target='_blank'
+                  href='https://www.facebook.com/'
+                  rel='noreferrer'
+                >
                   <img src={facebookImg} alt='logo facebook'></img>
                 </a>
               </li>
               <li>
-                <a href='https://www.instagram.com/?hl=fr'>
+                <a
+                  target='_blank'
+                  href='https://www.instagram.com/?hl=fr'
+                  rel='noreferrer'
+                >
                   <img src={twitterImg} alt='logo twitter'></img>
                 </a>
               </li>
               <li>
-                <a href='https://twitter.com/?lang=fr'>
+                <a
+                  target='_blank'
+                  href='https://twitter.com/?lang=fr'
+                  rel='noreferrer'
+                >
                   <img src={instagramImg} alt='logo instagram'></img>
                 </a>
+              </li>
+              <li>
+                <Link to={`/user-profil/${userId}`}>
+                  <img
+                    src={profil}
+                    className='home__profil_img footer_profil'
+                  />
+                </Link>
               </li>
             </ul>
             <div className='nav'>
@@ -92,14 +114,14 @@ const Footer = () => {
 
                   <li>
                     <NavLink
-                      to='/apropos'
+                      to='/about'
                       className={({ isActive }) =>
                         isActive
                           ? 'redirection-active link-footer footer-active'
                           : 'btn-inactive link-footer'
                       }
                     >
-                      A proros
+                      A propos
                     </NavLink>
                   </li>
                   <li>
@@ -116,7 +138,7 @@ const Footer = () => {
                   </li>
                   <li className='display'>
                     <NavLink
-                      to='/connexion'
+                      to='/login'
                       className={({ isActive }) =>
                         isActive
                           ? 'redirection-active link-footer footer-active'

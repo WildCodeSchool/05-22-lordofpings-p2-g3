@@ -5,6 +5,7 @@ import Annuaire from './screen/Annuaire'
 import Evenements from './screen/Evenements'
 import Apropos from './screen/Apropos'
 import Profiledetails from './screen/Profiledetails'
+import ProfiledetailsG from './screen/ProfiledetailsG'
 import Header from './components/templates/Header'
 import Footer from './components/templates/Footer'
 import Main from './components/templates/Main'
@@ -14,6 +15,7 @@ import './App.css'
 import LoginPage from './screen/LoginPage'
 import Playlist from './screen/PlayList'
 import UserProfil from './screen/UserProfil'
+import Contact from './screen/Contact'
 
 function App({ isDebugMode = true }) {
   const [isHomePage, setIsHomePage] = useState(true)
@@ -52,6 +54,10 @@ function App({ isDebugMode = true }) {
             element={<Profiledetails setIsHomePage={setIsHomePage} />}
           />
           <Route
+            path='/profilesdetailsG/:id'
+            element={<ProfiledetailsG setIsHomePage={setIsHomePage} />}
+          />
+          <Route
             path='/about'
             element={<Apropos setIsHomePage={setIsHomePage} />}
           />
@@ -73,7 +79,7 @@ function App({ isDebugMode = true }) {
           />
           <Route
             path='/contact'
-            element={<EventDetails setIsHomePage={setIsHomePage} />}
+            element={<Contact setIsHomePage={setIsHomePage} />}
           />
         </Routes>
       </Main>

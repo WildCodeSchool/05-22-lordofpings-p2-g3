@@ -53,8 +53,11 @@ display: none;
   color: #D7CCCC;
 }
 
-footer .link-footer {
+.footer_profil{
+display: none;
+}
 
+footer .link-footer {
   text-decoration: none;
 }
 
@@ -127,9 +130,14 @@ footer .image {
   width: 40px;
   object-fit: contain;
 }
+
 #logof{
   width: 40px;
 }
+
+.footer_profil{
+  display: flex;
+  }
 
 .resaux{
   display: none;
@@ -170,6 +178,13 @@ footer{
 .nav .mobileMenu li {
   width: 50%;
 }
+
+.display{
+  display: flex;
+  justify-content: center;
+
+  }
+
 .rotate180{
   transform: rotate(90deg);
   transition: 0.5s;
@@ -216,6 +231,5 @@ footer{
   border-bottom: 1px dotted #fc5209!important;
 
 }
-
 }
 

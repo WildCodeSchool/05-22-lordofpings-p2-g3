@@ -11,10 +11,10 @@ export const LeafletDetails = ({ latitude, longitude, id }) => {
     <div className='lf-David'>
       {
         <MapContainer
-          style={{ width: '450px', height: '450px', margin: '0px' }}
+          style={{ width: '41vw', height: '30vh', margin: '0px' }}
           center={position}
           zoom={10}
-          scrollWheelZoom={true}
+          scrollWheelZoom={false}
         >
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright/OpenStreetMap</a> contributors'
