@@ -31,7 +31,7 @@ function App({ isDebugMode = true }) {
   })
 
   return (
-    <UserContext.Provider value={{ userInfo: userInfo }}>
+    <UserContext.Provider value={{ userInfo: userInfo ,setUserInfo : setUserInfo }}>
       <div className='app-container'>
         <Header className='header' isHomePage={isHomePage} />
         <Main className='main'>
