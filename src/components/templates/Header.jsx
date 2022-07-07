@@ -35,14 +35,14 @@ const Header = ({
           <div className='home'>
             <video src='/video.mp4' autoPlay loop playsinline muted></video>
             <div className='header__home '>
-              <div className=' p-20'>
-                <div className='logo'>
-                  <Link to='/playlist'>
-                    <img src={logo} alt='rockYourBand-logo' />
-                  </Link>
-                </div>
-
-                <nav className='home__container p-20 flex-row'>
+             
+                <nav className='home__container'>
+                  <div className='logo'>
+                    <Link to='/playlist'>
+                      <img src={logo} alt='rockYourBand-logo' />
+                    </Link>
+                  </div>
+              
                   <div className='navbarre '>
                     <ul>
                       <li>
@@ -78,7 +78,7 @@ const Header = ({
                           &Eacute;venements
                         </NavLink>
                       </li>
-                      <li>
+                      {/* <li>
                         <NavLink
                           to='/about'
                           className={({ isActive }) =>
@@ -87,7 +87,7 @@ const Header = ({
                         >
                           A propos
                         </NavLink>
-                      </li>
+                      </li> */}
                       <li>
                         <NavLink
                           to='/contact'
@@ -99,30 +99,31 @@ const Header = ({
                         </NavLink>
                       </li>
                     </ul>
+             
                   </div>
-
-                  <div className='home__container flex-row header__right '>
-                    <Link to={`/user-profil/${userId}`}>
-                      <div className='home__profil'>
-                        <img src={profil} className='home__profil_img' />
-                      </div>
-                    </Link>
-                    <Link to='/login'>
-                      <button className='header__login '>
-                        <p> Connexion</p>
-                      </button>
-                    </Link>
-                  </div>
+                <div className='container__profil '>
+                  <Link to={`/user-profil/${userId}`}>
+                    <div className='home__profil'>
+                      <img src={profil} className='home__profil_img' />
+                    </div>
+                  </Link>
+                  <Link to='/login'>
+                    <button className='header__login '>
+                      <p> Connexion</p>
+                    </button>
+                  </Link>
+                </div>
+                
                 </nav>
-              </div>
+           
 
               <div className='hero-container'>
                 <div className='hero__btn-container'>
                   {/* <Link to='/annuaire/musicien'> */}
                   <Button
                     name='Recherche musicien'
-                    bgColor={`var(--primary-1)`}
-                    shadow={`var(--gray-3)`}
+                    bgColor={`var(--gray-1)`}
+                    shadow={`var(--orange-logo)`}
                     spec={{ choice: false, url: '/annuaire' }}
                     handleType={handleType}
                   ></Button>
@@ -153,14 +154,16 @@ const Header = ({
 
       {!isHomePage && (
         // <div className='nothome'>
-        <header className='header-color  p-20'>
-          <div className='logo'>
-            <Link to='/playlist'>
-              <img src={logo} alt='rockYourBand-logo' />
-            </Link>
-          </div>
+        <header className='header-color'>
+          
 
-          <nav className='home__container flex-row flex-center'>
+          <nav className='home__container-2'>
+            <div className='logo'>
+              <Link to='/playlist'>
+                <img src={logo} alt='rockYourBand-logo' />
+              </Link>
+            </div>
+            
             <div className='navbarre'>
               <ul>
                 <li>
@@ -194,7 +197,7 @@ const Header = ({
                     &Eacute;venements
                   </NavLink>
                 </li>
-                <li>
+                {/*  <li>
                   <NavLink
                     to='/about'
                     className={({ isActive }) =>
@@ -203,7 +206,7 @@ const Header = ({
                   >
                     A propos
                   </NavLink>
-                </li>
+                </li> */}
                 <li>
                   <NavLink
                     to='/contact'
@@ -216,7 +219,7 @@ const Header = ({
                 </li>
               </ul>
             </div>
-            <div className='home__container flex-row header__right '>
+            <div className='container__profil '>
               <Link to={`/user-profil/${userId}`}>
                 <div className='home__profil'>
                   <img src={profil} className='home__profil_img' />
