@@ -397,8 +397,10 @@ img.home__profil_img {
 }
 
 @media screen and (max-width:768px) {
-
-
+  
+.container__profil{
+  display:none;
+}
   .logo {
     display: none;
   }
