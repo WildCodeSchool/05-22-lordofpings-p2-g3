@@ -8,7 +8,9 @@
 }
 
 .overlay_text {
-  padding-bottom: 200px;
+  margin-bottom: 400px;
+  font-weight: bolder;
+  letter-spacing: 0.1rem;
 }
 .carousel .slide img {
   object-fit: cover;
@@ -34,6 +36,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 .carousel .thumbs {
 margin: 0;
@@ -69,7 +72,7 @@ filter: contrast(50%)
   /**********************/
   .sliderContainer {
     position: relative;
-    height: 80%;
+    height: 70%;
 
 
   }
@@ -113,7 +116,10 @@ filter: contrast(50%)
 }
 
 @media screen and (max-width:600px) {
-  .carousel {
-    display: none;
-  }
+  .overlay_title {
+    font-size: 2rem;
+}
+.sliderContainer {
+  height:60%;
+}
 }

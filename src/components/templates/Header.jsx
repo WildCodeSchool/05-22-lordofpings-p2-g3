@@ -1,6 +1,6 @@
 /* eslint*/
 import './Header.css'
-import { useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import logo from '../../assets/images/rockYourBand-transparent.png'
 import imageBtnLeft from '../../assets/images/musique-de-guitare.png'
 import imageBtnRight from '../../assets/images/groupe-musique-2.webp'
@@ -9,6 +9,7 @@ import { Link, useNavigate, NavLink } from 'react-router-dom'
 import login from '../../assets/images/login.png'
 import profil from '../../assets/images/vincent.png'
 import UserContext from '../../contexts/UserContext'
+const DIRECTUS_URL = 'https://yv3o2geh.directus.app'
 
 const userId = 1
 
@@ -19,13 +20,23 @@ const Header = ({
 }) => {
   // const [isHomePage, setIsHomePage] = useState(true);
   const [isActive, setIsActive] = useState()
-  // const { userInfo setUserInfo} = useContext(UserContext);
+  const { userInfo, setUserInfo } = useContext(UserContext)
+  const [userImg, setUsrImg] = useState()
+
   let navigate = useNavigate()
   const handleType = (choice, url) => {
     console.log('handleClick')
     setSelectGroupe(choice)
     navigate(url)
   }
+
+  useEffect(() => {
+    console.log(`DIRECTUS_URL/assets/${userInfo.avatar}`)
+    // userInfo.avatar != null ?
+    userInfo.avatar == null
+      ? setUsrImg('https://imgur.com/To08fWB.png')
+      : setUsrImg(`${DIRECTUS_URL}/assets/${userInfo.avatar}`)
+  }, [userInfo])
 
   let activeStyle = {}
 
@@ -101,11 +112,14 @@ const Header = ({
                   </ul>
                 </div>
                 <div className='container__profil '>
-                  <Link to={`/user-profil/${userId}`}>
-                    <div className='home__profil'>
-                      <img src={profil} className='home__profil_img' />
-                    </div>
-                  </Link>
+                  {userInfo.avatar != '' &&
+                    localStorage.getItem('rock-your-band') != null && (
+                      <Link to={`/user-profil/${userId}`}>
+                        <div className='home__profil'>
+                          <img src={userImg} className='home__profil_img' />
+                        </div>
+                      </Link>
+                    )}
                   <Link to='/login'>
                     <button className='header__login '>
                       <p> Connexion</p>
@@ -215,11 +229,14 @@ const Header = ({
               </ul>
             </div>
             <div className='container__profil '>
-              <Link to={`/user-profil/${userId}`}>
-                <div className='home__profil'>
-                  <img src={profil} className='home__profil_img' />
-                </div>
-              </Link>
+              {userInfo.avatar != '' &&
+                localStorage.getItem('rock-your-band') != null && (
+                  <Link to={`/user-profil/${userId}`}>
+                    <div className='home__profil'>
+                      <img src={userImg} className='home__profil_img' />
+                    </div>
+                  </Link>
+                )}
               <Link to='/login'>
                 <button className='header__login '>
                   <p> Connexion</p>

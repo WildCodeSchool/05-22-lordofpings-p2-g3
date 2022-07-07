@@ -52,7 +52,7 @@ const Profiledetails = ({ setIsHomePage }) => {
                       <h3 className='profileH'>
                         {character[0].name.last} {character[0].name.first}
                       </h3>
-                      <h4 className='profileH4'>{character[0].age}ans </h4>
+                      <h4 className='profileH4'>{character[0].age} ans </h4>
                     </div>
                     <div className='profile-resbtn'>
                       <div className='profile-reseaux'>
@@ -78,7 +78,7 @@ const Profiledetails = ({ setIsHomePage }) => {
                     </div>
                   </div>
                   <div className='profile-title'>
-                    <h4>Description : </h4>{' '}
+                    <h4>Description : </h4>
                     <p>{character[0].music.description} </p>
                   </div>
                   <div className='profile-cubes'>
@@ -117,7 +117,7 @@ const Profiledetails = ({ setIsHomePage }) => {
             </div>
             <div className='profile-WTF'>
               <h4>Playlist: </h4>
-              <h6>{character[0].music.lien}</h6>
+              {/* <h6>{character[0].music.lien}</h6> */}
               <div className='profile-contai'>
                 <div className='profile-contain'>
                   <AudioPlayer
