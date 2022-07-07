@@ -171,7 +171,8 @@ html {
   width: auto;
   height: 600px;
   object-fit: cover;
-  filter: brightness(60%)
+  filter: brightness(60%);
+  border: 2px solid white;
 }
 
 

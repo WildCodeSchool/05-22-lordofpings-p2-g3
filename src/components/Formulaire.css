@@ -10,6 +10,8 @@
     padding: 25px;
     border-right: 1px solid;
     border-left: 1px solid;
+    background: #607c87;
+    border-radius: 10px;
 }
 
 
@@ -70,6 +72,8 @@ justify-content: space-around;
 }
 option:not(:checked) { 
     background-color: black; 
+    color: white;
+    
 }
 
 .selectForm::-ms-expand {
@@ -148,8 +152,8 @@ option:not(:checked) {
 
 @media  screen and (max-width: 768px) {
     .contener-1 {
-        width: 300px;
-        display:flex;
+        /* width: 300px; */
+        display: flex;
         flex-direction: column;
         margin: auto;
         align-items: center;
@@ -161,6 +165,16 @@ option:not(:checked) {
         margin-left: 90px; 
     } */
 
+    .contenerForm {
+        display: flex;
+        
+        justify-content: center;
+       border-right: none;
+       border-left: none;
+
+
+    }
+    
 
     .selectForm {
         padding: 6px;
@@ -190,7 +204,7 @@ option:not(:checked) {
           -ms-transition: all 0.3s;
           -o-transition: all 0.3s;
           transition: all 0.3s;
-          color: var(--orange-logo);
+          color: cornsilk;
           font: inherit;
           margin: 0;
           text-transform: none;

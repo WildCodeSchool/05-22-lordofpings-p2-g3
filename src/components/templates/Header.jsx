@@ -8,6 +8,7 @@ import Button from '../../components/Button'
 import { Link, useNavigate, NavLink } from 'react-router-dom'
 import login from '../../assets/images/login.png'
 import profil from '../../assets/images/vincent.png'
+import UserContext from '../../contexts/UserContext'
 
 const userId = 1
 
@@ -18,7 +19,7 @@ const Header = ({
 }) => {
   // const [isHomePage, setIsHomePage] = useState(true);
   const [isActive, setIsActive] = useState()
-
+  // const { userInfo setUserInfo} = useContext(UserContext);
   let navigate = useNavigate()
   const handleType = (choice, url) => {
     console.log('handleClick')
@@ -33,7 +34,7 @@ const Header = ({
       {isHomePage && (
         <>
           <div className='home'>
-            <video src='/video.mp4' autoPlay loop playsinline muted></video>
+            <video src='/video_shd.mp4' autoPlay loop playsinline muted></video>
             <div className='header__home '>
               <nav className='home__container'>
                 <div className='logo'>
