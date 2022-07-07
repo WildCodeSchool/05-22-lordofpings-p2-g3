@@ -43,7 +43,7 @@ const SignIn = () => {
   const [userme, setUserMe] = useState('')
   const [nextPageRedirect, setNextPageRedirect] = useState(false)
 
-  const { userInfo, setUserInfo} = useContext(UserContext)
+  const { userInfo, setUserInfo } = useContext(UserContext)
 
   const [generateToken, { data, loading, error }] = useMutation(POST_LOGIN)
 
@@ -99,16 +99,20 @@ const SignIn = () => {
           Authorization: 'Bearer ' + token
         }
       }
-     axios
+      axios
         .get(`${DIRECTUS_URL}/users/me`, config)
         .then(response => response.data)
         .then(res => {
-          console.log('user me data', res.data)
+          console.log('user me signin data', res.data)
           setUserMe(res.data)
 
           /*** MAJ du userContext */
-          setUserInfo({...userInfo,avatar: res.data.avatar, email: res.data.email, language:res.data.language })
-          
+          setUserInfo({
+            ...userInfo,
+            avatar: res.data.avatar,
+            email: res.data.email,
+            language: res.data.language
+          })
         })
 
         .catch(error => {
