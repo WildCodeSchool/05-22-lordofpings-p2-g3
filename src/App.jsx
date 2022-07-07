@@ -5,6 +5,7 @@ import Annuaire from './screen/Annuaire'
 import Evenements from './screen/Evenements'
 import Apropos from './screen/Apropos'
 import Profiledetails from './screen/Profiledetails'
+import ProfiledetailsG from './screen/ProfiledetailsG'
 import Header from './components/templates/Header'
 import Footer from './components/templates/Footer'
 import Main from './components/templates/Main'
@@ -40,6 +41,10 @@ function App({ isDebugMode = true }) {
           <Route
             path='/profilesdetails/:id'
             element={<Profiledetails setIsHomePage={setIsHomePage} />}
+          />
+          <Route
+            path='/profilesdetailsG/:id'
+            element={<ProfiledetailsG setIsHomePage={setIsHomePage} />}
           />
           <Route
             path='/about'

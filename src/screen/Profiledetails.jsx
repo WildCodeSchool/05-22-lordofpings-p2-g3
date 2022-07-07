@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import './Profiledetails.css'
-import facebookImg from '../assets/images/logoResaux/facebook.png'
-import instagramImg from '../assets/images/logoResaux/instagram.png'
-import youtubeImg from '../assets/images/logoResaux/youtube.png'
-import pprofile from '../assets/images/tom.jpg'
-import LeafletDetails from '../components/LeafletDetails'
-import AudioPlayer from '../components/AudioPlayer.jsx'
+
 import audio1 from '../assets/sounds/lofi-study.mp3'
 import audio2 from '../assets/sounds/test.mp3'
 import audio3 from '../assets/sounds/urban-beat.mp3'
+import instagramImg from '../assets/images/logoResaux/instagram.png'
+import facebookImg from '../assets/images/logoResaux/facebook.png'
+import LeafletDetails from '../components/LeafletDetails'
+import pprofile from '../assets/images/tom.jpg'
+import youtubeImg from '../assets/images/logoResaux/youtube.png'
+import AudioPlayer from '../components/AudioPlayer.jsx'
+
+import './Profiledetails.css'
 
 const Profiledetails = ({ setIsHomePage }) => {
   useEffect(() => {
@@ -47,10 +49,10 @@ const Profiledetails = ({ setIsHomePage }) => {
                 <div className='profile-liens'>
                   <div className='profile-social'>
                     <div className='profile-name'>
-                      <h3>
+                      <h3 className='profileH'>
                         {character[0].name.last} {character[0].name.first}
                       </h3>
-                      <h4>{character[0].age}ans </h4>
+                      <h4 className='profileH4'>{character[0].age}ans </h4>
                     </div>
                     <div className='profile-resbtn'>
                       <div className='profile-reseaux'>

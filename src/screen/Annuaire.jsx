@@ -5,9 +5,11 @@ import { Leaflet } from '../components/Leaflet'
 import Formulaire from '../components/Formulaire'
 import './Annuaire.css'
 import Profiles from '../components/Profiles'
+import ProfilesG from '../components/ProfilesG'
 
 const Annuaire = ({ setIsHomePage }) => {
   const [profiles, setProfiles] = useState([])
+  const [profilesg, setProfilesG] = useState([])
   const [displayMOrG, setDisplayMOrG] = useState('') // etape 1
   const [profilesFilter, setProfilesFilter] = useState([])
   const [group, setGroup] = useState([])
@@ -184,7 +186,7 @@ const Annuaire = ({ setIsHomePage }) => {
           (group, index) =>
             index < 11 && (
               <div className='containerGroupe'>
-                <Profiles
+                <ProfilesG
                   key={group.id}
                   id={group.id}
                   name={group.name}
