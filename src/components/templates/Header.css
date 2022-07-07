@@ -126,7 +126,7 @@ header {
   padding-top: 2rem;
   padding-bottom: 1rem;
   font-size: 5rem;
-    letter-spacing: 0.2rem;
+  letter-spacing: 0.2rem;
 }
 
 .hero-vp h2 {
@@ -201,7 +201,7 @@ header {
   flex-flow: row nowrap;
   align-items: center;
   font-size: var(--font-size-3);
-  font-weight:700;
+  font-weight: 700;
   /* padding-left: 1rem;; */
 }
 
@@ -235,6 +235,7 @@ header {
 
   align-content: center;
   align-items: center;
+  padding:0.8rem auto;
 }
 
 /***** SECTION PROFIL USER && CONNEXION******/
@@ -296,7 +297,7 @@ img.home__profil_img {
   width: 69px;
   height: 68px;
   border-radius: 50%;
-  margin-top:-1px;
+  margin-top: -1px;
 
 }
 
@@ -351,10 +352,34 @@ img.home__profil_img {
   }
 }
 
+
+
+
+
+@media screen and (max-width:1280px) {
+  .hero__btn-container {
+    padding-top: 0rem;
+  }
+
+  .hero-vp h1 {
+    padding-top: 1.8rem;
+
+  }
+
+  button.header__login p {
+    font-size: var(--font-size-2);
+  }
+
+}
+
 @media screen and (max-width:1055px) {
   .navbarre {
     flex: 1 0 auto;
     justify-content: start;
+  }
+
+  button.header__login p {
+    font-size: var(--font-size-2);
   }
 
   .navbarre li {
@@ -369,38 +394,72 @@ img.home__profil_img {
   }
 }
 
-
 @media screen and (max-width:980px) {
+
   .navbarre {
-    display: flex;
+    flex: 1 1 auto;
+    justify-content: start;
   }
 
+  .navbarre li {
+    font-size: 1.6rem;
+    padding: 0 0.6rem;
+  }
+
+  button.header__login p {
+    font-size: var(--font-size-2);
+  }
 
 }
 
 @media screen and (max-width:875px) {
   .navbarre {
-    display: none;
-  }
-}
-
-@media screen and (max-width:1280px) {
-  .hero__btn-container {
-    padding-top: 0rem;
+    flex: 1 1 auto;
+      justify-content: start;
   }
 
-  .hero-vp h1 {
-    padding-top: 1.8rem;
- 
+    .navbarre li {
+      font-size: 1.5rem;
+      padding: 0 0.5rem;
+    }
+
+  .navbarre li {
+    font-size: 1.6rem;
+    padding: 0 0.5rem;
   }
 
+  button.header__login p {
+    font-size: 1.6rem;
+
+  }
+
+    .header__login{
+      padding:1.5rem;
+    }
+
+    .home__profil{
+      width: 51px;
+        height: 50px;
+
+    }
+     img.home__profil_img {
+       width: 50px;
+       height: 50px;
+       border-radius: 50%;
+       margin-top: -2px;
+  
+     }
 }
 
 @media screen and (max-width:768px) {
-  
-.container__profil{
-  display:none;
-}
+  button.header__login p {
+    font-size: var(--font-size-2);
+  }
+
+  .container__profil {
+    display: none;
+  }
+
   .logo {
     display: none;
   }
@@ -449,5 +508,17 @@ img.home__profil_img {
     padding: 0rem;
   }
 
-
+}
+@media screen and (max-width:430px) {
+  .hero-vp h1{
+    font-size:auto;
+    text-align: center;
+    letter-spacing: 0.1rem;
+    
+  }
+    .hero-vp h2 {
+      font-size: 1.1rem;
+      
+  
+    }
 }

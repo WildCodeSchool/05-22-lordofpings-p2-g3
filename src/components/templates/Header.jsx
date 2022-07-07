@@ -125,7 +125,7 @@ const Header = ({
                     )}
                   <Link to='/login'>
                     <button className='header__login '>
-                      <p> Connexion</p>
+                      <p> Login</p>
                     </button>
                   </Link>
                 </div>
@@ -246,7 +246,7 @@ const Header = ({
                 )}
               <Link to='/login'>
                 <button className='header__login '>
-                  <p> Connexion</p>
+                  <p> Login</p>
                 </button>
               </Link>
             </div>
