@@ -117,7 +117,7 @@ const Profiledetails = ({ setIsHomePage }) => {
             </div>
             <div className='profile-WTF'>
               <h4>Playlist: </h4>
-              <h6>{character[0].music.lien}</h6>
+              {/* <h6>{character[0].music.lien}</h6> */}
               <div className='profile-contai'>
                 <div className='profile-contain'>
                   <AudioPlayer
