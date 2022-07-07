@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from 'react'
 
+import DisplayDev from '../components/DisplayDev'
+// import Equalizer from '../components/Equalizer'
+import Memory from '../components/Memory'
+
 import boomer from '../assets/images/boomer.png'
 import partoch from '../assets/images/partoch.png'
-import DisplayDev from '../components/DisplayDev'
-// import AudioPlayer from '../components/AudioPlayer'
-// import audio1 from '../assets/sounds/test.mp3'
-// import audio2 from '../assets/sounds/urban-beat.mp3'
-import './Apropos.css'
 
 const Apropos = ({ setIsHomePage }) => {
   const [isactive, setIsactive] = useState(false)
   const [devProject, setDevProject] = useState([])
 
   useEffect(() => {
-    fetch('https://kinotonik.github.io/jsonapi/data_dev_p2.json')
+    fetch('https://yv3o2geh.directus.app/items/team')
       .then(res => res.json())
       .then(res => setDevProject(res.data))
   }, [])
@@ -23,9 +22,6 @@ const Apropos = ({ setIsHomePage }) => {
     return setIsHomePage(false)
   }, [])
 
-  // const handleClick = () => {
-  //   setIsactive(!isactive)
-  // }
   return (
     <div className='bigwrapper-apropos'>
       <div className='wrapper-parallax'>
@@ -47,21 +43,10 @@ const Apropos = ({ setIsHomePage }) => {
             />
           ))}
         </div>
+        <div className='app-memo'>
+          <Memory />
+        </div>
       </div>
-      {/* <div className='main'>
-              <div className='about__container' />
-              <h2>Mon Player</h2>
-
-              <AudioPlayer
-                onClick={handleClick}
-                className={`about__container-player  ${
-                  isactive ? 'rotate' : 'notRotate'
-                }`}
-                url={audio2}
-              />
-
-              <Link to='/graph'>graql</Link>
-            </div> */}
     </div>
   )
 }

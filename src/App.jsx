@@ -5,6 +5,7 @@ import Annuaire from './screen/Annuaire'
 import Evenements from './screen/Evenements'
 import Apropos from './screen/Apropos'
 import Profiledetails from './screen/Profiledetails'
+import ProfiledetailsG from './screen/ProfiledetailsG'
 import Header from './components/templates/Header'
 import Footer from './components/templates/Footer'
 import Main from './components/templates/Main'
@@ -14,12 +15,14 @@ import './App.css'
 import LoginPage from './screen/LoginPage'
 import Playlist from './screen/PlayList'
 import UserProfil from './screen/UserProfil'
+import Contact from './screen/Contact'
 
 import SignIn from './components/graphql/SignIn'
 import UserContext from './contexts/UserContext'
 
 function App({ isDebugMode = true }) {
   const [isHomePage, setIsHomePage] = useState(true)
+  const [selectGroupe, setSelectGroupe] = useState(false)
 
   const [userInfo, setUserInfo] = useState({
     id: '',
@@ -31,15 +34,26 @@ function App({ isDebugMode = true }) {
   })
 
   return (
-    <UserContext.Provider value={{ userInfo: userInfo ,setUserInfo : setUserInfo }}>
+    <UserContext.Provider
+      value={{ userInfo: userInfo, setUserInfo: setUserInfo }}
+    >
       <div className='app-container'>
-        <Header className='header' isHomePage={isHomePage} />
+        <Header
+          className='header'
+          isHomePage={isHomePage}
+          setSelectGroupe={setSelectGroupe}
+        />
         <Main className='main'>
           <Routes>
             <Route path='/' element={<Home setIsHomePage={setIsHomePage} />} />
             <Route
               path='/annuaire'
-              element={<Annuaire setIsHomePage={setIsHomePage} />}
+              element={
+                <Annuaire
+                  setIsHomePage={setIsHomePage}
+                  selectGroupe={selectGroupe}
+                />
+              }
             />
             <Route
               path='/evenement'
@@ -53,6 +67,10 @@ function App({ isDebugMode = true }) {
             <Route
               path='/profilesdetails/:id'
               element={<Profiledetails setIsHomePage={setIsHomePage} />}
+            />
+            <Route
+              path='/profilesdetailsG/:id'
+              element={<ProfiledetailsG setIsHomePage={setIsHomePage} />}
             />
             <Route
               path='/about'
@@ -74,9 +92,12 @@ function App({ isDebugMode = true }) {
               path='/graphql'
               element={<GraphqlPage setIsHomePage={setIsHomePage} />}
             />
+            <Route
+              path='/contact'
+              element={<Contact setIsHomePage={setIsHomePage} />}
+            />
           </Routes>
         </Main>
-
         <Footer className='footer' />
       </div>
 

@@ -1,12 +1,15 @@
 
 
-.contener {
+.contenerForm {
     display: flex;
     /* flex-direction: column;   */
     justify-content: center;
     /* background: linear-gradient(45deg, #95a5fc, #ffc8ef); */
-    border: 1px solid;
+    /* border: 1px solid; */
     margin-bottom: 5rem;
+    padding: 25px;
+    border-right: 1px solid;
+    border-left: 1px solid;
 }
 
 
@@ -15,7 +18,7 @@
     display: flex;
 justify-content: space-around;
     align-items: flex-end;
-    width: 600px;
+    /* width: 600px; */
     margin: 30px;
     width: 100%;
 }
@@ -23,7 +26,7 @@ justify-content: space-around;
      display: flex;
     flex-direction: column;
     margin: 10px;
-    width: 300px;
+    width: 37%;
     color: white;
     font-weight: bold;
 }
@@ -37,7 +40,7 @@ justify-content: space-around;
     background: none;
     border: none;
       border-bottom: solid 2px white;
-      color: #474544;
+      
       font-size: 1.000em;
     font-weight: 400;
     letter-spacing: 1px;
@@ -55,7 +58,7 @@ justify-content: space-around;
       -ms-transition: all 0.3s;
       -o-transition: all 0.3s;
       transition: all 0.3s;
-      color: var(--orange-logo);
+      color: cornsilk;
       font: inherit;
       margin: 0;
       text-transform: none;
@@ -64,6 +67,11 @@ justify-content: space-around;
       -moz-appearance: none;
       -webkit-appearance: none;
   
+}
+option:not(:checked) { 
+    background-color: black; 
+    color: var(--orange-logo);
+    
 }
 
 .selectForm::-ms-expand {
@@ -81,6 +89,7 @@ justify-content: space-around;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 /* .contButton {
     height: 100%;
@@ -112,7 +121,7 @@ justify-content: space-around;
     width: 100%;
 }
 .buttonForm:after {
-    content: "et trouve !";
+    content: "sur rock your band";
     position: absolute;
     padding: 30px 80px;
     z-index: -1;
@@ -141,10 +150,11 @@ justify-content: space-around;
 
 @media  screen and (max-width: 768px) {
     .contener-1 {
-        width: 300px;
-        display:flex;
+        /* width: 300px; */
+        display: flex;
         flex-direction: column;
         margin: auto;
+        align-items: center;
     }
    /* .locForm {
         width: 200px;
@@ -152,6 +162,67 @@ justify-content: space-around;
         flex-direction: column;
         margin-left: 90px; 
     } */
+
+    .contenerForm {
+        display: flex;
+        
+        justify-content: center;
+       border-right: none;
+       border-left: none;
+
+
+    }
+    
+
+    .selectForm {
+        padding: 6px;
+        margin: 10px 0px;
+    /* height: 35px; */
+        outline: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        background: none;
+        border: none;
+          border-bottom: solid 2px white;
+          color: #474544;
+          font-size: 1.000em;
+        font-weight: 400;
+        letter-spacing: 1px;
+          margin: 0em 0 1.875em 0;
+          padding: 0 0 0.875em 0;
+        text-transform: uppercase;
+          width: 90%;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          -ms-box-sizing: border-box;
+          -o-box-sizing: border-box;
+          box-sizing: border-box;
+          -webkit-transition: all 0.3s;
+          -moz-transition: all 0.3s;
+          -ms-transition: all 0.3s;
+          -o-transition: all 0.3s;
+          transition: all 0.3s;
+          color: cornsilk;
+          font: inherit;
+          margin: 0;
+          text-transform: none;
+          background: url(https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-32.png) no-repeat right;
+          outline: none;
+          -moz-appearance: none;
+          -webkit-appearance: none;
+      
+    }
+
+    .labelFrom{
+        display: flex;
+       flex-direction: column;
+       margin: 10px;
+       width: 300px;
+       color: white;
+       font-weight: bold;
+       font-size: 17px;
+       align-items: center;
+   }
 
    
     .buttonForm {
@@ -161,6 +232,7 @@ justify-content: space-around;
     background-color: var(--gray-2);
     border: solid black 1px;
     font-weight: bold;align-items: center;
+    margin-top: 1rem;
     }
 
     .buttonForm:after{

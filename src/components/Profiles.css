@@ -59,7 +59,6 @@ html {
 .box-item {
   position: relative;
   --webkit-backface-visibility: hidden;
-  backdrop-filter: blur(2px);
 }
 
 .flip-box {
@@ -152,6 +151,7 @@ html {
   line-height: 1.5em;
   font-weight: 700;
   text-shadow: 0px 0px 7px rgba(0, 0, 0, 1);
+  backdrop-filter: blur(20px);
 }
 
 .flip-box-button {
@@ -171,12 +171,13 @@ html {
   width: auto;
   height: 600px;
   object-fit: cover;
+  filter: brightness(60%)
 }
 
 
 /* .card {
   max-height: 63vh;
-  min-height: 60vh;
+  min-height: 43vh;
 
 } */
 

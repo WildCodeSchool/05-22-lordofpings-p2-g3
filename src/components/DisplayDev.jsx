@@ -2,8 +2,6 @@ import React from 'react'
 import './DisplayDev.css'
 
 function DisplayDev({ devName, devDescription, devAvatar, devBck, devBtn }) {
-  console.log({ devBck })
-
   return (
     <div>
       <div className='container-apropos'>
@@ -21,7 +19,7 @@ function DisplayDev({ devName, devDescription, devAvatar, devBck, devBtn }) {
         <p className='description-apropos'>{devDescription}</p>
         <button
           className='btn-apropos'
-          onClick={() => (location.href = `${devBtn}`)}
+          onClick={() => window.open(`${devBtn}`, '_blank')}
         >
           Ma musique
         </button>
