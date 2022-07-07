@@ -2,167 +2,35 @@
     max-width: 860px;
     margin: 40px auto;
 }
-/* .contenair-btn-memory .btn-memory {
+
+/* *****************btn************************* */
+
+.btn-apropos {
+    width: 25%;
     border: none;
-    position: relative;
-    background: none;
-    padding: 40px 80px;
-    display: inline-block;
-    text-transform: uppercase;
-    color: #fff;
-    letter-spacing: 2px;
-    font-size: 1rem;
-    font-weight: 800;
-    transform-style: preserve-3d;
-    outline: none;
-    outline: 1px solid transparent;
-    transition: all 0.5s ease-out;
-    cursor: pointer;
-    width: 50%;
-}
-.contenair-btn-memory .btn-memory::after {
-    content: "Nouvelle partie";
-    position: absolute;
-    padding: 40px 80px;
-    z-index: -1;
-    transition: all 0.5s ease-out;
-    width: 100%;
-    left: 0;
-    top: -100%;
-    transform-origin: 0% 100%;
-    transform: rotateX(90deg);
-
-}
-
-.btn-memory:hover {
-    transform: translateY(40px) rotateX(-90deg);
-} */
-
-
-/* ****************************************** */
-
-/* .contenair-btn-memory .btn-memory{
-    position:relative;
-    width: 355px;
-    height: 55px;
-    margin:20px;  
-    
-} 
-
-.contenair-btn-memory .btn-memory a{
-    position:absolute;    
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background: rgba(255,255,255,0.05);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-    border-top: 1px solid rgba(255,255,255,0.1);
-    border-bottom:1px solid rgba(255,255,255,0.1);
-    border-radius: 30px;
-    color: #fff;
-    z-index: 1;
-    font-size: 1.5rem;
-    font-weight: 300;
-    letter-spacing: 1px;
-    overflow: hidden;
-    transition: 0.5s;
-    backdrop-filter: blur(15px);
-} 
-
-.contenair-btn-memory .btn-memory:hover a {
-    letter-spacing: 3px;
-}
-
-.contenair-btn-memory .btn-memory a::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(to left, rgba(255,255,255,0.15),
-    transparent);
-    transform: skewX(45deg) translateX(0);
-    transition: 0.5s;
-}
-
-.contenair-btn-memory .btn-memory:hover a::before
-{
-  transform: skewX(45deg) translateX(200%);
-}
-
-.contenair-btn-memory .btn-memory::before
-{
-  content: '';
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -5px;
-  width:30px;
-  height:10px;
-  background: #e74c3c;
-  border-radius: 10px;
-  transition: 0.5s;
-  transition-delay: 0s;
-}
-
-.contenair-btn-memory .btn-memory:hover::before {
-    bottom: 0;
-    height: 50%;
-    width: 80%;
-    border-radius: 30px;
-    transition-delay: 0.5s;
-}
-.contenair-btn-memory .btn-memory::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: -5px;
-    width:30px;
-    height:10px;
-    background: #e74c3c;
-    border-radius: 10px;
-    transition: 0.5s;
-    transition-delay: 0s;
-}
-.contenair-btn-memory .btn-memory:hover::after
-{
-  top: 0;
-  height: 50%;
-  width: 80%;
-  border-radius: 30px;
-  transition-delay: 0.5s;
-}
-.contenair-btn-memory .btn-memory::before,
-.contenair-btn-memory .btn-memory::after {
-    background: #e74c3c;
-    box-shadow: 0 0 5px #e74c3c,
-    0 0 15px #e74c3c,
-    0 0 30px #e74c3c,
-    0 0 60px #e74c3c;
-} */
-
-.btn-memory{
-    background: none;
-    border: 2px solid white;
-    padding: 6px 12px;
-    border-radius: 4px;
-    color: white;
     font-weight: bold;
-    cursor: pointer;
-    font-size: 1em;
-}
+    font-size: 1.5rem;
+    padding: 1rem;
+    --b: 0.3em;   /* the thickness of the line */
+    --c: #d64d13; /* the color */
+    
+    color: #0000;
+    padding-block: var(--b);
+    background: 
+      linear-gradient(var(--c) 50%,rgb(238, 229, 229) 0) 0% calc(100% - var(--_p,0%))/100% 200%,
+      linear-gradient(var(--c) 0 0) 0% var(--_p,0%)/var(--_p,0%) var(--b) no-repeat;
+    -webkit-background-clip: text,padding-box;
+            background-clip: text,padding-box;
+    transition: .3s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));
+  }
+  .btn-apropos:hover {
+    --_p: 100%;
+    --_s: .3s;
+  }
+/* *****************fin btn************************* */
 
-.btn-memory:hover {
-    background: #e74c3c;
-    color: white;
-}
-/* ****************************************** */
+/* *****************memory card************************* */
+
 .card-grid {
     margin-top: 40px;
     display: grid;
@@ -193,5 +61,23 @@
     transition-delay: 0s;
 }
 
+/* *****************fin memory card************************* */
 
-
+@media screen and (max-width:380px) {
+    .wrapper-memory {
+        max-width: 860px;
+        margin: 40px 0px 40px 16px;
+    }
+    .btn-apropos {
+        font-size: 1rem;
+    } 
+  }
+  @media screen and (min-width:381px) and (max-width:900px) {
+    .wrapper-memory {
+        max-width: 860px;
+        margin: 40px 0px 40px 40px;
+    }
+    .btn-apropos {
+        font-size: 1.3rem;
+    } 
+  }

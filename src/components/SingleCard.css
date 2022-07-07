@@ -5,6 +5,6 @@
 .card-memo img {
     width: 100%;
     display: block;
-    border: 2px solid white;
-    border-radius: 6px;
+    border: 2px solid #d64d13;
+    border-radius: 4px;
 }
