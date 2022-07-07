@@ -49,14 +49,14 @@ const UserProfil = ({ setIsHomePage }) => {
 
   return (
     <div className='main'>
-      <h1> Mon profil {data} </h1>
+      <h1> Mon profil {data.id} </h1>
       {error && <pre>{error}</pre>}
       {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
       <div className='profile-container'>
         <div className='profile-gutter'>
           <div className='profile-coninfo'>
             {console.log('url vart', data)}
-            {/* `${DIRECTUS_URL}/assets/${data.data.avatar}` */}
+            {/* `${DIRECTUS_URL}/assets/${data.avatar}` */}
             <img
               src={`${DIRECTUS_URL}/assets/${data.avatar}`}
               alt='profile photo'
@@ -105,7 +105,7 @@ const UserProfil = ({ setIsHomePage }) => {
                 </div>
                 <div className='profile-cube2'>
                   <h4>Spec: </h4>
-                  <h6> {data.tags}</h6>
+                  <h6> {data.tags?.map((elt, index) => elt).join(', ')}</h6>
                 </div>
                 <div className='profile-cube3'>
                   <h4>Localisation:</h4>
