@@ -4,11 +4,14 @@ import { useContext, useEffect, useState } from 'react'
 import logo from '../../assets/images/rockYourBand-transparent.png'
 import imageBtnLeft from '../../assets/images/musique-de-guitare.png'
 import imageBtnRight from '../../assets/images/groupe-musique-2.webp'
+import efflogo from '../../assets/sounds/dru10_3.mp3'
 import Button from '../../components/Button'
 import { Link, useNavigate, NavLink } from 'react-router-dom'
 import login from '../../assets/images/login.png'
 import profil from '../../assets/images/vincent.png'
 import UserContext from '../../contexts/UserContext'
+import useSound from 'use-sound'
+
 const DIRECTUS_URL = 'https://yv3o2geh.directus.app'
 
 const userId = 1
@@ -40,6 +43,15 @@ const Header = ({
 
   let activeStyle = {}
 
+  const [play, { stop }] = useSound(efflogo)
+
+  const handleMouseEnter = () => {
+    play()
+  }
+  const handleMouseleave = () => {
+    stop()
+  }
+
   return (
     <header className='header'>
       {isHomePage && (
@@ -50,7 +62,12 @@ const Header = ({
               <nav className='home__container'>
                 <div className='logo'>
                   <Link to='/'>
-                    <img src={logo} alt='rockYourBand-logo' />
+                    <img
+                      src={logo}
+                      alt='rockYourBand-logo'
+                      onMouseEnter={handleMouseEnter}
+                      onMouseLeave={handleMouseleave}
+                    />
                   </Link>
                 </div>
 
@@ -250,4 +267,5 @@ const Header = ({
     </header>
   )
 }
+
 export default Header

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import Aos from 'aos'
-import Equalizer from './Equalizer'
 
 import 'aos/dist/aos.css'
 import './Concept.css'
@@ -20,42 +19,14 @@ function Concept() {
         clientHeight + scrollTop >= scrollHeight - 600 &&
         animText === false
       ) {
-        console.log(animText)
+        // console.log(animText)
         // setAnimText(true)
       }
     })
   }, [])
 
-  // useEffect(() => {
-  //   animText && animate_text()
-  // }, [animText])
-
-  // function animate_text() {
-  //   let delay = 20,
-  //     delay_start = 0,
-  //     contents,
-  //     letters
-
-  //   document.querySelectorAll('.animate-text').forEach(elem => {
-  //     contents = elem.textContent.trim()
-  //     elem.textContent = ''
-  //     letters = contents.split('')
-  //     elem.style.visibility = 'visible'
-
-  //     letters.forEach((letter, index_1) => {
-  //       setTimeout(() => {
-  //         let span = document.createElement('span')
-  //         span.innerHTML = letter.replace(/ /, '&nbsp;')
-  //         elem.appendChild(span)
-  //       }, delay_start + delay * index_1)
-  //     })
-  //     delay_start += delay * letters.length
-  //   })
-  // }
-
   return (
     <>
-      {/* <h2>Rock your Band</h2> */}
       <div data-aos='fade-up' className='wrapper_text'>
         <p className='animate-text'>
           Ce site est une scène numérique pour être en relation avec d'autres
@@ -83,9 +54,6 @@ function Concept() {
           c’est le chef qui le suit.
         </p>
       </div>
-      {/* <div className='equalizer'>
-        <Equalizer />
-      </div> */}
     </>
   )
 }
