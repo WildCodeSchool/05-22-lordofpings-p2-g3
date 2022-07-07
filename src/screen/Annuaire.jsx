@@ -6,6 +6,7 @@ import Formulaire from '../components/Formulaire'
 import './Annuaire.css'
 import Profiles from '../components/Profiles'
 import { useParams } from 'react-router-dom'
+import ProfilesG from '../components/ProfilesG'
 
 const Annuaire = ({ setIsHomePage, selectGroupe }) => {
   const [profiles, setProfiles] = useState([])
@@ -62,7 +63,7 @@ const Annuaire = ({ setIsHomePage, selectGroupe }) => {
   }
 
   const filterG4 = (arr, strCompareG) => {
-    return arr.filter(el => el.location?.includes(strCompareG))
+    return arr.filter(el => el.location?.city?.includes(strCompareG))
   }
 
   const filterG5 = (arr, strCompareG) => {
@@ -240,7 +241,7 @@ const Annuaire = ({ setIsHomePage, selectGroupe }) => {
             <div className='containerSolo'>
               {!noCreteria && groupesFilter.length
                 ? groupesFilter.map(groupe => (
-                    <Profiles
+                    <ProfilesG
                       key={groupe.id}
                       id={groupe.id}
                       name={groupe.name}
@@ -261,7 +262,7 @@ const Annuaire = ({ setIsHomePage, selectGroupe }) => {
               {noCreteria &&
                 groupes !== null &&
                 groupes.map(groupeFiltre => (
-                  <Profiles
+                  <ProfilesG
                     key={groupeFiltre.id}
                     id={groupeFiltre.id}
                     name={groupeFiltre.name}
