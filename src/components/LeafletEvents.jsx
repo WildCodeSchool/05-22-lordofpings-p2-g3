@@ -24,10 +24,10 @@ export const LeafletEvents = ({
             <img src={imgUrl} alt={name} />
             <div>
               <h2>{`${name}`}</h2>
-              <p style={{ color: '#8d8d25' }}>💰 {tarif}</p>
-              <p>📍 {city}</p>
-              <p>🎶Style:</p>
-              <ul style={{ color: 'red' }}>
+              <p style={{ color: '#fc5209' }}>💰 {tarif}</p>
+              <p style={{ color: '#fc5209' }}>📍 {city}</p>
+              <p style={{ color: '#fc5209' }}>🎶Style:</p>
+              <ul className='lf_ul'>
                 {style.map(sty => (
                   <li>{`${sty}`}</li>
                 ))}
