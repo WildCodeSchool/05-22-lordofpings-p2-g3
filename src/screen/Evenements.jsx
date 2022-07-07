@@ -9,25 +9,61 @@ const Evenements = ({ setIsHomePage }) => {
     setIsHomePage(false)
   }, [])
 
-  const [isDisplayMap, setIsDisplayMap] = useState(false)
+  const [noCreteria, setNoCreteria] = useState(true)
+  const [creteria, setCreteria] = useState({
+    style: '',
+    info_pratique: ''
+  })
+  const [evenementsF, setEvenementsF] = useState([])
+  const [evenements, setEvenements] = useState([])
+  const [noResult, setNoResult] = useState(false)
 
-  useEffect(() => {}, [isDisplayMap])
-  const handleClick = e => {
-    e.preventDefault()
-    setIsDisplayMap(!isDisplayMap)
+  const filter1 = (arr, strCompare) => {
+    return arr.filter(el => el.style?.includes(strCompare))
   }
 
-  const [evenements, setEvenements] = useState([])
+  const filter2 = (arr, strCompare) => {
+    return arr.filter(el => el.info_pratique?.includes(strCompare))
+  }
+
+  const checkCreteria = (e, creteria, noCreteria) => {
+    e.preventDefault()
+    console.log('TEST', creteria)
+    let result = evenements
+    result = creteria.style ? filter1(result, creteria.style) : result
+    result = creteria.info_pratique
+      ? filter2(result, creteria.info_pratique)
+      : result
+
+    setNoCreteria(false)
+    setCreteria(creteria)
+    setEvenementsF(result)
+    setNoCreteria(noCreteria)
+    setNoResult(true)
+  }
 
   useEffect(() => {
     const getData = () => {
       fetch('https://yv3o2geh.directus.app/items/evenements/')
         .then(res => res.json())
-        .then(res => console.log(res) || setEvenements(res.data))
+        .then(res => {
+          console.log(res) || setEvenements(res.data)
+        })
     }
     getData()
   }, [])
 
+  const handleChange = target => {
+    if (target.id === 'selectStyle') {
+      setCreteria({ ...creteria, style: target.value })
+    }
+    if (target.id === 'month') {
+      setCreteria({ ...creteria, info_pratique: target.value })
+    }
+  }
+  useEffect(() => {
+    console.log(evenements[0])
+  }, [evenements])
   return (
     <>
       <h1 className='h1event'>
@@ -35,67 +71,87 @@ const Evenements = ({ setIsHomePage }) => {
       </h1>
       <form className='form-event'>
         <div className='contener-form-event'>
-          Type d'événement
-          <select className='select-event'>
-            <option value='tous'>Tous</option>
-            <option value='festival'>Festival</option>
-            <option value='concert'>Concert</option>
-            <option value='guinguette'>Guinguette</option>
-          </select>
           Genre musical :
-          <select className='select-event'>
-            <option value='tous'>Tous</option>
-            <option value='rock'>Rock</option>
-            <option value='metal'>Metal</option>
-            <option value='electro'>Electro</option>
-            <option value='rap'>Rap</option>
-            <option value='hip-hop'>Hip-Hop</option>
-            <option value='pop'>Pop</option>
-            <option value='classic'>Classic</option>
+          <select
+            className='selectForm eventForm'
+            id='selectStyle'
+            onChange={e => handleChange(e.target)}
+          >
+            <option value=''>Tous</option>
+            <option value='Rock'>Rock</option>
+            <option value='Metal'>Metal</option>
+            <option value='Electro'>Electro</option>
+            <option value='Rap'>Rap</option>
+            <option value='Hip-Hop'>Hip-Hop</option>
+            <option value='Pop'>Pop</option>
+            <option value='Classic'>Classic</option>
           </select>
-          <input type='text' name='' className='selectForm' />
-          <label>
-            Veuillez saisir la date de début:
-            <input
-              type='date'
-              name='bday'
-              required
-              pattern='\d{4}-\d{2}-\d{2}'
-            />
-            <span className='validity'></span>
-          </label>
-          <label>
-            Veuillez saisir la date de fin:
-            <input
-              type='date'
-              name='bday'
-              required
-              pattern='\d{4}-\d{2}-\d{2}'
-            />
-            <span className='validity'></span>
-          </label>
-          Localisation :
-          <button className='button-event' onClick={handleClick}>
-            CHERCHER
+          Date:
+          <select
+            className='selectForm eventForm'
+            id='month'
+            name='month'
+            onChange={e => handleChange(e.target)}
+          >
+            <option value='Janvier'>Janvier</option>
+            <option value='Février'>Février</option>
+            <option value='Mars'>Mars</option>
+            <option value='Avril'>Avril</option>
+            <option value='Mai'>Mai</option>
+            <option value='Juin'>Juin</option>
+            <option value='Juillet'>Juillet</option>
+            <option value='Août'>Août</option>
+            <option value='Septembre'>Septembre</option>
+            <option value='Octobre'>Octobre</option>
+            <option value='Novembre'>Novembre</option>
+            <option value='Décembre'>Décembre</option>
+          </select>
+          <button
+            className='buttonForm buttonEvent'
+            onClick={e => checkCreteria(e, creteria)}
+          >
+            RECHERCHE
+            {console.log(evenements.date_start)}
           </button>
         </div>
-
-        {isDisplayMap && <Leaflet />}
       </form>
       <div className='GaleryEvenements'>
-        {evenements.map(evenement => (
-          <Events
-            key={evenement.id}
-            name={evenement.name}
-            image={evenement.image}
-            description={evenement.description}
-            id={evenement.id}
-            url={evenement.url}
-            tarif={evenement.tarif}
-            style={evenement.style}
-            location={evenement.location}
-          />
-        ))}
+        {!noCreteria && evenementsF.length
+          ? evenementsF.map(evenement => (
+              <Events
+                key={evenement.id}
+                name={evenement.name}
+                image={evenement.image}
+                description={evenement.description}
+                id={evenement.id}
+                url={evenement.url}
+                tarif={evenement.tarif}
+                style={evenement.style}
+                location={evenement.location}
+                city={evenement.city}
+                date_start={evenement.date_start}
+                infos={evenement.info_pratique}
+              />
+            ))
+          : noResult && <p className='noResultAff'>Aucun résultat</p>}
+        {noCreteria &&
+          evenements !== null &&
+          evenements.map(evenementF => (
+            <Events
+              key={evenementF.id}
+              name={evenementF.name}
+              image={evenementF.image}
+              description={evenementF.description}
+              id={evenementF.id}
+              url={evenementF.url}
+              tarif={evenementF.tarif}
+              style={evenementF.style}
+              location={evenementF.location}
+              city={evenementF.city}
+              date_start={evenementF.date_start}
+              infos={evenementF.info_pratique}
+            />
+          ))}
       </div>
     </>
   )

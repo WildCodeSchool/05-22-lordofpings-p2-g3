@@ -1,5 +1,13 @@
+.buttonEvent {
+  width:20px;
+}
 .contener-form-event {
-text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-weight: bolder;
+  
 }
 
 .h1event {
@@ -7,10 +15,9 @@ text-align: center;
   text-align: center;
 }
 
-.select-event {
-  margin:10px
-}
 
-.button-event {
-  margin:10px
+.eventForm {
+  display: flex;
+  margin-inline: 2em;
+  width:6em;
 }

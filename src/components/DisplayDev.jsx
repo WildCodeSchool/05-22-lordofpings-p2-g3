@@ -2,8 +2,6 @@ import React from 'react'
 import './DisplayDev.css'
 
 function DisplayDev({ devName, devDescription, devAvatar, devBck, devBtn }) {
-  console.log({ devBck })
-
   return (
     <div>
       <div className='container-apropos'>

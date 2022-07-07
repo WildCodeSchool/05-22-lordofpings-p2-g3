@@ -9,7 +9,7 @@ const Formulaire = ({ isCheck, selectGroupe }) => {
     style: '',
     location: '',
     objectif: '',
-    gs: `${selectGroupe}`
+    gs: selectGroupe
   })
 
   const [locFilter, setLocFilter] = useState([])
@@ -47,9 +47,16 @@ const Formulaire = ({ isCheck, selectGroupe }) => {
   }, [])
 
   useEffect(() => {
-    fetch('https://yv3o2geh.directus.app/items/locations')
+    fetch('https://kinotonik.github.io/jsonapi/data_musicien.json')
       .then(res => res.json())
-      .then(res => setLocFilter(res.data))
+      .then(res => {
+        let a = res.results.map(el => el.location.city)
+        console.log('ARR MAP', a)
+        a = a.filter((item, index) => a.indexOf(item) === index)
+
+        console.log('FILTRE TEST', a)
+        return setLocFilter(a)
+      })
   }, [])
 
   useEffect(() => {
@@ -58,9 +65,11 @@ const Formulaire = ({ isCheck, selectGroupe }) => {
       .then(res => setObjFilter(res.data))
   }, [])
 
-  useEffect(() => {
-    console.log(creteria)
-  }, [creteria])
+  // useEffect(() => {
+  //   fetch('https://yv3o2geh.directus.app/items/objectif')
+  //     .then(res => res.json())
+  //     .then(res => setObjFilter(res.data))
+  // }, [])
 
   useEffect(() => {
     fetch('https://yv3o2geh.directus.app/items/instruments')
@@ -159,8 +168,8 @@ const Formulaire = ({ isCheck, selectGroupe }) => {
               <option value=''>---Type---</option>
               {locFilter.length &&
                 locFilter.map((loc, i) => (
-                  <option key={i} value={loc.name}>
-                    {loc.name}
+                  <option key={i} value={loc}>
+                    {loc}
                   </option>
                 ))}
             </select>

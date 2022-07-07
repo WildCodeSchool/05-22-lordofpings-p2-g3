@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import DisplayDev from '../components/DisplayDev'
-import Equalizer from '../components/Equalizer'
+// import Equalizer from '../components/Equalizer'
 import Memory from '../components/Memory'
 
 import boomer from '../assets/images/boomer.png'
@@ -22,9 +22,6 @@ const Apropos = ({ setIsHomePage }) => {
     return setIsHomePage(false)
   }, [])
 
-  // const handleClick = () => {
-  //   setIsactive(!isactive)
-  // }
   return (
     <div className='bigwrapper-apropos'>
       <div className='wrapper-parallax'>
@@ -45,9 +42,6 @@ const Apropos = ({ setIsHomePage }) => {
               devBtn={dev.devBtn}
             />
           ))}
-          <div className='equalizer'>
-            <Equalizer />
-          </div>
         </div>
         <div className='app-memo'>
           <Memory />

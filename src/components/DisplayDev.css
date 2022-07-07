@@ -20,6 +20,7 @@ perspective: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  align-items: flex-start;
   height: 70%;
   transform-style: preserve-3d;
   z-index: -1;
@@ -46,7 +47,7 @@ perspective: 10px;
 /* ***************cards*************** */
 .h1-apropos {
   font-size: 8rem;
-  padding: 2rem 4rem;
+  padding: 1rem 4rem !important;
   color: #0d1117;
   padding-right: 60%;
   text-shadow: 0 0 15px white;
@@ -62,9 +63,9 @@ perspective: 10px;
 
 .container-apropos {
   width: 350px;
-
+height: auto;
   text-align: center;
-  border-radius: 1rem;
+  border-radius: .2rem;
   background-color: #0d1117;
   position: relative;
   overflow: hidden;
