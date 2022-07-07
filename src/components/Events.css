@@ -58,6 +58,7 @@ html {
 
 
 .eventBody {
+  display: flex;
   position: relative;
   --webkit-backface-visibility: hidden;
   backdrop-filter: blur(2px);
@@ -154,7 +155,7 @@ html {
 }
 
 .event-flip-box p {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   line-height: 1.5em;
   font-weight: 700;
   text-shadow: 0px 0px 7px rgba(0, 0, 0, 1);
@@ -170,7 +171,7 @@ html {
   cursor: pointer;
   font-size: 20px;
   font-weight: bold;
-  margin-top: 25px;
+  margin-bottom: 40px;
   padding: 15px 20px;
   text-transform: uppercase;
 
@@ -193,4 +194,3 @@ html {
   min-height: 60vh;
 
 } */
-
