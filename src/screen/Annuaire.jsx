@@ -301,6 +301,7 @@ const Annuaire = ({ setIsHomePage, selectGroupe }) => {
                           objectif={grpFiltre.search.objectif}
                           latitude={grpFiltre.location.coordinates.latitude}
                           longitude={grpFiltre.location.coordinates.longitude}
+                          style={grpFiltre.style}
                         />
                       ))}
                     {noCreteria &&
@@ -317,6 +318,7 @@ const Annuaire = ({ setIsHomePage, selectGroupe }) => {
                           objectif={grpFiltre.search.objectif}
                           latitude={grpFiltre.location.coordinates.latitude}
                           longitude={grpFiltre.location.coordinates.longitude}
+                          style={grpFiltre.style}
                         />
                       ))}
                   </MapContainer>
