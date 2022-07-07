@@ -286,6 +286,7 @@ const Annuaire = ({ setIsHomePage, selectGroupe }) => {
                           location={grpFiltre.location.city}
                           instrument={grpFiltre.instrument}
                           experience={grpFiltre.experience}
+                          style={grpFiltre.style}
                           objectif={grpFiltre.search.objectif}
                           latitude={grpFiltre.location.coordinates.latitude}
                           longitude={grpFiltre.location.coordinates.longitude}
@@ -302,6 +303,7 @@ const Annuaire = ({ setIsHomePage, selectGroupe }) => {
                           location={grpFiltre.location.city}
                           instrument={grpFiltre.instrument}
                           experience={grpFiltre.experience}
+                          style={grpFiltre.style}
                           objectif={grpFiltre.search.objectif}
                           latitude={grpFiltre.location.coordinates.latitude}
                           longitude={grpFiltre.location.coordinates.longitude}

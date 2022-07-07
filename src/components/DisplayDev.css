@@ -3,6 +3,11 @@
   padding-bottom: 16px;
 }
 
+.wrapper-parallax::-webkit-scrollbar {
+  display: none;
+}
+
+
 /* ***************parallax*************** */
 .wrapper-parallax {
 height: 100vh;
@@ -10,12 +15,12 @@ overflow-y: auto;
 overflow-x: hidden;
 perspective: 10px;
 }
-
 .header-apropos{
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  align-items: flex-start;
   height: 70%;
   transform-style: preserve-3d;
   z-index: -1;
@@ -42,7 +47,7 @@ perspective: 10px;
 /* ***************cards*************** */
 .h1-apropos {
   font-size: 8rem;
-  padding: 2rem 4rem;
+  padding: 1rem 4rem !important;
   color: #0d1117;
   padding-right: 60%;
   text-shadow: 0 0 15px white;
@@ -57,8 +62,10 @@ perspective: 10px;
 }
 
 .container-apropos {
+  width: 350px;
+height: auto;
   text-align: center;
-  border-radius: 1rem;
+  border-radius: .2rem;
   background-color: #0d1117;
   position: relative;
   overflow: hidden;
@@ -101,12 +108,9 @@ perspective: 10px;
   width: 15rem;
   clip-path: circle(60px at center);
   margin-top: 6rem;
+  object-fit: contain;
 }
 
-/* h1:ntd-child(2)  {
-  font-size: 1.5rem;
-  padding: 2rem 1rem;
-} */
 
 .description-apropos {
   margin: 1rem 2rem;
@@ -142,19 +146,36 @@ perspective: 10px;
 /* fin cards*************** */
 
 /* ***************MEDIA SCREEN*************** */
-@media screen and (max-width:499px) {
-.h1-apropos {
-  font-size: 4rem;
-}
-}
-@media screen and (min-width:500px) {
+@media screen and (min-width:768px) {
   .wrapper-apropos {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    grid-template-columns: repeat(2, 1fr);
+  }
       
 }
+@media screen and (max-width:767px) {
+  .wrapper-apropos {
+    grid-template-columns: repeat(1, 1fr);}
+    .h1-apropos {
+      position: absolute;
+      top:15%;
+      text-align: center;
+      font-size: 4rem;
+      padding: 0;
+    }
+    .header-apropos {
+      height: 45%;
+    }
+  }
 
-@media screen and (min-width:750px) {
+
+  @media screen and (min-width:1200px) {
+    .wrapper-apropos {
+        grid-template-columns: repeat(3, 1fr);
+      }
+        
+  }
+
+@media screen and (min-width:1600px) {
   .wrapper-apropos {
       grid-template-columns: repeat(4, 1fr);
   }
