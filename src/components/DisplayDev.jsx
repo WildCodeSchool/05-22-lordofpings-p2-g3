@@ -21,7 +21,7 @@ function DisplayDev({ devName, devDescription, devAvatar, devBck, devBtn }) {
           className='btn-apropos'
           onClick={() => window.open(`${devBtn}`, '_blank')}
         >
-          Ma musique
+          Musique
         </button>
       </div>
     </div>

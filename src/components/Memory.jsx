@@ -82,11 +82,11 @@ function Memory() {
   return (
     <div className='wrapper-memory'>
       <h1>Memory Card</h1>
-
-      <button className='btn-apropos' onClick={shuffleCards}>
-        Nouvelle partie
-      </button>
-
+      <div className='btn-container'>
+        <button className='btn-apropos' onClick={shuffleCards}>
+          Nouvelle partie
+        </button>
+      </div>
       <div className='card-grid'>
         {cards.map(card => (
           <SingleCard
