@@ -88,8 +88,8 @@
 
 h1,
 h2,
-h3,
-h4 {
+h3
+ {
   margin: 0;
   padding: 3rem 1rem;
   font-style: 3rem;
@@ -277,7 +277,7 @@ body {
   min-height: 100vh;
   display: grid;
   grid:
-    "header" auto "main" auto "footer" 80px/ 100%;
+    "header" auto "main" auto "footer" 100px/ 100%;
 
 }
 

@@ -5,11 +5,11 @@ import { Leaflet } from '../components/Leaflet'
 import Formulaire from '../components/Formulaire'
 import './Annuaire.css'
 import Profiles from '../components/Profiles'
+import { useParams } from 'react-router-dom'
 import ProfilesG from '../components/ProfilesG'
 
 const Annuaire = ({ setIsHomePage, selectGroupe }) => {
   const [profiles, setProfiles] = useState([])
-  const [profilesg, setProfilesG] = useState([])
   const [displayMOrG, setDisplayMOrG] = useState('') // etape 1
   const [profilesFilter, setProfilesFilter] = useState([])
   const [groupes, setGroupes] = useState([])
@@ -22,7 +22,7 @@ const Annuaire = ({ setIsHomePage, selectGroupe }) => {
     style: '',
     location: '',
     objectif: '',
-    gs: `${selectGroupe}`
+    gs: selectGroupe
   })
 
   useEffect(() => {
@@ -94,6 +94,7 @@ const Annuaire = ({ setIsHomePage, selectGroupe }) => {
 
   const checkCreteria = (e, creteria, noCreteria) => {
     e.preventDefault()
+    console.log('ETAT BORDEL', creteria, creteria.gs)
     let result = profiles
     result = creteria.instrument ? filter1(result, creteria.instrument) : result
     result = creteria.style ? filter2(result, creteria.style) : result
@@ -132,6 +133,7 @@ const Annuaire = ({ setIsHomePage, selectGroupe }) => {
       {creteria.gs == 'false' && (
         <>
           <div className='titleCard'>
+            {console.log('BORDEL DE MERDE', creteria.gs)}
             <h3>Retrouvez vos futurs musiciens sur Rock Your Band ... </h3>
           </div>
           <div className='elment-annuaire'>
@@ -150,7 +152,12 @@ const Annuaire = ({ setIsHomePage, selectGroupe }) => {
                       objectif={profile.music.search.objectif}
                     />
                   ))
-                : noResult && <p className='noResultAff'>Aucun résultat</p>}
+                : noResult && (
+                    <p className='noResultAff'>
+                      Malheureusement, il n'y a aucun résultat qui correspond à
+                      votre recherche
+                    </p>
+                  )}
               {noCreteria &&
                 profiles !== null &&
                 profiles.map(profileFiltre => (
@@ -246,7 +253,12 @@ const Annuaire = ({ setIsHomePage, selectGroupe }) => {
                       objectif={groupe.search.objectif}
                     />
                   ))
-                : noResult && <p className='noResultAff'>Aucun résultat</p>}
+                : noResult && (
+                    <p className='noResultAff'>
+                      Malheureusement, il n'y a aucun résultat qui correspond à
+                      votre recherche
+                    </p>
+                  )}
               {noCreteria &&
                 groupes !== null &&
                 groupes.map(groupeFiltre => (

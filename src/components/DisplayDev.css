@@ -63,7 +63,7 @@ perspective: 10px;
 
 .container-apropos {
   width: 350px;
-height: auto;
+  height: auto;
   text-align: center;
   border-radius: .2rem;
   background-color: #0d1117;
@@ -146,27 +146,29 @@ height: auto;
 /* fin cards*************** */
 
 /* ***************MEDIA SCREEN*************** */
-@media screen and (min-width:768px) {
-  .wrapper-apropos {
-    grid-template-columns: repeat(2, 1fr);
-  }
-      
-}
 @media screen and (max-width:767px) {
   .wrapper-apropos {
-    grid-template-columns: repeat(1, 1fr);}
+    grid-template-columns: repeat(1, 0.7fr);
+    margin-left: 200px;}
     .h1-apropos {
       position: absolute;
       top:15%;
       text-align: center;
       font-size: 4rem;
       padding: 0;
+      
     }
     .header-apropos {
       height: 45%;
     }
   }
-
+  
+  @media screen and (min-width:768px) {
+    .wrapper-apropos {
+      grid-template-columns: repeat(2, 1fr);
+    }
+        
+  }
 
   @media screen and (min-width:1200px) {
     .wrapper-apropos {
