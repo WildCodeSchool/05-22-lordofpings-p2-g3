@@ -35,50 +35,49 @@ const Header = ({
           <div className='home'>
             <video src='/video.mp4' autoPlay loop playsinline muted></video>
             <div className='header__home '>
-             
-                <nav className='home__container'>
-                  <div className='logo'>
-                    <Link to='/playlist'>
-                      <img src={logo} alt='rockYourBand-logo' />
-                    </Link>
-                  </div>
-              
-                  <div className='navbarre '>
-                    <ul>
-                      <li>
-                        {/* navlink ici */}
-                        <NavLink
-                          to='/'
-                          className={({ isActive }) => {
-                            console.log('accueil', isActive)
-                            return isActive ? 'btn-active' : 'btn-inactive'
-                          }}
-                        >
-                          Accueil
-                        </NavLink>
-                      </li>
-                      <li>
-                        <NavLink
-                          to='/annuaire'
-                          className={({ isActive }) =>
-                            isActive ? 'btn-active' : 'btn-inactive'
-                          }
-                        >
-                          Annuaire
-                        </NavLink>
-                      </li>
-                      <li>
-                        <NavLink
-                          to='/evenement'
-                          className={({ isActive }) => {
-                            console.log(isActive)
-                            return isActive ? 'btn-active' : 'btn-inactive'
-                          }}
-                        >
-                          &Eacute;venements
-                        </NavLink>
-                      </li>
-                      {/* <li>
+              <nav className='home__container'>
+                <div className='logo'>
+                  <Link to='/'>
+                    <img src={logo} alt='rockYourBand-logo' />
+                  </Link>
+                </div>
+
+                <div className='navbarre '>
+                  <ul>
+                    <li>
+                      {/* navlink ici */}
+                      <NavLink
+                        to='/'
+                        className={({ isActive }) => {
+                          console.log('accueil', isActive)
+                          return isActive ? 'btn-active' : 'btn-inactive'
+                        }}
+                      >
+                        Accueil
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to='/annuaire'
+                        className={({ isActive }) =>
+                          isActive ? 'btn-active' : 'btn-inactive'
+                        }
+                      >
+                        Annuaire
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to='/evenement'
+                        className={({ isActive }) => {
+                          console.log(isActive)
+                          return isActive ? 'btn-active' : 'btn-inactive'
+                        }}
+                      >
+                        &Eacute;venements
+                      </NavLink>
+                    </li>
+                    {/* <li>
                         <NavLink
                           to='/about'
                           className={({ isActive }) =>
@@ -88,19 +87,18 @@ const Header = ({
                           A propos
                         </NavLink>
                       </li> */}
-                      <li>
-                        <NavLink
-                          to='/contact'
-                          className={({ isActive }) =>
-                            isActive ? 'btn-active' : 'btn-inactive'
-                          }
-                        >
-                          Contact
-                        </NavLink>
-                      </li>
-                    </ul>
-             
-                  </div>
+                    <li>
+                      <NavLink
+                        to='/contact'
+                        className={({ isActive }) =>
+                          isActive ? 'btn-active' : 'btn-inactive'
+                        }
+                      >
+                        Contact
+                      </NavLink>
+                    </li>
+                  </ul>
+                </div>
                 <div className='container__profil '>
                   <Link to={`/user-profil/${userId}`}>
                     <div className='home__profil'>
@@ -113,9 +111,7 @@ const Header = ({
                     </button>
                   </Link>
                 </div>
-                
-                </nav>
-           
+              </nav>
 
               <div className='hero-container'>
                 <div className='hero__btn-container'>
@@ -155,15 +151,13 @@ const Header = ({
       {!isHomePage && (
         // <div className='nothome'>
         <header className='header-color'>
-          
-
           <nav className='home__container-2'>
             <div className='logo'>
-              <Link to='/playlist'>
+              <Link to='/'>
                 <img src={logo} alt='rockYourBand-logo' />
               </Link>
             </div>
-            
+
             <div className='navbarre'>
               <ul>
                 <li>
