@@ -71,7 +71,8 @@ function Concept() {
         </p>
         <h3 className='title_concept'>Comment ça marche ?</h3>
         <p className='animate-text'>
-          Vous filtrez votre recherche avant de partager des moments.
+          Effectuer votre recherche pour trouver d'autres musiciens selon vos
+          critères.
         </p>
         <h3 className='title_concept'>N'hésitez plus !</h3>
         <p className='animate-text'>
