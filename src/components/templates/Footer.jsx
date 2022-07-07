@@ -121,7 +121,7 @@ const Footer = () => {
                           : 'btn-inactive link-footer'
                       }
                     >
-                      A proros
+                      A propos
                     </NavLink>
                   </li>
                   <li>
