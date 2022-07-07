@@ -1,3 +1,14 @@
+.GaleryEvenements {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 60px;
+  margin-right: 2em;
+  margin-bottom: 2em;
+  margin-top: 0.5em;
+
+}
 html {
   font-family: sans-serif;
   box-sizing: border-box;
@@ -6,30 +17,21 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
-
-.card {
-  padding: 30px;
-  border: solid 1px rgba(0, 0, 0, 0.08);
-  cursor: pointer;
-  background-color: white;
-  color:black;
-  margin-bottom: 20px;
-  width: 20rem;
-  border-radius: 25px;
-  /* max-height: 45vh;
-  min-height: 60vh; */
+.box-item {
+  margin: 2em;
 }
-
 
 .text-center {
   text-align: center;
 }
 
+
 .color-white {
+  
   color: #fff;
   cursor: pointer;
-  margin: 20px;
-  height: 55px;
+  margin: 0px;
+  height: 600px;
   text-align:center;
   border: none;
   background-size: 300% 100%;
@@ -39,6 +41,7 @@ html {
   -o-transition: all .4s ease-in-out;
   -webkit-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
+  text-overflow: ellipsis;
 }
 
 .buttonProfile:hover {
@@ -49,16 +52,20 @@ html {
   transition: all .4s ease-in-out;
 }
 
-@media screen and (min-width:1380px) {
+
   .box-container {
     flex-direction: row
   }
-}
-
 
 .box-item {
   position: relative;
   --webkit-backface-visibility: hidden;
+  backdrop-filter: blur(2px);
+  height: 600px;
+  width: 450px;
+  margin-bottom: 15px;
+  margin-inline: 15px;
+  
 }
 
 .flip-box {
@@ -67,7 +74,7 @@ html {
   -webkit-transform-style: preserve-3d;
   perspective: 1000px;
   -webkit-perspective: 1000px;
-  width: 350px;
+  width: 450px;
   margin: 20px;
 }
 
@@ -82,6 +89,7 @@ html {
   -webkit-transition: transform 0.7s cubic-bezier(.4,.2,.2,1);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  
 }
 
 .flip-box-front {
@@ -143,15 +151,16 @@ html {
 }
 
 .flip-box-header {
-  font-size: 34px;
+  font-size: 36px;
 }
 
 .flip-box p {
-  font-size: 30px;
+  font-size: 1.8rem;
   line-height: 1.5em;
   font-weight: 700;
   text-shadow: 0px 0px 7px rgba(0, 0, 0, 1);
-  backdrop-filter: blur(20px);
+  text-align: center;
+  margin:1em;
 }
 
 .flip-box-button {
@@ -162,7 +171,7 @@ html {
   cursor: pointer;
   font-size: 20px;
   font-weight: bold;
-  margin-top: 25px;
+  margin-top: 14em;
   padding: 15px 20px;
   text-transform: uppercase;
 }
@@ -171,13 +180,22 @@ html {
   width: auto;
   height: 600px;
   object-fit: cover;
-  filter: brightness(60%)
+  width: 450px;
+  border: #fff solid 2px;
+  filter: blur(4px);
+  filter: brightness(50%)
+;
 }
 
 
 /* .card {
   max-height: 63vh;
-  min-height: 43vh;
+  min-height: 60vh;
 
 } */
 
+@media screen and (max-width:499px) {
+  .left {
+    display: none;
+  }
+}
