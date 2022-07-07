@@ -135,7 +135,12 @@ const Evenements = ({ setIsHomePage }) => {
                   infos={evenement.info_pratique}
                 />
               ))
-            : noResult && <p className='noResultAff'>Aucun résultat</p>}
+            : noResult && (
+                <p className='noResultAff'>
+                  Malheureusement, il n'y a aucun résultat qui correspond à
+                  votre recherche
+                </p>
+              )}
           {noCreteria &&
             evenements !== null &&
             evenements.map(evenementF => (
