@@ -292,10 +292,11 @@ button.header__login:hover {
   align-content: start;
 }
 
-img.home__profil {
-  width: 70px;
-  height: 70px;
+img.home__profil_img {
+  width: 69px;
+  height: 68px;
   border-radius: 50%;
+  margin-top:-1px;
 
 }
 
