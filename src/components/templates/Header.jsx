@@ -49,7 +49,7 @@ const Header = ({
             <div className='header__home '>
               <nav className='home__container'>
                 <div className='logo'>
-                  <Link to='/playlist'>
+                  <Link to='/'>
                     <img src={logo} alt='rockYourBand-logo' />
                   </Link>
                 </div>
@@ -171,7 +171,7 @@ const Header = ({
         <header className='header-color'>
           <nav className='home__container-2'>
             <div className='logo'>
-              <Link to='/playlist'>
+              <Link to='/'>
                 <img src={logo} alt='rockYourBand-logo' />
               </Link>
             </div>
