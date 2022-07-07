@@ -277,7 +277,7 @@ body {
   min-height: 100vh;
   display: grid;
   grid:
-    "header" auto "main" auto "footer" 100px/ 100%;
+    "header" auto "main" auto "footer" 80px/ 100%;
 
 }
 

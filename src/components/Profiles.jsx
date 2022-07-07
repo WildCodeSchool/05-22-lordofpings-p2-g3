@@ -21,7 +21,7 @@ const Profiles = ({
           <div className='inner color-white'>
             <h3 className='flip-box-header'>{name}</h3>
             <p>📍 {location}</p>
-            <p>⭐️ {experience}</p>
+            <p>🎓 {experience}</p>
             <p>🎶 {instrument.join(', ')}</p>
             <p>⭐️{objectif}</p>
           </div>

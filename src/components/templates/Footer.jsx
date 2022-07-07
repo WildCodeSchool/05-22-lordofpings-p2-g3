@@ -55,16 +55,11 @@ const Footer = () => {
                   <img src={instagramImg} alt='logo instagram'></img>
                 </a>
               </li>
-              <li>
-                <Link to={`/user-profil/${userId}`}>
-                  <img
-                    src={profil}
-                    className='home__profil_img footer_profil'
-                  />
-                </Link>
-              </li>
             </ul>
             <div className='nav'>
+              <Link to={`/user-profil/${userId}`}>
+                <img src={profil} className='home__profil_img footer_profil' />
+              </Link>
               <label
                 htmlFor='toggle'
                 onClick={miracleNav}
