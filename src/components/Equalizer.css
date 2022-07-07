@@ -24,7 +24,7 @@
     width: 40px;
     height: 120px;
     margin-right: 10px;
-    background: linear-gradient(32deg, #B51EB7 0%, #3f1961 100%);;
+    background: linear-gradient(32deg, #1eb759 0%, #615c19 100%);;
     -webkit-transition: height 0.5s ease-out;
     transition: height 0.5s ease-out;
   }
