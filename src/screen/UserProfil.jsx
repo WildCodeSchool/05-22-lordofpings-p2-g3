@@ -34,10 +34,12 @@ const UserProfil = ({ setIsHomePage }) => {
       let res = await axios.get(`${DIRECTUS_URL}/users/me`, config)
       setData(res.data.data)
     } catch (error) {
-      setError('vous devez vous connecter pour acceder a votre profil',error.message)
-    }
-    finally{
-     console.log(error.message)
+      setError(
+        'vous devez vous connecter pour acceder a votre profil',
+        error.message
+      )
+    } finally {
+      console.log(error.message)
     }
   }
 
@@ -47,9 +49,9 @@ const UserProfil = ({ setIsHomePage }) => {
 
   return (
     <div className='main'>
-      <h1> User n°{id} </h1>
+      <h1> Mon profil {data} </h1>
       {error && <pre>{error}</pre>}
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+      {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
       <div className='profile-container'>
         <div className='profile-gutter'>
           <div className='profile-coninfo'>
@@ -103,10 +105,7 @@ const UserProfil = ({ setIsHomePage }) => {
                 </div>
                 <div className='profile-cube2'>
                   <h4>Spec: </h4>
-               
-                  {data.tags[10]} 
-                
-
+                  <h6> {data.tags}</h6>
                 </div>
                 <div className='profile-cube3'>
                   <h4>Localisation:</h4>
