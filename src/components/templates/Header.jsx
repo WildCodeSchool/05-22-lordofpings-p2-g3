@@ -45,7 +45,7 @@ const Header = ({
       {isHomePage && (
         <>
           <div className='home'>
-            <video src='/video_shd.mp4' autoPlay loop playsinline muted></video>
+            <video src='/video.mp4' autoPlay loop playsinline muted></video>
             <div className='header__home '>
               <nav className='home__container'>
                 <div className='logo'>
