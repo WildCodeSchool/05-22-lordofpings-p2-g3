@@ -23,7 +23,7 @@ const Profiles = ({
             <p>📍 {location}</p>
             <p>⭐️ {experience}</p>
             <p>🎶 {instrument.join(', ')}</p>
-            <p>⭐️{objectif}</p>
+            <p>⭐️ {objectif}</p>
           </div>
         </div>
         <div className='flip-box-back text-center'>

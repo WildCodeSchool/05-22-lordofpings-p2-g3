@@ -1,3 +1,9 @@
+
+
+.titre-contact {
+	letter-spacing: 3px;
+}
+
 .container-contact {
 	position: relative;
 	width: 100%;
@@ -89,6 +95,8 @@ textarea{
     border: 2px solid #F15412;
     background-color: #fff;
 }
+
+
 
 
 
