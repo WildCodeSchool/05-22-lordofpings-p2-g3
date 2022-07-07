@@ -59,7 +59,7 @@ const UserProfil = ({ setIsHomePage }) => {
           avatar: res.data.data.avatar,
           test:'mlkmlk'
         })
-        
+
         const user2=userInfo
         console.warn('user after state--->', user2)
         console.log('context userProfil.jsx', userInfo)
@@ -76,7 +76,7 @@ const UserProfil = ({ setIsHomePage }) => {
 
   return (
     <div className='main'>
-      <h1> Mon profil {data.id} </h1>
+      <h1> Mon profil </h1>
       {error && <pre>{error}</pre>}
       {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
       <div className='profile-container'>
