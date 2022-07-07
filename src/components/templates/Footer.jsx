@@ -29,17 +29,29 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a href='https://www.facebook.com/'>
+                <a
+                  target='_blank'
+                  href='https://www.facebook.com/'
+                  rel='noreferrer'
+                >
                   <img src={facebookImg} alt='logo facebook'></img>
                 </a>
               </li>
               <li>
-                <a href='https://www.instagram.com/?hl=fr'>
+                <a
+                  target='_blank'
+                  href='https://www.instagram.com/?hl=fr'
+                  rel='noreferrer'
+                >
                   <img src={twitterImg} alt='logo twitter'></img>
                 </a>
               </li>
               <li>
-                <a href='https://twitter.com/?lang=fr'>
+                <a
+                  target='_blank'
+                  href='https://twitter.com/?lang=fr'
+                  rel='noreferrer'
+                >
                   <img src={instagramImg} alt='logo instagram'></img>
                 </a>
               </li>
