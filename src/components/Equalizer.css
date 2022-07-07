@@ -1,15 +1,16 @@
 .container__equalizer {
     position: relative;
-    top: -220px;
-    margin: 10px auto;
-    height: 200px;
-    text-align: center
+    top: -110px;
+    margin: 5px auto;
+    height: 150px;
+    text-align: center;
+    
   }
   
   .container__equalizer::before {
     content: "";
     display: inline-block;
-    height: 100%;
+    /* height: 100%; */
   }
   
   .container__equalizer::after {
@@ -22,7 +23,7 @@
     vertical-align: top;
 
     width: 40px;
-    height: 120px;
+    height: 100px;
     margin-right: 10px;
     background: linear-gradient(32deg, #1eb759 0%, #615c19 100%);;
     -webkit-transition: height 0.5s ease-out;

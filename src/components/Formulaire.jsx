@@ -59,6 +59,10 @@ const Formulaire = ({ isCheck, selectGroupe }) => {
   }, [])
 
   useEffect(() => {
+    console.log(creteria)
+  }, [creteria])
+
+  useEffect(() => {
     fetch('https://yv3o2geh.directus.app/items/instruments')
       .then(res => res.json())
       .then(res => setInstFilter(res.data))

@@ -12,7 +12,7 @@
 .title_concept {
     font-family: var(--font-family-1);
     font-size: var(--font-size-2);
-    color: var(--bg-deg-2);
+    color: orangered;
     padding: 0.5em 0;
     text-align: center;
 }
@@ -20,9 +20,9 @@
 .animate-text { 
     font-family: var(--font-family-2);
     text-align: center;
-    visibility:hidden;
+    /* visibility:hidden; */
 }
-  .animate-text span { 
+  /* .animate-text span { 
 	display:inline-block;
     color: var(--text-primary-color);
     animation:fade-in 0.2s ease-in-out 1;
@@ -31,6 +31,6 @@
 @keyframes fade-in {
 	0% { opacity:0; font-size:0; xxmargin-left:100px; }
     100% { opacity:1; xxfont-size:300%; xxtransform:rotate(360deg); margin-left:0; }
-}
+} */
 
   /* ---------------- */

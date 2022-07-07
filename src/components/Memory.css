@@ -1,0 +1,50 @@
+.wrapper-memory {
+    max-width: 860px;
+    margin: 40px auto;
+}
+
+.btn-memory{
+    background: none;
+    border: 2px solid white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.btn-memory:hover {
+    background:#f15412;
+    color: white;
+}
+
+.card-grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px;
+    grid-gap: 20px;
+}
+
+/* front of card - the picture */
+.card-memo .front {
+    transform: rotateY(90deg);
+    transition: all ease-in 0.2s;
+    position: absolute;
+}
+
+.flipped .front {
+    transform: rotateY(0deg);
+    transition-delay: 0.2s;
+}
+
+/* back of card - the cover */
+.card-memo .back {
+    transition: all ease-in 0.2s;
+    transition-delay: 0.2s;
+}
+
+.flipped .back {
+    transform: rotateY(90deg);
+    transition-delay: 0s;
+}
