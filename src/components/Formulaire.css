@@ -219,7 +219,7 @@ option:not(:checked) {
         display: flex;
        flex-direction: column;
        margin: 10px;
-       width: 300px;
+       width: 80vw;
        color: white;
        font-weight: bold;
        font-size: 17px;
