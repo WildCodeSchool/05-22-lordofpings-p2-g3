@@ -116,10 +116,7 @@ const Header = ({
                     localStorage.getItem('rock-your-band') != null && (
                       <Link to={`/user-profil/${userId}`}>
                         <div className='home__profil'>
-                          <img
-                          src={userImg}
-                            className='home__profil_img'
-                          />
+                          <img src={userImg} className='home__profil_img' />
                         </div>
                       </Link>
                     )}
@@ -233,14 +230,10 @@ const Header = ({
             </div>
             <div className='container__profil '>
               {userInfo.avatar != '' &&
-               
                 localStorage.getItem('rock-your-band') != null && (
                   <Link to={`/user-profil/${userId}`}>
                     <div className='home__profil'>
-                      <img
-                      src={userImg}
-                        className='home__profil_img'
-                      />
+                      <img src={userImg} className='home__profil_img' />
                     </div>
                   </Link>
                 )}
