@@ -25,10 +25,10 @@ export const Leaflet = ({
             <>
               <img src={image} alt={name} />
               <h2>{`${name}`}</h2>
-              <p>{`${location}`}</p>
-              <p style={{ color: 'red' }}>{` ${[style]}`}</p>
-              <p style={{ color: 'blue' }}>{`Niveau:${experience}`}</p>
-              <p>{`${instrument}`}</p>
+              <p>📍{`${location}`}</p>
+              <p>🤘🏻{` ${[style]}`}</p>
+              <p>🎓{`${experience}`}</p>
+              <p>🎶{`${instrument}`}</p>
             </>
             <button
               className='leaflet_btn__card'
