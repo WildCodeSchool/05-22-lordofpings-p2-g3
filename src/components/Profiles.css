@@ -1,13 +1,5 @@
-.GaleryEvenements {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 60px;
-  margin-right: 2em;
+.containerSolo {
   margin-bottom: 2em;
-  margin-top: 0.5em;
-
 }
 html {
   font-family: sans-serif;
@@ -58,12 +50,13 @@ html {
   }
 
 .box-item {
+  display: flex;
   position: relative;
   --webkit-backface-visibility: hidden;
   backdrop-filter: blur(2px);
-  height: 600px;
-  width: 450px;
-  margin-bottom: 15px;
+  height: 500px;
+  width: 340px;
+  margin-bottom: 2em;
   margin-inline: 15px;
   
 }
@@ -151,6 +144,7 @@ html {
 }
 
 .flip-box-header {
+  margin-top: 0.5em;
   font-size: 36px;
 }
 
@@ -178,9 +172,9 @@ html {
 
 .flip-image {
   width: auto;
-  height: 600px;
+  height: 500px;
   object-fit: cover;
-  width: 450px;
+  width: 340px;
   border: #fff solid 2px;
   filter: blur(4px);
   filter: brightness(50%)
@@ -199,3 +193,8 @@ html {
     display: none;
   }
 }
+.box-item {
+display: flex;
+
+}
+ 
