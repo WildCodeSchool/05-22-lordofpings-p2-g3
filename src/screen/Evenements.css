@@ -1,8 +1,7 @@
 .buttonEvent {
-  width:10em;
-  padding-inline: 00px;
-  margin-right: 100px;
-  margin-bottom: 2em;
+  width:11em;
+  padding-inline: auto;
+  padding-left: 2em;
 }
 .contener-form-event {
   display: flex;
@@ -29,6 +28,36 @@
 
 @media screen and (max-width:1000px) {
 
-.contener-form-event {  flex-direction: column
+.contener-form-event {  flex-direction: column;
+  display: flex;
+  
+  justify-content: center;
+ border-right: none;
+ border-left: none;
+
 }
+.buttonEvent {
+        
+  margin-bottom: 1rem;
+padding: 10px 30px;
+background-color: var(--gray-2);
+border: solid black 1px;
+font-weight: bold;align-items: center;
+margin-top: 1rem;
 }
+
+.buttonEvent:after{
+display: none;
+}
+.buttonEvent:hover {
+transform: none;
+}
+.buttonEvent:active {
+box-shadow: 
+  7px 6px 28px 1px rgba(0, 0, 0, 0.35);
+transform: translateY(10px);
+
+}
+
+}
+
