@@ -4,9 +4,10 @@
 }
 
 .login{
-width: var(--width);
+max-width: var(--width);
 height: var(--height);
 margin: auto;
+
 
 
 font-size: 2rem;;
