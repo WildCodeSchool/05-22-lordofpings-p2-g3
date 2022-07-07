@@ -5,9 +5,11 @@
     /* flex-direction: column;   */
     justify-content: center;
     /* background: linear-gradient(45deg, #95a5fc, #ffc8ef); */
-    border: 1px solid;
+    /* border: 1px solid; */
     margin-bottom: 5rem;
     padding: 25px;
+    border-right: 1px solid;
+    border-left: 1px solid;
 }
 
 
@@ -38,7 +40,7 @@ justify-content: space-around;
     background: none;
     border: none;
       border-bottom: solid 2px white;
-      color: #474544;
+      
       font-size: 1.000em;
     font-weight: 400;
     letter-spacing: 1px;
@@ -56,7 +58,7 @@ justify-content: space-around;
       -ms-transition: all 0.3s;
       -o-transition: all 0.3s;
       transition: all 0.3s;
-      color: var(--orange-logo);
+      color: cornsilk;
       font: inherit;
       margin: 0;
       text-transform: none;
@@ -65,6 +67,9 @@ justify-content: space-around;
       -moz-appearance: none;
       -webkit-appearance: none;
   
+}
+option:not(:checked) { 
+    background-color: black; 
 }
 
 .selectForm::-ms-expand {
@@ -114,7 +119,7 @@ justify-content: space-around;
     width: 100%;
 }
 .buttonForm:after {
-    content: "et trouve !";
+    content: "sur rock your band";
     position: absolute;
     padding: 30px 80px;
     z-index: -1;

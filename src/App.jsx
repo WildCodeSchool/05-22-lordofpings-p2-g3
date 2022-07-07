@@ -14,6 +14,7 @@ import './App.css'
 import LoginPage from './screen/LoginPage'
 import Playlist from './screen/PlayList'
 import UserProfil from './screen/UserProfil'
+import Contact from './screen/Contact'
 
 function App({ isDebugMode = true }) {
   const [isHomePage, setIsHomePage] = useState(true)
@@ -73,7 +74,7 @@ function App({ isDebugMode = true }) {
           />
           <Route
             path='/contact'
-            element={<EventDetails setIsHomePage={setIsHomePage} />}
+            element={<Contact setIsHomePage={setIsHomePage} />}
           />
         </Routes>
       </Main>
