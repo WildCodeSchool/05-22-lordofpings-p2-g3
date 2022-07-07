@@ -258,17 +258,20 @@ font-size: 40px;
   width: 50%;
   height: 100%;
   margin: 20px;
-  
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 
 }
 
 .profile-contain{
   height: 300px;
   width: 300px;
+  display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .player__container{
@@ -305,14 +308,25 @@ font-size: 40px;
   font-size: 18px;
   }
   .profile-cubes h4{
-    font-size: 22px;
-    
+    font-size: 16px;
+     }
+  .profile-cubes h6{
+  font-size: 13px;
+     }
+     .profile-cube1{
+            padding: 10px;
+     }
+      .profile-cube2{
+              padding: 10px;
     }
-    .profile-cubes h6{
-    font-size: 18px;
-  
-    }
+    .profile-cube3{
+      padding: 10px;
 }
+.profile-cube4{
+        padding: 10px;
+}
+  }
+
 
 
 @media (min-width:300px) and (max-width: 1199px) {
