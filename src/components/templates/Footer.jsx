@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import { useState } from 'react'
 import './Footer.css'
@@ -8,9 +8,21 @@ import logoImg from '../../assets/images/Rock_your_band.png'
 import twitterImg from '../../assets/images/logoResaux/twitter.png'
 import profil from '../../assets/images/vincent.png'
 
+import UserContext from '../../contexts/UserContext'
+const DIRECTUS_URL = 'https://yv3o2geh.directus.app'
 const userId = 1
 const Footer = () => {
   const [openNav, setopenNav] = useState(true)
+  const { userInfo, setUserInfo } = useContext(UserContext)
+  const [userImg, setUsrImg] = useState()
+
+  useEffect(() => {
+    console.log(`DIRECTUS_URL/assets/${userInfo.avatar}`)
+    // userInfo.avatar != null ?
+    userInfo.avatar == null
+      ? setUsrImg('https://imgur.com/To08fWB.png')
+      : setUsrImg(`${DIRECTUS_URL}/assets/${userInfo.avatar}`)
+  }, [userInfo])
 
   function miracleNav() {
     setopenNav(!openNav)
@@ -57,9 +69,15 @@ const Footer = () => {
               </li>
             </ul>
             <div className='nav'>
-              <Link to={`/user-profil/${userId}`}>
-                <img src={profil} className='home__profil_img footer_profil' />
-              </Link>
+              {userInfo.avatar != '' &&
+                localStorage.getItem('rock-your-band') != null && (
+                  <Link to={`/user-profil/${userId}`}>
+                    <img
+                      src={userImg}
+                      className='home__profil_img footer_profil'
+                    />
+                  </Link>
+                )}
               <label
                 htmlFor='toggle'
                 onClick={miracleNav}
