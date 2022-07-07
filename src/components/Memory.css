@@ -38,12 +38,7 @@
     transform: translateY(40px) rotateX(-90deg);
 } */
 
-/* .contenair-btn-memory{
-    width:600px;
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:space-around;
-} */
+
 /* ****************************************** */
 
 /* .contenair-btn-memory .btn-memory{
@@ -51,6 +46,7 @@
     width: 355px;
     height: 55px;
     margin:20px;  
+    
 } 
 
 .contenair-btn-memory .btn-memory a{
